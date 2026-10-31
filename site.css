@@ -285,3 +285,6 @@ a.mjump-btn { text-decoration: none; }
 @media (prefers-reduced-motion: reduce) {
   .site-nav, .mp-explore-card, .faq-chev { transition: none; }
 }
+.topup-price { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; margin: 10px 0 8px; }
+.topup-price strong { font-size: 2rem; font-weight: 800; color: #0f172a; letter-spacing: -0.02em; }
+.topup-price span { font-size: 0.92rem; color: #475569; font-weight: 600; }
