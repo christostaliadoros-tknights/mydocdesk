@@ -196,11 +196,6 @@ a.download-card:hover { border-color: #5eead4; box-shadow: var(--shadow-md); }
 .download-card img { width: 86px; height: auto; border-radius: 6px; border: 1px solid #e2e8f0; flex: 0 0 auto; }
 .download-text { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
 .download-text em { font-style: normal; font-size: 0.84rem; color: #64748b; }
-.deck-ico { font-size: 2.4rem; width: 86px; text-align: center; flex: 0 0 auto; }
-.download-card.deck { flex-wrap: wrap; }
-.deck-links { display: flex; gap: 8px; flex-wrap: wrap; }
-.deck-links a { font-size: 0.84rem; font-weight: 800; color: #0a192f; text-decoration: none; background: #f1f5f9; border: 1px solid #cbd5e1; padding: 6px 12px; border-radius: 8px; }
-.deck-links a:hover { background: #ccfbf1; border-color: #5eead4; }
 
 /* ---------- Footer ---------- */
 .mp-footer { max-width: none; margin: 56px 0 0; padding: 0; background: #0a192f; color: #94a3b8; }
