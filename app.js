@@ -114,7 +114,7 @@ const SCHEDULE_SLOTS_BY_SPECIALTY = {
       patient: "Natalia Georgiadou (Age 29)",
       phone: "+357 99 118 402",
       priority: 2,
-      prioLabel: "🟢 PRIORITY 3 • 30m SCALING (ΚΑΘΑΡΙΣΜΟΣ)",
+      prioLabel: "🟢 PRIORITY 3 • 30m SCALING",
       complaint: "6-month routine ultrasonic scaling, airflow polishing & annual GeSY preventive checkup",
       notes: "GeSY & Private • Routed to non-peak afternoon hygiene slot to preserve morning surgery hours.",
       channel: "WhatsApp Booking"
@@ -288,6 +288,53 @@ const SCHEDULE_SLOTS_BY_SPECIALTY = {
   ]
 };
 
+// Additional routine bookings so each demo day shows a realistic, fully counted schedule
+// (headline KPIs and calendar-layer counts are computed from these slots at render time).
+function mkSlot(id, time, patient, phone, layer, complaint, notes, channel, prioLabel) {
+  return {
+    id, time, patient, phone, priority: 2, calLayer: layer,
+    prioLabel: prioLabel || (layer === "clinic_main" ? "⚪ ROUTINE • BOOKED AT CLINIC DESK" : "🟡 PRIORITY 2 • STANDARD"),
+    complaint, notes, channel
+  };
+}
+const EXTRA_SCHEDULE_SLOTS = {
+  pediatrics: [
+    mkSlot("slot-0830", "08:30 AM", "Andreas Michael (Age 7)", "+357 99 228 341", "clinic_main", "School sports medical certificate", "GeSY & Private (#530917) • Booked by clinic desk last week; no symptoms reported.", "Clinic Desk"),
+    mkSlot("slot-1100", "11:00 AM", "Maria Charalambous (Age 3)", "+357 96 410 572", "ai_subcal", "Low-grade fever 37.8°C (2 days) + tugging left ear, drinking well", "GeSY & Private (#771230) • Red-flag screen negative; parent sending temperature log on WhatsApp.", "WhatsApp Voice Note"),
+    mkSlot("slot-1145", "11:45 AM", "Christina Pavlou (Age 1)", "+357 99 873 015", "clinic_main", "12-month vaccination (MMR) & growth check", "GeSY & Private (#118462) • Vaccination booklet requested at check-in.", "Clinic Desk"),
+    mkSlot("slot-1600", "04:00 PM", "Giorgos Antoniou (Age 11)", "+357 97 662 108", "ai_subcal", "Ankle sprain follow-up (football, 6 days ago) — swelling reducing", "GeSY & Private (#402985) • Anastasia attached the parent's photo of the ankle to the event.", "WhatsApp Photo Triage")
+  ],
+  dental: [
+    mkSlot("slot-0830", "08:30 AM", "Eleni Kyriakou (Age 45)", "+357 99 340 218", "clinic_main", "6-month hygiene recall: scale & polish", "Private • Booked by clinic desk; no pain reported.", "Clinic Desk", "🟢 PRIORITY 3 • 30m HYGIENE"),
+    mkSlot("slot-1000", "10:00 AM", "Panayiotis Ioannou (Age 52)", "+357 96 118 704", "ai_subcal", "Lost old amalgam filling (LL6), mild cold sensitivity, no swelling", "GeSY & Private (#660413) • 45m restorative slot; patient avoids chewing on left side.", "Phone Call"),
+    mkSlot("slot-1145", "11:45 AM", "Stella Neophytou (Age 16)", "+357 97 250 991", "clinic_main", "Orthodontic wire adjustment (monthly)", "Private • Parent consent on file.", "Clinic Desk"),
+    mkSlot("slot-1600", "04:00 PM", "Michalis Theodorou (Age 61)", "+357 99 805 336", "ai_subcal", "Implant consultation — missing UL5, CBCT scan uploaded", "Private • Anastasia attached the CBCT report from WhatsApp to the event.", "WhatsApp Document")
+  ],
+  dermatology: [
+    mkSlot("slot-0830", "08:30 AM", "Katerina Hadjiantoni (Age 39)", "+357 99 471 203", "clinic_main", "Annual full-body mole mapping", "GeSY & Private (#245718) • Booked by clinic desk; family history of melanoma noted.", "Clinic Desk"),
+    mkSlot("slot-1100", "11:00 AM", "Nikos Evangelou (Age 19)", "+357 96 337 860", "ai_subcal", "Acne follow-up — isotretinoin month 3, blood results attached", "GeSY & Private (#902611) • Lab PDF attached to the calendar event via WhatsApp.", "WhatsApp Document"),
+    mkSlot("slot-1200", "12:00 PM", "Androulla Savva (Age 57)", "+357 99 560 144", "clinic_main", "Cryotherapy for hand warts (2nd session)", "Private • 15m procedure slot.", "Clinic Desk"),
+    mkSlot("slot-1600", "04:00 PM", "Petros Georgiades (Age 48)", "+357 97 218 433", "ai_subcal", "New pigmented lesion on upper back — photo attached", "GeSY & Private (#318820) • Anastasia flagged change in size reported by spouse; photo on event.", "WhatsApp Photo Triage")
+  ],
+  cardiology: [
+    mkSlot("slot-0830", "08:30 AM", "Yiannis Kallis (Age 66)", "+357 99 612 078", "clinic_main", "Hypertension follow-up: ECG + BP review", "GeSY & Private (#507342) • Home BP diary to bring.", "Clinic Desk"),
+    mkSlot("slot-1000", "10:00 AM", "Anna Demetriou (Age 44)", "+357 96 903 251", "ai_subcal", "Intermittent palpitations — 24h Holter results uploaded", "GeSY & Private (#681204) • No chest pain or syncope on red-flag screen.", "WhatsApp Document"),
+    mkSlot("slot-1145", "11:45 AM", "Loizos Constantinou (Age 70)", "+357 99 144 690", "clinic_main", "Pre-operative cardiac clearance (knee replacement)", "GeSY & Private (#209877) • Surgeon's referral letter on file.", "Clinic Desk"),
+    mkSlot("slot-1600", "04:00 PM", "Rena Christou (Age 58)", "+357 97 488 512", "ai_subcal", "Echo follow-up — mild mitral regurgitation", "GeSY & Private (#734016) • Previous echo report attached.", "Phone Call")
+  ]
+};
+Object.keys(EXTRA_SCHEDULE_SLOTS).forEach((k) => {
+  if (SCHEDULE_SLOTS_BY_SPECIALTY[k]) SCHEDULE_SLOTS_BY_SPECIALTY[k].push(...EXTRA_SCHEDULE_SLOTS[k]);
+});
+
+function slotStartMinutes(timeStr) {
+  const m = /(\d{1,2}):(\d{2})\s*(AM|PM)/i.exec(timeStr || "");
+  if (!m) return 9999;
+  let h = Number(m[1]) % 12;
+  if (m[3].toUpperCase() === "PM") h += 12;
+  return h * 60 + Number(m[2]);
+}
+
 const state = {
   brandKey: "mydocdesk", // 'mydocdesk' | 'mydocdeskai'
   iconKey: "schedule_gold", // 'schedule_navy' | 'schedule_gold' | 'bell' | 'cross'
@@ -297,7 +344,7 @@ const state = {
     id: "pediatrics",
     doctorName: "Dr. Andreas Nicolaou",
     clinicTitle: "Dr. Andreas Nicolaou — Pediatrics",
-    specialty: "Pediatrics (Παιδίατρος)",
+    specialty: "Pediatrics",
     city: "Limassol",
     coverage: "GeSY & Private",
     phone: "+357 25 340 110",
@@ -305,6 +352,7 @@ const state = {
   },
   activeScenarioKey: "urgent_fever",
   activeScheduleLayer: "all",
+  micLang: "en-US",
   scheduleSlots: SCHEDULE_SLOTS_BY_SPECIALTY.pediatrics.map((s) => ({ ...s })),
   gesyQueue: [
     {
@@ -337,7 +385,7 @@ const state = {
       id: "mp-doc-1",
       name: "Dr. Andreas Nicolaou",
       specialty: "Pediatrics",
-      specialtyLabel: "👶 Pediatrics (Παιδίατρος)",
+      specialtyLabel: "👶 Pediatrics",
       city: "Limassol",
       area: "Agios Athanasios, Limassol",
       coverage: "GeSY & Private",
@@ -354,7 +402,7 @@ const state = {
       id: "mp-doc-dental-1",
       name: "Dr. Nikos Constantinou",
       specialty: "Dental",
-      specialtyLabel: "🦷 Dentistry (Οδοντίατρος)",
+      specialtyLabel: "🦷 Dentistry",
       city: "Limassol",
       area: "Makarios Ave, Limassol",
       coverage: "GeSY & Private",
@@ -371,7 +419,7 @@ const state = {
       id: "mp-doc-2",
       name: "Dr. Elena Georgiou",
       specialty: "Dermatology",
-      specialtyLabel: "🔬 Dermatology (Δερματολόγος)",
+      specialtyLabel: "🔬 Dermatology",
       city: "Nicosia",
       area: "Strovolos, Nicosia",
       coverage: "GeSY & Private",
@@ -388,7 +436,7 @@ const state = {
       id: "mp-doc-3",
       name: "Dr. Marios Petrou",
       specialty: "Cardiology",
-      specialtyLabel: "❤️ Cardiology (Καρδιολόγος)",
+      specialtyLabel: "❤️ Cardiology",
       city: "Larnaca",
       area: "Finikoudes Medical Center, Larnaca",
       coverage: "GeSY & Private",
@@ -405,7 +453,7 @@ const state = {
       id: "mp-doc-dental-2",
       name: "Dr. Marina Christoforou",
       specialty: "Dental",
-      specialtyLabel: "🦷 Dentistry (Οδοντίατρος)",
+      specialtyLabel: "🦷 Dentistry",
       city: "Nicosia",
       area: "Engomi, Nicosia",
       coverage: "GeSY & Private",
@@ -422,7 +470,7 @@ const state = {
       id: "mp-doc-4",
       name: "Dr. Katerina Loizou",
       specialty: "Pediatrics",
-      specialtyLabel: "👶 Pediatrics (Παιδίατρος)",
+      specialtyLabel: "👶 Pediatrics",
       city: "Nicosia",
       area: "Engomi, Nicosia",
       coverage: "GeSY & Private",
@@ -438,7 +486,7 @@ const state = {
       id: "mp-doc-5",
       name: "Dr. Stavros Hadjigeorgiou",
       specialty: "ENT",
-      specialtyLabel: "👂 ENT / Otolaryngology (ΩΡΛ)",
+      specialtyLabel: "👂 ENT / Otolaryngology",
       city: "Limassol",
       area: "Makarios Ave, Limassol",
       coverage: "GeSY & Private",
@@ -454,7 +502,7 @@ const state = {
       id: "mp-doc-6",
       name: "Dr. Chloe Constantinou",
       specialty: "Dermatology",
-      specialtyLabel: "🔬 Dermatology (Δερματολόγος)",
+      specialtyLabel: "🔬 Dermatology",
       city: "Paphos",
       area: "Kato Paphos Medical Plaza",
       coverage: "GeSY & Private",
@@ -692,50 +740,6 @@ const SCENARIOS = {
       "[10:21:24] PRIORITY_ENGINE score=P3_ASYNC_GESY (0 calendar slots consumed — saved 20 min)",
       "[10:21:25] GESY_BATCH_QUEUE appended item #gesy-1 for Dr. Marios Petrou 1-click sign-off"
     ]
-  },
-
-  greek_urgent: {
-    callerDisplay: "Κλήση Ασθενούς: Ελένη Μ. (+357 99 712 900)",
-    statusLabel: "ΖΩΝΤΑΝΗ ΚΛΗΣΗ (EL) • 🔴 ΠΡΟΤΕΡΑΙΟΤΗΤΑ 1",
-    caseId: "Case #MD-412",
-    prioClass: "prio-1",
-    prioPill: "🔴 ΠΡΟΤΕΡΑΙΟΤΗΤΑ 1 • ΕΠΕΙΓΟΝ ΣΗΜΕΡΑ",
-    prioHeadline: "Ξεκλείδωμα Κρυφού Επείγοντος Ραντεβού 12:30 μ.μ.",
-    coverage: "ΓεΣΥ & Ιδιωτικό (#903115)",
-    callTurns: [
-      {
-        speaker: "Αναστασία (AI Ιατρική Γραμματεία)",
-        role: "ai",
-        text: "Καλημέρα σας! Καλέσατε στο ιατρείο Dr. Andreas Nicolaou — Pediatrics. Ο γιατρός εξετάζει ασθενή αυτή τη στιγμή, είμαι η Αναστασία, η ψηφιακή βοηθός του. Πώς μπορώ να σας βοηθήσω;"
-      },
-      {
-        speaker: "Ελένη Μ. (Μητέρα)",
-        role: "caller",
-        text: "Γεια σας, ο γιος μου έχει πυρετό 39.5 από χθες το βράδυ και πονάει πολύ το αυτί του, μπορεί να μας δει ο γιατρός σήμερα;"
-      },
-      {
-        speaker: "Αναστασία (AI Ιατρική Γραμματεία)",
-        role: "ai",
-        text: "Περαστικά του! Λόγω υψηλού πυρετού (39.5°C) και οξέος πόνου στο αυτί, το περιστατικό κατατάσσεται ως Προτεραιότητα 1 (Επείγον). Ξεκλείδωσα το ειδικό επείγον κενό του Dr. Andreas Nicolaou σήμερα στις 12:30 μ.μ. και σας έστειλα επιβεβαίωση στο WhatsApp!"
-      }
-    ],
-    waMessages: [
-      {
-        dir: "incoming",
-        html: `<strong>🔴 Επείγον Ραντεβού (Προτεραιότητα 1)</strong><br/>Καλημέρα κα Ελένη! Κρατήσαμε το επείγον ραντεβού σήμερα στις <strong>12:30 μ.μ.</strong> με τον <strong>Dr. Andreas Nicolaou</strong> και ενημερώσαμε τον φάκελο:<div class="wa-slot-card urgent"><div class="wa-slot-title">🔴 Σήμερα 12:30 μ.μ. (Επείγον Buffer Slot)</div><div style="font-size:0.72rem; color:#475569;">Συμπτώματα: Πυρετός 39.5°C + Οξύς πόνος στο αυτί • ΓεΣΥ #903115</div><div class="wa-slot-btn-row"><button type="button" class="wa-slot-btn urgent" onclick="confirmSuggestedSlot()">✓ Επιβεβαίωση 12:30 μ.μ.</button></div></div>`
-      }
-    ],
-    caseFields: [
-      { label: "Ασθενής & Κάλυψη", val: "Γιώργος Μ. (5 ετών) • ΓεΣΥ & Ιδιωτικό (#903115)", full: false },
-      { label: "Προτεραιότητα", val: "🔴 P1 Επείγον → Σήμερα 12:30 μ.μ.", full: false },
-      { label: "Σημείωση Περιστατικού (Case Note)", val: "Πυρετός 39.5°C από χθες βράδυ + οξύς πόνος στο δεξί αυτί. Χωρίς δύσπνοια.", full: true },
-      { label: "Γλώσσα Φωνητικής Διαλογής", val: "🇬🇷/🇨🇾 Ελληνικά (Αυτόματη απομαγνητοφώνηση & σύνοψη φακέλου)", full: true }
-    ],
-    logs: [
-      "[10:25:01] SIP_INBOUND_EL +35799712900 → Greek Medical ASR (290ms)",
-      "[10:25:14] PRIORITY_ENGINE score=P1_URGENT → Unlocked 12:30 PM Emergency Buffer Slot",
-      "[10:25:15] WHATSAPP_TEMPLATE sent in Greek + SOAP Case Note attached to Doctor Calendar"
-    ]
   }
 };
 
@@ -814,11 +818,28 @@ function switchTab(tabId) {
   document.querySelectorAll(".nav-tab").forEach((btn) => {
     btn.classList.toggle("active", btn.dataset.tab === tabId);
   });
+  const mjMap = { marketplace: "marketplace", onepager: "onepager" };
+  const mjBtns = document.querySelectorAll(".mjump-btn");
+  if (tabId !== "simulator") {
+    mjBtns.forEach((b) => b.classList.toggle("active", !!mjMap[tabId] && (b.getAttribute("onclick") || "").includes(`'${mjMap[tabId]}'`)));
+  } else if (![...mjBtns].some((b) => b.classList.contains("active") && (b.getAttribute("onclick") || "").includes("jumpToMobileSection"))) {
+    mjBtns.forEach((b, i) => b.classList.toggle("active", i === 0));
+  }
+  const activeTabBtn = document.querySelector(`.nav-tab[data-tab="${tabId}"]`);
+  if (activeTabBtn && window.matchMedia("(max-width: 820px)").matches) {
+    activeTabBtn.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+  }
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
+function jumpToMobileTab(tabId, btnEl) {
+  switchTab(tabId);
+  document.querySelectorAll(".mjump-btn").forEach((b) => b.classList.remove("active"));
+  if (btnEl) btnEl.classList.add("active");
+}
+
 function jumpToMobileSection(elementId, btnEl) {
-  switchTab("simulator");
+  if (!document.getElementById("tab-simulator")?.classList.contains("active")) switchTab("simulator");
   document.querySelectorAll(".mjump-btn").forEach((b) => b.classList.remove("active"));
   if (btnEl) btnEl.classList.add("active");
   const target = document.getElementById(elementId);
@@ -835,7 +856,7 @@ const CLINIC_PRESETS = {
     id: "pediatrics",
     doctorName: "Dr. Andreas Nicolaou",
     clinicTitle: "Dr. Andreas Nicolaou — Pediatrics",
-    specialty: "Pediatrics (Παιδίατρος)",
+    specialty: "Pediatrics",
     city: "Limassol",
     coverage: "GeSY & Private",
     phone: "+357 25 340 110",
@@ -845,7 +866,7 @@ const CLINIC_PRESETS = {
     id: "dental",
     doctorName: "Dr. Nikos Constantinou",
     clinicTitle: "Dr. Nikos Constantinou — Dentistry",
-    specialty: "Dentistry (Οδοντίατρος)",
+    specialty: "Dentistry",
     city: "Limassol",
     coverage: "GeSY & Private",
     phone: "+357 25 410 220",
@@ -855,7 +876,7 @@ const CLINIC_PRESETS = {
     id: "dermatology",
     doctorName: "Dr. Elena Georgiou",
     clinicTitle: "Dr. Elena Georgiou — Dermatology",
-    specialty: "Dermatology (Δερματολόγος)",
+    specialty: "Dermatology",
     city: "Nicosia",
     coverage: "GeSY & Private",
     phone: "+357 22 670 330",
@@ -865,7 +886,7 @@ const CLINIC_PRESETS = {
     id: "cardiology",
     doctorName: "Dr. Marios Petrou",
     clinicTitle: "Dr. Marios Petrou — Cardiology",
-    specialty: "Cardiology (Καρδιολόγος)",
+    specialty: "Cardiology",
     city: "Larnaca",
     coverage: "GeSY & Private",
     phone: "+357 24 520 440",
@@ -957,7 +978,6 @@ function triggerScenario(scenKey, btnEl) {
 
   const SCENARIO_TO_PRESET = {
     urgent_fever: "pediatrics",
-    greek_urgent: "pediatrics",
     dental_emergency: "dental",
     soon_rash: "dermatology",
     routine_gesy: "cardiology"
@@ -1027,7 +1047,7 @@ function triggerScenario(scenKey, btnEl) {
 
   if (state.voiceAudioEnabled && scen.callTurns.length > 0) {
     const lastAi = [...scen.callTurns].reverse().find((t) => t.role === "ai");
-    if (lastAi) speakAnastasiaText(lastAi.text, scenKey === "greek_urgent" ? "el-GR" : "en-GB");
+    if (lastAi) speakAnastasiaText(lastAi.text, "en-GB");
   }
 }
 
@@ -1053,6 +1073,35 @@ function playClinicRingtone() {
   } catch (_) {}
 }
 
+const TOUR_STEP_PANELS = {
+  1: { id: "card-phone-call", label: "Step 1 • Live call" },
+  2: { id: "card-brain-panel", label: "Step 2 • Triage case note" },
+  3: { id: "card-whatsapp-chat", label: "Step 3 • WhatsApp slot offer" },
+  4: { id: "simulator-abcd-card", label: "Step 4 • A/B/C/D doctor reply" }
+};
+
+function focusTourPanel(stepNum) {
+  document.querySelectorAll(".tour-focus").forEach((el) => {
+    el.classList.remove("tour-focus");
+    el.removeAttribute("data-tour-label");
+  });
+  const cfg = TOUR_STEP_PANELS[stepNum];
+  const panel = cfg && document.getElementById(cfg.id);
+  if (!panel) return;
+  panel.classList.add("tour-focus");
+  panel.setAttribute("data-tour-label", cfg.label);
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const tall = panel.getBoundingClientRect().height > window.innerHeight * 0.8;
+  panel.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: tall ? "start" : "center" });
+}
+
+function clearTourFocus() {
+  document.querySelectorAll(".tour-focus").forEach((el) => {
+    el.classList.remove("tour-focus");
+    el.removeAttribute("data-tour-label");
+  });
+}
+
 function runInteractiveStep(stepNum) {
   for (let i = 1; i <= 4; i++) {
     document.getElementById(`step-card-${i}`)?.classList.toggle("active", i === stepNum);
@@ -1064,12 +1113,13 @@ function runInteractiveStep(stepNum) {
     showToast("📞 Step 1: Patient calls while Dr. Nicolaou is in Exam Room 1 — AI Anastasia answers immediately!");
   } else if (stepNum === 2) {
     showToast("🩺 Step 2: Anastasia screens red flags & scores Leo (39.6°C fever + acute ear pain) as 🔴 PRIORITY 1!");
-    document.getElementById("triage-prio-banner")?.scrollIntoView({ behavior: "smooth", block: "nearest" });
   } else if (stepNum === 3) {
     showToast("🔓 Step 3: Anastasia unlocks Dr. Nicolaou's hidden 12:30 PM Emergency Buffer Slot!");
   } else if (stepNum === 4) {
     confirmSuggestedSlot();
   }
+  // Steps 1–3 run their simulator updates synchronously; focus after layout settles.
+  setTimeout(() => focusTourPanel(stepNum), 120);
 }
 
 function startGuidedTour() {
@@ -1091,12 +1141,13 @@ function startGuidedTour() {
     } else {
       clearInterval(state.guidedTimer);
       state.guidedTimer = null;
+      clearTourFocus();
       if (btn) {
         btn.classList.remove("playing");
         btn.textContent = "▶ Replay Guided Triage Demo";
       }
     }
-  }, 2600);
+  }, 4200);
 }
 
 function confirmSuggestedSlot() {
@@ -1161,10 +1212,10 @@ function handlePatientTurn(channel, text) {
     if (isDentalHygiene && !isUrgent) {
       prioClass = "prio-3";
       prioPill = "🟢 PRIORITY 3 • 30-MIN HYGIENE / SCALING SLOT";
-      prioHeadline = "Routed to Non-Peak 30m Ultrasonic Scaling (Καθαρισμός) Slot";
+      prioHeadline = "Routed to Non-Peak 30m Ultrasonic Scaling Slot";
       aiReply = isGreek
         ? "Καταχώρησα το αίτημά σας για οδοντιατρικό καθαρισμό / προληπτικό έλεγχο (Προτεραιότητα 3 — 30 λεπτά) σε απογευματινό ραντεβού ώστε να προστατευθούν τα επείγοντα χειρουργικά κενά!"
-        : "I have triaged your routine dental scaling & polishing (καθαρισμός) into a 30-minute non-peak hygiene slot so the dentist's morning surgical blocks stay open for emergencies!";
+        : "I have triaged your routine dental scaling & polishing into a 30-minute non-peak hygiene slot so the dentist's morning surgical blocks stay open for emergencies!";
     } else if (isUrgent) {
       prioClass = "prio-1";
       prioPill = "🔴 PRIORITY 1 • 30-MIN EMERGENCY CHAIR SLOT";
@@ -1270,31 +1321,79 @@ function speakAnastasiaText(text, lang = "en-GB") {
   } catch (_) {}
 }
 
+function setMicLanguage(lang) {
+  state.micLang = lang === "el-GR" ? "el-GR" : "en-US";
+  document.querySelectorAll(".mic-lang-btn").forEach((b) => {
+    const on = b.dataset.lang === state.micLang;
+    b.classList.toggle("active", on);
+    b.setAttribute("aria-pressed", on ? "true" : "false");
+  });
+  showToast(state.micLang === "el-GR" ? "🎙️ Mic language set to Greek (el-GR)" : "🎙️ Mic language set to English (en-US)");
+}
+
+function showVoiceInputUnavailable(message) {
+  showToast(message);
+  const chips = document.querySelector(".call-quick-prompts");
+  if (chips) {
+    chips.classList.remove("sample-hint");
+    void chips.offsetWidth;
+    chips.classList.add("sample-hint");
+    chips.scrollIntoView({ behavior: "smooth", block: "center" });
+    setTimeout(() => chips.classList.remove("sample-hint"), 3200);
+  }
+}
+
 function startLiveMicSpeech() {
   const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
   if (!SpeechRec) {
-    handlePatientTurn("voice", "My child has a 39.5 fever since last night, can the doctor see us today?");
-    showToast("🎙️ Simulated voice input: 'My child has a 39.5 fever since last night, can the doctor see us today?'");
+    showVoiceInputUnavailable("🎙️ Voice input not supported in this browser — try a sample below.");
     return;
   }
-  const rec = new SpeechRec();
-  rec.lang = "en-US";
-  rec.interimResults = false;
   const heroBtn = document.getElementById("btn-live-mic-hero");
-  if (heroBtn) heroBtn.classList.add("listening");
+  const callMicBtn = document.getElementById("btn-call-mic");
+  const setListening = (on) => {
+    heroBtn?.classList.toggle("listening", on);
+    callMicBtn?.classList.toggle("listening", on);
+  };
+  let rec;
+  try {
+    rec = new SpeechRec();
+  } catch (_) {
+    showVoiceInputUnavailable("🎙️ Voice input not supported in this browser — try a sample below.");
+    return;
+  }
+  rec.lang = state.micLang || "en-US";
+  rec.interimResults = false;
+  rec.maxAlternatives = 1;
+  setListening(true);
+  showToast(rec.lang === "el-GR" ? "🎙️ Listening (Greek)… speak as the patient." : "🎙️ Listening (English)… speak as the patient.");
   rec.onresult = (event) => {
-    const transcript = event.results[0][0].transcript;
+    const transcript = (event.results?.[0]?.[0]?.transcript || "").trim();
+    if (!transcript) {
+      showVoiceInputUnavailable("🎙️ Didn't catch that — try again or try a sample below.");
+      return;
+    }
     state.voiceAudioEnabled = true;
     handlePatientTurn("voice", transcript);
   };
-  rec.onend = () => {
-    if (heroBtn) heroBtn.classList.remove("listening");
+  rec.onend = () => setListening(false);
+  rec.onerror = (event) => {
+    setListening(false);
+    const err = event && event.error;
+    if (err === "not-allowed" || err === "service-not-allowed") {
+      showVoiceInputUnavailable("🎙️ Microphone access is blocked — allow it in your browser, or try a sample below.");
+    } else if (err === "no-speech" || err === "aborted") {
+      showVoiceInputUnavailable("🎙️ Didn't catch that — try again or try a sample below.");
+    } else {
+      showVoiceInputUnavailable("🎙️ Voice input not supported in this browser — try a sample below.");
+    }
   };
-  rec.onerror = () => {
-    if (heroBtn) heroBtn.classList.remove("listening");
-    handlePatientTurn("voice", "My child has a 39.5 fever since last night, can the doctor see us today?");
-  };
-  rec.start();
+  try {
+    rec.start();
+  } catch (_) {
+    setListening(false);
+    showVoiceInputUnavailable("🎙️ Voice input not supported in this browser — try a sample below.");
+  }
 }
 
 // ============================================================================
@@ -1330,6 +1429,12 @@ function getSlotCalendarLayerMeta(s, idx) {
       badgeText: "🔒 Personal / Surgery Busy Hold",
       badgeClass: "cal-pill-busy"
     };
+  }
+  if (s.calLayer === "clinic_main") {
+    return { layer: "clinic_main", badgeText: "⚪ 📅 Clinic Main Desk", badgeClass: "cal-pill-clinic" };
+  }
+  if (s.calLayer === "ai_subcal") {
+    return { layer: "ai_subcal", badgeText: "🟣 📅 Anastasia AI Layer", badgeClass: "cal-pill-ai" };
   }
   if (s.priority === 1 || s.priority === 0) {
     return {
@@ -1369,14 +1474,46 @@ function filterScheduleLayer(layerKey, btnEl) {
   showToast(`📅 Showing: ${layerNames[state.activeScheduleLayer] || layerNames.all}`);
 }
 
+function updateScheduleKpis(annotated) {
+  const patients = annotated.filter((s) => s.priority >= 1).length;
+  const buffers = annotated.filter((s) => s.priority === 1 || s.priority === 0);
+  const usedBuffers = buffers.filter((s) => s.priority === 1);
+  const heldBuffers = buffers.filter((s) => s.priority === 0);
+  const setTxt = (id, txt) => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = txt;
+  };
+  const shortTime = (t) => ((/(\d{1,2}:\d{2}\s*(AM|PM))/i.exec(t) || [t])[0]).replace(/^0/, "");
+  setTxt("kpi-total-bookings", `${patients} Patients`);
+  setTxt("kpi-total-sub", `All ${patients} pre-screened with AI Case Notes`);
+  setTxt("kpi-urgent-slots", `${usedBuffers.length} / ${buffers.length} Used`);
+  const subParts = [];
+  if (usedBuffers.length) subParts.push(`${usedBuffers.map((s) => shortTime(s.time)).join(" & ")} unlocked`);
+  if (heldBuffers.length) subParts.push(`${heldBuffers.map((s) => shortTime(s.time)).join(" & ")} held for acute cases`);
+  setTxt("kpi-urgent-sub", subParts.join(" • "));
+  updateGesyKpi();
+}
+
+function updateGesyKpi() {
+  const pending = state.gesyQueue.filter((g) => !g.approved).length;
+  const kpi = document.getElementById("kpi-gesy-count");
+  if (kpi) kpi.textContent = pending === 0 ? "0 Pending (All Done!)" : `${pending} Pending`;
+  const sub = document.getElementById("kpi-gesy-sub");
+  if (sub) sub.textContent = pending === 0 ? "Batch approved from the lock screen" : `Est. 2 minutes to batch-approve all ${pending}`;
+}
+
 function renderDoctorSchedule() {
   const container = document.getElementById("doctor-schedule-list");
   if (!container) return;
 
-  const annotated = state.scheduleSlots.map((s, idx) => ({
-    ...s,
-    _meta: getSlotCalendarLayerMeta(s, idx)
-  }));
+  const annotated = state.scheduleSlots
+    .map((s, idx) => ({
+      ...s,
+      _meta: getSlotCalendarLayerMeta(s, idx)
+    }))
+    .sort((a, b) => slotStartMinutes(a.time) - slotStartMinutes(b.time));
+
+  updateScheduleKpis(annotated);
 
   const countAll = annotated.length;
   const countAi = annotated.filter((s) => s._meta.layer === "ai_subcal").length;
@@ -1442,8 +1579,7 @@ function updateSimulatorAbcdCard(scenKey, scen) {
     urgent_fever: `🩺 <strong>[Anastasia Digest #MD-409]</strong> Leo K. (4y, GeSY #948201): 39.6°C fever + R ear pain. Unlocked 12:30 PM Emergency Buffer. Reply <strong>A / B / C / D</strong>:`,
     dental_emergency: `🦷 <strong>[Anastasia Digest #MD-415]</strong> Dimitris A. (38y, GeSY #704118): Fractured UR4 crown + 8/10 thermal pain (photo attached). Held 12:30 PM Chair Buffer. Reply <strong>A / B / C / D</strong>:`,
     soon_rash: `🩺 <strong>[Anastasia Digest #MD-410]</strong> Andreas M. (34y, GeSY #839104): Forearm rash 48h, afebrile + photo attached. Offered Tomorrow 10:15 AM (P2). Reply <strong>A / B / C / D</strong>:`,
-    routine_gesy: `💊 <strong>[Anastasia Digest #MD-411]</strong> Costas P. (GeSY #449102): Chronic refill Amlodipine 5mg + Atorvastatin 20mg (Home BP 122/78). Queued in EOD Batch. Reply <strong>A / B / C / D</strong>:`,
-    greek_urgent: `🩺 <strong>[Anastasia Digest #MD-412]</strong> Γιώργος Μ. (5 ετών, ΓεΣΥ #903115): Πυρετός 39.5°C + οξύς πόνος στο αυτί. Κρατήθηκε το Επείγον Ραντεβού 12:30 μ.μ. Απαντήστε <strong>A / B / C / D</strong>:`
+    routine_gesy: `💊 <strong>[Anastasia Digest #MD-411]</strong> Costas P. (GeSY #449102): Chronic refill Amlodipine 5mg + Atorvastatin 20mg (Home BP 122/78). Queued in EOD Batch. Reply <strong>A / B / C / D</strong>:`
   };
 
   if (digestEl) {
@@ -1532,11 +1668,7 @@ function triggerDoctorQuickReply(optionKey, context, btnEl, itemId) {
     item.quickReplyChoice = optionKey;
     item.quickReplyStatus = act.gesyNote;
     renderGesyQueue();
-    const pendingCount = state.gesyQueue.filter((g) => !g.approved).length;
-    const kpi = document.getElementById("kpi-gesy-count");
-    if (kpi) {
-      kpi.textContent = pendingCount === 0 ? "0 Pending (All Done!)" : `${pendingCount} Pending (5-Min Batch)`;
-    }
+    updateGesyKpi();
     showToast(`📲 Replied [${optionKey}] for ${item.patient} — ${act.gesyNote}!`);
   }
 }
@@ -1592,8 +1724,7 @@ function approveAllGesy() {
     g.quickReplyStatus = g.quickReplyStatus || "✓ Replied [A]: Approved & Sent Pharmacy Code on WhatsApp";
   });
   renderGesyQueue();
-  const kpi = document.getElementById("kpi-gesy-count");
-  if (kpi) kpi.textContent = "0 Pending (All Done!)";
+  updateGesyKpi();
   showToast("✅ All End-of-Day GeSY prescriptions & referrals approved in 1 click!");
 }
 
