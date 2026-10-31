@@ -53,13 +53,13 @@
         <span class="tab-ico" aria-hidden="true">🗓️</span><span class="tab-label-full">2. Doctor Schedule &amp; Case Notes</span><span class="tab-label-short">Schedule</span>
       </button>
       <button type="button" class="nav-tab" data-tab="marketplace" onclick="switchTab('marketplace')">
-        <span class="tab-ico" aria-hidden="true">🌍</span><span class="tab-label-full">3. Phase 2: Patient Finder App</span><span class="tab-label-short">Patient Finder</span>
+        <span class="tab-ico" aria-hidden="true">🌍</span><span class="tab-label-full">3. Phase 2 Vision (Concept Mock-up)</span><span class="tab-label-short">Phase 2 Vision</span>
       </button>
-      <button type="button" class="nav-tab" data-tab="logos" onclick="switchTab('logos')">
+      <button type="button" class="nav-tab" data-tab="logos" onclick="switchTab('logos')" hidden aria-hidden="true" tabindex="-1">
         <span class="tab-ico" aria-hidden="true">🎨</span><span class="tab-label-full">4. Official MyDocDesk Logos</span><span class="tab-label-short">Logos</span>
       </button>
       <button type="button" class="nav-tab" data-tab="onepager" onclick="switchTab('onepager')">
-        <span class="tab-ico" aria-hidden="true">📄</span><span class="tab-label-full">5. Doctor 1-Pager &amp; Pitch</span><span class="tab-label-short">1-Pager</span>
+        <span class="tab-ico" aria-hidden="true">📄</span><span class="tab-label-full">4. Doctor 1-Pager &amp; Pitch</span><span class="tab-label-short">1-Pager</span>
       </button>
     </nav>
   </header>
@@ -74,7 +74,7 @@
           <div class="guided-hero-copy">
             <div class="guided-eyebrow">
               <span class="pulse-dot"></span>
-              <span>PHASE 1: AI VIRTUAL MEDICAL RECEPTIONIST • PHASE 2: LIVE DOCTOR MARKETPLACE</span>
+              <span>PHASE 1: AI VIRTUAL MEDICAL RECEPTIONIST • PHASE 2 (VISION): PATIENT FINDER</span>
             </div>
             <h1 class="guided-title">
               How <span class="js-brand-name">MyDocDesk</span> Triages Calls &amp; WhatsApp Messages, Writes Case Notes, and Protects the Doctor's Schedule
@@ -95,6 +95,7 @@
               <button type="button" class="mic-lang-btn active" data-lang="en-US" aria-pressed="true" onclick="setMicLanguage('en-US')" title="Speak in English">EN</button>
               <button type="button" class="mic-lang-btn" data-lang="el-GR" aria-pressed="false" onclick="setMicLanguage('el-GR')" title="Speak in Greek" lang="el">ΕΛ</button>
             </div>
+            <a href="mailto:christos@t-knights.com?subject=MyDocDesk%20pilot%20call&amp;body=Hi%20Christos%2C%0A%0AI%27d%20like%20to%20book%20a%2015-minute%20MyDocDesk%20pilot%20call.%0A%0AClinic%20name%20%26%20specialty%3A%0ACity%3A%0ALandline%20or%20mobile%20used%20for%20appointments%3A%0ABest%20days/times%20to%20talk%3A%0A%0AThank%20you%2C%0A" class="pilot-cta-btn" id="btn-pilot-hero">📅 Book a 15-min pilot call</a>
             <a href="./assets/MyDocDesk_Doctor_Leave_Behind.pdf" download="MyDocDesk_Doctor_Leave_Behind.pdf" class="hero-pdf-btn" onclick="switchTab('onepager')">
               📄 Download 1-Page Doctor PDF
             </a>
@@ -462,6 +463,131 @@
           </div>
         </div>
       </div>
+
+      <!-- =================================================================== -->
+      <!-- A DAY WITH ANASTASIA — PHONE TIMELINE                              -->
+      <!-- =================================================================== -->
+      <section class="info-section day-section" id="day-with-anastasia" aria-labelledby="day-title">
+        <div class="info-section-head">
+          <div class="info-eyebrow">A day with Anastasia</div>
+          <h2 id="day-title" class="info-title">What the doctor actually sees on their phone</h2>
+          <p class="info-lead">No dashboard to log into. Anastasia sends a handful of short WhatsApp messages a day, and the doctor replies with one letter. <span class="info-muted">(Illustrative example day.)</span></p>
+        </div>
+        <div class="day-layout">
+          <div class="phone-frame" role="img" aria-label="Phone showing the doctor's WhatsApp thread with Anastasia across one day">
+            <div class="phone-notch" aria-hidden="true"></div>
+            <div class="phone-header">
+              <div class="phone-avatar" aria-hidden="true">A</div>
+              <div>
+                <div class="phone-contact">Anastasia • MyDocDesk</div>
+                <div class="phone-status">AI receptionist for Dr. Andreas Nicolaou</div>
+              </div>
+            </div>
+            <div class="phone-thread">
+              <div class="day-time-sep">07:30</div>
+              <div class="bubble in">
+                <div class="bubble-tag">☀️ Morning digest</div>
+                Good morning, Dr. Nicolaou. Today: <strong>8 patients</strong> booked, first at 08:30. Urgent buffers at <strong>12:30</strong> and <strong>17:00</strong> are still free. <strong>3 GeSY items</strong> waiting for your end-of-day batch. Overnight: 4 WhatsApp messages answered, 0 missed calls.
+                <span class="bubble-meta">07:30</span>
+              </div>
+
+              <div class="day-time-sep">12:05</div>
+              <div class="bubble in">
+                <div class="bubble-tag">🔴 Approval needed • #MD-409</div>
+                Leo K. (4y, GeSY): 39.6°C fever since last night + right ear pain. Red-flag screen negative. Reply:<br/>
+                <strong>A</strong> book today 12:30 buffer • <strong>B</strong> tomorrow 09:00 • <strong>C</strong> I'll call the parent • <strong>D</strong> decline
+                <span class="bubble-meta">12:05</span>
+              </div>
+              <div class="bubble out">A<span class="bubble-meta">12:06 ✓✓</span></div>
+              <div class="bubble in">
+                ✅ Done. Leo is booked at 12:30, mother confirmed on WhatsApp, case note pinned to the calendar event.
+                <span class="bubble-meta">12:06</span>
+              </div>
+
+              <div class="day-time-sep">15:10</div>
+              <div class="bubble in urgent">
+                <div class="bubble-tag">🚨 Urgent escalation</div>
+                A parent called about a <strong>6-month-old with fever and unusual drowsiness</strong>. These are red-flag symptoms, so I did not book an appointment. I told her to <strong>call 112 now</strong> and stayed on the line until she confirmed. Caller: Sample Parent, +357 99 000 000.
+                <span class="bubble-meta">15:10</span>
+              </div>
+              <div class="bubble out">Thanks, calling her now.<span class="bubble-meta">15:12 ✓✓</span></div>
+
+              <div class="day-time-sep">19:00</div>
+              <div class="bubble in">
+                <div class="bubble-tag">🟢 End-of-day GeSY batch</div>
+                3 items ready: 2 prescription renewals, 1 physiotherapy referral. Each has the patient's request and last visit attached. Reply <strong>ALL</strong> to approve or a number to review one.<br/>
+                Today: 37 calls &amp; messages handled, 9 bookings, 1 escalation to 112.
+                <span class="bubble-meta">19:00</span>
+              </div>
+              <div class="bubble out">ALL<span class="bubble-meta">19:04 ✓✓</span></div>
+            </div>
+          </div>
+
+          <ol class="day-timeline">
+            <li><span class="day-dot">07:30</span><div><strong>Morning digest</strong><p>The day at a glance: bookings, free urgent buffers, pending GeSY admin, and anything that happened overnight.</p></div></li>
+            <li><span class="day-dot">12:05</span><div><strong>A/B/C/D approval</strong><p>Anything that touches an urgent buffer waits for the doctor's one-letter reply. Anastasia never fills a buffer on her own.</p></div></li>
+            <li><span class="day-dot red">15:10</span><div><strong>Urgent escalation</strong><p>Red-flag symptoms are not booked. The caller is told to call 112 and the doctor is alerted straight away.</p></div></li>
+            <li><span class="day-dot green">19:00</span><div><strong>End-of-day GeSY batch</strong><p>Prescription renewals and referrals are grouped into one list to approve in a couple of minutes.</p></div></li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- =================================================================== -->
+      <!-- PRIVACY & TRUST                                                    -->
+      <!-- =================================================================== -->
+      <section class="info-section trust-section" id="privacy-trust" aria-labelledby="trust-title">
+        <div class="info-section-head">
+          <div class="info-eyebrow">Privacy &amp; trust</div>
+          <h2 id="trust-title" class="info-title">Built for patient data from day one</h2>
+          <p class="info-lead">How Anastasia handles your patients' information and where the doctor stays in control.</p>
+        </div>
+        <div class="trust-grid">
+          <div class="trust-card"><div class="trust-ico" aria-hidden="true">🇪🇺</div><h3>GDPR by design</h3><p>Built around GDPR principles: only the details needed to book and brief the doctor are collected, for that purpose only. Your clinic stays the data controller.</p></div>
+          <div class="trust-card"><div class="trust-ico" aria-hidden="true">🗄️</div><h3>Designed for EU hosting</h3><p>The platform is designed to keep call transcripts, case notes and messages on servers located in the EU.</p></div>
+          <div class="trust-card"><div class="trust-ico" aria-hidden="true">⏳</div><h3>Retention controls</h3><p>The clinic decides how long transcripts and recordings are kept, and they are deleted automatically afterwards. Patients can ask the clinic for their data to be removed.</p></div>
+          <div class="trust-card"><div class="trust-ico" aria-hidden="true">🧾</div><h3>Audit trail of every action</h3><p>Every booking, reply, escalation and approval is logged with time and source, so the clinic can always see who did what and when.</p></div>
+          <div class="trust-card"><div class="trust-ico" aria-hidden="true">👩‍⚕️</div><h3>The doctor has the final say</h3><p>Urgent buffers, GeSY renewals and anything unusual wait for the doctor's A/B/C/D reply. Anastasia suggests; the doctor decides.</p></div>
+          <div class="trust-card"><div class="trust-ico" aria-hidden="true">⚕️</div><h3>Anastasia never diagnoses</h3><p>She asks standard intake and red-flag questions, then routes the patient. Red-flag symptoms are escalated to 112 or the doctor immediately.</p></div>
+        </div>
+        <div class="consent-box">
+          <div class="consent-label">What callers hear first (consent notice)</div>
+          <blockquote class="consent-quote">“Hello, you've reached Dr. Nicolaou's clinic. I'm Anastasia, the clinic's AI assistant. This call is handled by an AI and a transcript is kept to prepare your appointment, in line with the clinic's privacy policy. If you'd rather speak to a person, just say so and the clinic will call you back.”</blockquote>
+          <p class="consent-note">The wording is set by each clinic and can be adjusted with its data-protection adviser.</p>
+        </div>
+      </section>
+
+      <!-- =================================================================== -->
+      <!-- YOUR CLINIC IN 3 STEPS                                              -->
+      <!-- =================================================================== -->
+      <section class="info-section setup-section" id="clinic-3-steps" aria-labelledby="setup-title">
+        <div class="info-section-head">
+          <div class="info-eyebrow">Getting started</div>
+          <h2 id="setup-title" class="info-title">Your clinic in 3 steps</h2>
+          <p class="info-lead">No new number for patients, no new app for your staff.</p>
+        </div>
+        <ol class="setup-steps">
+          <li class="setup-step">
+            <span class="setup-num" aria-hidden="true">1</span>
+            <h3>Forward your existing number</h3>
+            <p>Set your clinic landline or mobile to forward calls to Anastasia <strong>when the line is busy or not answered</strong>. Patients keep calling the number they already know.</p>
+            <p class="setup-note">☎️ Landlines work too. Conditional call forwarding (busy / no answer) is a standard feature on most landline and mobile plans.</p>
+          </li>
+          <li class="setup-step">
+            <span class="setup-num" aria-hidden="true">2</span>
+            <h3>Connect your clinic WhatsApp</h3>
+            <p>Link the clinic's WhatsApp number so Anastasia can answer messages and voice notes, send confirmations and collect photos or lab results before the visit.</p>
+          </li>
+          <li class="setup-step">
+            <span class="setup-num" aria-hidden="true">3</span>
+            <h3>Choose your rules</h3>
+            <p>Set your booking hours, which slots are kept as urgent buffers, and what needs your A/B/C/D approval. Change them at any time.</p>
+          </li>
+        </ol>
+        <div class="setup-cta-row">
+          <a href="mailto:christos@t-knights.com?subject=MyDocDesk%20pilot%20call&amp;body=Hi%20Christos%2C%0A%0AI%27d%20like%20to%20book%20a%2015-minute%20MyDocDesk%20pilot%20call.%0A%0AClinic%20name%20%26%20specialty%3A%0ACity%3A%0ALandline%20or%20mobile%20used%20for%20appointments%3A%0ABest%20days/times%20to%20talk%3A%0A%0AThank%20you%2C%0A" class="pilot-cta-btn large" id="btn-pilot-steps">📅 Book a 15-min pilot call</a>
+          <span class="setup-cta-note">A short call with Christos to see whether Anastasia fits your clinic. No commitment.</span>
+        </div>
+      </section>
     </section>
 
     <!-- =================================================================== -->
@@ -598,13 +724,16 @@
       <div class="marketplace-hero">
         <div class="guided-eyebrow">
           <span class="pulse-dot"></span>
-          <span>PHASE 2 VISION • THE UNIFIED PATIENT DISCOVERY &amp; INSTANT BOOKING APP</span>
+          <span>PHASE 2 VISION (CONCEPT MOCK-UP) • PATIENT FINDER APP</span>
         </div>
         <h2 style="font-size:1.3rem; font-weight:800; margin-bottom:6px;">
-          <span class="js-brand-name">MyDocDesk</span> Patient Network — Find Available Doctors in Your Area by Case &amp; Urgency
+          <span class="js-brand-name">MyDocDesk</span> Patient Finder — a future concept for finding available doctors by case &amp; urgency
         </h2>
+        <div class="concept-banner" role="note">
+          <strong>🧪 Future concept — not a live service.</strong> This tab is a design mock-up of a possible Phase 2 patient app. The doctors, clinics, areas and time slots below are <strong>fictional samples</strong>; no real bookings are made and no doctors are listed. Today, <span class="js-brand-name">MyDocDesk</span> is the AI receptionist shown in the Live Demo.
+        </div>
         <p style="font-size:0.84rem; color:#cbd5e1; max-width:880px;">
-          Because every doctor on the network uses the <strong><span class="js-brand-name">MyDocDesk</span> AI Receptionist</strong> as their live master schedule in Phase 1, patients in Phase 2 can search by symptom or specialty and book <strong>100% real, verified same-day slots</strong> (including unlocked urgent buffer slots!).
+          Because every doctor on the network uses the <strong><span class="js-brand-name">MyDocDesk</span> AI Receptionist</strong> as their live master schedule in Phase 1, a future patient app could let people search by symptom or specialty and see the same-day slots each participating doctor chooses to publish (including urgent buffer slots the doctor has unlocked).
         </p>
 
         <div class="marketplace-filter-bar">
@@ -635,7 +764,7 @@
           />
 
           <button type="button" class="mp-search-btn" onclick="renderMarketplaceDoctors()">
-            🔍 Search Live Slots
+            🔍 Search Sample Slots
           </button>
         </div>
       </div>
@@ -828,8 +957,8 @@
     <button type="button" class="mjump-btn" onclick="jumpToMobileSection('card-brain-panel', this)" aria-label="Jump to the triage case note">
       <span class="mj-ico" aria-hidden="true">🩺</span><span class="mj-lbl">Notes</span>
     </button>
-    <button type="button" class="mjump-btn" onclick="jumpToMobileTab('marketplace', this)" aria-label="Open the Patient Finder app">
-      <span class="mj-ico" aria-hidden="true">🌍</span><span class="mj-lbl">Finder</span>
+    <button type="button" class="mjump-btn" onclick="jumpToMobileSection('clinic-3-steps', this)" aria-label="Get started: your clinic in 3 steps and pilot call">
+      <span class="mj-ico" aria-hidden="true">🚀</span><span class="mj-lbl">Start</span>
     </button>
     <button type="button" class="mjump-btn" onclick="jumpToMobileTab('onepager', this)" aria-label="Open the doctor 1-pager">
       <span class="mj-ico" aria-hidden="true">📄</span><span class="mj-lbl">1-Pager</span>

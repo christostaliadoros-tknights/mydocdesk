@@ -383,14 +383,13 @@ const state = {
   marketplaceDoctors: [
     {
       id: "mp-doc-1",
-      name: "Dr. Andreas Nicolaou",
+      name: "Dr. Sample A",
       specialty: "Pediatrics",
       specialtyLabel: "👶 Pediatrics",
       city: "Limassol",
-      area: "Agios Athanasios, Limassol",
+      area: "Sample clinic, Limassol",
       coverage: "GeSY & Private",
-      rating: "4.9 ★ (312 reviews)",
-      aiStatus: "Live AI Triage & Schedule Sync Active",
+      aiStatus: "Slots would sync from the doctor's MyDocDesk schedule",
       urgentBufferAvailable: true,
       slots: [
         { label: "🔴 Today 12:30 PM (Urgent Buffer)", urgent: true },
@@ -400,14 +399,13 @@ const state = {
     },
     {
       id: "mp-doc-dental-1",
-      name: "Dr. Nikos Constantinou",
+      name: "Dr. Sample B",
       specialty: "Dental",
       specialtyLabel: "🦷 Dentistry",
       city: "Limassol",
-      area: "Makarios Ave, Limassol",
+      area: "Sample clinic, Limassol",
       coverage: "GeSY & Private",
-      rating: "5.0 ★ (384 reviews)",
-      aiStatus: "Live AI Triage & Schedule Sync Active",
+      aiStatus: "Slots would sync from the doctor's MyDocDesk schedule",
       urgentBufferAvailable: true,
       slots: [
         { label: "🔴 Today 12:30 PM (Urgent Buffer)", urgent: true },
@@ -417,14 +415,13 @@ const state = {
     },
     {
       id: "mp-doc-2",
-      name: "Dr. Elena Georgiou",
+      name: "Dr. Sample C",
       specialty: "Dermatology",
       specialtyLabel: "🔬 Dermatology",
       city: "Nicosia",
-      area: "Strovolos, Nicosia",
+      area: "Sample clinic, Nicosia",
       coverage: "GeSY & Private",
-      rating: "5.0 ★ (428 reviews)",
-      aiStatus: "Live AI Triage & Schedule Sync Active",
+      aiStatus: "Slots would sync from the doctor's MyDocDesk schedule",
       urgentBufferAvailable: true,
       slots: [
         { label: "🔴 Today 04:30 PM (Urgent Buffer)", urgent: true },
@@ -434,14 +431,13 @@ const state = {
     },
     {
       id: "mp-doc-3",
-      name: "Dr. Marios Petrou",
+      name: "Dr. Sample D",
       specialty: "Cardiology",
       specialtyLabel: "❤️ Cardiology",
       city: "Larnaca",
-      area: "Finikoudes Medical Center, Larnaca",
+      area: "Sample clinic, Larnaca",
       coverage: "GeSY & Private",
-      rating: "4.9 ★ (275 reviews)",
-      aiStatus: "Live AI Triage & Schedule Sync Active",
+      aiStatus: "Slots would sync from the doctor's MyDocDesk schedule",
       urgentBufferAvailable: true,
       slots: [
         { label: "🔴 Today 05:15 PM (Urgent Buffer)", urgent: true },
@@ -451,14 +447,13 @@ const state = {
     },
     {
       id: "mp-doc-dental-2",
-      name: "Dr. Marina Christoforou",
+      name: "Dr. Sample E",
       specialty: "Dental",
       specialtyLabel: "🦷 Dentistry",
       city: "Nicosia",
-      area: "Engomi, Nicosia",
+      area: "Sample clinic, Nicosia",
       coverage: "GeSY & Private",
-      rating: "4.9 ★ (290 reviews)",
-      aiStatus: "Live AI Triage & Schedule Sync Active",
+      aiStatus: "Slots would sync from the doctor's MyDocDesk schedule",
       urgentBufferAvailable: true,
       slots: [
         { label: "🔴 Today 04:00 PM (Urgent Buffer)", urgent: true },
@@ -468,14 +463,13 @@ const state = {
     },
     {
       id: "mp-doc-4",
-      name: "Dr. Katerina Loizou",
+      name: "Dr. Sample F",
       specialty: "Pediatrics",
       specialtyLabel: "👶 Pediatrics",
       city: "Nicosia",
-      area: "Engomi, Nicosia",
+      area: "Sample clinic, Nicosia",
       coverage: "GeSY & Private",
-      rating: "4.8 ★ (198 reviews)",
-      aiStatus: "Live AI Triage & Schedule Sync Active",
+      aiStatus: "Slots would sync from the doctor's MyDocDesk schedule",
       urgentBufferAvailable: true,
       slots: [
         { label: "🔴 Today 01:00 PM (Urgent Buffer)", urgent: true },
@@ -484,14 +478,13 @@ const state = {
     },
     {
       id: "mp-doc-5",
-      name: "Dr. Stavros Hadjigeorgiou",
+      name: "Dr. Sample G",
       specialty: "ENT",
       specialtyLabel: "👂 ENT / Otolaryngology",
       city: "Limassol",
-      area: "Makarios Ave, Limassol",
+      area: "Sample clinic, Limassol",
       coverage: "GeSY & Private",
-      rating: "4.9 ★ (240 reviews)",
-      aiStatus: "Live AI Triage & Schedule Sync Active",
+      aiStatus: "Slots would sync from the doctor's MyDocDesk schedule",
       urgentBufferAvailable: true,
       slots: [
         { label: "🔴 Today 02:15 PM (Urgent Buffer)", urgent: true },
@@ -500,14 +493,13 @@ const state = {
     },
     {
       id: "mp-doc-6",
-      name: "Dr. Chloe Constantinou",
+      name: "Dr. Sample H",
       specialty: "Dermatology",
       specialtyLabel: "🔬 Dermatology",
       city: "Paphos",
-      area: "Kato Paphos Medical Plaza",
+      area: "Sample clinic, Paphos",
       coverage: "GeSY & Private",
-      rating: "4.9 ★ (164 reviews)",
-      aiStatus: "Live AI Triage & Schedule Sync Active",
+      aiStatus: "Slots would sync from the doctor's MyDocDesk schedule",
       urgentBufferAvailable: false,
       slots: [
         { label: "Tomorrow 10:00 AM (Standard)", urgent: false },
@@ -1763,13 +1755,13 @@ function renderMarketplaceDoctors() {
             <div class="doc-mp-spec">${d.specialtyLabel}</div>
             <div style="font-size:0.74rem; color:#64748b; margin-top:2px;">📍 ${d.area} • ${d.coverage}</div>
           </div>
-          <span class="code-badge">${d.rating}</span>
+          <span class="code-badge sample-badge">Sample</span>
         </div>
         <div style="font-size:0.73rem; background:#f8fafc; padding:6px 9px; border-radius:7px; border:1px solid #e2e8f0; color:#334155;">
-          🤖 <strong>AI Receptionist Live:</strong> ${d.aiStatus}
+          🤖 <strong>Concept:</strong> ${d.aiStatus}
         </div>
         <div style="font-size:0.72rem; font-weight:800; color:#0f172a; text-transform:uppercase;">
-          Tap a Live Verified Slot to Book with Case Note:
+          Example slots (illustrative only):
         </div>
         <div class="doc-mp-slots">
           ${d.slots
@@ -1791,7 +1783,7 @@ function renderMarketplaceDoctors() {
 }
 
 function bookMarketplaceSlot(docName, slotLabel) {
-  showToast(`🎉 Booked ${slotLabel} with ${docName}! Anastasia sent your WhatsApp confirmation & Pre-Visit Case Note.`);
+  showToast(`🧪 Concept mock-up: in the future app, ${slotLabel} with ${docName} would be booked here. No real booking was made.`);
 }
 
 // ============================================================================
