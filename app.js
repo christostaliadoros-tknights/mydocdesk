@@ -836,7 +836,7 @@ function setBrandVariant(newBrandKey, newIconKey, silent) {
   const tagline = isGreekUI() ? tr(meta.tagline) : meta.tagline;
   if (taglineEl) taglineEl.textContent = tagline;
 
-  document.title = `${brandPlain} (${domainText}) — ${tagline}`;
+  if (!document.querySelector("title[data-el]")) document.title = `${brandPlain} (${domainText}) — ${tagline}`;
 
   document.querySelectorAll(".js-brand-name").forEach((el) => {
     el.textContent = brandPlain;

@@ -151,8 +151,14 @@ function i18nApplyHead() {
     const el = document.querySelector(sel);
     if (el) el.setAttribute(attr, val);
   };
-  const desc = "Το MyDocDesk δίνει στους γιατρούς και οδοντιάτρους της Κύπρου μια AI ιατρική γραμματέα, την Αναστασία, που απαντά σε κλήσεις και μηνύματα WhatsApp, ταξινομεί κατά επείγον, συντάσσει σημείωμα πριν από την επίσκεψη και προστατεύει το πρόγραμμα του γιατρού.";
-  set('meta[name="description"]', "content", desc);
+  // Each page carries its own Greek title/description in data-el attributes
+  const t = document.querySelector("title[data-el]");
+  if (t) document.title = t.getAttribute("data-el");
+  document.querySelectorAll('meta[data-el]').forEach((m) => m.setAttribute("content", m.getAttribute("data-el")));
+  if (!document.querySelector('meta[name="description"][data-el]')) {
+    const desc = "Το MyDocDesk δίνει στους γιατρούς και οδοντιάτρους της Κύπρου μια AI ιατρική γραμματέα, την Αναστασία, που απαντά σε κλήσεις και μηνύματα WhatsApp, ταξινομεί κατά επείγον, συντάσσει σημείωμα πριν από την επίσκεψη και προστατεύει το πρόγραμμα του γιατρού.";
+    set('meta[name="description"]', "content", desc);
+  }
   set('meta[property="og:locale"]', "content", "el_GR");
 }
 

@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-el="Ζωντανή επίδειξη — MyDocDesk AI Ιατρική Γραμματέας">Live demo — MyDocDesk AI Medical Receptionist</title>
+  <meta name="description" content="Try the live MyDocDesk demo: hear Anastasia answer a patient call and WhatsApp, triage by urgency, write the case note and book into the doctor&#x27;s schedule." data-el="Δοκιμάστε τη ζωντανή επίδειξη του MyDocDesk: ακούστε την Αναστασία να απαντά σε κλήση και WhatsApp, να ταξινομεί κατά επείγον, να γράφει το σημείωμα και να κλείνει ραντεβού στο πρόγραμμα του γιατρού." />
+  <link rel="canonical" href="https://mydocdesk.com/demo.html" />
+  <meta name="theme-color" content="#0a192f" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="MyDocDesk" />
+  <meta property="og:url" content="https://mydocdesk.com/demo.html" />
+  <meta property="og:title" content="Live demo — MyDocDesk AI Medical Receptionist" data-el="Ζωντανή επίδειξη — MyDocDesk AI Ιατρική Γραμματέας" />
+  <meta property="og:description" content="Try the live MyDocDesk demo: hear Anastasia answer a patient call and WhatsApp, triage by urgency, write the case note and book into the doctor&#x27;s schedule." data-el="Δοκιμάστε τη ζωντανή επίδειξη του MyDocDesk: ακούστε την Αναστασία να απαντά σε κλήση και WhatsApp, να ταξινομεί κατά επείγον, να γράφει το σημείωμα και να κλείνει ραντεβού στο πρόγραμμα του γιατρού." />
+  <meta property="og:image" content="https://mydocdesk.com/assets/og-preview.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="MyDocDesk — AI Medical Receptionist for Cyprus Clinics" />
+  <meta property="og:locale" content="en_GB" />
+  <meta property="og:locale:alternate" content="el_GR" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Live demo — MyDocDesk AI Medical Receptionist" />
+  <meta name="twitter:description" content="Try the live MyDocDesk demo: hear Anastasia answer a patient call and WhatsApp, triage by urgency, write the case note and book into the doctor&#x27;s schedule." />
+  <meta name="twitter:image" content="https://mydocdesk.com/assets/og-preview.png" />
+  <meta name="twitter:image:alt" content="MyDocDesk — AI Medical Receptionist for Cyprus Clinics" />
+  <link rel="icon" type="image/png" href="./assets/favicon.png" />
+  <link rel="apple-touch-icon" href="./assets/icon-schedule-gold-cross.png" />
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./site.css" />
+  <script>
+    (function () {
+      try {
+        var q = new URLSearchParams(location.search).get("lang");
+        var l = q === "el" || q === "en" ? q : localStorage.getItem("mydocdesk-lang");
+        if (l === "el") {
+          document.documentElement.lang = "el";
+          document.documentElement.classList.add("i18n-pending");
+          setTimeout(function () { document.documentElement.classList.remove("i18n-pending"); }, 2500);
+        }
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body class="mp-page page-demo" data-page="demo">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" id="site-header">
+    <div class="site-header-inner">
+      <a class="site-brand" href="./index.html" aria-label="MyDocDesk home">
+        <img src="./assets/icon-schedule-gold-cross.png" alt="MyDocDesk Logo" class="brand-logo-img" width="44" height="44" />
+        <span class="site-brand-text">
+          <span class="site-brand-name" data-no-i18n><span class="brand-name-mydoc">MyDoc</span><span class="brand-name-desk">Desk</span></span>
+          <span class="site-brand-tag">AI Medical Receptionist</span>
+        </span>
+      </a>
+      <nav class="site-nav" id="site-nav" aria-label="Main menu">
+        <a href="./index.html" class="site-nav-link" data-page="home">Home</a>
+        <a href="./how-it-works.html" class="site-nav-link" data-page="how">How it works</a>
+        <a href="./demo.html" class="site-nav-link active" aria-current="page" data-page="demo">Live demo</a>
+        <a href="./pricing.html" class="site-nav-link" data-page="pricing">Pricing &amp; pilot</a>
+        <a href="./privacy-faq.html" class="site-nav-link" data-page="privacy">Privacy &amp; FAQ</a>
+        <a href="./contact.html" class="site-nav-link" data-page="contact">Contact</a>
+        <a href="./contact.html" class="pilot-cta-btn js-pilot-cta site-nav-cta">📅 Book a pilot call</a>
+      </nav>
+      <div class="site-header-actions">
+        <div class="lang-switch" id="lang-switch" role="group" aria-label="Language / Γλώσσα">
+          <button type="button" class="lang-switch-btn active" data-lang="en" aria-pressed="true" onclick="setSiteLanguage('en')" title="English" lang="en"><svg class="flag-ico" viewBox="0 0 60 30" width="16" height="11" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><clipPath id="flag-uk-t"><path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"/></clipPath><path d="M0,0 v30 h60 v-30 z" fill="#012169"/><path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#flag-uk-t)" stroke="#C8102E" stroke-width="4"/><path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/><path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/></svg><span>EN</span></button>
+          <button type="button" class="lang-switch-btn" data-lang="el" aria-pressed="false" onclick="setSiteLanguage('el')" title="Ελληνικά" lang="el"><svg class="flag-ico" viewBox="0 0 27 18" width="16" height="11" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="27" height="18" fill="#0D5EAF"/><path fill="#fff" d="M0 2h27v2H0zM0 6h27v2H0zM0 10h27v2H0zM0 14h27v2H0z"/><rect width="10" height="10" fill="#0D5EAF"/><path fill="#fff" d="M4 0h2v10H4zM0 4h10v2H0z"/></svg><span>ΕΛ</span></button>
+        </div>
+        <a href="./contact.html" class="pilot-cta-btn js-pilot-cta header-cta">📅 Book a pilot call</a>
+        <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path class="nt-open" d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none"/><path class="nt-close" d="M5 5l14 14M19 5L5 19" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+  <div class="demo-subbar">
+    <div class="demo-subbar-inner">
+      <span class="demo-subbar-label">Live demo</span>
+    <nav class="nav-tabs" aria-label="Demo sections">
+      <button type="button" class="nav-tab active" data-tab="simulator" onclick="switchTab('simulator')">
+        <span class="tab-ico" aria-hidden="true">📞</span><span class="tab-label-full">1. Live AI Receptionist &amp; Triage</span><span class="tab-label-short">Live Demo</span>
+      </button>
+      <button type="button" class="nav-tab" data-tab="schedule" onclick="switchTab('schedule')">
+        <span class="tab-ico" aria-hidden="true">🗓️</span><span class="tab-label-full">2. Doctor Schedule &amp; Case Notes</span><span class="tab-label-short">Schedule</span>
+      </button>
+      <button type="button" class="nav-tab" data-tab="marketplace" onclick="switchTab('marketplace')">
+        <span class="tab-ico" aria-hidden="true">🌍</span><span class="tab-label-full">3. Phase 2 Vision (Concept Mock-up)</span><span class="tab-label-short">Phase 2 Vision</span>
+      </button>
+      <button type="button" class="nav-tab" data-tab="logos" onclick="switchTab('logos')" hidden aria-hidden="true" tabindex="-1">
+        <span class="tab-ico" aria-hidden="true">🎨</span><span class="tab-label-full">4. Official MyDocDesk Logos</span><span class="tab-label-short">Logos</span>
+      </button>
+      <button type="button" class="nav-tab" data-tab="onepager" onclick="switchTab('onepager')">
+        <span class="tab-ico" aria-hidden="true">📄</span><span class="tab-label-full">4. Doctor 1-Pager &amp; Pitch</span><span class="tab-label-short">1-Pager</span>
+      </button>
+    </nav>
+    </div>
+  </div>
+
+  <main class="main-container" id="main">
+    <!-- =================================================================== -->
+    <!-- TAB 1: LIVE AI RECEPTIONIST, PRIORITY TRIAGE & CASE-NOTE SIMULATOR -->
+    <!-- =================================================================== -->
+    <section id="tab-simulator" class="tab-panel active">
+      <div class="guided-hero-banner" id="guided-hero-banner">
+        <div class="guided-hero-top">
+          <div class="guided-hero-copy">
+            <div class="guided-eyebrow">
+              <span class="pulse-dot"></span>
+              <span>PHASE 1: AI VIRTUAL MEDICAL RECEPTIONIST • PHASE 2 (VISION): PATIENT FINDER</span>
+            </div>
+            <h1 class="guided-title">
+              How <span class="js-brand-name">MyDocDesk</span> Triages Calls &amp; WhatsApp Messages, Writes Case Notes, and Protects the Doctor's Schedule
+            </h1>
+            <p class="guided-sub">
+              While the doctor examines a patient, <strong>Anastasia (AI Medical Receptionist)</strong> answers calls &amp; WhatsApp voice notes in Greek/English, scores clinical priority (<strong>🔴 Urgent / 🟡 Soon / 🟢 GeSY Admin</strong>), attaches a <strong>3-bullet Pre-Visit Case Note</strong>, and unlocks emergency buffer slots only when needed.
+            </p>
+          </div>
+          <div class="guided-cta-group">
+            <button type="button" class="guided-demo-btn" id="btn-guided-demo" onclick="startGuidedTour()">
+              ▶ Start Guided Triage Demo
+            </button>
+            <button type="button" class="live-mic-hero-btn" id="btn-live-mic-hero" onclick="startLiveMicSpeech()">
+              🎙️ Speak as Patient (Mic)
+            </button>
+            <div class="mic-lang-toggle" role="group" aria-label="Voice input language">
+              <span class="mic-lang-caption">Mic language:</span>
+              <button type="button" class="mic-lang-btn active" data-lang="en-US" aria-pressed="true" onclick="setMicLanguage('en-US')" title="Speak in English">EN</button>
+              <button type="button" class="mic-lang-btn" data-lang="el-GR" aria-pressed="false" onclick="setMicLanguage('el-GR')" title="Speak in Greek" lang="el">ΕΛ</button>
+            </div>
+            <a href="./contact.html" class="pilot-cta-btn js-pilot-cta" id="btn-pilot-hero">📅 Book a 15-min pilot call</a>
+            <a href="./assets/MyDocDesk_Doctor_Leave_Behind.pdf" download="MyDocDesk_Doctor_Leave_Behind.pdf" class="hero-pdf-btn" onclick="switchTab('onepager')">
+              📄 Download 1-Page Doctor PDF
+            </a>
+          </div>
+        </div>
+
+        <!-- 4-Step Interactive Walkthrough Cards -->
+        <div class="story-stepper-grid" role="tablist" aria-label="4-Step Interactive Medical Triage Walkthrough">
+          <button type="button" class="story-step-card active" id="step-card-1" onclick="runInteractiveStep(1)">
+            <div class="step-num-row">
+              <span class="step-badge">STEP 1</span>
+              <span class="step-action-pill">🔊 Hear Patient Call</span>
+            </div>
+            <div class="step-title">📞 Patient Calls While Doctor Is in Exam</div>
+            <div class="step-desc">Doctor's phone doesn't interrupt the consultation—Anastasia answers in <strong id="step1-clinic-label">Dr. Andreas Nicolaou's Clinic</strong>.</div>
+          </button>
+
+          <button type="button" class="story-step-card" id="step-card-2" onclick="runInteractiveStep(2)">
+            <div class="step-num-row">
+              <span class="step-badge">STEP 2</span>
+              <span class="step-action-pill">🩺 Score Priority</span>
+            </div>
+            <div class="step-title">🧠 Clinical Intake &amp; Priority Triage</div>
+            <div class="step-desc">Asks symptoms, duration &amp; red flags. Assigns <strong>🔴 P1 Urgent</strong>, <strong>🟡 P2 Soon</strong>, or <strong>🟢 P3 GeSY Queue</strong>.</div>
+          </button>
+
+          <button type="button" class="story-step-card" id="step-card-3" onclick="runInteractiveStep(3)">
+            <div class="step-num-row">
+              <span class="step-badge">STEP 3</span>
+              <span class="step-action-pill">📅 AI Sub-Calendar Layer</span>
+            </div>
+            <div class="step-title">🗓️ Multi-Calendar Read &amp; Buffer Unlock</div>
+            <div class="step-desc">Reads busy blocks across personal/hospital calendars &amp; writes AI bookings to a <strong>Color-Coded "Anastasia AI" Layer</strong>.</div>
+          </button>
+
+          <button type="button" class="story-step-card" id="step-card-4" onclick="runInteractiveStep(4)">
+            <div class="step-num-row">
+              <span class="step-badge">STEP 4</span>
+              <span class="step-action-pill">📲 A/B/C/D Quick-Reply</span>
+            </div>
+            <div class="step-title">💬 Case Card &amp; 1-Tap A/B/C/D Approval</div>
+            <div class="step-desc">Pins SOAP note to calendar &amp; lets the doctor reply <strong>A / B / C / D</strong> from a WhatsApp notification—zero app needed.</div>
+          </button>
+        </div>
+
+        <div class="live-toast-banner" id="live-toast-banner" hidden>
+          <span id="live-toast-text">✅ Case #MD-409 Triaged as 🔴 PRIORITY 1 — Unlocked 12:30 PM Buffer Slot &amp; pinned Case Note to Dr. Nicolaou's Calendar!</span>
+        </div>
+      </div>
+
+      <!-- Clinic / Doctor Customizer Bar -->
+      <div class="clinic-customizer-bar">
+        <div class="customizer-top-row">
+          <span class="customizer-label">🩺 Test With Any Clinic (Select a Specialty Preset or Type Any Doctor):</span>
+          <form class="customizer-form" onsubmit="applyCustomClinicForm(event)">
+            <input
+              type="text"
+              id="custom-clinic-name-input"
+              class="customizer-input"
+              placeholder="Or type any Doctor / Clinic name (e.g. Dr. Kyprianou — ENT)..."
+              aria-label="Custom Doctor or Clinic Name"
+            />
+            <button type="submit" class="customizer-apply-btn">Apply to AI</button>
+          </form>
+        </div>
+        <div class="customizer-presets">
+          <button type="button" class="preset-pill active" id="preset-pill-pediatrics" onclick="selectClinicPreset('pediatrics', this)">
+            👶 Dr. Andreas Nicolaou — Pediatrics (Limassol • GeSY &amp; Private)
+          </button>
+          <button type="button" class="preset-pill" id="preset-pill-dental" onclick="selectClinicPreset('dental', this)">
+            🦷 Dr. Nikos Constantinou — Dentistry (Limassol • GeSY &amp; Private)
+          </button>
+          <button type="button" class="preset-pill" id="preset-pill-dermatology" onclick="selectClinicPreset('dermatology', this)">
+            🔬 Dr. Elena Georgiou — Dermatology (Nicosia • GeSY &amp; Private)
+          </button>
+          <button type="button" class="preset-pill" id="preset-pill-cardiology" onclick="selectClinicPreset('cardiology', this)">
+            ❤️ Dr. Marios Petrou — Cardiology (Larnaca • GeSY &amp; Private)
+          </button>
+        </div>
+      </div>
+
+      <!-- Scenario Bar -->
+      <div class="scenario-bar">
+        <div class="scenario-bar-left">
+          <span class="scenario-label">Interactive Triage Cases:</span>
+          <button type="button" class="scenario-btn active" id="btn-scen-urgent" onclick="triggerScenario('urgent_fever', this)">
+            🔴 P1 Urgent: Child 39.6°C Fever + Ear Pain (Unlocks 12:30 Slot)
+          </button>
+          <button type="button" class="scenario-btn" id="btn-scen-dental" onclick="triggerScenario('dental_emergency', this)">
+            🦷 Dental Urgent: Broken Crown &amp; Acute Toothache + Photo
+          </button>
+          <button type="button" class="scenario-btn" id="btn-scen-soon" onclick="triggerScenario('soon_rash', this)">
+            🟡 P2 Soon: Spreading Skin Rash + WhatsApp Photo
+          </button>
+          <button type="button" class="scenario-btn" id="btn-scen-gesy" onclick="triggerScenario('routine_gesy', this)">
+            🟢 P3 Routine: GeSY Prescription Renewal (No Slot Wasted)
+          </button>
+        </div>
+        <div class="scenario-bar-right">
+          <button type="button" class="tts-btn" id="tts-toggle-btn" onclick="toggleVoiceAudio()">
+            🔊 Voice Audio: Off (Tap to Hear Anastasia)
+          </button>
+        </div>
+      </div>
+
+      <p class="demo-safety-line" role="note">
+        <span aria-hidden="true">⚕️</span> <strong>Anastasia never diagnoses.</strong> Red-flag symptoms are escalated to 112 or the doctor immediately.
+      </p>
+
+      <!-- 3-Column Live Simulator Grid -->
+      <div class="simulator-grid">
+        <!-- Column 1: Live Phone Call -->
+        <div class="phone-card" id="card-phone-call">
+          <div class="phone-notch">5G • +357 CY CLINIC LINE</div>
+          <div class="doctor-busy-pill">
+            <span>🩺 <strong id="busy-doc-name">Dr. Andreas Nicolaou</strong> is in <span id="busy-room-label">Exam Room 1</span></span>
+            <span>⚡ AI Desk Answering</span>
+          </div>
+
+          <div class="call-header">
+            <div class="call-status-tag">
+              <span class="pulse-dot"></span>
+              <span id="call-status-label">LIVE PATIENT CALL • TRIAGE ACTIVE</span>
+            </div>
+            <div class="call-clinic-title" id="call-clinic-title">Dr. Andreas Nicolaou — Pediatrics</div>
+            <div class="call-sub" id="caller-phone-display">Patient Caller: Maria K. (+357 99 614 280)</div>
+          </div>
+
+          <div class="waveform-box">
+            <span id="anastasia-voice-status">🎙️ Anastasia (AI Medical Receptionist • EL/EN/RU)</span>
+            <div class="wave-bars" id="call-wave-bars">
+              <span></span><span></span><span></span><span></span><span></span>
+            </div>
+          </div>
+
+          <div class="call-transcript" id="call-transcript-list">
+            <!-- Populated by JS -->
+          </div>
+
+          <div class="call-quick-prompts">
+            <button type="button" class="call-chip" onclick="sendQuickPrompt('voice', 'My 4-year-old has a 39.6 fever and severe ear pain since last night.')">
+              "39.6°C fever + ear pain"
+            </button>
+            <button type="button" class="call-chip" onclick="sendQuickPrompt('voice', 'I broke my upper crown biting something hard and have sharp throbbing tooth pain.')">
+              "🦷 Broken tooth &amp; sharp pain"
+            </button>
+            <button type="button" class="call-chip" onclick="sendQuickPrompt('voice', 'I need to renew my monthly GeSY blood pressure medication.')">
+              "Renew GeSY prescription"
+            </button>
+          </div>
+
+          <form class="call-input-area" onsubmit="sendCustomTurn(event, 'voice')">
+            <button type="button" class="call-mic-btn" id="btn-call-mic" onclick="startLiveMicSpeech()" title="Speak as Patient">
+              🎙️
+            </button>
+            <input
+              type="text"
+              id="voice-custom-input"
+              aria-label="Type what the patient says on the call"
+              class="call-input"
+              placeholder="Say or type patient symptoms..."
+            />
+            <button type="submit" class="call-send-btn">Speak</button>
+          </form>
+        </div>
+
+        <!-- Column 2: Clinic WhatsApp Thread (Photo Upload, Slot Confirm & Pre-Visit Pass) -->
+        <div class="whatsapp-card" id="card-whatsapp-chat">
+          <div class="wa-header">
+            <div class="wa-header-left">
+              <img src="./assets/icon-schedule-gold-cross.png" alt="MyDocDesk" class="wa-avatar-img" id="wa-logo-img" />
+              <div>
+                <div class="wa-title">
+                  <span id="wa-clinic-title">Dr. Andreas Nicolaou — Pediatrics</span>
+                  <span class="wa-verified">✓ Verified Medical</span>
+                </div>
+                <div class="wa-subtitle"><span class="js-brand-name">MyDocDesk</span> • Triage, Slot Booking &amp; Photo Intake</div>
+              </div>
+            </div>
+            <span id="wa-clinic-phone" style="font-size:0.72rem; opacity:0.9;">+357 25 340 110</span>
+          </div>
+
+          <div class="wa-handoff-banner">
+            <span id="wa-handoff-status">⚡ Live Schedule Sync + Pre-Visit Photo/Lab Intake</span>
+            <span>GeSY &amp; Private</span>
+          </div>
+
+          <div class="wa-messages" id="wa-messages-list">
+            <!-- Populated by JS -->
+          </div>
+
+          <div class="wa-quick-chips">
+            <button type="button" class="wa-chip" onclick="confirmSuggestedSlot()">
+              ✅ Confirm Suggested Slot
+            </button>
+            <button type="button" class="wa-chip" onclick="simulatePatientPhotoUpload()">
+              📷 Attach Symptom Photo / Lab PDF
+            </button>
+            <button type="button" class="wa-chip" onclick="sendQuickPrompt('whatsapp', 'We are GeSY beneficiaries (ID #948201).')">
+              🪪 Send GeSY ID
+            </button>
+            <button type="button" class="wa-chip" onclick="sendQuickPrompt('whatsapp', 'Thank you, we will be there at 12:30!')">
+              💬 "See you at 12:30"
+            </button>
+          </div>
+
+          <form class="call-input-area wa-input-bar" onsubmit="sendCustomTurn(event, 'whatsapp')">
+            <input
+              type="text"
+              id="wa-custom-input"
+              aria-label="Type a patient WhatsApp message"
+              class="call-input wa-text-input"
+              placeholder="Message Anastasia on WhatsApp (or send symptoms)..."
+            />
+            <button type="submit" class="call-send-btn" style="background:#128c7e;">Send</button>
+          </form>
+        </div>
+
+        <!-- Column 3: AI Triage Brain & Structured Pre-Visit Case Note -->
+        <div class="brain-panel" id="card-brain-panel">
+          <div class="brain-header">
+            <div>
+              <div class="brain-title">🧠 AI Priority Triage &amp; Doctor's Case Note Card</div>
+              <div style="font-size:0.74rem; color:#64748b;">
+                Automatically pinned to the doctor's calendar event before the patient walks in
+              </div>
+            </div>
+            <span class="code-badge" id="case-id-badge">Case #MD-409</span>
+          </div>
+
+          <!-- Dynamic Priority Banner -->
+          <div class="prio-banner prio-1" id="triage-prio-banner">
+            <div>
+              <div style="font-size:0.7rem; font-weight:800; opacity:0.85;">CLINICAL SLOT PRIORITY LEVEL</div>
+              <div style="font-size:0.88rem; font-weight:800;" id="triage-prio-headline">
+                Unlocks Hidden 12:30 PM Emergency Buffer Slot
+              </div>
+            </div>
+            <span class="prio-badge-pill" id="triage-prio-pill">🔴 PRIORITY 1 • URGENT SAME-DAY</span>
+          </div>
+
+          <!-- Structured Pre-Visit Case Note (SOAP Summary) -->
+          <div class="case-note-card">
+            <div class="case-note-header">
+              <span>📋 STRUCTURED PRE-VISIT CASE NOTE (FOR DOCTOR)</span>
+              <span id="case-note-coverage" style="color:#0d9488;">GeSY Beneficiary #948201</span>
+            </div>
+            <div class="case-grid" id="case-note-grid">
+              <!-- Populated by JS -->
+            </div>
+            <div class="subcal-sync-strip" id="triage-subcal-strip">
+              <span class="subcal-tag ai-layer">📅 Written to: <strong>Anastasia AI Sub-Calendar</strong> (Cyan-Teal Layer)</span>
+              <span class="subcal-busy-pill">🔒 Checked 3 Calendars (Clinic + Personal + Hospital Rounds)</span>
+            </div>
+          </div>
+
+          <!-- Interactive A/B/C/D Doctor Lock-Screen Quick-Reply Card -->
+          <div class="abcd-quick-card" id="simulator-abcd-card">
+            <div class="abcd-card-header">
+              <div>
+                <span class="abcd-eyebrow">📲 ZERO-DASHBOARD DOCTOR NOTIFICATION • 1-TAP LOCK-SCREEN ACTION</span>
+                <div class="abcd-title">Anastasia WhatsApp/SMS Digest → Reply <code>A</code>, <code>B</code>, <code>C</code>, or <code>D</code></div>
+              </div>
+              <span class="code-badge" id="abcd-sim-badge">Awaiting Doctor Reply</span>
+            </div>
+            <div class="abcd-digest-preview" id="abcd-digest-preview-text">
+              "🩺 <strong>[Anastasia Digest #MD-409]</strong> Leo K. (4y, GeSY #948201): 39.6°C fever + R ear pain. Held 12:30 PM Emergency Buffer. Reply <strong>A / B / C / D</strong>:"
+            </div>
+            <div class="abcd-btn-grid">
+              <button type="button" class="abcd-btn opt-a" onclick="triggerDoctorQuickReply('A', 'simulator', this)">
+                <span class="abcd-key">[A]</span>
+                <span>Approve &amp; Send (Confirm Slot)</span>
+              </button>
+              <button type="button" class="abcd-btn opt-b" onclick="triggerDoctorQuickReply('B', 'simulator', this)">
+                <span class="abcd-key">[B]</span>
+                <span>Book Next Morning / Alt Slot</span>
+              </button>
+              <button type="button" class="abcd-btn opt-c" onclick="triggerDoctorQuickReply('C', 'simulator', this)">
+                <span class="abcd-key">[C]</span>
+                <span>Request Lab / Photo on WhatsApp</span>
+              </button>
+              <button type="button" class="abcd-btn opt-d" onclick="triggerDoctorQuickReply('D', 'simulator', this)">
+                <span class="abcd-key">[D]</span>
+                <span>Escalate — Doctor Calls Back</span>
+              </button>
+            </div>
+            <div class="abcd-status-bar" id="abcd-sim-status">
+              💡 Tap <strong>[A]</strong>, <strong>[B]</strong>, <strong>[C]</strong>, or <strong>[D]</strong> above to simulate replying from the doctor's phone lock screen—Anastasia executes it on WhatsApp immediately.
+            </div>
+          </div>
+
+          <div style="font-size:0.73rem; font-weight:800; color:#475569; text-transform:uppercase;">
+            ⚡ Real-Time Schedule &amp; Triage Engine Trace
+          </div>
+          <div class="logs-list" id="execution-logs-list">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive Clinic ROI & Doctor Time-Saved Calculator -->
+      <div class="roi-calculator-card" id="card-roi-calculator">
+        <div class="roi-header">
+          <div>
+            <div class="roi-eyebrow">💡 CLINIC ROI &amp; DOCTOR FOCUS CALCULATOR (CYPRUS &amp; GREECE)</div>
+            <h2 class="roi-title">See Why Doctors Switch to <span class="js-brand-name">MyDocDesk</span> Before Joining the Marketplace</h2>
+            <p class="roi-sub">
+              Personal Doctors (GeSY) and Private Specialists receive 40–120 calls &amp; WhatsApp messages a day. See how much time and revenue <span class="js-brand-name">MyDocDesk</span> recovers compared to a €1,400/month front-desk secretary.
+            </p>
+          </div>
+          <span class="code-badge">€149/mo AI vs €1,400/mo Secretary</span>
+        </div>
+
+        <div class="roi-grid">
+          <div class="roi-sliders-col">
+            <div class="roi-slider-group">
+              <div class="roi-slider-label">
+                <span>📞 Daily Patient Calls &amp; WhatsApp Messages</span>
+                <strong id="roi-calls-val">65 calls/day</strong>
+              </div>
+              <input type="range" id="roi-calls-slider" aria-label="Daily patient calls and WhatsApp messages" aria-describedby="roi-calls-val" min="20" max="160" step="5" value="65" oninput="updateClinicRoi()" />
+              <div class="roi-range-ends"><span>20/day (Solo Practice)</span><span>160/day (Busy GeSY / Polyclinic)</span></div>
+            </div>
+
+            <div class="roi-slider-group">
+              <div class="roi-slider-label">
+                <span>💶 Average Private / Specialist Visit Value</span>
+                <strong id="roi-fee-val">€60 / visit</strong>
+              </div>
+              <input type="range" id="roi-fee-slider" aria-label="Average private or specialist visit value in euros" aria-describedby="roi-fee-val" min="35" max="150" step="5" value="60" oninput="updateClinicRoi()" />
+              <div class="roi-range-ends"><span>€35 (Standard)</span><span>€150 (Procedure / Specialist)</span></div>
+            </div>
+
+            <div class="roi-slider-group">
+              <div class="roi-slider-label">
+                <span>💊 Daily GeSY Prescription / Referral Calls Filtered</span>
+                <strong id="roi-gesy-val">18 admin calls/day</strong>
+              </div>
+              <input type="range" id="roi-gesy-slider" aria-label="Daily GeSY prescription and referral calls" aria-describedby="roi-gesy-val" min="5" max="50" step="1" value="18" oninput="updateClinicRoi()" />
+              <div class="roi-range-ends"><span>5/day</span><span>50/day batched into 5-min EOD queue</span></div>
+            </div>
+          </div>
+
+          <div class="roi-results-col">
+            <div class="roi-result-box primary">
+              <div class="roi-res-label">Doctor Exam Interruptions Eliminated</div>
+              <div class="roi-res-value" id="roi-hours-saved">42 hrs / mo</div>
+              <div class="roi-res-note">Zero phone rings during patient exams; every case arrives pre-summarized</div>
+            </div>
+            <div class="roi-result-box">
+              <div class="roi-res-label">Recovered Missed Appointments / yr</div>
+              <div class="roi-res-value" id="roi-missed-rev">€28,800 / yr</div>
+              <div class="roi-res-note">Patients who called while busy &amp; booked via instant WhatsApp handoff</div>
+            </div>
+            <div class="roi-result-box">
+              <div class="roi-res-label">Clinic Slots Saved via GeSY Async Queue</div>
+              <div class="roi-res-value" id="roi-slots-saved">396 slots / mo</div>
+              <div class="roi-res-note">Renewals batched into 1-click End-of-Day list instead of phone chaos</div>
+            </div>
+            <div class="roi-result-box total">
+              <div class="roi-res-label">Annual Staff Savings vs Full-Time Receptionist</div>
+              <div class="roi-res-value" id="roi-staff-savings">€15,012 / yr</div>
+              <div class="roi-res-note">24/7 Greek, English &amp; Russian coverage including weekends &amp; holidays</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- =================================================================== -->
+      <!-- A DAY WITH ANASTASIA — PHONE TIMELINE                              -->
+      <!-- =================================================================== -->
+      <section class="info-section day-section" id="day-with-anastasia" aria-labelledby="day-title">
+        <div class="info-section-head">
+          <div class="info-eyebrow">A day with Anastasia</div>
+          <h2 id="day-title" class="info-title">What the doctor actually sees on their phone</h2>
+          <p class="info-lead">No dashboard to log into. Anastasia sends a handful of short WhatsApp messages a day, and the doctor replies with one letter. <span class="info-muted">(Illustrative example day.)</span></p>
+        </div>
+        <div class="day-layout">
+          <div class="phone-frame" role="img" aria-label="Phone showing the doctor's WhatsApp thread with Anastasia across one day">
+            <div class="phone-notch" aria-hidden="true"></div>
+            <div class="phone-header">
+              <div class="phone-avatar" aria-hidden="true">A</div>
+              <div>
+                <div class="phone-contact">Anastasia • MyDocDesk</div>
+                <div class="phone-status">AI receptionist for Dr. Andreas Nicolaou</div>
+              </div>
+            </div>
+            <div class="phone-thread">
+              <div class="day-time-sep">07:30</div>
+              <div class="bubble in">
+                <div class="bubble-tag">☀️ Morning digest</div>
+                Good morning, Dr. Nicolaou. Today: <strong>8 patients</strong> booked, first at 08:30. Urgent buffers at <strong>12:30</strong> and <strong>17:00</strong> are still free. <strong>3 GeSY items</strong> waiting for your end-of-day batch. Overnight: 4 WhatsApp messages answered, 0 missed calls.
+                <span class="bubble-meta">07:30</span>
+              </div>
+
+              <div class="day-time-sep">12:05</div>
+              <div class="bubble in">
+                <div class="bubble-tag">🔴 Approval needed • #MD-409</div>
+                Leo K. (4y, GeSY): 39.6°C fever since last night + right ear pain. Red-flag screen negative. Reply:<br/>
+                <strong>A</strong> book today 12:30 buffer • <strong>B</strong> tomorrow 09:00 • <strong>C</strong> I'll call the parent • <strong>D</strong> decline
+                <span class="bubble-meta">12:05</span>
+              </div>
+              <div class="bubble out">A<span class="bubble-meta">12:06 ✓✓</span></div>
+              <div class="bubble in">
+                ✅ Done. Leo is booked at 12:30, mother confirmed on WhatsApp, case note pinned to the calendar event.
+                <span class="bubble-meta">12:06</span>
+              </div>
+
+              <div class="day-time-sep">15:10</div>
+              <div class="bubble in urgent">
+                <div class="bubble-tag">🚨 Urgent escalation</div>
+                A parent called about a <strong>6-month-old with fever and unusual drowsiness</strong>. These are red-flag symptoms, so I did not book an appointment. I told her to <strong>call 112 now</strong> and stayed on the line until she confirmed. Caller: Sample Parent, +357 99 000 000.
+                <span class="bubble-meta">15:10</span>
+              </div>
+              <div class="bubble out">Thanks, calling her now.<span class="bubble-meta">15:12 ✓✓</span></div>
+
+              <div class="day-time-sep">19:00</div>
+              <div class="bubble in">
+                <div class="bubble-tag">🟢 End-of-day GeSY batch</div>
+                3 items ready: 2 prescription renewals, 1 physiotherapy referral. Each has the patient's request and last visit attached. Reply <strong>ALL</strong> to approve or a number to review one.<br/>
+                Today: 37 calls &amp; messages handled, 9 bookings, 1 escalation to 112.
+                <span class="bubble-meta">19:00</span>
+              </div>
+              <div class="bubble out">ALL<span class="bubble-meta">19:04 ✓✓</span></div>
+            </div>
+          </div>
+
+          <ol class="day-timeline">
+            <li><span class="day-dot">07:30</span><div><strong>Morning digest</strong><p>The day at a glance: bookings, free urgent buffers, pending GeSY admin, and anything that happened overnight.</p></div></li>
+            <li><span class="day-dot">12:05</span><div><strong>A/B/C/D approval</strong><p>Anything that touches an urgent buffer waits for the doctor's one-letter reply. Anastasia never fills a buffer on her own.</p></div></li>
+            <li><span class="day-dot red">15:10</span><div><strong>Urgent escalation</strong><p>Red-flag symptoms are not booked. The caller is told to call 112 and the doctor is alerted straight away.</p></div></li>
+            <li><span class="day-dot green">19:00</span><div><strong>End-of-day GeSY batch</strong><p>Prescription renewals and referrals are grouped into one list to approve in a couple of minutes.</p></div></li>
+          </ol>
+        </div>
+      </section>
+
+
+      <section class="info-section demo-next" id="demo-next" aria-labelledby="demo-next-title">
+        <div class="info-section-head">
+          <div class="info-eyebrow">Next step</div>
+          <h2 id="demo-next-title" class="info-title">Like what you see?</h2>
+          <p class="info-lead">Setup takes three steps and you keep your existing number. Start with a 14-day free pilot.</p>
+        </div>
+        <div class="setup-cta-row demo-next-row">
+          <a href="./contact.html" class="pilot-cta-btn js-pilot-cta large" id="btn-pilot-steps">📅 Book a 15-min pilot call</a>
+          <a href="./pricing.html" class="mp-btn-ghost dark">💶 Pricing &amp; pilot</a>
+          <a href="./how-it-works.html" class="mp-btn-ghost dark">⚙️ How it works</a>
+        </div>
+      </section>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- TAB 2: DOCTOR'S LIVE SCHEDULE, TRIAGE CASE NOTES & GeSY QUEUE        -->
+    <!-- =================================================================== -->
+    <section id="tab-schedule" class="tab-panel">
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-label">Today's Triaged Bookings</div>
+          <div class="kpi-value" id="kpi-total-bookings">19 Patients</div>
+          <div class="kpi-sub" id="kpi-total-sub">All pre-screened with AI Case Notes</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">🔴 Urgent Buffer Slots</div>
+          <div class="kpi-value" id="kpi-urgent-slots" style="color:#dc2626;">2 / 2 Used</div>
+          <div class="kpi-sub" id="kpi-urgent-sub">12:30 PM unlocked • 5:00 PM held for acute cases</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">🟢 Async GeSY Admin Queue</div>
+          <div class="kpi-value" id="kpi-gesy-count" style="color:#16a34a;">6 Pending</div>
+          <div class="kpi-sub" id="kpi-gesy-sub">Est. 2 minutes to batch-approve all</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Phase 2 Network Status</div>
+          <div class="kpi-value" style="color:#0284c7;">Synced Live</div>
+          <div class="kpi-sub">Open slots visible on <span class="js-brand-name">MyDocDesk</span> App</div>
+        </div>
+      </div>
+
+      <div class="dashboard-split">
+        <div>
+          <div class="section-card">
+            <div class="section-header">
+              <div>
+                <div class="section-title" id="schedule-clinic-title">🗓️ Dr. Andreas Nicolaou — Pediatrics: Prioritized Daily Schedule &amp; Case Notes</div>
+                <div style="font-size:0.78rem; color:#64748b;" id="schedule-clinic-sub">
+                  Pediatrics • Limassol (GeSY &amp; Private) — Every appointment includes a structured 3-bullet intake note set by Anastasia
+                </div>
+              </div>
+              <span class="code-badge">Multi-Calendar Sync Active</span>
+            </div>
+
+            <!-- Dedicated Color-Coded Google Calendar / Outlook Layer Architecture Bar -->
+            <div class="calendar-layer-bar" id="calendar-layer-bar">
+              <div class="cal-layer-top">
+                <div class="cal-layer-copy">
+                  <div class="cal-layer-title">📅 Dedicated Color-Coded "Anastasia AI Reception" Sub-Calendar + Multi-Calendar Busy-Read</div>
+                  <div class="cal-layer-desc">
+                    <strong>Reads Busy Blocks Across All Connected Calendars:</strong> Doctor's Personal Calendar + Hospital/Surgery Rounds + Main Clinic Calendar (never double-books, never leaks private event details). <strong>Writes AI Bookings to a Dedicated Color-Coded Sub-Calendar</strong> so you see at a glance what Anastasia booked vs. manual desk entries.
+                  </div>
+                </div>
+              </div>
+              <div class="cal-layer-filters" role="tablist" aria-label="Filter Schedule by Calendar Layer">
+                <button type="button" class="cal-filter-btn active" data-layer="all" onclick="filterScheduleLayer('all', this)">
+                  🗂️ All Layers (<span id="count-layer-all">6</span>)
+                </button>
+                <button type="button" class="cal-filter-btn layer-ai" data-layer="ai_subcal" onclick="filterScheduleLayer('ai_subcal', this)">
+                  🟣 📅 Anastasia AI Sub-Calendar (<span id="count-layer-ai">3</span>)
+                </button>
+                <button type="button" class="cal-filter-btn layer-buffer" data-layer="ai_buffer" onclick="filterScheduleLayer('ai_buffer', this)">
+                  🔴 📅 AI Emergency Buffers (<span id="count-layer-buffer">2</span>)
+                </button>
+                <button type="button" class="cal-filter-btn layer-busy" data-layer="busy_hold" onclick="filterScheduleLayer('busy_hold', this)">
+                  🔒 Personal / Surgery Busy Hold (<span id="count-layer-busy">1</span>)
+                </button>
+                <button type="button" class="cal-filter-btn layer-clinic" data-layer="clinic_main" onclick="filterScheduleLayer('clinic_main', this)">
+                  ⚪ 📅 Clinic Main Desk (<span id="count-layer-clinic">1</span>)
+                </button>
+              </div>
+            </div>
+
+            <div class="schedule-slot-list" id="doctor-schedule-list">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="section-card">
+            <div class="section-header">
+              <div>
+                <div class="section-title">🟢 5-Minute End-of-Day GeSY Queue &amp; Lock-Screen <code>A/B/C/D</code> Quick-Reply</div>
+                <div style="font-size:0.76rem; color:#64748b;">
+                  Anastasia sends a concise WhatsApp/SMS digest so the doctor can reply <strong>A / B / C / D</strong> from their lock screen without opening any dashboard:
+                </div>
+              </div>
+              <button type="button" class="customizer-apply-btn" onclick="approveAllGesy()">✓ Approve All</button>
+            </div>
+
+            <div class="gesy-abcd-legend">
+              <div class="gesy-abcd-legend-title">📲 Doctor Lock-Screen Quick-Reply Legend (Tap A / B / C / D on any patient item below):</div>
+              <div class="gesy-abcd-pills">
+                <span class="gesy-legend-pill"><strong>[A]</strong> Approve &amp; Send on WhatsApp</span>
+                <span class="gesy-legend-pill"><strong>[B]</strong> Book Next Morning Slot</span>
+                <span class="gesy-legend-pill"><strong>[C]</strong> Request Lab / Photo on WhatsApp</span>
+                <span class="gesy-legend-pill"><strong>[D]</strong> Escalate — Doctor Calls Back</span>
+              </div>
+            </div>
+
+            <div class="gesy-queue-list" id="gesy-queue-box">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+
+          <div class="section-card">
+            <div class="section-header">
+              <div>
+                <div class="section-title">⚙️ Doctor's Custom Priority Triage Rules</div>
+                <div style="font-size:0.76rem; color:#64748b;">
+                  Each doctor controls what counts as 🔴 Urgent vs 🟡 Soon vs 🟢 Async Admin
+                </div>
+              </div>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:8px; font-size:0.78rem;">
+              <div style="padding:9px 11px; border-radius:8px; background:#fef2f2; border:1px solid #fca5a5; color:#991b1b;">
+                <strong>🔴 Priority 1 (Unlocks 12:30 &amp; 17:00 Buffer Slots):</strong> Fever &gt;39.0°C in children under 6, acute ear/abdominal pain, post-op complication, acute allergic reaction.
+              </div>
+              <div style="padding:9px 11px; border-radius:8px; background:#fffbeb; border:1px solid #fcd34d; color:#92400e;">
+                <strong>🟡 Priority 2 (Books Next 24–48h Standard Slot):</strong> New rash/mole check (requests WhatsApp photo upfront), mild cough/cold &gt;3 days, specialist consultation.
+              </div>
+              <div style="padding:9px 11px; border-radius:8px; background:#f0fdf4; border:1px solid #86efac; color:#166534;">
+                <strong>🟢 Priority 3 (Routes to Async GeSY Admin Queue):</strong> Chronic prescription refills, repeat specialist referrals, routine blood test review.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- TAB 3: PHASE 2 PREVIEW — PATIENT FINDER MARKETPLACE NETWORK         -->
+    <!-- =================================================================== -->
+    <section id="tab-marketplace" class="tab-panel">
+      <div class="marketplace-hero">
+        <div class="guided-eyebrow">
+          <span class="pulse-dot"></span>
+          <span>PHASE 2 VISION (CONCEPT MOCK-UP) • PATIENT FINDER APP</span>
+        </div>
+        <h2 style="font-size:1.3rem; font-weight:800; margin-bottom:6px;">
+          <span class="js-brand-name">MyDocDesk</span> Patient Finder — a future concept for finding available doctors by case &amp; urgency
+        </h2>
+        <div class="concept-banner" role="note">
+          <strong>🧪 Future concept — not a live service.</strong> This tab is a design mock-up of a possible Phase 2 patient app. The doctors, clinics, areas and time slots below are <strong>fictional samples</strong>; no real bookings are made and no doctors are listed. Today, <span class="js-brand-name">MyDocDesk</span> is the AI receptionist shown in the Live Demo.
+        </div>
+        <p style="font-size:0.84rem; color:#cbd5e1; max-width:880px;">
+          Because every doctor on the network uses the <strong><span class="js-brand-name">MyDocDesk</span> AI Receptionist</strong> as their live master schedule in Phase 1, a future patient app could let people search by symptom or specialty and see the same-day slots each participating doctor chooses to publish (including urgent buffer slots the doctor has unlocked).
+        </p>
+
+        <div class="marketplace-filter-bar">
+          <select id="mp-specialty-filter" class="mp-select" onchange="renderMarketplaceDoctors()" aria-label="Filter by Specialty">
+            <option value="all">🩺 All Specialties</option>
+            <option value="Pediatrics">👶 Pediatrics</option>
+            <option value="Dental">🦷 Dentistry</option>
+            <option value="Dermatology">🔬 Dermatology</option>
+            <option value="Cardiology">❤️ Cardiology</option>
+            <option value="ENT">👂 ENT / Otolaryngology</option>
+          </select>
+
+          <select id="mp-city-filter" class="mp-select" onchange="renderMarketplaceDoctors()" aria-label="Filter by City">
+            <option value="all">📍 All Cyprus Cities (Limassol, Nicosia, Larnaca, Paphos)</option>
+            <option value="Limassol">📍 Limassol</option>
+            <option value="Nicosia">📍 Nicosia</option>
+            <option value="Larnaca">📍 Larnaca</option>
+            <option value="Paphos">📍 Paphos</option>
+          </select>
+
+          <input
+            type="text"
+            id="mp-symptom-input"
+            aria-label="Describe the patient case or symptoms"
+            class="mp-input"
+            placeholder="Describe case (e.g. 'Child fever 39.5 today' or 'Skin rash')..."
+            oninput="renderMarketplaceDoctors()"
+          />
+
+          <button type="button" class="mp-search-btn" onclick="renderMarketplaceDoctors()">
+            🔍 Search Sample Slots
+          </button>
+        </div>
+      </div>
+
+      <div class="marketplace-grid" id="marketplace-doctors-grid">
+        <!-- Populated by JS -->
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- TAB 4: OFFICIAL MYDOCDESK LOGO STUDIO                               -->
+    <!-- =================================================================== -->
+    <section id="tab-logos" class="tab-panel">
+      <div class="section-card">
+        <div class="section-header">
+          <div>
+            <div class="section-title">🎨 Official Brand Identity: MyDocDesk (mydocdesk.com)</div>
+            <div style="font-size:0.8rem; color:#64748b;">
+              Combining the <strong>Schedule + Medical Cross + Voice Waveform</strong> icon from #3 &amp; #4 with the warm <strong>Champagne-Gold, Deep Navy &amp; Vibrant Cyan-Teal</strong> palette from #1 &amp; #2 (<code>INTELLIGENT MEDICAL RECEPTION</code>).
+            </div>
+          </div>
+          <span class="code-badge" id="active-brand-pill">Active: MyDocDesk • Schedule Shield + Gold/Navy/Teal (mydocdesk.com)</span>
+        </div>
+
+        <div class="logo-studio-grid">
+          <div class="logo-studio-card active" id="studio-card-schedule_gold">
+            <img src="./assets/logo-mydocdesk-schedule-gold-cross-teal.jpg" alt="Official MyDocDesk Logo — Champagne-Gold Cross + Cyan-Teal Schedule Shield + Stethoscope Curve" class="logo-studio-img" />
+            <h3 style="font-size:1.05rem; font-weight:800;">Official Brand Mark: MyDocDesk — Champagne-Gold Cross + Schedule Shield + Stethoscope</h3>
+            <p style="font-size:0.79rem; color:#475569;">
+              Features a warm champagne-gold medical cross behind the navy-and-teal verified schedule shield, AI voice waveform bars, and stethoscope curve. Tagline: <code>INTELLIGENT MEDICAL RECEPTION</code>.
+            </p>
+            <button type="button" class="guided-demo-btn" onclick="setBrandVariant('mydocdesk', 'schedule_gold')">
+              ✓ Official Active Logo (`MyDocDesk`)
+            </button>
+          </div>
+
+          <div class="logo-studio-card" id="studio-card-schedule_navy">
+            <img src="./assets/logo-mydocdesk-schedule-gold-navy-teal.jpg" alt="MyDocDesk Alternate Logo — Navy Cross + Gold Calendar Header & Star + Cyan-Teal Schedule Shield" class="logo-studio-img" />
+            <h3 style="font-size:1.05rem; font-weight:800;">Alternate Variant: Navy Cross + Gold Calendar Header &amp; Star</h3>
+            <p style="font-size:0.79rem; color:#475569;">
+              Alternate 3D render with navy cross, champagne-gold calendar binder, and cyan-teal schedule shield. Tagline: <code>INTELLIGENT MEDICAL RECEPTION</code>.
+            </p>
+            <button type="button" class="guided-demo-btn" onclick="setBrandVariant('mydocdesk', 'schedule_navy')">
+              Preview Alternate Variant
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- TAB 5: DOCTOR 1-PAGER & FOUNDING CLINIC LEAVE-BEHIND (ENGLISH)      -->
+    <!-- =================================================================== -->
+    <section id="tab-onepager" class="tab-panel">
+      <div class="onepager-hero-card">
+        <div class="onepager-hero-top">
+          <div>
+            <div class="guided-eyebrow">
+              <span class="pulse-dot"></span>
+              <span>EXECUTIVE LEAVE-BEHIND FOR CYPRUS DOCTORS, GeSY CLINICS &amp; DENTISTS</span>
+            </div>
+            <h2 class="onepager-hero-title">
+              📄 MyDocDesk 1-Page Doctor Leave-Behind &amp; Founding Clinic Offer
+            </h2>
+            <p class="onepager-hero-sub">
+              Print-ready 1-page A4 executive PDF designed to hand to doctors and dentists in Cyprus or send directly via WhatsApp or Email.
+            </p>
+          </div>
+          <div class="onepager-cta-cluster">
+            <a
+              href="./assets/MyDocDesk_Doctor_Leave_Behind.pdf"
+              download="MyDocDesk_Doctor_Leave_Behind.pdf"
+              class="onepager-download-btn"
+            >
+              ⬇ Download 1-Page Doctor Leave-Behind (PDF)
+            </a>
+            <a
+              href="./assets/MyDocDesk_Doctor_Leave_Behind.pdf"
+              target="_blank"
+              rel="noopener"
+              class="onepager-open-btn"
+            >
+              🔍 Open Print-Ready PDF
+            </a>
+          </div>
+        </div>
+
+        <div class="onepager-toolbar">
+          <div class="onepager-contact-pill">
+            <span data-no-i18n>🛡️ <strong>Engineered &amp; Supported by T-Knights Consulting Ltd (Cyprus)</strong></span>
+          </div>
+          <div class="onepager-contact-pill">
+            <span>🤝 Founding Doctor Pilot (14 Days Free → <strong>€99/mo</strong>):</span>
+            <strong>Christos Taliadoros</strong> • <a href="mailto:hello@mydocdesk.com">hello@mydocdesk.com</a> • <a href="tel:+35799429249">+357 99 429249</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- English 1-Page Executive Leave-Behind Showcase (Preview + Structured Pitch) -->
+      <div class="onepager-DualGrid" id="onepager-dual-grid">
+        <!-- LEFT: PRINT-READY A4 PREVIEW -->
+        <article class="onepager-sheet" id="onepager-sheet-en">
+          <div class="op-sheet-topbar">
+            <span class="op-sheet-badge">📄 PRINT-READY A4 1-PAGE LEAVE-BEHIND (CYPRUS CLINICS &amp; DENTISTS)</span>
+            <a href="./assets/MyDocDesk_Doctor_Leave_Behind.pdf" download="MyDocDesk_Doctor_Leave_Behind.pdf" class="op-mini-dl">⬇ Download PDF</a>
+          </div>
+
+          <a href="./assets/MyDocDesk_Doctor_Leave_Behind.pdf" target="_blank" rel="noopener" title="Click to open full print-ready 1-page PDF">
+            <img
+              src="./assets/onepager-page1-en.png"
+              alt="MyDocDesk 1-Page Doctor Leave-Behind"
+              class="op-preview-img"
+            />
+          </a>
+        </article>
+
+        <!-- RIGHT: EXECUTIVE SUMMARY & PITCH BREAKDOWN -->
+        <article class="onepager-sheet" id="onepager-sheet-summary">
+          <div class="op-sheet-topbar">
+            <span class="op-sheet-badge">🩺 EXECUTIVE PITCH SUMMARY &amp; FOUNDING CLINIC ROI</span>
+            <a href="./assets/MyDocDesk_Doctor_Leave_Behind.pdf" target="_blank" rel="noopener" class="op-mini-dl">🔍 View Full PDF</a>
+          </div>
+
+          <div class="op-structured-body">
+            <div class="op-sec-block">
+              <div class="op-sec-title">⚠️ The Daily Problem in Every Cyprus Medical &amp; Dental Clinic</div>
+              <p class="op-sec-text">
+                <strong>40–100+ daily calls &amp; WhatsApp messages</strong> interrupt examinations and chairside dental procedures; missed calls mean lost <strong>€60–€500+ private treatments</strong>, while routine GeSY repeat prescriptions and referrals clog up the phone line and consume urgent slots.
+              </p>
+            </div>
+
+            <div class="op-sec-block">
+              <div class="op-sec-title">⚡ How Anastasia (Your AI Medical Receptionist) Works in 4 Steps</div>
+              <ol class="op-step-list">
+                <li><strong>1. Answers Normal Calls &amp; WhatsApp 24/7 (EL / EN / RU):</strong> Works with your existing Cyta/Epic/Cablenet landline or mobile via simple "Forward When Busy / Unanswered (<code>*67*</code> / <code>*61*</code>)"—patients call your normal number or message on WhatsApp, and elderly landline callers receive standard SMS confirmations.</li>
+                <li><strong>2. 3-Tier Clinical &amp; Dental Priority Triage:</strong>
+                  <ul class="op-tier-sublist">
+                    <li><span class="op-dot-red">🔴 Priority 1 (Urgent Same-Day):</span> High pediatric fever (&gt;39°C), acute ear/abdominal pain, broken crown or acute toothache → Unlocks your protected <strong>Emergency Buffer Slot</strong> (e.g. 12:30 / 17:00).</li>
+                    <li><span class="op-dot-amber">🟡 Priority 2 (Standard 24–48h + Photo Intake):</span> Spreading rashes, dermoscopy, lab/Holter reviews, dental fillings, root canals, implant consults → Requests a WhatsApp photo/PDF and books the right slot duration (15m / 30m / 45m / 60m).</li>
+                    <li><span class="op-dot-green">🟢 Priority 3 (Routine &amp; GeSY Async Queue):</span> Repeat GeSY prescriptions, specialist referrals, and routine ultrasonic dental cleanings → Batched into your <strong>5-Minute End-of-Day Queue</strong> (or non-peak hygiene slot) without wasting an exam slot.</li>
+                  </ul>
+                </li>
+                <li><strong>3. Dedicated Color-Coded "Anastasia AI" Calendar Layer + 3-Bullet Case Note:</strong> Reads busy blocks across all your connected <strong>Google, Apple, or Outlook Calendars</strong> (Personal + Hospital Rounds + Clinic Main—never double-books or exposes private details) and writes AI-triaged bookings onto a dedicated <strong>color-coded "Anastasia AI Reception" sub-calendar</strong> with chief complaint, GeSY ID, and WhatsApp photos attached.</li>
+                <li><strong>4. Zero-App <code>A / B / C / D</code> WhatsApp Quick-Reply Approval + Phase 2 Patient App:</strong> For Priority 2/3 items or GeSY renewals where you want final say, Anastasia texts you a concise digest with <strong>1-tap <code>Reply A / B / C / D</code> options</strong> (<code>[A] Approve &amp; Send</code>, <code>[B] Next Morning Slot</code>, <code>[C] Request Lab/Photo</code>, <code>[D] Doctor Call Back</code>) so you can act from your lock screen—plus priority placement in the Phase 2 <strong>MyDocDesk Patient Finder App</strong>.</li>
+              </ol>
+            </div>
+
+            <div class="op-sec-block">
+              <div class="op-sec-title">🔒 100% GDPR Compliant &amp; Built for Cyprus Specialties</div>
+              <p class="op-sec-text">
+                Tailored intake rules for <strong>Pediatrics, GeSY Personal Doctors, Dentists &amp; Implant Clinics, Dermatology, Cardiology, and ENT / OB-GYN</strong>. Anastasia performs safe administrative triage only (never diagnoses or prescribes) on EU-encrypted servers (Frankfurt) with automatic 112 red-flag escalation.
+              </p>
+            </div>
+
+            <div class="op-roi-footer">
+              <div><strong>Full-Time Receptionist:</strong> €1,400+/month (9am–5pm only • 1 call at a time • sick leave &amp; social insurance)</div>
+              <div class="op-roi-highlight"><strong>⭐ Founding Doctor Pilot Offer (First 20 Clinics):</strong> 14-Day Free Trial, then <strong>€99/month</strong> (locked-in Founding Rate; standard €149/month) • 1 saved private visit pays for the entire month</div>
+              <div><strong>Live Interactive Simulator &amp; Pilot Setup:</strong> <a href="https://mydocdesk.com">https://mydocdesk.com</a> • Christos Taliadoros (<code>hello@mydocdesk.com</code> • <code>+357 99 429249</code>)</div>
+              <div class="op-trust-line" data-no-i18n>🛡️ <strong>Engineered &amp; Supported by T-Knights Consulting Ltd (Cyprus)</strong></div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer mp-footer">
+    <div class="mp-footer-grid">
+      <div class="mp-footer-col mp-footer-brand">
+        <div class="mp-footer-logo" data-no-i18n><span class="brand-name-mydoc">MyDoc</span><span class="brand-name-desk">Desk</span></div>
+        <p>Anastasia, the AI medical receptionist for Cyprus doctors and dentists. Calls and WhatsApp answered 24/7, triaged by urgency and booked into your calendar.</p>
+      </div>
+      <nav class="mp-footer-col" aria-label="Footer menu">
+        <div class="mp-footer-title">Pages</div>
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./how-it-works.html">How it works</a></li>
+          <li><a href="./demo.html">Live demo</a></li>
+          <li><a href="./pricing.html">Pricing &amp; pilot</a></li>
+          <li><a href="./privacy-faq.html">Privacy &amp; FAQ</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="mp-footer-col">
+        <div class="mp-footer-title">Contact</div>
+        <ul>
+          <li><a href="mailto:hello@mydocdesk.com" data-no-i18n>hello@mydocdesk.com</a></li>
+          <li><a href="tel:+35799429249" data-no-i18n>+357 99 429249</a></li>
+          <li>Christos Taliadoros</li>
+        </ul>
+      </div>
+      <div class="mp-footer-col">
+        <div class="mp-footer-title">Downloads</div>
+        <ul>
+          <li><a href="./assets/MyDocDesk_Doctor_Leave_Behind.pdf" download="MyDocDesk_Doctor_Leave_Behind.pdf">⬇ 1-Page Doctor PDF</a></li>
+          <li><a href="./assets/MyDocDesk_Pitch_Deck.pdf" download="MyDocDesk_Pitch_Deck.pdf">⬇ Pitch deck (PDF)</a></li>
+          <li><a href="./assets/MyDocDesk_Pitch_Deck.pptx" download="MyDocDesk_Pitch_Deck.pptx">⬇ Pitch deck (PowerPoint)</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="mp-footer-bottom">
+      <div class="site-footer-trust" data-no-i18n>🛡️ <strong>Engineered &amp; Supported by T-Knights Consulting Ltd (Cyprus)</strong></div>
+      <a href="https://myvacai.com" class="mp-footer-sister">Sister brand: MyVacAI</a>
+    </div>
+  </footer>
+
+  <nav class="mobile-quick-jump" aria-label="Quick Jump Mobile Sections">
+    <button type="button" class="mjump-btn active" onclick="jumpToMobileSection('card-phone-call', this)" aria-label="Jump to the live phone call">
+      <span class="mj-ico" aria-hidden="true">📞</span><span class="mj-lbl">Call</span>
+    </button>
+    <button type="button" class="mjump-btn" onclick="jumpToMobileSection('card-whatsapp-chat', this)" aria-label="Jump to the WhatsApp chat">
+      <span class="mj-ico" aria-hidden="true">💬</span><span class="mj-lbl">WhatsApp</span>
+    </button>
+    <button type="button" class="mjump-btn" onclick="jumpToMobileSection('card-brain-panel', this)" aria-label="Jump to the triage case note">
+      <span class="mj-ico" aria-hidden="true">🩺</span><span class="mj-lbl">Notes</span>
+    </button>
+    <button type="button" class="mjump-btn" onclick="jumpToMobileTab('onepager', this)" aria-label="Open the doctor 1-pager">
+      <span class="mj-ico" aria-hidden="true">📄</span><span class="mj-lbl">1-Pager</span>
+    </button>
+    <a href="./pricing.html" class="mjump-btn" aria-label="Pricing and free pilot">
+      <span class="mj-ico" aria-hidden="true">💶</span><span class="mj-lbl">Pricing</span>
+    </a>
+  </nav>
+
+  <script src="./i18n.js"></script>
+  <script src="./i18n-el.js"></script>
+  <script src="./assets/voice/clips.js"></script>
+  <script src="./app.js"></script>
+  <script src="./site.js"></script>
+</body>
+</html>

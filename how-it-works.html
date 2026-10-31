@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-el="Πώς λειτουργεί — MyDocDesk AI Ιατρική Γραμματέας">How it works — MyDocDesk AI Medical Receptionist</title>
+  <meta name="description" content="Step by step: how Anastasia answers calls and WhatsApp, triages patients P1/P2/P3, writes case notes, books into a colour-coded calendar layer and waits for the doctor&#x27;s A/B/C/D approval." data-el="Βήμα προς βήμα: πώς η Αναστασία απαντά σε κλήσεις και WhatsApp, ταξινομεί τους ασθενείς Π1/Π2/Π3, γράφει σημειώματα, κλείνει ραντεβού σε χρωματικό ημερολόγιο και περιμένει την έγκριση A/B/C/D του γιατρού." />
+  <link rel="canonical" href="https://mydocdesk.com/how-it-works.html" />
+  <meta name="theme-color" content="#0a192f" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="MyDocDesk" />
+  <meta property="og:url" content="https://mydocdesk.com/how-it-works.html" />
+  <meta property="og:title" content="How it works — MyDocDesk AI Medical Receptionist" data-el="Πώς λειτουργεί — MyDocDesk AI Ιατρική Γραμματέας" />
+  <meta property="og:description" content="Step by step: how Anastasia answers calls and WhatsApp, triages patients P1/P2/P3, writes case notes, books into a colour-coded calendar layer and waits for the doctor&#x27;s A/B/C/D approval." data-el="Βήμα προς βήμα: πώς η Αναστασία απαντά σε κλήσεις και WhatsApp, ταξινομεί τους ασθενείς Π1/Π2/Π3, γράφει σημειώματα, κλείνει ραντεβού σε χρωματικό ημερολόγιο και περιμένει την έγκριση A/B/C/D του γιατρού." />
+  <meta property="og:image" content="https://mydocdesk.com/assets/og-preview.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="MyDocDesk — AI Medical Receptionist for Cyprus Clinics" />
+  <meta property="og:locale" content="en_GB" />
+  <meta property="og:locale:alternate" content="el_GR" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="How it works — MyDocDesk AI Medical Receptionist" />
+  <meta name="twitter:description" content="Step by step: how Anastasia answers calls and WhatsApp, triages patients P1/P2/P3, writes case notes, books into a colour-coded calendar layer and waits for the doctor&#x27;s A/B/C/D approval." />
+  <meta name="twitter:image" content="https://mydocdesk.com/assets/og-preview.png" />
+  <meta name="twitter:image:alt" content="MyDocDesk — AI Medical Receptionist for Cyprus Clinics" />
+  <link rel="icon" type="image/png" href="./assets/favicon.png" />
+  <link rel="apple-touch-icon" href="./assets/icon-schedule-gold-cross.png" />
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./site.css" />
+  <script>
+    (function () {
+      try {
+        var q = new URLSearchParams(location.search).get("lang");
+        var l = q === "el" || q === "en" ? q : localStorage.getItem("mydocdesk-lang");
+        if (l === "el") {
+          document.documentElement.lang = "el";
+          document.documentElement.classList.add("i18n-pending");
+          setTimeout(function () { document.documentElement.classList.remove("i18n-pending"); }, 2500);
+        }
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body class="mp-page page-how" data-page="how">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" id="site-header">
+    <div class="site-header-inner">
+      <a class="site-brand" href="./index.html" aria-label="MyDocDesk home">
+        <img src="./assets/icon-schedule-gold-cross.png" alt="MyDocDesk Logo" class="brand-logo-img" width="44" height="44" />
+        <span class="site-brand-text">
+          <span class="site-brand-name" data-no-i18n><span class="brand-name-mydoc">MyDoc</span><span class="brand-name-desk">Desk</span></span>
+          <span class="site-brand-tag">AI Medical Receptionist</span>
+        </span>
+      </a>
+      <nav class="site-nav" id="site-nav" aria-label="Main menu">
+        <a href="./index.html" class="site-nav-link" data-page="home">Home</a>
+        <a href="./how-it-works.html" class="site-nav-link active" aria-current="page" data-page="how">How it works</a>
+        <a href="./demo.html" class="site-nav-link" data-page="demo">Live demo</a>
+        <a href="./pricing.html" class="site-nav-link" data-page="pricing">Pricing &amp; pilot</a>
+        <a href="./privacy-faq.html" class="site-nav-link" data-page="privacy">Privacy &amp; FAQ</a>
+        <a href="./contact.html" class="site-nav-link" data-page="contact">Contact</a>
+        <a href="./contact.html" class="pilot-cta-btn js-pilot-cta site-nav-cta">📅 Book a pilot call</a>
+      </nav>
+      <div class="site-header-actions">
+        <div class="lang-switch" id="lang-switch" role="group" aria-label="Language / Γλώσσα">
+          <button type="button" class="lang-switch-btn active" data-lang="en" aria-pressed="true" onclick="setSiteLanguage('en')" title="English" lang="en"><svg class="flag-ico" viewBox="0 0 60 30" width="16" height="11" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><clipPath id="flag-uk-t"><path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"/></clipPath><path d="M0,0 v30 h60 v-30 z" fill="#012169"/><path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#flag-uk-t)" stroke="#C8102E" stroke-width="4"/><path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/><path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/></svg><span>EN</span></button>
+          <button type="button" class="lang-switch-btn" data-lang="el" aria-pressed="false" onclick="setSiteLanguage('el')" title="Ελληνικά" lang="el"><svg class="flag-ico" viewBox="0 0 27 18" width="16" height="11" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="27" height="18" fill="#0D5EAF"/><path fill="#fff" d="M0 2h27v2H0zM0 6h27v2H0zM0 10h27v2H0zM0 14h27v2H0z"/><rect width="10" height="10" fill="#0D5EAF"/><path fill="#fff" d="M4 0h2v10H4zM0 4h10v2H0z"/></svg><span>ΕΛ</span></button>
+        </div>
+        <a href="./contact.html" class="pilot-cta-btn js-pilot-cta header-cta">📅 Book a pilot call</a>
+        <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path class="nt-open" d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none"/><path class="nt-close" d="M5 5l14 14M19 5L5 19" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="mp-main" id="main">
+    <section class="mp-page-hero">
+      <div class="mp-eyebrow">How it works</div>
+      <h1>From the first ring to your one-letter reply</h1>
+      <p class="mp-lead">Anastasia handles the front-desk work in six steps. Nothing changes for your patients, and nothing sensitive happens without you.</p>
+    </section>
+
+    <section class="mp-section flow-section" aria-labelledby="flow-title">
+      <h2 id="flow-title" class="mp-flow-title">The flow at a glance</h2>
+      <ol class="flow-diagram">
+        <li class="flow-node flow-n1">
+          <span class="flow-num" aria-hidden="true">1</span>
+          <span class="flow-ico" aria-hidden="true">📞</span>
+          <strong>Patient calls</strong>
+          <span class="flow-sub">Forwarded when busy or unanswered</span>
+          <svg class="flow-arrow" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path d="M4 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </li>
+        <li class="flow-node flow-n2">
+          <span class="flow-num" aria-hidden="true">2</span>
+          <span class="flow-ico" aria-hidden="true">💬</span>
+          <strong>…or sends a WhatsApp</strong>
+          <span class="flow-sub">Text, voice notes, photos, lab PDFs</span>
+          <svg class="flow-arrow" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path d="M4 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </li>
+        <li class="flow-node flow-n3">
+          <span class="flow-num" aria-hidden="true">3</span>
+          <span class="flow-ico" aria-hidden="true">🚦</span>
+          <strong>Triage P1 / P2 / P3</strong>
+          <span class="flow-sub">Red flags → 112 or the doctor</span>
+          <svg class="flow-arrow" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path d="M4 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </li>
+        <li class="flow-node flow-n4">
+          <span class="flow-num" aria-hidden="true">4</span>
+          <span class="flow-ico" aria-hidden="true">📝</span>
+          <strong>Case note</strong>
+          <span class="flow-sub">3 bullets before the visit</span>
+          <svg class="flow-arrow" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path d="M4 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </li>
+        <li class="flow-node flow-n5">
+          <span class="flow-num" aria-hidden="true">5</span>
+          <span class="flow-ico" aria-hidden="true">📅</span>
+          <strong>Anastasia calendar layer</strong>
+          <span class="flow-sub">Colour-coded, never double-books</span>
+          <svg class="flow-arrow" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path d="M4 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </li>
+        <li class="flow-node flow-n6">
+          <span class="flow-num" aria-hidden="true">6</span>
+          <span class="flow-ico" aria-hidden="true">✅</span>
+          <strong>A / B / C / D approval</strong>
+          <span class="flow-sub">You reply with one letter</span>
+          
+        </li>
+      </ol>
+      <div class="flow-tiers">
+        <span class="tri-pill p1">🔴 P1 Urgent: same day</span>
+        <span class="tri-pill p2">🟡 P2 Soon: 24–48 h</span>
+        <span class="tri-pill p3">🟢 P3 Routine / GeSY: end-of-day list</span>
+      </div>
+    </section>
+
+    <p class="demo-safety-line mp-safety" role="note">
+      <span aria-hidden="true">⚕️</span> <strong>Anastasia never diagnoses.</strong> Red-flag symptoms are escalated to 112 or the doctor immediately.
+    </p>
+
+    <section class="mp-section how-steps" aria-label="The six steps in detail">
+      <article class="how-step" id="step-1">
+        <div class="how-step-badge" aria-hidden="true"><span class="how-step-num">1</span><span class="how-step-ico">📞</span></div>
+        <div class="how-step-body">
+          <h3>Calls are answered, even when you can't</h3>
+            <p>Your clinic landline or mobile forwards to Anastasia <strong>only when the line is busy or not answered</strong>. Patients keep calling the number they already know.</p>
+            <p>She speaks Greek and English, tells callers they are speaking to the clinic's AI assistant, and asks standard intake questions: who the patient is, what the problem is, how long it has lasted and their GeSY details.</p>
+        </div>
+      </article>
+      <article class="how-step" id="step-2">
+        <div class="how-step-badge" aria-hidden="true"><span class="how-step-num">2</span><span class="how-step-ico">💬</span></div>
+        <div class="how-step-body">
+          <h3>WhatsApp messages and voice notes too</h3>
+            <p>Patients can message the clinic's WhatsApp. Anastasia answers text and voice notes, sends booking confirmations and asks for a photo or lab result when it helps the doctor prepare.</p>
+            <p>Landline callers who don't use WhatsApp get a standard SMS confirmation instead.</p>
+        </div>
+      </article>
+      <article class="how-step" id="step-3">
+        <div class="how-step-badge" aria-hidden="true"><span class="how-step-num">3</span><span class="how-step-ico">🚦</span></div>
+        <div class="how-step-body">
+          <h3>Every request is triaged by urgency</h3>
+            <p><span class="tri-pill p1">🔴 P1 Urgent</span> Same-day problems, such as a child with high fever and ear pain or an acute toothache, are offered a protected urgent buffer slot, with your approval.</p>
+            <p><span class="tri-pill p2">🟡 P2 Soon</span> Rashes, lab reviews or dental treatment are booked in the next 24–48 hours, in a slot of the right length, with a photo or PDF collected first if useful.</p>
+            <p><span class="tri-pill p3">🟢 P3 Routine / GeSY</span> Repeat prescriptions and referrals go into one end-of-day list instead of taking an exam slot.</p>
+            <p><strong>Red-flag symptoms are never booked.</strong> The caller is told to call 112 and you are alerted straight away.</p>
+        </div>
+      </article>
+      <article class="how-step" id="step-4">
+        <div class="how-step-badge" aria-hidden="true"><span class="how-step-num">4</span><span class="how-step-ico">📝</span></div>
+        <div class="how-step-body">
+          <h3>A 3-bullet case note before the patient arrives</h3>
+            <p>Each booking carries a short pre-visit note: the chief complaint, the GeSY ID and any photos or files the patient sent. You walk in already knowing why they came.</p>
+        </div>
+      </article>
+      <article class="how-step" id="step-5">
+        <div class="how-step-badge" aria-hidden="true"><span class="how-step-num">5</span><span class="how-step-ico">📅</span></div>
+        <div class="how-step-body">
+          <h3>Booked on a colour-coded Anastasia calendar layer</h3>
+            <p>Anastasia reads the busy times across your connected Google, Apple or Outlook calendars (personal, hospital rounds and the clinic calendar) so she never double-books, without exposing private details.</p>
+            <p>Her bookings go onto a separate, colour-coded "Anastasia AI Reception" calendar, so you can see at a glance what she booked.</p>
+            <div class="mini-cal" role="img" aria-label="Example calendar day with colour-coded layers">
+              <div class="mini-cal-row"><span class="mini-cal-time">08:30</span><span class="mini-cal-ev ev-clinic">⚪ Clinic desk booking</span></div>
+              <div class="mini-cal-row"><span class="mini-cal-time">10:15</span><span class="mini-cal-ev ev-ai">🟣 Anastasia: rash review + photo</span></div>
+              <div class="mini-cal-row"><span class="mini-cal-time">11:00</span><span class="mini-cal-ev ev-busy">🔒 Busy (private)</span></div>
+              <div class="mini-cal-row"><span class="mini-cal-time">12:30</span><span class="mini-cal-ev ev-buffer">🔴 Urgent buffer (held for approval)</span></div>
+              <div class="mini-cal-row"><span class="mini-cal-time">17:00</span><span class="mini-cal-ev ev-buffer">🔴 Urgent buffer</span></div>
+            </div>
+            <p class="mp-visual-caption">Illustrative example.</p>
+        </div>
+      </article>
+      <article class="how-step" id="step-6">
+        <div class="how-step-badge" aria-hidden="true"><span class="how-step-num">6</span><span class="how-step-ico">✅</span></div>
+        <div class="how-step-body">
+          <h3>You approve with one letter on WhatsApp</h3>
+            <p>Urgent buffers, GeSY renewals and anything unusual wait for you. Anastasia sends a short WhatsApp/SMS message and you reply from your lock screen:</p>
+            <ul class="abcd-list">
+              <li><span class="abcd-key">A</span><span>Approve &amp; send</span></li>
+              <li><span class="abcd-key">B</span><span>Next morning slot</span></li>
+              <li><span class="abcd-key">C</span><span>Request a lab result or photo</span></li>
+              <li><span class="abcd-key">D</span><span>Doctor calls back</span></li>
+            </ul>
+            <p>You also get a short morning digest and one end-of-day GeSY list to approve in a couple of minutes. Anastasia suggests; the doctor decides.</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="mp-cta-band" aria-label="Book a pilot call">
+      <div class="mp-cta-copy">
+        <h2>See it for yourself</h2>
+        <p>Try the live demo, or book a 15-minute call to walk through your own clinic's setup.</p>
+      </div>
+      <div class="mp-cta-actions">
+        <a href="./contact.html" class="pilot-cta-btn js-pilot-cta large">📅 Book a 15-min pilot call</a>
+        <a href="./demo.html" class="mp-btn-ghost">▶ Try the live demo</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer mp-footer">
+    <div class="mp-footer-grid">
+      <div class="mp-footer-col mp-footer-brand">
+        <div class="mp-footer-logo" data-no-i18n><span class="brand-name-mydoc">MyDoc</span><span class="brand-name-desk">Desk</span></div>
+        <p>Anastasia, the AI medical receptionist for Cyprus doctors and dentists. Calls and WhatsApp answered 24/7, triaged by urgency and booked into your calendar.</p>
+      </div>
+      <nav class="mp-footer-col" aria-label="Footer menu">
+        <div class="mp-footer-title">Pages</div>
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./how-it-works.html">How it works</a></li>
+          <li><a href="./demo.html">Live demo</a></li>
+          <li><a href="./pricing.html">Pricing &amp; pilot</a></li>
+          <li><a href="./privacy-faq.html">Privacy &amp; FAQ</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="mp-footer-col">
+        <div class="mp-footer-title">Contact</div>
+        <ul>
+          <li><a href="mailto:hello@mydocdesk.com" data-no-i18n>hello@mydocdesk.com</a></li>
+          <li><a href="tel:+35799429249" data-no-i18n>+357 99 429249</a></li>
+          <li>Christos Taliadoros</li>
+        </ul>
+      </div>
+      <div class="mp-footer-col">
+        <div class="mp-footer-title">Downloads</div>
+        <ul>
+          <li><a href="./assets/MyDocDesk_Doctor_Leave_Behind.pdf" download="MyDocDesk_Doctor_Leave_Behind.pdf">⬇ 1-Page Doctor PDF</a></li>
+          <li><a href="./assets/MyDocDesk_Pitch_Deck.pdf" download="MyDocDesk_Pitch_Deck.pdf">⬇ Pitch deck (PDF)</a></li>
+          <li><a href="./assets/MyDocDesk_Pitch_Deck.pptx" download="MyDocDesk_Pitch_Deck.pptx">⬇ Pitch deck (PowerPoint)</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="mp-footer-bottom">
+      <div class="site-footer-trust" data-no-i18n>🛡️ <strong>Engineered &amp; Supported by T-Knights Consulting Ltd (Cyprus)</strong></div>
+      <a href="https://myvacai.com" class="mp-footer-sister">Sister brand: MyVacAI</a>
+    </div>
+  </footer>
+
+  <nav class="mobile-quick-jump mp-bottom-bar" aria-label="Quick links">
+    <a href="./index.html" class="mjump-btn"><span class="mj-ico" aria-hidden="true">🏠</span><span class="mj-lbl">Home</span></a>
+    <a href="./how-it-works.html" class="mjump-btn active" aria-current="page"><span class="mj-ico" aria-hidden="true">⚙️</span><span class="mj-lbl">How</span></a>
+    <a href="./demo.html" class="mjump-btn"><span class="mj-ico" aria-hidden="true">▶️</span><span class="mj-lbl">Demo</span></a>
+    <a href="./pricing.html" class="mjump-btn"><span class="mj-ico" aria-hidden="true">💶</span><span class="mj-lbl">Pricing</span></a>
+    <a href="./contact.html" class="mjump-btn"><span class="mj-ico" aria-hidden="true">✉️</span><span class="mj-lbl">Contact</span></a>
+  </nav>
+
+  <script src="./i18n.js"></script>
+  <script src="./i18n-el.js"></script>
+  <script src="./site.js"></script>
+</body>
+</html>
