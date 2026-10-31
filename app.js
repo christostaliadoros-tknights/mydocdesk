@@ -327,6 +327,60 @@ Object.keys(EXTRA_SCHEDULE_SLOTS).forEach((k) => {
   if (SCHEDULE_SLOTS_BY_SPECIALTY[k]) SCHEDULE_SLOTS_BY_SPECIALTY[k].push(...EXTRA_SCHEDULE_SLOTS[k]);
 });
 
+Object.keys(SCHEDULE_SLOTS_BY_SPECIALTY).forEach((k) => {
+  SCHEDULE_SLOTS_BY_SPECIALTY[k].forEach((s) => { s.spec = k; });
+});
+
+// ---------------------------------------------------------------------------
+// Display-time localisation helpers (data stays in English for logic/sorting)
+// ---------------------------------------------------------------------------
+function fmtTime(t) {
+  if (!isGreekUI() || !t) return t;
+  const to24 = (str) =>
+    str.replace(/(\d{1,2}):(\d{2})\s*(AM|PM)/gi, (_, h, m, ap) => {
+      let hh = Number(h) % 12;
+      if (ap.toUpperCase() === "PM") hh += 12;
+      return `${String(hh).padStart(2, "0")}:${m}`;
+    });
+  const m = /^(.*?)(\s*\((.+)\))?$/.exec(t);
+  const base = to24(m[1]);
+  const suffix = m[3] ? ` (${tr(m[3])})` : "";
+  return base + suffix;
+}
+
+function slotView(s) {
+  const el = isGreekUI() && window.SCHEDULE_EL ? window.SCHEDULE_EL[`${s.spec}/${s.id}`] : null;
+  if (!isGreekUI()) return s;
+  return {
+    ...s,
+    time: fmtTime(s.time),
+    patient: el ? el[0] : tr(s.patient),
+    complaint: el ? el[1] : tr(s.complaint),
+    notes: el ? el[2] : tr(s.notes),
+    phone: tr(s.phone),
+    prioLabel: tr(s.prioLabel),
+    channel: tr(s.channel)
+  };
+}
+
+function clinicView(c) {
+  if (!isGreekUI() || !c) return c;
+  const preset = window.CLINIC_EL && window.CLINIC_EL[c.id];
+  if (preset) return { ...c, ...preset };
+  return {
+    ...c,
+    clinicTitle: c.clinicTitle.replace("Specialist Clinic", "Ιατρείο Ειδικότητας"),
+    specialty: tr(c.specialty),
+    city: tr(c.city),
+    coverage: tr(c.coverage),
+    roomLabel: tr(c.roomLabel || "Exam Room 1")
+  };
+}
+
+function docName() {
+  return clinicView(state.activeClinic).doctorName;
+}
+
 function slotStartMinutes(timeStr) {
   const m = /(\d{1,2}):(\d{2})\s*(AM|PM)/i.exec(timeStr || "");
   if (!m) return 9999;
@@ -779,9 +833,10 @@ function setBrandVariant(newBrandKey, newIconKey, silent) {
   if (domainPill) domainPill.textContent = domainText;
 
   const taglineEl = document.getElementById("topbar-tagline");
-  if (taglineEl) taglineEl.textContent = meta.tagline;
+  const tagline = isGreekUI() ? tr(meta.tagline) : meta.tagline;
+  if (taglineEl) taglineEl.textContent = tagline;
 
-  document.title = `${brandPlain} (${domainText}) — ${meta.tagline}`;
+  document.title = `${brandPlain} (${domainText}) — ${tagline}`;
 
   document.querySelectorAll(".js-brand-name").forEach((el) => {
     el.textContent = brandPlain;
@@ -898,19 +953,19 @@ function selectClinicPreset(presetKey, btnEl) {
   state.scheduleSlots = slotsForPreset.map((s) => ({ ...s }));
   renderDoctorSchedule();
 
-  if (presetKey === "dental") {
-    triggerScenario("dental_emergency", document.getElementById("btn-scen-dental"));
-    showToast("🦷 Switched to Dr. Nikos Constantinou — Dentistry (Limassol • GeSY & Private)!");
-  } else if (presetKey === "dermatology") {
-    triggerScenario("soon_rash", document.getElementById("btn-scen-soon"));
-    showToast("🔬 Switched to Dr. Elena Georgiou — Dermatology (Nicosia • GeSY & Private)!");
-  } else if (presetKey === "cardiology") {
-    triggerScenario("routine_gesy", document.getElementById("btn-scen-gesy"));
-    showToast("❤️ Switched to Dr. Marios Petrou — Cardiology (Larnaca • GeSY & Private)!");
-  } else {
-    triggerScenario("urgent_fever", document.getElementById("btn-scen-urgent"));
-    showToast("👶 Switched to Dr. Andreas Nicolaou — Pediatrics (Limassol • GeSY & Private)!");
-  }
+  const SCEN_FOR_PRESET = {
+    dental: ["dental_emergency", "btn-scen-dental", "🦷"],
+    dermatology: ["soon_rash", "btn-scen-soon", "🔬"],
+    cardiology: ["routine_gesy", "btn-scen-gesy", "❤️"],
+    pediatrics: ["urgent_fever", "btn-scen-urgent", "👶"]
+  };
+  const [scenKey, btnId, icon] = SCEN_FOR_PRESET[presetKey] || SCEN_FOR_PRESET.pediatrics;
+  triggerScenario(scenKey, document.getElementById(btnId));
+  const v = clinicView(state.activeClinic);
+  showToast(L(
+    `${icon} Switched to ${v.clinicTitle} (${v.city} • ${v.coverage})!`,
+    `${icon} Ενεργό ιατρείο: ${v.clinicTitle} (${v.city} • ${v.coverage})`
+  ));
 }
 
 function applyCustomClinicForm(e) {
@@ -932,17 +987,20 @@ function applyCustomClinicForm(e) {
   };
   document.querySelectorAll(".preset-pill").forEach((b) => b.classList.remove("active"));
   applyClinicBranding();
-  showToast(`🩺 AI Medical Receptionist Anastasia is now answering for ${normalizedTitle}!`);
+  showToast(L(
+    `🩺 AI Medical Receptionist Anastasia is now answering for ${normalizedTitle}!`,
+    `🩺 Η Αναστασία, η AI ιατρική γραμματέας, απαντά τώρα για: ${clinicView(state.activeClinic).clinicTitle}`
+  ));
 }
 
 function applyClinicBranding() {
-  const c = state.activeClinic;
+  const c = clinicView(state.activeClinic);
   const step1Label = document.getElementById("step1-clinic-label");
-  if (step1Label) step1Label.textContent = `${c.doctorName}'s Clinic`;
+  if (step1Label) step1Label.textContent = L(`${c.doctorName}'s Clinic`, `ιατρείο: ${c.doctorName}`);
   const busyDoc = document.getElementById("busy-doc-name");
   if (busyDoc) busyDoc.textContent = c.doctorName;
   const busyRoom = document.getElementById("busy-room-label");
-  if (busyRoom) busyRoom.textContent = c.roomLabel || "Exam Room 1";
+  if (busyRoom) busyRoom.textContent = c.roomLabel || L("Exam Room 1", "Εξεταστήριο 1");
   const callTitle = document.getElementById("call-clinic-title");
   if (callTitle) callTitle.textContent = c.clinicTitle;
   const waTitle = document.getElementById("wa-clinic-title");
@@ -952,19 +1010,30 @@ function applyClinicBranding() {
 
   const schedTitle = document.getElementById("schedule-clinic-title");
   if (schedTitle) {
-    schedTitle.textContent = `🗓️ ${c.clinicTitle}: Prioritized Daily Schedule & Case Notes`;
+    schedTitle.textContent = L(
+      `🗓️ ${c.clinicTitle}: Prioritized Daily Schedule & Case Notes`,
+      `🗓️ ${c.clinicTitle}: Ημερήσιο Πρόγραμμα κατά Προτεραιότητα & Σημειώματα Περιστατικών`
+    );
   }
   const schedSub = document.getElementById("schedule-clinic-sub");
   if (schedSub) {
-    schedSub.textContent = `${c.specialty} • ${c.city} (${c.coverage}) — Every appointment includes a structured 3-bullet intake note set by Anastasia`;
+    schedSub.textContent = L(
+      `${c.specialty} • ${c.city} (${c.coverage}) — Every appointment includes a structured 3-bullet intake note set by Anastasia`,
+      `${c.specialty} • ${c.city} (${c.coverage}) — Κάθε ραντεβού συνοδεύεται από δομημένο σημείωμα 3 σημείων που συντάσσει η Αναστασία`
+    );
   }
 }
 
 // ============================================================================
 // Scenario Rendering & Interactive Triage Flow
 // ============================================================================
+function getScenario(scenKey) {
+  const el = isGreekUI() && window.SCENARIOS_EL && window.SCENARIOS_EL[scenKey];
+  return el ? { ...SCENARIOS[scenKey], ...el } : SCENARIOS[scenKey];
+}
+
 function triggerScenario(scenKey, btnEl) {
-  const scen = SCENARIOS[scenKey];
+  const scen = getScenario(scenKey);
   if (!scen) return;
   state.activeScenarioKey = scenKey;
 
@@ -1039,7 +1108,7 @@ function triggerScenario(scenKey, btnEl) {
 
   if (state.voiceAudioEnabled && scen.callTurns.length > 0) {
     const lastAi = [...scen.callTurns].reverse().find((t) => t.role === "ai");
-    if (lastAi) speakAnastasiaText(lastAi.text, "en-GB");
+    if (lastAi) speakAnastasiaText(lastAi.text, isGreekUI() ? "el-GR" : "en-GB");
   }
 }
 
@@ -1066,10 +1135,10 @@ function playClinicRingtone() {
 }
 
 const TOUR_STEP_PANELS = {
-  1: { id: "card-phone-call", label: "Step 1 • Live call" },
-  2: { id: "card-brain-panel", label: "Step 2 • Triage case note" },
-  3: { id: "card-whatsapp-chat", label: "Step 3 • WhatsApp slot offer" },
-  4: { id: "simulator-abcd-card", label: "Step 4 • A/B/C/D doctor reply" }
+  1: { id: "card-phone-call", label: L("Step 1 • Live call", "Βήμα 1 • Ζωντανή κλήση") },
+  2: { id: "card-brain-panel", label: L("Step 2 • Triage case note", "Βήμα 2 • Σημείωμα διαλογής") },
+  3: { id: "card-whatsapp-chat", label: L("Step 3 • WhatsApp slot offer", "Βήμα 3 • Πρόταση ραντεβού στο WhatsApp") },
+  4: { id: "simulator-abcd-card", label: L("Step 4 • A/B/C/D doctor reply", "Βήμα 4 • Απάντηση γιατρού A/B/C/D") }
 };
 
 function focusTourPanel(stepNum) {
@@ -1102,11 +1171,20 @@ function runInteractiveStep(stepNum) {
   if (stepNum === 1) {
     playClinicRingtone();
     triggerScenario("urgent_fever", document.getElementById("btn-scen-urgent"));
-    showToast("📞 Step 1: Patient calls while Dr. Nicolaou is in Exam Room 1 — AI Anastasia answers immediately!");
+    showToast(L(
+      "📞 Step 1: Patient calls while Dr. Nicolaou is in Exam Room 1 — AI Anastasia answers immediately!",
+      "📞 Βήμα 1: Ο ασθενής καλεί ενώ ο γιατρός εξετάζει στο Εξεταστήριο 1 — η Αναστασία απαντά αμέσως!"
+    ));
   } else if (stepNum === 2) {
-    showToast("🩺 Step 2: Anastasia screens red flags & scores Leo (39.6°C fever + acute ear pain) as 🔴 PRIORITY 1!");
+    showToast(L(
+      "🩺 Step 2: Anastasia screens red flags & scores Leo (39.6°C fever + acute ear pain) as 🔴 PRIORITY 1!",
+      "🩺 Βήμα 2: Η Αναστασία ελέγχει τα σημεία κινδύνου και κατατάσσει τον Λέοντα (πυρετός 39,6°C + οξύς πόνος στο αυτί) ως 🔴 ΠΡΟΤΕΡΑΙΟΤΗΤΑ 1!"
+    ));
   } else if (stepNum === 3) {
-    showToast("🔓 Step 3: Anastasia unlocks Dr. Nicolaou's hidden 12:30 PM Emergency Buffer Slot!");
+    showToast(L(
+      "🔓 Step 3: Anastasia unlocks Dr. Nicolaou's hidden 12:30 PM Emergency Buffer Slot!",
+      "🔓 Βήμα 3: Η Αναστασία ξεκλειδώνει το προστατευμένο ραντεβού επειγόντων των 12:30!"
+    ));
   } else if (stepNum === 4) {
     confirmSuggestedSlot();
   }
@@ -1122,7 +1200,7 @@ function startGuidedTour() {
   const btn = document.getElementById("btn-guided-demo");
   if (btn) {
     btn.classList.add("playing");
-    btn.textContent = "⏳ Running 4-Step Triage Demo...";
+    btn.textContent = L("⏳ Running 4-Step Triage Demo...", "⏳ Εκτελείται η επίδειξη 4 βημάτων...");
   }
   let step = 1;
   runInteractiveStep(step);
@@ -1136,7 +1214,7 @@ function startGuidedTour() {
       clearTourFocus();
       if (btn) {
         btn.classList.remove("playing");
-        btn.textContent = "▶ Replay Guided Triage Demo";
+        btn.textContent = L("▶ Replay Guided Triage Demo", "▶ Επανάληψη Καθοδηγούμενης Επίδειξης");
       }
     }
   }, 4200);
@@ -1147,10 +1225,16 @@ function confirmSuggestedSlot() {
   if (!waList) return;
   const passDiv = document.createElement("div");
   passDiv.className = "wa-msg incoming";
-  passDiv.innerHTML = `✅ <strong>Appointment Locked &amp; Case Note Pinned!</strong><br/>${state.activeClinic.doctorName} now sees your structured 3-bullet Pre-Visit Case Note on the clinic schedule. Reply here anytime to attach photos or lab results.`;
+  passDiv.innerHTML = L(
+    `✅ <strong>Appointment Locked &amp; Case Note Pinned!</strong><br/>${docName()} now sees your structured 3-bullet Pre-Visit Case Note on the clinic schedule. Reply here anytime to attach photos or lab results.`,
+    `✅ <strong>Το ραντεβού κλείδωσε και το σημείωμα επισυνάφθηκε!</strong><br/>Ο/Η ${docName()} βλέπει πλέον το δομημένο σημείωμα 3 σημείων στο πρόγραμμα του ιατρείου. Μπορείτε να απαντήσετε εδώ οποτεδήποτε για να στείλετε φωτογραφίες ή εξετάσεις.`
+  );
   waList.appendChild(passDiv);
   waList.scrollTop = waList.scrollHeight;
-  showToast(`✅ Confirmed slot & attached Pre-Visit Case Note to ${state.activeClinic.doctorName}'s live schedule!`);
+  showToast(L(
+    `✅ Confirmed slot & attached Pre-Visit Case Note to ${docName()}'s live schedule!`,
+    `✅ Το ραντεβού επιβεβαιώθηκε και το σημείωμα επισυνάφθηκε στο πρόγραμμα: ${docName()}`
+  ));
 }
 
 function simulatePatientPhotoUpload() {
@@ -1158,23 +1242,30 @@ function simulatePatientPhotoUpload() {
   if (!waList) return;
   const outMsg = document.createElement("div");
   outMsg.className = "wa-msg outgoing";
-  outMsg.innerHTML = `📷 <strong>[Uploaded Photo: patient_symptom_photo.jpg]</strong><br/>Attached photo for the doctor to review before our appointment.`;
+  outMsg.innerHTML = L(
+    `📷 <strong>[Uploaded Photo: patient_symptom_photo.jpg]</strong><br/>Attached photo for the doctor to review before our appointment.`,
+    `📷 <strong>[Φωτογραφία: patient_symptom_photo.jpg]</strong><br/>Επισυνάπτω φωτογραφία για να τη δει ο γιατρός πριν από το ραντεβού μας.`
+  );
   waList.appendChild(outMsg);
 
   const inMsg = document.createElement("div");
   inMsg.className = "wa-msg incoming";
-  inMsg.innerHTML = `🩺 <strong>Photo Added to Doctor's Case Card!</strong><br/>I attached <code>patient_symptom_photo.jpg</code> directly onto your calendar slot so ${state.activeClinic.doctorName} can inspect it before you walk in.`;
+  inMsg.innerHTML = L(
+    `🩺 <strong>Photo Added to Doctor's Case Card!</strong><br/>I attached <code>patient_symptom_photo.jpg</code> directly onto your calendar slot so ${docName()} can inspect it before you walk in.`,
+    `🩺 <strong>Η φωτογραφία προστέθηκε στην καρτέλα του περιστατικού!</strong><br/>Επισύναψα το <code>patient_symptom_photo.jpg</code> στο ραντεβού σας, ώστε ο/η ${docName()} να τη δει πριν από την επίσκεψη.`
+  );
   waList.appendChild(inMsg);
   waList.scrollTop = waList.scrollHeight;
 
-  showToast("📷 Symptom photo attached to the Doctor's Pre-Visit Case Note!");
+  showToast(L("📷 Symptom photo attached to the Doctor's Pre-Visit Case Note!", "📷 Η φωτογραφία συμπτωμάτων επισυνάφθηκε στο σημείωμα του γιατρού!"));
 }
 
 // ============================================================================
 // Custom Patient Prompts & Live Triage Classifier
 // ============================================================================
 function sendQuickPrompt(channel, text) {
-  handlePatientTurn(channel, text);
+  const greekSample = isGreekUI() && window.CHIP_PROMPTS_EL ? window.CHIP_PROMPTS_EL[text] : null;
+  handlePatientTurn(channel, greekSample || text);
 }
 
 function sendCustomTurn(e, channel) {
@@ -1195,68 +1286,35 @@ function handlePatientTurn(channel, text) {
   const isUrgent = /39|40|fever|ear|pain|urgent|blood|breath|broke|broken|fractur|swell|throbb|πυρετ|πον|επείγ|σήμερα|έσπασ|πρήξ/.test(lower);
   const isGesy = /gesy|prescription|refill|renew|pills|γεσυ|συνταγ|φάρμακ/.test(lower);
 
-  let aiReply = "";
-  let prioClass = "prio-2";
-  let prioPill = "🟡 PRIORITY 2 • STANDARD SLOT";
-  let prioHeadline = "Booked Next Available Standard Slot (Tomorrow 10:15 AM)";
-
+  let category = "default";
   if (isDental) {
-    if (isDentalHygiene && !isUrgent) {
-      prioClass = "prio-3";
-      prioPill = "🟢 PRIORITY 3 • 30-MIN HYGIENE / SCALING SLOT";
-      prioHeadline = "Routed to Non-Peak 30m Ultrasonic Scaling Slot";
-      aiReply = isGreek
-        ? "Καταχώρησα το αίτημά σας για οδοντιατρικό καθαρισμό / προληπτικό έλεγχο (Προτεραιότητα 3 — 30 λεπτά) σε απογευματινό ραντεβού ώστε να προστατευθούν τα επείγοντα χειρουργικά κενά!"
-        : "I have triaged your routine dental scaling & polishing into a 30-minute non-peak hygiene slot so the dentist's morning surgical blocks stay open for emergencies!";
-    } else if (isUrgent) {
-      prioClass = "prio-1";
-      prioPill = "🔴 PRIORITY 1 • 30-MIN EMERGENCY CHAIR SLOT";
-      prioHeadline = "Unlocks 12:30 PM Emergency Chair Buffer + Requests Tooth Photo";
-      aiReply = isGreek
-        ? "Λόγω οξέος οδοντικού πόνου / θραύσης δοντιού, το περιστατικό κατατάσσεται ως Οδοντιατρικό Επείγον (Προτεραιότητα 1). Ξεκλείδωσα το 30λεπτο επείγον κενό στις 12:30 μ.μ. — στείλτε μας μια φωτογραφία στο WhatsApp για να ετοιμάσουμε τον δίσκο εργαλείων!"
-        : `Because you have an acute dental emergency (broken tooth/crown or severe toothache), I unlocked ${state.activeClinic.doctorName}'s 12:30 PM 30-Minute Emergency Chair Slot and flagged the nurse to prep the bonding/crown tray. Please snap a quick tooth photo on WhatsApp!`;
-    } else {
-      prioClass = "prio-2";
-      prioPill = "🟡 PRIORITY 2 • 45–60 MIN DENTAL TREATMENT SLOT";
-      prioHeadline = "Booked 45m Dental Treatment Block (Tomorrow 11:00 AM) + Photo/X-Ray Intake";
-      aiReply = isGreek
-        ? "Κατέγραψα το οδοντιατρικό ιστορικό σας (Προτεραιότητα 2 — 45λεπτο ραντεβού θεραπείας/σφραγίσματος/εμφυτεύματος). Στείλτε μας φωτογραφία ή ακτινογραφία στο WhatsApp!"
-        : "I have logged your dental treatment case (Priority 2 — 45-to-60 minute clinical chair slot for filling, root canal, or implant consult) for Tomorrow at 11:00 AM. Feel free to attach a smartphone photo or X-ray on WhatsApp!";
-    }
-  } else if (isUrgent) {
-    prioClass = "prio-1";
-    prioPill = "🔴 PRIORITY 1 • URGENT SAME-DAY";
-    prioHeadline = "Unlocks Hidden 12:30 PM Emergency Buffer Slot";
-    aiReply = isGreek
-      ? "Λόγω των οξέων συμπτωμάτων, το περιστατικό κατατάσσεται ως Προτεραιότητα 1 (Επείγον). Ξεκλείδωσα το επείγον ραντεβού στις 12:30 μ.μ. και ενημέρωσα τον φάκελο του γιατρού!"
-      : `Because you described acute symptoms, I have triaged this as Priority 1 Urgent, unlocked ${state.activeClinic.doctorName}'s 12:30 PM Emergency Buffer Slot, and attached your Case Note!`;
-  } else if (isGesy) {
-    prioClass = "prio-3";
-    prioPill = "🟢 PRIORITY 3 • ASYNC GeSY QUEUE";
-    prioHeadline = "Zero Clinic Slot Wasted • Added to End-of-Day GeSY Batch";
-    aiReply = isGreek
-      ? "Καταχώρησα το αίτημα συνταγογράφησης ΓεΣΥ στη λίστα έγκρισης του γιατρού χωρίς να χρειαστεί επίσκεψη!"
-      : "I have logged your GeSY prescription renewal into the doctor's 5-Minute End-of-Day Approval Queue so you don't need to wait or book an exam slot!";
-  } else {
-    aiReply = isGreek
-      ? "Κατέγραψα το ιστορικό σας (Προτεραιότητα 2). Το επόμενο διαθέσιμο ραντεβού είναι αύριο στις 10:15 π.μ. Στείλτε μας φωτογραφία ή εξετάσεις στο WhatsApp!"
-      : "I have created your Pre-Visit Case Note (Priority 2). Our next available consultation slot is Tomorrow at 10:15 AM—feel free to send any photo or lab PDF here on WhatsApp!";
-  }
+    if (isDentalHygiene && !isUrgent) category = "dentalHygiene";
+    else if (isUrgent) category = "dentalUrgent";
+    else category = "dentalTreatment";
+  } else if (isUrgent) category = "urgent";
+  else if (isGesy) category = "gesy";
+
+  const replyLang = isGreek ? "el" : "en";
+  const aiReply = triageReplyText(category, replyLang, state.activeClinic.doctorName);
+  const meta = triageMeta(category);
+  const prioClass = meta.prioClass;
+  const prioPill = meta.prioPill;
+  const prioHeadline = meta.prioHeadline;
 
   if (channel === "voice") {
     const callList = document.getElementById("call-transcript-list");
     callList.insertAdjacentHTML(
       "beforeend",
-      `<div class="turn-bubble caller"><span class="turn-speaker">Patient Caller</span><div>${text}</div></div>
-       <div class="turn-bubble ai"><span class="turn-speaker">Anastasia (AI Medical Receptionist)</span><div>${aiReply}</div></div>`
+      `<div class="turn-bubble caller"><span class="turn-speaker">${L("Patient Caller", "Ασθενής (καλών)")}</span><div>${escapeHtml(text)}</div></div>
+       <div class="turn-bubble ai"><span class="turn-speaker">${L("Anastasia (AI Medical Receptionist)", "Αναστασία (AI Ιατρική Γραμματέας)")}</span><div>${aiReply}</div></div>`
     );
     callList.scrollTop = callList.scrollHeight;
   } else {
     const waList = document.getElementById("wa-messages-list");
     waList.insertAdjacentHTML(
       "beforeend",
-      `<div class="wa-msg outgoing">${text}</div>
-       <div class="wa-msg incoming"><strong>🩺 Anastasia (AI Triage):</strong> ${aiReply}</div>`
+      `<div class="wa-msg outgoing">${escapeHtml(text)}</div>
+       <div class="wa-msg incoming"><strong>${L("🩺 Anastasia (AI Triage):", "🩺 Αναστασία (AI Διαλογή):")}</strong> ${aiReply}</div>`
     );
     waList.scrollTop = waList.scrollHeight;
   }
@@ -1269,16 +1327,112 @@ function handlePatientTurn(channel, text) {
 
   const caseGrid = document.getElementById("case-note-grid");
   caseGrid.innerHTML = `
-    <div class="case-field"><div class="case-field-label">Patient Channel</div><div class="case-field-val">${channel === "voice" ? "📞 Live Phone Call" : "💬 WhatsApp Chat"}</div></div>
-    <div class="case-field"><div class="case-field-label">Assigned Triage Priority</div><div class="case-field-val">${prioPill}</div></div>
-    <div class="case-field full"><div class="case-field-label">Patient Statement & Chief Complaint</div><div class="case-field-val">"${text}"</div></div>
-    <div class="case-field full"><div class="case-field-label">AI Action Taken</div><div class="case-field-val">${prioHeadline}</div></div>
+    <div class="case-field"><div class="case-field-label">${L("Patient Channel", "Κανάλι Ασθενούς")}</div><div class="case-field-val">${channel === "voice" ? L("📞 Live Phone Call", "📞 Ζωντανή Τηλεφωνική Κλήση") : L("💬 WhatsApp Chat", "💬 Συνομιλία WhatsApp")}</div></div>
+    <div class="case-field"><div class="case-field-label">${L("Assigned Triage Priority", "Προτεραιότητα Διαλογής")}</div><div class="case-field-val">${prioPill}</div></div>
+    <div class="case-field full"><div class="case-field-label">${L("Patient Statement & Chief Complaint", "Δήλωση Ασθενούς & Κύριο Ενόχλημα")}</div><div class="case-field-val">"${escapeHtml(text)}"</div></div>
+    <div class="case-field full"><div class="case-field-label">${L("AI Action Taken", "Ενέργεια της Αναστασίας")}</div><div class="case-field-val">${prioHeadline}</div></div>
   `;
 
   if (state.voiceAudioEnabled) {
     speakAnastasiaText(aiReply, isGreek ? "el-GR" : "en-GB");
   }
 }
+
+function escapeHtml(str) {
+  return String(str).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+}
+
+const TRIAGE_META = {
+  dentalHygiene: {
+    prioClass: "prio-3",
+    prioPill: ["🟢 PRIORITY 3 • 30-MIN HYGIENE / SCALING SLOT", "🟢 ΠΡΟΤΕΡΑΙΟΤΗΤΑ 3 • 30ΛΕΠΤΟ ΡΑΝΤΕΒΟΥ ΚΑΘΑΡΙΣΜΟΥ"],
+    prioHeadline: ["Routed to Non-Peak 30m Ultrasonic Scaling Slot", "Προγραμματίστηκε σε 30λεπτο ραντεβού καθαρισμού εκτός ωρών αιχμής"]
+  },
+  dentalUrgent: {
+    prioClass: "prio-1",
+    prioPill: ["🔴 PRIORITY 1 • 30-MIN EMERGENCY CHAIR SLOT", "🔴 ΠΡΟΤΕΡΑΙΟΤΗΤΑ 1 • 30ΛΕΠΤΟ ΕΠΕΙΓΟΝ ΡΑΝΤΕΒΟΥ"],
+    prioHeadline: ["Unlocks 12:30 PM Emergency Chair Buffer + Requests Tooth Photo", "Ξεκλειδώνει το επείγον ραντεβού των 12:30 + ζητά φωτογραφία του δοντιού"]
+  },
+  dentalTreatment: {
+    prioClass: "prio-2",
+    prioPill: ["🟡 PRIORITY 2 • 45–60 MIN DENTAL TREATMENT SLOT", "🟡 ΠΡΟΤΕΡΑΙΟΤΗΤΑ 2 • ΡΑΝΤΕΒΟΥ ΘΕΡΑΠΕΙΑΣ 45–60 ΛΕΠΤΩΝ"],
+    prioHeadline: ["Booked 45m Dental Treatment Block (Tomorrow 11:00 AM) + Photo/X-Ray Intake", "Κλείστηκε 45λεπτο ραντεβού θεραπείας (αύριο 11:00) + λήψη φωτογραφίας/ακτινογραφίας"]
+  },
+  urgent: {
+    prioClass: "prio-1",
+    prioPill: ["🔴 PRIORITY 1 • URGENT SAME-DAY", "🔴 ΠΡΟΤΕΡΑΙΟΤΗΤΑ 1 • ΕΠΕΙΓΟΝ ΑΥΘΗΜΕΡΟΝ"],
+    prioHeadline: ["Unlocks Hidden 12:30 PM Emergency Buffer Slot", "Ξεκλειδώνει το προστατευμένο ραντεβού επειγόντων των 12:30"]
+  },
+  gesy: {
+    prioClass: "prio-3",
+    prioPill: ["🟢 PRIORITY 3 • ASYNC GeSY QUEUE", "🟢 ΠΡΟΤΕΡΑΙΟΤΗΤΑ 3 • ΛΙΣΤΑ ΓεΣΥ ΤΕΛΟΥΣ ΗΜΕΡΑΣ"],
+    prioHeadline: ["Zero Clinic Slot Wasted • Added to End-of-Day GeSY Batch", "Κανένα ραντεβού δεν χάνεται • Προστέθηκε στη λίστα ΓεΣΥ τέλους ημέρας"]
+  },
+  default: {
+    prioClass: "prio-2",
+    prioPill: ["🟡 PRIORITY 2 • STANDARD SLOT", "🟡 ΠΡΟΤΕΡΑΙΟΤΗΤΑ 2 • ΚΑΝΟΝΙΚΟ ΡΑΝΤΕΒΟΥ"],
+    prioHeadline: ["Booked Next Available Standard Slot (Tomorrow 10:15 AM)", "Κλείστηκε το επόμενο διαθέσιμο ραντεβού (αύριο 10:15)"]
+  }
+};
+
+function triageMeta(category) {
+  const m = TRIAGE_META[category] || TRIAGE_META.default;
+  return { prioClass: m.prioClass, prioPill: L(m.prioPill[0], m.prioPill[1]), prioHeadline: L(m.prioHeadline[0], m.prioHeadline[1]) };
+}
+
+/** Anastasia's reply text. English replies use the English doctor name so clips stay stable across UI languages. */
+function triageReplyText(category, lang, doctorNameEn) {
+  if (lang === "el") {
+    return {
+      dentalHygiene: "Καταχώρισα το αίτημά σας για οδοντιατρικό καθαρισμό και προληπτικό έλεγχο σε 30λεπτο απογευματινό ραντεβού, ώστε τα πρωινά ραντεβού να μένουν διαθέσιμα για επείγοντα περιστατικά.",
+      dentalUrgent: "Λόγω του οξέος πόνου και του σπασμένου δοντιού, το περιστατικό σας καταχωρίστηκε ως επείγον. Κράτησα το 30λεπτο επείγον ραντεβού στις 12:30. Παρακαλώ στείλτε μας μια φωτογραφία του δοντιού στο WhatsApp, ώστε να προετοιμαστούν τα απαραίτητα.",
+      dentalTreatment: "Κατέγραψα το αίτημά σας για οδοντιατρική θεραπεία και σας κράτησα 45λεπτο ραντεβού αύριο στις 11:00. Αν έχετε φωτογραφία ή ακτινογραφία, μπορείτε να τη στείλετε στο WhatsApp.",
+      urgent: "Λόγω των οξέων συμπτωμάτων, το περιστατικό καταχωρίστηκε ως επείγον. Κράτησα το ραντεβού επειγόντων στις 12:30 και ενημέρωσα τον φάκελο για τον γιατρό.",
+      gesy: "Καταχώρισα το αίτημα επανάληψης συνταγής ΓεΣΥ στη λίστα έγκρισης του γιατρού. Δεν χρειάζεται να έρθετε στο ιατρείο· θα σας ενημερώσουμε στο WhatsApp μόλις εγκριθεί.",
+      default: "Κατέγραψα το σημείωμά σας για τον γιατρό. Το επόμενο διαθέσιμο ραντεβού είναι αύριο στις 10:15. Μπορείτε να στείλετε φωτογραφίες ή εξετάσεις εδώ στο WhatsApp."
+    }[category];
+  }
+  return {
+    dentalHygiene: "I have triaged your routine dental scaling & polishing into a 30-minute non-peak hygiene slot so the dentist's morning surgical blocks stay open for emergencies!",
+    dentalUrgent: `Because you have an acute dental emergency (broken tooth/crown or severe toothache), I unlocked ${doctorNameEn}'s 12:30 PM 30-Minute Emergency Chair Slot and flagged the nurse to prep the bonding/crown tray. Please snap a quick tooth photo on WhatsApp!`,
+    dentalTreatment: "I have logged your dental treatment case (Priority 2 — 45-to-60 minute clinical chair slot for filling, root canal, or implant consult) for Tomorrow at 11:00 AM. Feel free to attach a smartphone photo or X-ray on WhatsApp!",
+    urgent: `Because you described acute symptoms, I have triaged this as Priority 1 Urgent, unlocked ${doctorNameEn}'s 12:30 PM Emergency Buffer Slot, and attached your Case Note!`,
+    gesy: "I have logged your GeSY prescription renewal into the doctor's 5-Minute End-of-Day Approval Queue so you don't need to wait or book an exam slot!",
+    default: "I have created your Pre-Visit Case Note (Priority 2). Our next available consultation slot is Tomorrow at 10:15 AM—feel free to send any photo or lab PDF here on WhatsApp!"
+  }[category];
+}
+
+function voiceIntroText(lang, clinic) {
+  const v = lang === "el" ? (window.CLINIC_EL && window.CLINIC_EL[clinic.id]) || clinic : clinic;
+  return lang === "el"
+    ? `Γεια σας, είμαι η Αναστασία, η ψηφιακή ιατρική γραμματέας του ιατρείου: ${v.doctorName}. Απαντώ στις κλήσεις των ασθενών, κρατώ σημειώσεις για τον γιατρό και διαχειρίζομαι τα επείγοντα ραντεβού.`
+    : `Hello, I am Anastasia, the AI Medical Receptionist for ${clinic.doctorName}. I triage patient calls, take clinical case notes, and manage urgent buffer slots.`;
+}
+
+/** Every text Anastasia can speak with the built-in presets (used to pre-generate neural voice clips). */
+window.__collectSpeakables = function () {
+  const out = [];
+  const add = (text, lang) => {
+    const plain = String(text || "").replace(/<[^>]+>/g, "");
+    out.push({ text: plain, lang, key: voiceClipKey(plain, lang) });
+  };
+  Object.values(CLINIC_PRESETS).forEach((c) => {
+    add(voiceIntroText("en", c), "en-GB");
+    add(voiceIntroText("el", c), "el-GR");
+    ["dentalUrgent", "urgent"].forEach((cat) => add(triageReplyText(cat, "en", c.doctorName), "en-GB"));
+  });
+  ["dentalHygiene", "dentalTreatment", "gesy", "default"].forEach((cat) => add(triageReplyText(cat, "en", ""), "en-GB"));
+  Object.keys(TRIAGE_META).forEach((cat) => add(triageReplyText(cat, "el", ""), "el-GR"));
+  Object.keys(SCENARIOS).forEach((k) => {
+    const lastEn = [...SCENARIOS[k].callTurns].reverse().find((t) => t.role === "ai");
+    if (lastEn) add(lastEn.text, "en-GB");
+    const elScen = window.SCENARIOS_EL && window.SCENARIOS_EL[k];
+    const lastEl = elScen && [...elScen.callTurns].reverse().find((t) => t.role === "ai");
+    if (lastEl) add(lastEl.text, "el-GR");
+  });
+  const seen = new Set();
+  return out.filter((o) => (seen.has(o.key) ? false : seen.add(o.key)));
+};
 
 // ============================================================================
 // Web Speech API (Voice Output & Live Microphone Input)
@@ -1289,38 +1443,28 @@ function toggleVoiceAudio() {
   if (btn) {
     btn.classList.toggle("active", state.voiceAudioEnabled);
     btn.textContent = state.voiceAudioEnabled
-      ? "🔊 Voice Audio: ON (Anastasia Speaking)"
-      : "🔊 Voice Audio: Off (Tap to Hear Anastasia)";
+      ? L("🔊 Voice Audio: ON (Anastasia Speaking)", "🔊 Φωνή: ΕΝΕΡΓΗ (μιλά η Αναστασία)")
+      : L("🔊 Voice Audio: Off (Tap to Hear Anastasia)", "🔊 Φωνή: Ανενεργή (πατήστε για να ακούσετε την Αναστασία)");
   }
   if (state.voiceAudioEnabled) {
-    speakAnastasiaText(
-      `Hello, I am Anastasia, the AI Medical Receptionist for ${state.activeClinic.doctorName}. I triage patient calls, take clinical case notes, and manage urgent buffer slots.`,
-      "en-GB"
-    );
-  } else if ("speechSynthesis" in window) {
-    window.speechSynthesis.cancel();
+    const lang = isGreekUI() ? "el" : "en";
+    speakAnastasiaText(voiceIntroText(lang, state.activeClinic), lang === "el" ? "el-GR" : "en-GB");
+  } else {
+    stopAnastasiaVoice();
   }
 }
 
-function speakAnastasiaText(text, lang = "en-GB") {
-  if (!("speechSynthesis" in window)) return;
-  try {
-    window.speechSynthesis.cancel();
-    const u = new SpeechSynthesisUtterance(text);
-    u.lang = lang;
-    u.rate = 1.02;
-    window.speechSynthesis.speak(u);
-  } catch (_) {}
-}
-
-function setMicLanguage(lang) {
+function setMicLanguage(lang, silent) {
   state.micLang = lang === "el-GR" ? "el-GR" : "en-US";
   document.querySelectorAll(".mic-lang-btn").forEach((b) => {
     const on = b.dataset.lang === state.micLang;
     b.classList.toggle("active", on);
     b.setAttribute("aria-pressed", on ? "true" : "false");
   });
-  showToast(state.micLang === "el-GR" ? "🎙️ Mic language set to Greek (el-GR)" : "🎙️ Mic language set to English (en-US)");
+  if (silent) return;
+  showToast(state.micLang === "el-GR"
+    ? L("🎙️ Mic language set to Greek (el-GR)", "🎙️ Γλώσσα μικροφώνου: Ελληνικά (el-GR)")
+    : L("🎙️ Mic language set to English (en-US)", "🎙️ Γλώσσα μικροφώνου: Αγγλικά (en-US)"));
 }
 
 function showVoiceInputUnavailable(message) {
@@ -1358,7 +1502,9 @@ function startLiveMicSpeech() {
   rec.interimResults = false;
   rec.maxAlternatives = 1;
   setListening(true);
-  showToast(rec.lang === "el-GR" ? "🎙️ Listening (Greek)… speak as the patient." : "🎙️ Listening (English)… speak as the patient.");
+  showToast(rec.lang === "el-GR"
+    ? L("🎙️ Listening (Greek)… speak as the patient.", "🎙️ Σας ακούω (Ελληνικά)… μιλήστε ως ασθενής.")
+    : L("🎙️ Listening (English)… speak as the patient.", "🎙️ Σας ακούω (Αγγλικά)… μιλήστε ως ασθενής."));
   rec.onresult = (event) => {
     const transcript = (event.results?.[0]?.[0]?.transcript || "").trim();
     if (!transcript) {
@@ -1396,9 +1542,9 @@ function updateClinicRoi() {
   const visitFee = Number(document.getElementById("roi-fee-slider")?.value || 60);
   const gesyPerDay = Number(document.getElementById("roi-gesy-slider")?.value || 18);
 
-  document.getElementById("roi-calls-val").textContent = `${callsPerDay} calls/day`;
-  document.getElementById("roi-fee-val").textContent = `€${visitFee} / visit`;
-  document.getElementById("roi-gesy-val").textContent = `${gesyPerDay} admin calls/day`;
+  document.getElementById("roi-calls-val").textContent = L(`${callsPerDay} calls/day`, `${callsPerDay} κλήσεις/ημέρα`);
+  document.getElementById("roi-fee-val").textContent = L(`€${visitFee} / visit`, `€${visitFee} / επίσκεψη`);
+  document.getElementById("roi-gesy-val").textContent = L(`${gesyPerDay} admin calls/day`, `${gesyPerDay} διοικητικές κλήσεις/ημέρα`);
 
   // 22 working days/month
   const hoursSavedMo = Math.round((callsPerDay * 1.8 * 22) / 60);
@@ -1406,9 +1552,9 @@ function updateClinicRoi() {
   const recoveredRevYr = recoveredVisitsPerWeek * visitFee * 48;
   const slotsSavedMo = gesyPerDay * 22;
 
-  document.getElementById("roi-hours-saved").textContent = `${hoursSavedMo} hrs / mo`;
-  document.getElementById("roi-missed-rev").textContent = `€${recoveredRevYr.toLocaleString()} / yr`;
-  document.getElementById("roi-slots-saved").textContent = `${slotsSavedMo} calls / mo`;
+  document.getElementById("roi-hours-saved").textContent = L(`${hoursSavedMo} hrs / mo`, `${hoursSavedMo} ώρες / μήνα`);
+  document.getElementById("roi-missed-rev").textContent = L(`€${recoveredRevYr.toLocaleString("en-GB")} / yr`, `€${recoveredRevYr.toLocaleString("el-GR")} / έτος`);
+  document.getElementById("roi-slots-saved").textContent = L(`${slotsSavedMo} calls / mo`, `${slotsSavedMo} κλήσεις / μήνα`);
 }
 
 // ============================================================================
@@ -1463,7 +1609,8 @@ function filterScheduleLayer(layerKey, btnEl) {
     busy_hold: "Multi-Calendar Busy-Read Holds (Personal + Hospital/Surgery Rounds)",
     clinic_main: "Main Clinic Desk Calendar Layer"
   };
-  showToast(`📅 Showing: ${layerNames[state.activeScheduleLayer] || layerNames.all}`);
+  const shown = layerNames[state.activeScheduleLayer] || layerNames.all;
+  showToast(L(`📅 Showing: ${shown}`, `📅 Εμφάνιση: ${tr(shown)}`));
 }
 
 function updateScheduleKpis(annotated) {
@@ -1475,13 +1622,16 @@ function updateScheduleKpis(annotated) {
     const el = document.getElementById(id);
     if (el) el.textContent = txt;
   };
-  const shortTime = (t) => ((/(\d{1,2}:\d{2}\s*(AM|PM))/i.exec(t) || [t])[0]).replace(/^0/, "");
-  setTxt("kpi-total-bookings", `${patients} Patients`);
-  setTxt("kpi-total-sub", `All ${patients} pre-screened with AI Case Notes`);
-  setTxt("kpi-urgent-slots", `${usedBuffers.length} / ${buffers.length} Used`);
+  const shortTime = (t) => {
+    const raw = (/(\d{1,2}:\d{2}\s*(AM|PM))/i.exec(t) || [t])[0];
+    return isGreekUI() ? fmtTime(raw) : raw.replace(/^0/, "");
+  };
+  setTxt("kpi-total-bookings", L(`${patients} Patients`, `${patients} Ασθενείς`));
+  setTxt("kpi-total-sub", L(`All ${patients} pre-screened with AI Case Notes`, `Και οι ${patients} με προκαταρκτικό σημείωμα AI`));
+  setTxt("kpi-urgent-slots", L(`${usedBuffers.length} / ${buffers.length} Used`, `${usedBuffers.length} / ${buffers.length} σε χρήση`));
   const subParts = [];
-  if (usedBuffers.length) subParts.push(`${usedBuffers.map((s) => shortTime(s.time)).join(" & ")} unlocked`);
-  if (heldBuffers.length) subParts.push(`${heldBuffers.map((s) => shortTime(s.time)).join(" & ")} held for acute cases`);
+  if (usedBuffers.length) subParts.push(L(`${usedBuffers.map((s) => shortTime(s.time)).join(" & ")} unlocked`, `${usedBuffers.map((s) => shortTime(s.time)).join(" & ")} ξεκλειδώθηκε`));
+  if (heldBuffers.length) subParts.push(L(`${heldBuffers.map((s) => shortTime(s.time)).join(" & ")} held for acute cases`, `${heldBuffers.map((s) => shortTime(s.time)).join(" & ")} κρατείται για οξέα περιστατικά`));
   setTxt("kpi-urgent-sub", subParts.join(" • "));
   updateGesyKpi();
 }
@@ -1489,9 +1639,11 @@ function updateScheduleKpis(annotated) {
 function updateGesyKpi() {
   const pending = state.gesyQueue.filter((g) => !g.approved).length;
   const kpi = document.getElementById("kpi-gesy-count");
-  if (kpi) kpi.textContent = pending === 0 ? "0 Pending (All Done!)" : `${pending} Pending`;
+  if (kpi) kpi.textContent = pending === 0 ? L("0 Pending (All Done!)", "0 σε αναμονή (ολοκληρώθηκαν!)") : L(`${pending} Pending`, `${pending} σε αναμονή`);
   const sub = document.getElementById("kpi-gesy-sub");
-  if (sub) sub.textContent = pending === 0 ? "Batch approved from the lock screen" : `Est. 2 minutes to batch-approve all ${pending}`;
+  if (sub) sub.textContent = pending === 0
+    ? L("Batch approved from the lock screen", "Εγκρίθηκαν μαζικά από την οθόνη κλειδώματος")
+    : L(`Est. 2 minutes to batch-approve all ${pending}`, `Περίπου 2 λεπτά για μαζική έγκριση και των ${pending}`);
 }
 
 function renderDoctorSchedule() {
@@ -1530,7 +1682,8 @@ function renderDoctorSchedule() {
       : annotated.filter((s) => s._meta.layer === activeLayer);
 
   container.innerHTML = visibleSlots
-    .map((s) => {
+    .map((raw) => {
+      const s = { ...slotView(raw), _meta: { ...raw._meta, badgeText: tr(raw._meta.badgeText) } };
       const cls =
         s.priority === 1
           ? "prio-1"
@@ -1553,8 +1706,8 @@ function renderDoctorSchedule() {
           </div>
         </div>
         <div class="slot-notes-box">
-          <div><strong>🩺 ${s.priority === -1 ? "Calendar Sync Source:" : "Chief Complaint:"}</strong> ${s.complaint}</div>
-          <div style="margin-top:3px; color:#475569;"><strong>📋 ${s.priority === -1 ? "Privacy & Availability Rule:" : "AI Pre-Visit Note:"}</strong> ${s.notes}</div>
+          <div><strong>🩺 ${s.priority === -1 ? L("Calendar Sync Source:", "Πηγή συγχρονισμού ημερολογίου:") : L("Chief Complaint:", "Κύριο ενόχλημα:")}</strong> ${s.complaint}</div>
+          <div style="margin-top:3px; color:#475569;"><strong>📋 ${s.priority === -1 ? L("Privacy & Availability Rule:", "Κανόνας απορρήτου & διαθεσιμότητας:") : L("AI Pre-Visit Note:", "Σημείωμα AI πριν από την επίσκεψη:")}</strong> ${s.notes}</div>
         </div>
       </div>`;
     })
@@ -1574,58 +1727,91 @@ function updateSimulatorAbcdCard(scenKey, scen) {
     routine_gesy: `💊 <strong>[Anastasia Digest #MD-411]</strong> Costas P. (GeSY #449102): Chronic refill Amlodipine 5mg + Atorvastatin 20mg (Home BP 122/78). Queued in EOD Batch. Reply <strong>A / B / C / D</strong>:`
   };
 
+  const digests = isGreekUI() && window.DIGEST_EL ? window.DIGEST_EL : DIGEST_BY_SCEN;
   if (digestEl) {
-    digestEl.innerHTML = DIGEST_BY_SCEN[scenKey] || DIGEST_BY_SCEN.urgent_fever;
+    digestEl.innerHTML = digests[scenKey] || digests.urgent_fever;
   }
   if (badgeEl) {
-    badgeEl.textContent = "📲 Lock-Screen Ready";
+    badgeEl.textContent = L("📲 Lock-Screen Ready", "📲 Έτοιμο στην οθόνη κλειδώματος");
     badgeEl.style.background = "";
     badgeEl.style.color = "";
   }
   if (statusEl) {
-    statusEl.innerHTML = `💡 Tap <strong>[A]</strong>, <strong>[B]</strong>, <strong>[C]</strong>, or <strong>[D]</strong> above to simulate replying from ${state.activeClinic.doctorName}'s phone lock screen—Anastasia executes it on WhatsApp immediately.`;
+    statusEl.innerHTML = L(
+      `💡 Tap <strong>[A]</strong>, <strong>[B]</strong>, <strong>[C]</strong>, or <strong>[D]</strong> above to simulate replying from ${docName()}'s phone lock screen—Anastasia executes it on WhatsApp immediately.`,
+      `💡 Πατήστε <strong>[A]</strong>, <strong>[B]</strong>, <strong>[C]</strong> ή <strong>[D]</strong> παραπάνω για να δείτε την απάντηση του γιατρού από την οθόνη κλειδώματος — η Αναστασία την εκτελεί αμέσως στο WhatsApp.`
+    );
   }
   if (stripEl) {
     const layerText =
       scenKey === "routine_gesy"
-        ? `📅 Routed to: <strong>5-Min End-of-Day GeSY Batch Queue</strong> (0 Calendar Slots Consumed)`
-        : `📅 Written to: <strong>Anastasia AI Sub-Calendar</strong> (Color-Coded Cyan-Teal Layer)`;
+        ? L(`📅 Routed to: <strong>5-Min End-of-Day GeSY Batch Queue</strong> (0 Calendar Slots Consumed)`,
+            `📅 Δρομολογήθηκε: <strong>Λίστα ΓεΣΥ τέλους ημέρας (5 λεπτά)</strong> (0 ραντεβού δεσμεύτηκαν)`)
+        : L(`📅 Written to: <strong>Anastasia AI Sub-Calendar</strong> (Color-Coded Cyan-Teal Layer)`,
+            `📅 Καταχωρίστηκε: <strong>Υπο-ημερολόγιο Αναστασίας AI</strong> (χρωματικό επίπεδο κυανό-τιρκουάζ)`);
     stripEl.innerHTML = `
       <span class="subcal-tag ai-layer">${layerText}</span>
-      <span class="subcal-busy-pill">🔒 Checked 3 Calendars (Clinic + Personal + Hospital Rounds)</span>
+      <span class="subcal-busy-pill">${L("🔒 Checked 3 Calendars (Clinic + Personal + Hospital Rounds)", "🔒 Έλεγχος 3 ημερολογίων (Ιατρείο + Προσωπικό + Εφημερίες νοσοκομείου)")}</span>
     `;
   }
   document.querySelectorAll("#simulator-abcd-card .abcd-btn").forEach((b) => b.classList.remove("selected"));
 }
 
 function triggerDoctorQuickReply(optionKey, context, btnEl, itemId) {
-  const docName = state.activeClinic.doctorName;
-  const ACTIONS = {
+  const doc = docName();
+  const ACTIONS_EN = {
     A: {
       short: "Approved & Sent",
       simStatus: `✅ <strong>Doctor Replied "A" from Lock Screen:</strong> Anastasia confirmed the recommended slot/prescription on WhatsApp & locked the event on the <strong>Anastasia AI Sub-Calendar</strong>.`,
-      waHtml: `✅ <strong>[Doctor Quick-Reply "A" Executed by Anastasia]</strong><br/>${docName} approved your case directly via 1-tap lock-screen reply. Your appointment/prescription is confirmed and synced to the clinic calendar!`,
+      waHtml: `✅ <strong>[Doctor Quick-Reply "A" Executed by Anastasia]</strong><br/>${doc} approved your case directly via 1-tap lock-screen reply. Your appointment/prescription is confirmed and synced to the clinic calendar!`,
       gesyNote: "✓ Replied [A]: Approved & Sent Pharmacy Code on WhatsApp"
     },
     B: {
       short: "Next Morning Slot Offered",
       simStatus: `🗓️ <strong>Doctor Replied "B" from Lock Screen:</strong> Anastasia moved the booking to <strong>Tomorrow 09:15 AM Morning Slot</strong> on the AI Sub-Calendar & messaged the patient on WhatsApp.`,
-      waHtml: `🗓️ <strong>[Doctor Quick-Reply "B" Executed by Anastasia]</strong><br/>${docName} reviewed your case note and offered our priority morning slot tomorrow at <strong>09:15 AM</strong>. Tap below to confirm!`,
+      waHtml: `🗓️ <strong>[Doctor Quick-Reply "B" Executed by Anastasia]</strong><br/>${doc} reviewed your case note and offered our priority morning slot tomorrow at <strong>09:15 AM</strong>. Tap below to confirm!`,
       gesyNote: "🗓️ Replied [B]: Booked Next Morning 09:15 AM Brief Check Slot"
     },
     C: {
       short: "Requested Lab / Photo on WhatsApp",
       simStatus: `📷 <strong>Doctor Replied "C" from Lock Screen:</strong> Anastasia automatically messaged the patient on WhatsApp requesting a recent lab PDF / close-up symptom photo before final sign-off.`,
-      waHtml: `📷 <strong>[Doctor Quick-Reply "C" Executed by Anastasia]</strong><br/>${docName} reviewed your request and asked if you can reply here on WhatsApp with a quick photo / latest lab result so we can attach it to your chart right away.`,
+      waHtml: `📷 <strong>[Doctor Quick-Reply "C" Executed by Anastasia]</strong><br/>${doc} reviewed your request and asked if you can reply here on WhatsApp with a quick photo / latest lab result so we can attach it to your chart right away.`,
       gesyNote: "📷 Replied [C]: Anastasia Requested Latest BP/Lab Photo on WhatsApp"
     },
     D: {
       short: "Escalated — Doctor Calls Back",
-      simStatus: `📞 <strong>Doctor Replied "D" from Lock Screen:</strong> Anastasia notified the patient that ${docName} will call them personally right after the current exam.`,
-      waHtml: `📞 <strong>[Doctor Quick-Reply "D" Executed by Anastasia]</strong><br/>${docName} saw your triage summary and asked me to let you know they will call you directly on your mobile in ~10 minutes as soon as the current examination finishes.`,
+      simStatus: `📞 <strong>Doctor Replied "D" from Lock Screen:</strong> Anastasia notified the patient that ${doc} will call them personally right after the current exam.`,
+      waHtml: `📞 <strong>[Doctor Quick-Reply "D" Executed by Anastasia]</strong><br/>${doc} saw your triage summary and asked me to let you know they will call you directly on your mobile in ~10 minutes as soon as the current examination finishes.`,
       gesyNote: "📞 Replied [D]: Flagged for Direct 2-Min Doctor Callback"
     }
   };
+  const ACTIONS_EL = {
+    A: {
+      short: "Εγκρίθηκε & στάλθηκε",
+      simStatus: `✅ <strong>Ο γιατρός απάντησε «A» από την οθόνη κλειδώματος:</strong> η Αναστασία επιβεβαίωσε το προτεινόμενο ραντεβού/τη συνταγή στο WhatsApp και κλείδωσε την καταχώριση στο <strong>Υπο-ημερολόγιο Αναστασίας AI</strong>.`,
+      waHtml: `✅ <strong>[Γρήγορη απάντηση γιατρού «A» — εκτελέστηκε από την Αναστασία]</strong><br/>Ο/Η ${doc} ενέκρινε το αίτημά σας με ένα άγγιγμα. Το ραντεβού/η συνταγή σας επιβεβαιώθηκε και συγχρονίστηκε με το ημερολόγιο του ιατρείου.`,
+      gesyNote: "✓ Απάντηση [A]: Εγκρίθηκε — ο κωδικός φαρμακείου στάλθηκε στο WhatsApp"
+    },
+    B: {
+      short: "Προτάθηκε πρωινό ραντεβού",
+      simStatus: `🗓️ <strong>Ο γιατρός απάντησε «B» από την οθόνη κλειδώματος:</strong> η Αναστασία μετέφερε το ραντεβού <strong>αύριο στις 09:15</strong> στο υπο-ημερολόγιο AI και ενημέρωσε τον ασθενή στο WhatsApp.`,
+      waHtml: `🗓️ <strong>[Γρήγορη απάντηση γιατρού «B» — εκτελέστηκε από την Αναστασία]</strong><br/>Ο/Η ${doc} είδε το σημείωμά σας και σας προτείνει πρωινό ραντεβού προτεραιότητας αύριο στις <strong>09:15</strong>. Πατήστε παρακάτω για επιβεβαίωση.`,
+      gesyNote: "🗓️ Απάντηση [B]: Κλείστηκε σύντομο ραντεβού αύριο στις 09:15"
+    },
+    C: {
+      short: "Ζητήθηκαν εξετάσεις / φωτογραφία",
+      simStatus: `📷 <strong>Ο γιατρός απάντησε «C» από την οθόνη κλειδώματος:</strong> η Αναστασία ζήτησε αυτόματα από τον ασθενή στο WhatsApp πρόσφατες εξετάσεις (PDF) ή κοντινή φωτογραφία πριν από την τελική έγκριση.`,
+      waHtml: `📷 <strong>[Γρήγορη απάντηση γιατρού «C» — εκτελέστηκε από την Αναστασία]</strong><br/>Ο/Η ${doc} είδε το αίτημά σας και παρακαλεί να στείλετε εδώ στο WhatsApp μια φωτογραφία ή τις πιο πρόσφατες εξετάσεις σας, ώστε να επισυναφθούν στον φάκελό σας.`,
+      gesyNote: "📷 Απάντηση [C]: Η Αναστασία ζήτησε πρόσφατες μετρήσεις πίεσης/εξετάσεις στο WhatsApp"
+    },
+    D: {
+      short: "Κλιμάκωση — ο γιατρός θα καλέσει",
+      simStatus: `📞 <strong>Ο γιατρός απάντησε «D» από την οθόνη κλειδώματος:</strong> η Αναστασία ενημέρωσε τον ασθενή ότι ο γιατρός θα τον καλέσει προσωπικά μόλις ολοκληρωθεί η τρέχουσα εξέταση.`,
+      waHtml: `📞 <strong>[Γρήγορη απάντηση γιατρού «D» — εκτελέστηκε από την Αναστασία]</strong><br/>Ο/Η ${doc} είδε τη σύνοψη του περιστατικού σας και θα σας καλέσει στο κινητό σε περίπου 10 λεπτά, μόλις ολοκληρωθεί η τρέχουσα εξέταση.`,
+      gesyNote: "📞 Απάντηση [D]: Σημειώθηκε για άμεση τηλεφωνική επικοινωνία με τον γιατρό"
+    }
+  };
+  const ACTIONS = isGreekUI() ? ACTIONS_EL : ACTIONS_EN;
 
   const act = ACTIONS[optionKey] || ACTIONS.A;
 
@@ -1634,7 +1820,7 @@ function triggerDoctorQuickReply(optionKey, context, btnEl, itemId) {
     if (btnEl) btnEl.classList.add("selected");
     const badgeEl = document.getElementById("abcd-sim-badge");
     if (badgeEl) {
-      badgeEl.textContent = `✓ Replied "${optionKey}" (${act.short})`;
+      badgeEl.textContent = L(`✓ Replied "${optionKey}" (${act.short})`, `✓ Απάντηση «${optionKey}» (${act.short})`);
       badgeEl.style.background = "#0d9488";
       badgeEl.style.color = "#ffffff";
     }
@@ -1649,7 +1835,10 @@ function triggerDoctorQuickReply(optionKey, context, btnEl, itemId) {
       waList.appendChild(msgDiv);
       waList.scrollTop = waList.scrollHeight;
     }
-    showToast(`📲 Doctor replied "${optionKey}" — Anastasia executed "${act.short}" & updated the patient on WhatsApp!`);
+    showToast(L(
+      `📲 Doctor replied "${optionKey}" — Anastasia executed "${act.short}" & updated the patient on WhatsApp!`,
+      `📲 Ο γιατρός απάντησε «${optionKey}» — η Αναστασία εκτέλεσε «${act.short}» και ενημέρωσε τον ασθενή στο WhatsApp!`
+    ));
     return;
   }
 
@@ -1661,7 +1850,7 @@ function triggerDoctorQuickReply(optionKey, context, btnEl, itemId) {
     item.quickReplyStatus = act.gesyNote;
     renderGesyQueue();
     updateGesyKpi();
-    showToast(`📲 Replied [${optionKey}] for ${item.patient} — ${act.gesyNote}!`);
+    showToast(L(`📲 Replied [${optionKey}] for ${item.patient} — ${act.gesyNote}!`, `📲 Απάντηση [${optionKey}] για ${tr(item.patient)} — ${act.gesyNote}`));
   }
 }
 
@@ -1675,17 +1864,17 @@ function renderGesyQueue() {
         <div style="flex:1; min-width:220px;">
           <div style="display:flex; align-items:center; justify-content:space-between; gap:8px; flex-wrap:wrap;">
             <div style="font-size:0.83rem; font-weight:800; color:#0f172a;">
-              ${g.patient} <span style="color:#0d9488; font-size:0.73rem;">(${g.gesyId})</span>
+              ${tr(g.patient)} <span style="color:#0d9488; font-size:0.73rem;">(${isGreekUI() ? g.gesyId.replace("GeSY", "ΓεΣΥ") : g.gesyId})</span>
             </div>
-            <span class="code-badge" style="font-size:0.68rem;">${g.timeSaved || "Saved 15m slot"}</span>
+            <span class="code-badge" style="font-size:0.68rem;">${tr(g.timeSaved || "Saved 15m slot")}</span>
           </div>
-          <div style="font-size:0.75rem; color:#475569; margin-top:3px;">${g.request}</div>
+          <div style="font-size:0.75rem; color:#475569; margin-top:3px;">${tr(g.request)}</div>
           <div class="gesy-abcd-row">
-            <span class="gesy-abcd-label">📲 Quick Reply:</span>
-            <button type="button" class="gesy-abcd-chip ${g.quickReplyChoice === "A" ? "active" : ""}" onclick="triggerDoctorQuickReply('A', 'gesy', this, '${g.id}')" title="Approve & Send on WhatsApp">[A] Approve &amp; Send</button>
-            <button type="button" class="gesy-abcd-chip ${g.quickReplyChoice === "B" ? "active" : ""}" onclick="triggerDoctorQuickReply('B', 'gesy', this, '${g.id}')" title="Book Next Morning Slot">[B] Morning Slot</button>
-            <button type="button" class="gesy-abcd-chip ${g.quickReplyChoice === "C" ? "active" : ""}" onclick="triggerDoctorQuickReply('C', 'gesy', this, '${g.id}')" title="Request Lab / Photo on WhatsApp">[C] Ask Lab/Photo</button>
-            <button type="button" class="gesy-abcd-chip ${g.quickReplyChoice === "D" ? "active" : ""}" onclick="triggerDoctorQuickReply('D', 'gesy', this, '${g.id}')" title="Escalate — Doctor Will Call Back">[D] Call Back</button>
+            <span class="gesy-abcd-label">${L("📲 Quick Reply:", "📲 Γρήγορη απάντηση:")}</span>
+            <button type="button" class="gesy-abcd-chip ${g.quickReplyChoice === "A" ? "active" : ""}" onclick="triggerDoctorQuickReply('A', 'gesy', this, '${g.id}')" title="${L("Approve & Send on WhatsApp", "Έγκριση & αποστολή στο WhatsApp")}">${L("[A] Approve &amp; Send", "[A] Έγκριση")}</button>
+            <button type="button" class="gesy-abcd-chip ${g.quickReplyChoice === "B" ? "active" : ""}" onclick="triggerDoctorQuickReply('B', 'gesy', this, '${g.id}')" title="${L("Book Next Morning Slot", "Ραντεβού επόμενο πρωί")}">${L("[B] Morning Slot", "[B] Πρωινό ραντεβού")}</button>
+            <button type="button" class="gesy-abcd-chip ${g.quickReplyChoice === "C" ? "active" : ""}" onclick="triggerDoctorQuickReply('C', 'gesy', this, '${g.id}')" title="${L("Request Lab / Photo on WhatsApp", "Αίτημα εξετάσεων / φωτογραφίας στο WhatsApp")}">${L("[C] Ask Lab/Photo", "[C] Εξετάσεις/Φωτογραφία")}</button>
+            <button type="button" class="gesy-abcd-chip ${g.quickReplyChoice === "D" ? "active" : ""}" onclick="triggerDoctorQuickReply('D', 'gesy', this, '${g.id}')" title="${L("Escalate — Doctor Will Call Back", "Κλιμάκωση — ο γιατρός θα καλέσει")}">${L("[D] Call Back", "[D] Επανάκληση")}</button>
           </div>
           ${
             g.quickReplyStatus
@@ -1698,7 +1887,7 @@ function renderGesyQueue() {
           class="gesy-approve-btn ${g.approved ? "approved" : ""}"
           onclick="approveGesyItem('${g.id}')"
         >
-          ${g.approved ? "✓ Action Sent on WhatsApp" : "✓ 1-Click Approve [A]"}
+          ${g.approved ? L("✓ Action Sent on WhatsApp", "✓ Στάλθηκε στο WhatsApp") : L("✓ 1-Click Approve [A]", "✓ Έγκριση με 1 κλικ [A]")}
         </button>
       </div>`
     )
@@ -1713,11 +1902,11 @@ function approveAllGesy() {
   state.gesyQueue.forEach((g) => {
     g.approved = true;
     g.quickReplyChoice = g.quickReplyChoice || "A";
-    g.quickReplyStatus = g.quickReplyStatus || "✓ Replied [A]: Approved & Sent Pharmacy Code on WhatsApp";
+    g.quickReplyStatus = g.quickReplyStatus || L("✓ Replied [A]: Approved & Sent Pharmacy Code on WhatsApp", "✓ Απάντηση [A]: Εγκρίθηκε — ο κωδικός φαρμακείου στάλθηκε στο WhatsApp");
   });
   renderGesyQueue();
   updateGesyKpi();
-  showToast("✅ All End-of-Day GeSY prescriptions & referrals approved in 1 click!");
+  showToast(L("✅ All End-of-Day GeSY prescriptions & referrals approved in 1 click!", "✅ Όλες οι συνταγές και τα παραπεμπτικά ΓεΣΥ της ημέρας εγκρίθηκαν με 1 κλικ!"));
 }
 
 // ============================================================================
@@ -1735,10 +1924,10 @@ function renderMarketplaceDoctors() {
     if (specFilter !== "all" && d.specialty !== specFilter) return false;
     if (cityFilter !== "all" && d.city !== cityFilter) return false;
     if (query) {
-      const hay = `${d.name} ${d.specialtyLabel} ${d.city} ${d.area}`.toLowerCase();
-      const matchFever = /fever|child|kid|ear|πυρετ/.test(query) && (d.specialty === "Pediatrics" || d.specialty === "ENT");
-      const matchRash = /rash|skin|mole|δέρμ/.test(query) && d.specialty === "Dermatology";
-      const matchHeart = /heart|bp|chest|καρδ/.test(query) && d.specialty === "Cardiology";
+      const hay = `${d.name} ${d.specialtyLabel} ${d.city} ${d.area} ${tr(d.name)} ${tr(d.specialtyLabel)} ${tr(d.city)} ${tr(d.area)}`.toLowerCase();
+      const matchFever = /fever|child|kid|ear|πυρετ|παιδ|αυτ|ωτ/.test(query) && (d.specialty === "Pediatrics" || d.specialty === "ENT");
+      const matchRash = /rash|skin|mole|δέρμ|δερμ|εξάνθ|εξανθ|σπίλ|σπιλ|ελιά|κνησμ/.test(query) && d.specialty === "Dermatology";
+      const matchHeart = /heart|bp|chest|καρδ|πίεσ|πιεσ|στήθ|στηθ|ταχυκαρδ|αρρυθμ/.test(query) && d.specialty === "Cardiology";
       const matchDental = /tooth|teeth|dental|dentist|crown|filling|implant|cleaning|δόντ|δοντ|οδοντ|σφράγισμ|καθαρισμ/.test(query) && d.specialty === "Dental";
       if (!hay.includes(query) && !matchFever && !matchRash && !matchHeart && !matchDental) return false;
     }
@@ -1751,17 +1940,17 @@ function renderMarketplaceDoctors() {
       <div class="doctor-mp-card ${d.urgentBufferAvailable ? "urgent-ready" : ""}">
         <div class="doc-mp-header">
           <div>
-            <div class="doc-mp-name">${d.name}</div>
-            <div class="doc-mp-spec">${d.specialtyLabel}</div>
-            <div style="font-size:0.74rem; color:#64748b; margin-top:2px;">📍 ${d.area} • ${d.coverage}</div>
+            <div class="doc-mp-name">${tr(d.name)}</div>
+            <div class="doc-mp-spec">${tr(d.specialtyLabel)}</div>
+            <div style="font-size:0.74rem; color:#64748b; margin-top:2px;">📍 ${tr(d.area)} • ${tr(d.coverage)}</div>
           </div>
-          <span class="code-badge sample-badge">Sample</span>
+          <span class="code-badge sample-badge">${L("Sample", "Δείγμα")}</span>
         </div>
         <div style="font-size:0.73rem; background:#f8fafc; padding:6px 9px; border-radius:7px; border:1px solid #e2e8f0; color:#334155;">
-          🤖 <strong>Concept:</strong> ${d.aiStatus}
+          🤖 <strong>${L("Concept:", "Ιδέα:")}</strong> ${tr(d.aiStatus)}
         </div>
         <div style="font-size:0.72rem; font-weight:800; color:#0f172a; text-transform:uppercase;">
-          Example slots (illustrative only):
+          ${L("Example slots (illustrative only):", "Ενδεικτικά ραντεβού (μόνο για επίδειξη):")}
         </div>
         <div class="doc-mp-slots">
           ${d.slots
@@ -1770,9 +1959,9 @@ function renderMarketplaceDoctors() {
               <button
                 type="button"
                 class="doc-slot-pill ${s.urgent ? "urgent" : ""}"
-                onclick="bookMarketplaceSlot('${d.name}', '${s.label}')"
+                onclick="bookMarketplaceSlot('${d.id}', ${d.slots.indexOf(s)})"
               >
-                ${s.label}
+                ${mpSlotLabel(s.label)}
               </button>`
             )
             .join("")}
@@ -1782,8 +1971,20 @@ function renderMarketplaceDoctors() {
     .join("");
 }
 
-function bookMarketplaceSlot(docName, slotLabel) {
-  showToast(`🧪 Concept mock-up: in the future app, ${slotLabel} with ${docName} would be booked here. No real booking was made.`);
+function mpSlotLabel(label) {
+  if (!isGreekUI()) return label;
+  const days = { "Today": "Σήμερα", "Tomorrow": "Αύριο", "Thu": "Πέμ." };
+  return fmtTime(label.replace(/\b(Today|Tomorrow|Thu)\b/, (d) => days[d]));
+}
+
+function bookMarketplaceSlot(docId, slotIdx) {
+  const d = state.marketplaceDoctors.find((x) => x.id === docId);
+  if (!d) return;
+  const slotLabel = mpSlotLabel((d.slots[slotIdx] || d.slots[0]).label);
+  showToast(L(
+    `🧪 Concept mock-up: in the future app, ${slotLabel} with ${d.name} would be booked here. No real booking was made.`,
+    `🧪 Πρόταση σχεδιασμού: στη μελλοντική εφαρμογή, εδώ θα κλεινόταν το ραντεβού «${slotLabel}» με ${tr(d.name)}. Δεν έγινε πραγματική κράτηση.`
+  ));
 }
 
 // ============================================================================
@@ -1793,7 +1994,7 @@ function showToast(msg) {
   const banner = document.getElementById("live-toast-banner");
   const textEl = document.getElementById("live-toast-text");
   if (!banner || !textEl) return;
-  textEl.textContent = msg;
+  textEl.textContent = tr(msg);
   banner.hidden = false;
 }
 
@@ -1801,6 +2002,7 @@ function showToast(msg) {
 // Initialize on DOMContentLoaded
 // ============================================================================
 document.addEventListener("DOMContentLoaded", () => {
+  if (isGreekUI()) setMicLanguage("el-GR", true);
   setBrandVariant("mydocdesk", "schedule_gold", true);
   applyClinicBranding();
   triggerScenario("urgent_fever", document.getElementById("btn-scen-urgent"));

@@ -25,6 +25,19 @@
   <link rel="icon" type="image/png" href="./assets/favicon.png" />
   <link rel="apple-touch-icon" href="./assets/icon-schedule-gold-cross.png" />
   <link rel="stylesheet" href="./styles.css" />
+  <script>
+    (function () {
+      try {
+        var q = new URLSearchParams(location.search).get("lang");
+        var l = q === "el" || q === "en" ? q : localStorage.getItem("mydocdesk-lang");
+        if (l === "el") {
+          document.documentElement.lang = "el";
+          document.documentElement.classList.add("i18n-pending");
+          setTimeout(function () { document.documentElement.classList.remove("i18n-pending"); }, 2500);
+        }
+      } catch (e) {}
+    })();
+  </script>
 </head>
 <body>
   <!-- Top Navigation Bar with Live Brand & Logo Switcher -->
@@ -62,6 +75,11 @@
         <span class="tab-ico" aria-hidden="true">📄</span><span class="tab-label-full">4. Doctor 1-Pager &amp; Pitch</span><span class="tab-label-short">1-Pager</span>
       </button>
     </nav>
+
+    <div class="lang-switch" id="lang-switch" role="group" aria-label="Language / Γλώσσα">
+      <button type="button" class="lang-switch-btn active" data-lang="en" aria-pressed="true" onclick="setSiteLanguage('en')" title="English" lang="en">EN</button>
+      <button type="button" class="lang-switch-btn" data-lang="el" aria-pressed="false" onclick="setSiteLanguage('el')" title="Ελληνικά" lang="el">ΕΛ</button>
+    </div>
   </header>
 
   <main class="main-container">
@@ -95,7 +113,7 @@
               <button type="button" class="mic-lang-btn active" data-lang="en-US" aria-pressed="true" onclick="setMicLanguage('en-US')" title="Speak in English">EN</button>
               <button type="button" class="mic-lang-btn" data-lang="el-GR" aria-pressed="false" onclick="setMicLanguage('el-GR')" title="Speak in Greek" lang="el">ΕΛ</button>
             </div>
-            <a href="mailto:christos@t-knights.com?subject=MyDocDesk%20pilot%20call&amp;body=Hi%20Christos%2C%0A%0AI%27d%20like%20to%20book%20a%2015-minute%20MyDocDesk%20pilot%20call.%0A%0AClinic%20name%20%26%20specialty%3A%0ACity%3A%0ALandline%20or%20mobile%20used%20for%20appointments%3A%0ABest%20days/times%20to%20talk%3A%0A%0AThank%20you%2C%0A" class="pilot-cta-btn" id="btn-pilot-hero">📅 Book a 15-min pilot call</a>
+            <a href="#clinic-3-steps" class="pilot-cta-btn js-pilot-cta" id="btn-pilot-hero">📅 Book a 15-min pilot call</a>
             <a href="./assets/MyDocDesk_Doctor_Leave_Behind.pdf" download="MyDocDesk_Doctor_Leave_Behind.pdf" class="hero-pdf-btn" onclick="switchTab('onepager')">
               📄 Download 1-Page Doctor PDF
             </a>
@@ -584,7 +602,7 @@
           </li>
         </ol>
         <div class="setup-cta-row">
-          <a href="mailto:christos@t-knights.com?subject=MyDocDesk%20pilot%20call&amp;body=Hi%20Christos%2C%0A%0AI%27d%20like%20to%20book%20a%2015-minute%20MyDocDesk%20pilot%20call.%0A%0AClinic%20name%20%26%20specialty%3A%0ACity%3A%0ALandline%20or%20mobile%20used%20for%20appointments%3A%0ABest%20days/times%20to%20talk%3A%0A%0AThank%20you%2C%0A" class="pilot-cta-btn large" id="btn-pilot-steps">📅 Book a 15-min pilot call</a>
+          <a href="#clinic-3-steps" class="pilot-cta-btn js-pilot-cta large" id="btn-pilot-steps">📅 Book a 15-min pilot call</a>
           <span class="setup-cta-note">A short call with Christos to see whether Anastasia fits your clinic. No commitment.</span>
         </div>
       </section>
@@ -854,11 +872,11 @@
 
         <div class="onepager-toolbar">
           <div class="onepager-contact-pill">
-            <span>🛡️ <strong>Engineered &amp; Supported by T-Knights Consulting Ltd (Cyprus)</strong></span>
+            <span data-no-i18n>🛡️ <strong>Engineered &amp; Supported by T-Knights Consulting Ltd (Cyprus)</strong></span>
           </div>
           <div class="onepager-contact-pill">
             <span>🤝 Founding Doctor Pilot (14 Days Free → <strong>€99/mo</strong>):</span>
-            <strong>Christos Taliadoros</strong> • <a href="mailto:christos@t-knights.com">christos@t-knights.com</a> • <a href="tel:+35799429249">+357 99 429249</a>
+            <strong>Christos Taliadoros</strong> • <a href="mailto:hello@mydocdesk.com">hello@mydocdesk.com</a> • <a href="tel:+35799429249">+357 99 429249</a>
           </div>
         </div>
       </div>
@@ -922,8 +940,8 @@
             <div class="op-roi-footer">
               <div><strong>Full-Time Receptionist:</strong> €1,400+/month (9am–5pm only • 1 call at a time • sick leave &amp; social insurance)</div>
               <div class="op-roi-highlight"><strong>⭐ Founding Doctor Pilot Offer (First 20 Clinics):</strong> 14-Day Free Trial, then <strong>€99/month</strong> (locked-in Founding Rate; standard €149/month) • 1 saved private visit pays for the entire month</div>
-              <div><strong>Live Interactive Simulator &amp; Pilot Setup:</strong> <a href="https://mydocdesk.com">https://mydocdesk.com</a> • Christos Taliadoros (<code>christos@t-knights.com</code> • <code>+357 99 429249</code>)</div>
-              <div class="op-trust-line">🛡️ <strong>Engineered &amp; Supported by T-Knights Consulting Ltd (Cyprus)</strong></div>
+              <div><strong>Live Interactive Simulator &amp; Pilot Setup:</strong> <a href="https://mydocdesk.com">https://mydocdesk.com</a> • Christos Taliadoros (<code>hello@mydocdesk.com</code> • <code>+357 99 429249</code>)</div>
+              <div class="op-trust-line" data-no-i18n>🛡️ <strong>Engineered &amp; Supported by T-Knights Consulting Ltd (Cyprus)</strong></div>
             </div>
           </div>
         </article>
@@ -937,11 +955,11 @@
       <div class="site-footer-brand">
         <strong>MyDocDesk (mydocdesk.com)</strong> — Intelligent Medical Reception • AI Voice &amp; WhatsApp Triage for Cyprus Clinics &amp; Dentists
       </div>
-      <div class="site-footer-trust">
+      <div class="site-footer-trust" data-no-i18n>
         🛡️ <strong>Engineered &amp; Supported by T-Knights Consulting Ltd (Cyprus)</strong>
       </div>
       <div class="site-footer-contact">
-        Pilot Setup &amp; Live Demo: <strong>Christos Taliadoros</strong> • <a href="mailto:christos@t-knights.com">christos@t-knights.com</a> • <a href="tel:+35799429249">+357 99 429249</a> • <a href="./assets/MyDocDesk_Doctor_Leave_Behind.pdf" download="MyDocDesk_Doctor_Leave_Behind.pdf">⬇ Download 1-Page Doctor PDF</a>
+        Pilot Setup &amp; Live Demo: <strong>Christos Taliadoros</strong> • <a href="mailto:hello@mydocdesk.com">hello@mydocdesk.com</a> • <a href="tel:+35799429249">+357 99 429249</a> • <a href="./assets/MyDocDesk_Doctor_Leave_Behind.pdf" download="MyDocDesk_Doctor_Leave_Behind.pdf">⬇ Download 1-Page Doctor PDF</a>
       </div>
     </div>
   </footer>
@@ -965,6 +983,9 @@
     </button>
   </nav>
 
+  <script src="./i18n.js"></script>
+  <script src="./i18n-el.js"></script>
+  <script src="./assets/voice/clips.js"></script>
   <script src="./app.js"></script>
 </body>
 </html>
