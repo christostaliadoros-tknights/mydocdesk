@@ -334,7 +334,7 @@ html.nav-compact .site-nav-cta { display: inline-flex !important; margin-top: 10
 .mp-hero-visual .mp-visual-caption { text-align: right; }
 @keyframes mpPhotoIn { from { opacity: 0; transform: translateY(14px) scale(.985); } to { opacity: 1; transform: none; } }
 @keyframes mpChipPulse { 0% { box-shadow: 0 0 0 0 rgba(34,197,94,0.6); } 70%, 100% { box-shadow: 0 0 0 9px rgba(34,197,94,0); } }
-html.md-intro-on .mp-hero-photo { animation-delay: 1.15s; }
+html.md-intro-on .mp-hero-photo { animation-delay: 1.55s; }
 @media (max-width: 1080px) {
   .mp-hero { grid-template-areas: "photo" "copy" "visual"; row-gap: 26px; }
   .mp-hero-photo { aspect-ratio: 16 / 10; width: 100%; max-width: 540px; justify-self: center; }
