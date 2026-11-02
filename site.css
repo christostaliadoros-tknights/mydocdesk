@@ -82,6 +82,8 @@ html { scroll-padding-top: calc(var(--mp-header-h) + 12px); }
 
 /* Benefits */
 .mp-benefits { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.mp-benefits.mp-benefits-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 1180px) { .mp-benefits.mp-benefits-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .mp-benefit, .mp-card { background: #fff; border: 1px solid var(--border-subtle); border-radius: 16px; padding: 22px; box-shadow: var(--shadow-sm); }
 .mp-benefit-ico, .mp-card-ico { width: 46px; height: 46px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; background: linear-gradient(135deg, #ccfbf1, #e0f2fe); }
 .mp-benefit h3 { font-size: 1.08rem; font-weight: 800; color: #0f172a; margin: 14px 0 6px; }
@@ -254,7 +256,7 @@ a.mjump-btn { text-decoration: none; }
   .mp-hero-actions .pilot-cta-btn, .mp-hero-actions .mp-btn-ghost, .mp-cta-actions .pilot-cta-btn, .mp-cta-actions .mp-btn-ghost { width: 100%; }
   .mp-section { margin-top: 32px; }
   .mp-section-head h2, .mp-flow-title { font-size: 1.3rem; }
-  .mp-benefits, .mp-explore-grid, .pilot-steps, .mp-two-col, .price-grid, .contact-grid, .download-grid { grid-template-columns: minmax(0, 1fr); }
+  .mp-benefits, .mp-benefits.mp-benefits-4, .mp-explore-grid, .pilot-steps, .mp-two-col, .price-grid, .contact-grid, .download-grid { grid-template-columns: minmax(0, 1fr); }
   .price-grid, .contact-grid { margin-top: -18px; }
   .flow-section { padding: 20px 14px; }
   .flow-diagram { grid-template-columns: minmax(0, 1fr); gap: 22px; }
