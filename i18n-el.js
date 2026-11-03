@@ -1,6 +1,6 @@
 /* Greek (el) dictionary for MyDocDesk — generated; edit via docs generator */
 window.I18N_EL = {
- "MyDocDesk is a service of T-Knights Consulting Ltd, registered in Cyprus (HE369898).": "Το MyDocDesk είναι υπηρεσία της T-Knights Consulting Ltd, εταιρείας εγγεγραμμένης στην Κύπρο (αρ. εγγραφής HE369898).",
+ "MyDocDesk is a service of T-Knights Consulting Ltd, registered in Limassol, Cyprus (HE369898).": "Το MyDocDesk είναι υπηρεσία της T-Knights Consulting Ltd, εταιρείας εγγεγραμμένης στη Λεμεσό, Κύπρο (αρ. εγγραφής HE369898).",
  "MyDocDesk Logo": "Λογότυπο MyDocDesk",
  "Sister Brand: MyVacAI": "Αδελφή εφαρμογή: MyVacAI",
  "🔗 Sister: MyVacAI": "🔗 Αδελφή εφαρμογή: MyVacAI",
