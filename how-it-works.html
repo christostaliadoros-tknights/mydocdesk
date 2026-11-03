@@ -25,8 +25,8 @@
   <meta name="twitter:image:alt" content="MyDocDesk — AI Medical Receptionist for Cyprus Clinics" />
   <link rel="icon" type="image/png" href="./assets/favicon.png" />
   <link rel="apple-touch-icon" href="./assets/icon-schedule-gold-cross.png" />
-  <link rel="stylesheet" href="./styles.css?v=20261103b" />
-  <link rel="stylesheet" href="./site.css?v=20261103b" />
+  <link rel="stylesheet" href="./styles.css?v=20261103c" />
+  <link rel="stylesheet" href="./site.css?v=20261103c" />
   <script>
     (function () {
       try {
@@ -59,14 +59,14 @@
         <a href="./pricing.html" class="site-nav-link" data-page="pricing">Pricing &amp; pilot</a>
         <a href="./privacy-faq.html" class="site-nav-link" data-page="privacy">Privacy &amp; FAQ</a>
         <a href="./contact.html" class="site-nav-link" data-page="contact">Contact</a>
-        <a href="./contact.html" class="pilot-cta-btn js-pilot-cta site-nav-cta">📅 Book a pilot call</a>
+        <a href="./demo.html" class="pilot-cta-btn site-nav-cta"><svg class="ico ico-play" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M10 8.5v7l6-3.5z" fill="currentColor" stroke-width="1.5"/></svg> Try the live demo</a>
       </nav>
       <div class="site-header-actions">
         <div class="lang-switch" id="lang-switch" role="group" aria-label="Language / Γλώσσα">
           <button type="button" class="lang-switch-btn active" data-lang="en" aria-pressed="true" onclick="setSiteLanguage('en')" title="English" lang="en"><svg class="flag-ico" viewBox="0 0 60 30" width="16" height="11" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><clipPath id="flag-uk-t"><path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"/></clipPath><path d="M0,0 v30 h60 v-30 z" fill="#012169"/><path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#flag-uk-t)" stroke="#C8102E" stroke-width="4"/><path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/><path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/></svg><span>EN</span></button>
           <button type="button" class="lang-switch-btn" data-lang="el" aria-pressed="false" onclick="setSiteLanguage('el')" title="Ελληνικά" lang="el"><svg class="flag-ico" viewBox="0 0 27 18" width="16" height="11" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="27" height="18" fill="#0D5EAF"/><path fill="#fff" d="M0 2h27v2H0zM0 6h27v2H0zM0 10h27v2H0zM0 14h27v2H0z"/><rect width="10" height="10" fill="#0D5EAF"/><path fill="#fff" d="M4 0h2v10H4zM0 4h10v2H0z"/></svg><span>ΕΛ</span></button>
         </div>
-        <a href="./contact.html" class="pilot-cta-btn js-pilot-cta header-cta">📅 Book a pilot call</a>
+        <a href="./demo.html" class="pilot-cta-btn header-cta"><svg class="ico ico-play" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M10 8.5v7l6-3.5z" fill="currentColor" stroke-width="1.5"/></svg> Try the live demo</a>
         <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
           <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path class="nt-open" d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none"/><path class="nt-close" d="M5 5l14 14M19 5L5 19" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none"/></svg>
         </button>
@@ -86,61 +86,61 @@
       <ol class="flow-diagram">
         <li class="flow-node flow-n1">
           <span class="flow-num" aria-hidden="true">1</span>
-          <span class="flow-ico" aria-hidden="true">📞</span>
+          <span class="flow-ico" aria-hidden="true"><svg class="ico ico-phone" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
           <strong>Patient calls</strong>
           <span class="flow-sub">Forwarded when busy or unanswered</span>
           <svg class="flow-arrow" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path d="M4 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </li>
         <li class="flow-node flow-n2">
           <span class="flow-num" aria-hidden="true">2</span>
-          <span class="flow-ico" aria-hidden="true">💬</span>
+          <span class="flow-ico" aria-hidden="true"><svg class="ico ico-message" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22z"/></svg></span>
           <strong>…or sends a WhatsApp</strong>
           <span class="flow-sub">Text, voice notes, photos, lab PDFs</span>
           <svg class="flow-arrow" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path d="M4 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </li>
         <li class="flow-node flow-n3">
           <span class="flow-num" aria-hidden="true">3</span>
-          <span class="flow-ico" aria-hidden="true">🚦</span>
+          <span class="flow-ico" aria-hidden="true"><svg class="ico ico-activity" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span>
           <strong>Triage P1 / P2 / P3</strong>
           <span class="flow-sub">Red flags → 112 or the doctor</span>
           <svg class="flow-arrow" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path d="M4 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </li>
         <li class="flow-node flow-n4">
           <span class="flow-num" aria-hidden="true">4</span>
-          <span class="flow-ico" aria-hidden="true">📝</span>
+          <span class="flow-ico" aria-hidden="true"><svg class="ico ico-file-text" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"/><path d="M14 2v4a2 2 0 0 0 2 2h4M16 13H8M16 17H8M10 9H8"/></svg></span>
           <strong>Case note</strong>
           <span class="flow-sub">3 bullets before the visit</span>
           <svg class="flow-arrow" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path d="M4 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </li>
         <li class="flow-node flow-n5">
           <span class="flow-num" aria-hidden="true">5</span>
-          <span class="flow-ico" aria-hidden="true">📅</span>
+          <span class="flow-ico" aria-hidden="true"><svg class="ico ico-calendar" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>
           <strong>Anastasia calendar layer</strong>
           <span class="flow-sub">Colour-coded, never double-books</span>
           <svg class="flow-arrow" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path d="M4 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </li>
         <li class="flow-node flow-n6">
           <span class="flow-num" aria-hidden="true">6</span>
-          <span class="flow-ico" aria-hidden="true">✅</span>
+          <span class="flow-ico" aria-hidden="true"><svg class="ico ico-check-circle" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg></span>
           <strong>A / B / C / D approval</strong>
           <span class="flow-sub">You reply with one letter</span>
           
         </li>
       </ol>
       <div class="flow-tiers">
-        <span class="tri-pill p1">🔴 P1 Urgent: same day</span>
-        <span class="tri-pill p2">🟡 P2 Soon: 24–48 h</span>
-        <span class="tri-pill p3">🟢 P3 Routine / GeSY: end-of-day list</span>
+        <span class="tri-pill p1">P1 Urgent: same day</span>
+        <span class="tri-pill p2">P2 Soon: 24–48 h</span>
+        <span class="tri-pill p3">P3 Routine / GeSY: end-of-day list</span>
       </div>
     </section>
 
     <p class="demo-safety-line mp-safety" role="note">
-      <span aria-hidden="true">⚕️</span> <strong>Anastasia never diagnoses.</strong> Red-flag symptoms are escalated to 112 or the doctor immediately.
+      <span class="safety-ico" aria-hidden="true"><svg class="ico ico-shield-plus" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="M9 12h6M12 9v6"/></svg></span><span class="safety-txt"><strong>Anastasia never diagnoses.</strong> Red-flag symptoms are escalated to 112 or the doctor immediately. If she is unsure or the call drops, the case is flagged for a call-back. <a href="./privacy-faq.html#safety">Safety &amp; limitations</a></span>
     </p>
 
     <section class="mp-section how-steps" aria-label="The six steps in detail">
       <article class="how-step" id="step-1">
-        <div class="how-step-badge" aria-hidden="true"><span class="how-step-num">1</span><span class="how-step-ico">📞</span></div>
+        <div class="how-step-badge" aria-hidden="true"><span class="how-step-num">1</span><span class="how-step-ico"><svg class="ico ico-phone" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span></div>
         <div class="how-step-body">
           <h3>Calls are answered, even when you can't</h3>
             <p>Your clinic landline or mobile forwards to Anastasia <strong>only when the line is busy or not answered</strong>. Patients keep calling the number they already know.</p>
@@ -148,7 +148,7 @@
         </div>
       </article>
       <article class="how-step" id="step-2">
-        <div class="how-step-badge" aria-hidden="true"><span class="how-step-num">2</span><span class="how-step-ico">💬</span></div>
+        <div class="how-step-badge" aria-hidden="true"><span class="how-step-num">2</span><span class="how-step-ico"><svg class="ico ico-message" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22z"/></svg></span></div>
         <div class="how-step-body">
           <h3>WhatsApp messages and voice notes too</h3>
             <p>Patients can message the clinic's WhatsApp. Anastasia answers text and voice notes, sends booking confirmations and asks for a photo or lab result when it helps the doctor prepare.</p>
@@ -156,40 +156,40 @@
         </div>
       </article>
       <article class="how-step" id="step-3">
-        <div class="how-step-badge" aria-hidden="true"><span class="how-step-num">3</span><span class="how-step-ico">🚦</span></div>
+        <div class="how-step-badge" aria-hidden="true"><span class="how-step-num">3</span><span class="how-step-ico"><svg class="ico ico-activity" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span></div>
         <div class="how-step-body">
           <h3>Every request is triaged by urgency</h3>
-            <p><span class="tri-pill p1">🔴 P1 Urgent</span> Same-day problems, such as a child with high fever and ear pain or an acute toothache, are offered a protected urgent buffer slot, with your approval.</p>
-            <p><span class="tri-pill p2">🟡 P2 Soon</span> Rashes, lab reviews or dental treatment are booked in the next 24–48 hours, in a slot of the right length, with a photo or PDF collected first if useful.</p>
-            <p><span class="tri-pill p3">🟢 P3 Routine / GeSY</span> Repeat prescriptions and referrals go into one end-of-day list instead of taking an exam slot.</p>
-            <p><strong>Red-flag symptoms are never booked.</strong> The caller is told to call 112 and you are alerted straight away.</p>
+            <p><span class="tri-pill p1">P1 Urgent</span> Same-day problems, such as a child with high fever and ear pain or an acute toothache, are offered a protected urgent buffer slot, with your approval.</p>
+            <p><span class="tri-pill p2">P2 Soon</span> Rashes, lab reviews or dental treatment are booked in the next 24–48 hours, in a slot of the right length, with a photo or PDF collected first if useful.</p>
+            <p><span class="tri-pill p3">P3 Routine / GeSY</span> Repeat prescriptions and referrals go into one end-of-day list instead of taking an exam slot.</p>
+            <p><strong>Red-flag symptoms are never booked.</strong> The caller is told to call 112 and you are alerted straight away. If Anastasia is unsure, the line is unclear or the call drops, the case is flagged for the clinic to call back and you are notified.</p>
         </div>
       </article>
       <article class="how-step" id="step-4">
-        <div class="how-step-badge" aria-hidden="true"><span class="how-step-num">4</span><span class="how-step-ico">📝</span></div>
+        <div class="how-step-badge" aria-hidden="true"><span class="how-step-num">4</span><span class="how-step-ico"><svg class="ico ico-file-text" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"/><path d="M14 2v4a2 2 0 0 0 2 2h4M16 13H8M16 17H8M10 9H8"/></svg></span></div>
         <div class="how-step-body">
           <h3>A 3-bullet case note before the patient arrives</h3>
             <p>Each booking carries a short pre-visit note: the chief complaint, the GeSY ID and any photos or files the patient sent. You walk in already knowing why they came.</p>
         </div>
       </article>
       <article class="how-step" id="step-5">
-        <div class="how-step-badge" aria-hidden="true"><span class="how-step-num">5</span><span class="how-step-ico">📅</span></div>
+        <div class="how-step-badge" aria-hidden="true"><span class="how-step-num">5</span><span class="how-step-ico"><svg class="ico ico-calendar" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span></div>
         <div class="how-step-body">
           <h3>Booked on a colour-coded Anastasia calendar layer</h3>
             <p>Anastasia reads the busy times across your connected Google, Apple or Outlook calendars (personal, hospital rounds and the clinic calendar) so she never double-books, without exposing private details.</p>
             <p>Her bookings go onto a separate, colour-coded "Anastasia AI Reception" calendar, so you can see at a glance what she booked.</p>
             <div class="mini-cal" role="img" aria-label="Example calendar day with colour-coded layers">
-              <div class="mini-cal-row"><span class="mini-cal-time">08:30</span><span class="mini-cal-ev ev-clinic">⚪ Clinic desk booking</span></div>
-              <div class="mini-cal-row"><span class="mini-cal-time">10:15</span><span class="mini-cal-ev ev-ai">🟣 Anastasia: rash review + photo</span></div>
-              <div class="mini-cal-row"><span class="mini-cal-time">11:00</span><span class="mini-cal-ev ev-busy">🔒 Busy (private)</span></div>
-              <div class="mini-cal-row"><span class="mini-cal-time">12:30</span><span class="mini-cal-ev ev-buffer">🔴 Urgent buffer (held for approval)</span></div>
-              <div class="mini-cal-row"><span class="mini-cal-time">17:00</span><span class="mini-cal-ev ev-buffer">🔴 Urgent buffer</span></div>
+              <div class="mini-cal-row"><span class="mini-cal-time">08:30</span><span class="mini-cal-ev ev-clinic">Clinic desk booking</span></div>
+              <div class="mini-cal-row"><span class="mini-cal-time">10:15</span><span class="mini-cal-ev ev-ai">Anastasia: rash review + photo</span></div>
+              <div class="mini-cal-row"><span class="mini-cal-time">11:00</span><span class="mini-cal-ev ev-busy">Busy (private)</span></div>
+              <div class="mini-cal-row"><span class="mini-cal-time">12:30</span><span class="mini-cal-ev ev-buffer">Urgent buffer (held for approval)</span></div>
+              <div class="mini-cal-row"><span class="mini-cal-time">17:00</span><span class="mini-cal-ev ev-buffer">Urgent buffer</span></div>
             </div>
-            <p class="mp-visual-caption">Illustrative example.</p>
+            <p class="mp-illustrative"><svg class="ico ico-info" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg><span>Illustrative example – not a real clinic or patient</span></p>
         </div>
       </article>
       <article class="how-step" id="step-6">
-        <div class="how-step-badge" aria-hidden="true"><span class="how-step-num">6</span><span class="how-step-ico">✅</span></div>
+        <div class="how-step-badge" aria-hidden="true"><span class="how-step-num">6</span><span class="how-step-ico"><svg class="ico ico-check-circle" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg></span></div>
         <div class="how-step-body">
           <h3>You approve with one letter on WhatsApp</h3>
             <p>Urgent buffers, GeSY renewals and anything unusual wait for you. Anastasia sends a short WhatsApp/SMS message and you reply from your lock screen:</p>
@@ -210,8 +210,8 @@
         <p>Try the live demo, or book a 15-minute call to walk through your own clinic's setup.</p>
       </div>
       <div class="mp-cta-actions">
-        <a href="./contact.html" class="pilot-cta-btn js-pilot-cta large">📅 Book a 15-min pilot call</a>
-        <a href="./demo.html" class="mp-btn-ghost">▶ Try the live demo</a>
+        <a href="./demo.html" class="pilot-cta-btn large"><svg class="ico ico-play" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M10 8.5v7l6-3.5z" fill="currentColor" stroke-width="1.5"/></svg> Try the live demo</a>
+        <a href="./contact.html" class="mp-btn-ghost js-pilot-cta"><svg class="ico ico-calendar" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> Book a 15-min pilot call</a>
       </div>
     </section>
   </main>
@@ -243,21 +243,20 @@
       </div>
     </div>
     <div class="mp-footer-bottom">
-      <div class="site-footer-trust" data-no-i18n>🛡️ <strong>Engineered &amp; Supported by T-Knights Consulting Ltd (Cyprus)</strong></div>
-      <a href="https://myvacai.com" class="mp-footer-sister">Sister brand: MyVacAI</a>
+      <div class="site-footer-trust" data-no-i18n><svg class="ico ico-shield-check" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg> <strong>Engineered &amp; Supported by T-Knights Consulting Ltd (Cyprus)</strong></div>
     </div>
   </footer>
 
   <nav class="mobile-quick-jump mp-bottom-bar" aria-label="Quick links">
-    <a href="./index.html" class="mjump-btn"><span class="mj-ico" aria-hidden="true">🏠</span><span class="mj-lbl">Home</span></a>
-    <a href="./how-it-works.html" class="mjump-btn active" aria-current="page"><span class="mj-ico" aria-hidden="true">⚙️</span><span class="mj-lbl">How</span></a>
-    <a href="./demo.html" class="mjump-btn"><span class="mj-ico" aria-hidden="true">▶️</span><span class="mj-lbl">Demo</span></a>
-    <a href="./pricing.html" class="mjump-btn"><span class="mj-ico" aria-hidden="true">💶</span><span class="mj-lbl">Pricing</span></a>
-    <a href="./contact.html" class="mjump-btn"><span class="mj-ico" aria-hidden="true">✉️</span><span class="mj-lbl">Contact</span></a>
+    <a href="./index.html" class="mjump-btn"><span class="mj-ico" aria-hidden="true"><svg class="ico ico-home" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 9.5 12 3l9 6.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg></span><span class="mj-lbl">Home</span></a>
+    <a href="./how-it-works.html" class="mjump-btn active" aria-current="page"><span class="mj-ico" aria-hidden="true"><svg class="ico ico-sliders" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 4h-7M10 4H3M21 12h-9M8 12H3M21 20h-5M12 20H3M14 2v4M8 10v4M16 18v4"/></svg></span><span class="mj-lbl">How</span></a>
+    <a href="./demo.html" class="mjump-btn"><span class="mj-ico" aria-hidden="true"><svg class="ico ico-play" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M10 8.5v7l6-3.5z" fill="currentColor" stroke-width="1.5"/></svg></span><span class="mj-lbl">Demo</span></a>
+    <a href="./pricing.html" class="mjump-btn"><span class="mj-ico" aria-hidden="true"><svg class="ico ico-euro" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 10h12M4 14h9"/><path d="M19 6a7.7 7.7 0 0 0-5.2-2A7.9 7.9 0 0 0 6 12c0 4.4 3.5 8 7.8 8 2 0 3.8-.8 5.2-2"/></svg></span><span class="mj-lbl">Pricing</span></a>
+    <a href="./contact.html" class="mjump-btn"><span class="mj-ico" aria-hidden="true"><svg class="ico ico-mail" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></span><span class="mj-lbl">Contact</span></a>
   </nav>
 
-  <script src="./i18n.js?v=20261103b"></script>
-  <script src="./i18n-el.js?v=20261103b"></script>
-  <script src="./site.js?v=20261103b"></script>
+  <script src="./i18n.js?v=20261103c"></script>
+  <script src="./i18n-el.js?v=20261103c"></script>
+  <script src="./site.js?v=20261103c"></script>
 </body>
 </html>

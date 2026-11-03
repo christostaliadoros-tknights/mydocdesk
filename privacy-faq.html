@@ -25,8 +25,8 @@
   <meta name="twitter:image:alt" content="MyDocDesk — AI Medical Receptionist for Cyprus Clinics" />
   <link rel="icon" type="image/png" href="./assets/favicon.png" />
   <link rel="apple-touch-icon" href="./assets/icon-schedule-gold-cross.png" />
-  <link rel="stylesheet" href="./styles.css?v=20261103b" />
-  <link rel="stylesheet" href="./site.css?v=20261103b" />
+  <link rel="stylesheet" href="./styles.css?v=20261103c" />
+  <link rel="stylesheet" href="./site.css?v=20261103c" />
   <script>
     (function () {
       try {
@@ -59,14 +59,14 @@
         <a href="./pricing.html" class="site-nav-link" data-page="pricing">Pricing &amp; pilot</a>
         <a href="./privacy-faq.html" class="site-nav-link active" aria-current="page" data-page="privacy">Privacy &amp; FAQ</a>
         <a href="./contact.html" class="site-nav-link" data-page="contact">Contact</a>
-        <a href="./contact.html" class="pilot-cta-btn js-pilot-cta site-nav-cta">📅 Book a pilot call</a>
+        <a href="./demo.html" class="pilot-cta-btn site-nav-cta"><svg class="ico ico-play" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M10 8.5v7l6-3.5z" fill="currentColor" stroke-width="1.5"/></svg> Try the live demo</a>
       </nav>
       <div class="site-header-actions">
         <div class="lang-switch" id="lang-switch" role="group" aria-label="Language / Γλώσσα">
           <button type="button" class="lang-switch-btn active" data-lang="en" aria-pressed="true" onclick="setSiteLanguage('en')" title="English" lang="en"><svg class="flag-ico" viewBox="0 0 60 30" width="16" height="11" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><clipPath id="flag-uk-t"><path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"/></clipPath><path d="M0,0 v30 h60 v-30 z" fill="#012169"/><path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#flag-uk-t)" stroke="#C8102E" stroke-width="4"/><path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/><path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/></svg><span>EN</span></button>
           <button type="button" class="lang-switch-btn" data-lang="el" aria-pressed="false" onclick="setSiteLanguage('el')" title="Ελληνικά" lang="el"><svg class="flag-ico" viewBox="0 0 27 18" width="16" height="11" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="27" height="18" fill="#0D5EAF"/><path fill="#fff" d="M0 2h27v2H0zM0 6h27v2H0zM0 10h27v2H0zM0 14h27v2H0z"/><rect width="10" height="10" fill="#0D5EAF"/><path fill="#fff" d="M4 0h2v10H4zM0 4h10v2H0z"/></svg><span>ΕΛ</span></button>
         </div>
-        <a href="./contact.html" class="pilot-cta-btn js-pilot-cta header-cta">📅 Book a pilot call</a>
+        <a href="./demo.html" class="pilot-cta-btn header-cta"><svg class="ico ico-play" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M10 8.5v7l6-3.5z" fill="currentColor" stroke-width="1.5"/></svg> Try the live demo</a>
         <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
           <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path class="nt-open" d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none"/><path class="nt-close" d="M5 5l14 14M19 5L5 19" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none"/></svg>
         </button>
@@ -82,7 +82,7 @@
     </section>
 
     <p class="demo-safety-line mp-safety" role="note">
-      <span aria-hidden="true">⚕️</span> <strong>Anastasia never diagnoses.</strong> Red-flag symptoms are escalated to 112 or the doctor immediately.
+      <span class="safety-ico" aria-hidden="true"><svg class="ico ico-shield-plus" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="M9 12h6M12 9v6"/></svg></span><span class="safety-txt"><strong>Anastasia never diagnoses.</strong> Red-flag symptoms are escalated to 112 or the doctor immediately. If she is unsure or the call drops, the case is flagged for a call-back. <a href="./privacy-faq.html#safety">Safety &amp; limitations</a></span>
     </p>
 
     <div class="mp-trust-wrap">
@@ -93,17 +93,35 @@
           <p class="info-lead">How Anastasia handles your patients' information and where the doctor stays in control.</p>
         </div>
         <div class="trust-grid">
-          <div class="trust-card"><div class="trust-ico" aria-hidden="true">🇪🇺</div><h3>GDPR by design</h3><p>Built around GDPR principles: only the details needed to book and brief the doctor are collected, for that purpose only. Your clinic stays the data controller.</p></div>
-          <div class="trust-card"><div class="trust-ico" aria-hidden="true">🗄️</div><h3>Designed for EU hosting</h3><p>The platform is designed to keep call transcripts, case notes and messages on servers located in the EU.</p></div>
-          <div class="trust-card"><div class="trust-ico" aria-hidden="true">⏳</div><h3>Retention controls</h3><p>The clinic decides how long transcripts and recordings are kept, and they are deleted automatically afterwards. Patients can ask the clinic for their data to be removed.</p></div>
-          <div class="trust-card"><div class="trust-ico" aria-hidden="true">🧾</div><h3>Audit trail of every action</h3><p>Every booking, reply, escalation and approval is logged with time and source, so the clinic can always see who did what and when.</p></div>
-          <div class="trust-card"><div class="trust-ico" aria-hidden="true">👩‍⚕️</div><h3>The doctor has the final say</h3><p>Urgent buffers, GeSY renewals and anything unusual wait for the doctor's A/B/C/D reply. Anastasia suggests; the doctor decides.</p></div>
-          <div class="trust-card"><div class="trust-ico" aria-hidden="true">⚕️</div><h3>Anastasia never diagnoses</h3><p>She asks standard intake and red-flag questions, then routes the patient. Red-flag symptoms are escalated to 112 or the doctor immediately.</p></div>
+          <div class="trust-card"><div class="trust-ico" aria-hidden="true"><svg class="ico ico-shield-check" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></div><h3>GDPR and health data</h3><p>We follow GDPR and treat health information as special-category data. Only the details needed to book and brief the doctor are collected, and only for that purpose.</p></div>
+          <div class="trust-card"><div class="trust-ico" aria-hidden="true"><svg class="ico ico-file-check" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"/><path d="M14 2v4a2 2 0 0 0 2 2h4M9 15l2 2 4-4"/></svg></div><h3>Clear roles, DPA included</h3><p>Your clinic is the data controller and MyDocDesk acts as the data processor. A data processing agreement (DPA) and the full list of subprocessors are provided to every clinic before go-live, or earlier on request.</p></div>
+          <div class="trust-card"><div class="trust-ico" aria-hidden="true"><svg class="ico ico-clock" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div><h3>Retention controls</h3><p>The clinic decides how long transcripts and recordings are kept, and they are deleted automatically afterwards. Patients can ask the clinic for their data to be removed.</p></div>
+          <div class="trust-card"><div class="trust-ico" aria-hidden="true"><svg class="ico ico-list-checks" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m3 17 2 2 4-4M3 7l2 2 4-4M13 6h8M13 12h8M13 18h8"/></svg></div><h3>Audit trail of every action</h3><p>Every booking, reply, escalation and approval is logged with time and source, so the clinic can always see who did what and when.</p></div>
+          <div class="trust-card"><div class="trust-ico" aria-hidden="true"><svg class="ico ico-user-check" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="m16 11 2 2 4-4"/></svg></div><h3>The doctor has the final say</h3><p>Urgent buffers, GeSY renewals and anything unusual wait for the doctor's A/B/C/D reply. Anastasia suggests; the doctor decides.</p></div>
+          <div class="trust-card"><div class="trust-ico" aria-hidden="true"><svg class="ico ico-shield-plus" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="M9 12h6M12 9v6"/></svg></div><h3>Anastasia never diagnoses</h3><p>She asks standard intake and red-flag questions, then routes the patient. Red-flag symptoms are escalated to 112 or the doctor immediately.</p></div>
         </div>
         <div class="consent-box">
           <div class="consent-label">What callers hear first (consent notice)</div>
+          <p class="mp-illustrative"><svg class="ico ico-info" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg><span>Illustrative example – not a real clinic or patient</span></p>
           <blockquote class="consent-quote">“Hello, you've reached Dr. Nicolaou's clinic. I'm Anastasia, the clinic's AI assistant. This call is handled by an AI and a transcript is kept to prepare your appointment, in line with the clinic's privacy policy. If you'd rather speak to a person, just say so and the clinic will call you back.”</blockquote>
           <p class="consent-note">The wording is set by each clinic and can be adjusted with its data-protection adviser.</p>
+        </div>
+      </section>
+    </div>
+
+    <div class="mp-trust-wrap">
+      <section class="info-section trust-section safety-section" id="safety" aria-labelledby="safety-title">
+        <div class="info-section-head">
+          <div class="info-eyebrow">Safety &amp; limitations</div>
+          <h2 id="safety-title" class="info-title">What Anastasia does, and what she never does</h2>
+          <p class="info-lead">A receptionist, not a clinician. Here is exactly where her role ends.</p>
+        </div>
+        <div class="trust-grid">
+          <div class="trust-card"><div class="trust-ico" aria-hidden="true"><svg class="ico ico-stethoscope" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 12 0V4a2 2 0 0 0-2-2h-1"/><path d="M8 15v1a6 6 0 0 0 12 0v-4"/><circle cx="20" cy="10" r="2"/></svg></div><h3>Not a medical device</h3><p>Anastasia is a reception assistant, not a medical device. She does not diagnose, give medical advice or replace clinical judgement.</p></div>
+          <div class="trust-card"><div class="trust-ico" aria-hidden="true"><svg class="ico ico-alert" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4M12 17h.01"/></svg></div><h3>A conservative red-flag script</h3><p>She follows a cautious red-flag script that always errs on the side of safety: when in doubt, the caller is told to call 112 or the case is marked for an urgent callback.</p></div>
+          <div class="trust-card"><div class="trust-ico" aria-hidden="true"><svg class="ico ico-phone-off" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10.68 13.31a16 16 0 0 0 3.41 2.6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.42 19.42 0 0 1-3.33-2.67m-2.67-3.34a19.79 19.79 0 0 1-3.07-8.63A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91"/><path d="M22 2 2 22"/></svg></div><h3>If she's unsure or the call drops</h3><p>If Anastasia is unsure, the line is unclear or the call is cut off, the case is flagged for the clinic to call back and the doctor is notified.</p></div>
+          <div class="trust-card"><div class="trust-ico" aria-hidden="true"><svg class="ico ico-user-check" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="m16 11 2 2 4-4"/></svg></div><h3>The doctor makes every clinical decision</h3><p>Anastasia collects information, books within your rules and passes urgent cases on. All clinical decisions stay with the doctor.</p></div>
+          <div class="trust-card"><div class="trust-ico" aria-hidden="true"><svg class="ico ico-file-check" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"/><path d="M14 2v4a2 2 0 0 0 2 2h4M9 15l2 2 4-4"/></svg></div><h3>Your clinic approves the script</h3><p>During onboarding, your clinic reviews and approves the triage questions and red-flag list before Anastasia speaks to any patient.</p></div>
         </div>
       </section>
     </div>
@@ -128,7 +146,7 @@
         </details>
         <details class="faq-item">
           <summary><span class="faq-q">How does WhatsApp work?</span><span class="faq-chev" aria-hidden="true"></span></summary>
-          <div class="faq-a"><p>Anastasia answers the clinic's WhatsApp: text and voice notes, booking confirmations, and photos or lab results sent before the visit. We go through the best way to connect your current WhatsApp number on the pilot call.</p></div>
+          <div class="faq-a"><p>MyDocDesk runs on the official WhatsApp Business Platform. You can choose a dedicated MyDocDesk WhatsApp line for your clinic (the fastest option), or we migrate your existing business number to the platform. Once migrated, that number no longer works in the regular WhatsApp app. Either way, patients still call your usual clinic number, and Anastasia answers text and voice notes, sends booking confirmations and collects photos or lab results before the visit.</p></div>
         </details>
         <details class="faq-item">
           <summary><span class="faq-q">Does Anastasia speak Greek?</span><span class="faq-chev" aria-hidden="true"></span></summary>
@@ -140,7 +158,7 @@
         </details>
         <details class="faq-item">
           <summary><span class="faq-q">What if a patient has an emergency?</span><span class="faq-chev" aria-hidden="true"></span></summary>
-          <div class="faq-a"><p>Anastasia asks standard red-flag questions. If there are red-flag symptoms she does not book an appointment: she tells the caller to call 112 and alerts you straight away. She never diagnoses.</p></div>
+          <div class="faq-a"><p>Anastasia asks standard red-flag questions. If there are red-flag symptoms she does not book an appointment: she tells the caller to call 112 and alerts you straight away. If she is unsure or the call drops, the case is flagged for the clinic to call back. She never diagnoses.</p></div>
         </details>
         <details class="faq-item">
           <summary><span class="faq-q">Who decides what gets booked?</span><span class="faq-chev" aria-hidden="true"></span></summary>
@@ -148,7 +166,7 @@
         </details>
         <details class="faq-item">
           <summary><span class="faq-q">How is patient data protected?</span><span class="faq-chev" aria-hidden="true"></span></summary>
-          <div class="faq-a"><p>MyDocDesk is built around GDPR principles: only the details needed to book and brief you are collected, your clinic stays the data controller, the platform is designed for EU hosting, and you decide how long transcripts are kept. See the privacy section above.</p></div>
+          <div class="faq-a"><p>We follow GDPR and treat health information as special-category data. Only the details needed to book and brief you are collected. Your clinic is the data controller and MyDocDesk acts as data processor; a data processing agreement (DPA) and the full subprocessor list are provided before go-live. You decide how long transcripts are kept. See the privacy section above.</p></div>
         </details>
         <details class="faq-item">
           <summary><span class="faq-q">What happens if we use more than 300 minutes?</span><span class="faq-chev" aria-hidden="true"></span></summary>
@@ -167,8 +185,8 @@
         <p>Book a 15-minute call or email hello@mydocdesk.com.</p>
       </div>
       <div class="mp-cta-actions">
-        <a href="./contact.html" class="pilot-cta-btn js-pilot-cta large">📅 Book a 15-min pilot call</a>
-        <a href="./demo.html" class="mp-btn-ghost">▶ Try the live demo</a>
+        <a href="./demo.html" class="pilot-cta-btn large"><svg class="ico ico-play" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M10 8.5v7l6-3.5z" fill="currentColor" stroke-width="1.5"/></svg> Try the live demo</a>
+        <a href="./contact.html" class="mp-btn-ghost js-pilot-cta"><svg class="ico ico-calendar" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> Book a 15-min pilot call</a>
       </div>
     </section>
   </main>
@@ -200,21 +218,20 @@
       </div>
     </div>
     <div class="mp-footer-bottom">
-      <div class="site-footer-trust" data-no-i18n>🛡️ <strong>Engineered &amp; Supported by T-Knights Consulting Ltd (Cyprus)</strong></div>
-      <a href="https://myvacai.com" class="mp-footer-sister">Sister brand: MyVacAI</a>
+      <div class="site-footer-trust" data-no-i18n><svg class="ico ico-shield-check" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg> <strong>Engineered &amp; Supported by T-Knights Consulting Ltd (Cyprus)</strong></div>
     </div>
   </footer>
 
   <nav class="mobile-quick-jump mp-bottom-bar" aria-label="Quick links">
-    <a href="./index.html" class="mjump-btn"><span class="mj-ico" aria-hidden="true">🏠</span><span class="mj-lbl">Home</span></a>
-    <a href="./how-it-works.html" class="mjump-btn"><span class="mj-ico" aria-hidden="true">⚙️</span><span class="mj-lbl">How</span></a>
-    <a href="./demo.html" class="mjump-btn"><span class="mj-ico" aria-hidden="true">▶️</span><span class="mj-lbl">Demo</span></a>
-    <a href="./pricing.html" class="mjump-btn"><span class="mj-ico" aria-hidden="true">💶</span><span class="mj-lbl">Pricing</span></a>
-    <a href="./contact.html" class="mjump-btn"><span class="mj-ico" aria-hidden="true">✉️</span><span class="mj-lbl">Contact</span></a>
+    <a href="./index.html" class="mjump-btn"><span class="mj-ico" aria-hidden="true"><svg class="ico ico-home" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 9.5 12 3l9 6.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg></span><span class="mj-lbl">Home</span></a>
+    <a href="./how-it-works.html" class="mjump-btn"><span class="mj-ico" aria-hidden="true"><svg class="ico ico-sliders" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 4h-7M10 4H3M21 12h-9M8 12H3M21 20h-5M12 20H3M14 2v4M8 10v4M16 18v4"/></svg></span><span class="mj-lbl">How</span></a>
+    <a href="./demo.html" class="mjump-btn"><span class="mj-ico" aria-hidden="true"><svg class="ico ico-play" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M10 8.5v7l6-3.5z" fill="currentColor" stroke-width="1.5"/></svg></span><span class="mj-lbl">Demo</span></a>
+    <a href="./pricing.html" class="mjump-btn"><span class="mj-ico" aria-hidden="true"><svg class="ico ico-euro" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 10h12M4 14h9"/><path d="M19 6a7.7 7.7 0 0 0-5.2-2A7.9 7.9 0 0 0 6 12c0 4.4 3.5 8 7.8 8 2 0 3.8-.8 5.2-2"/></svg></span><span class="mj-lbl">Pricing</span></a>
+    <a href="./contact.html" class="mjump-btn"><span class="mj-ico" aria-hidden="true"><svg class="ico ico-mail" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></span><span class="mj-lbl">Contact</span></a>
   </nav>
 
-  <script src="./i18n.js?v=20261103b"></script>
-  <script src="./i18n-el.js?v=20261103b"></script>
-  <script src="./site.js?v=20261103b"></script>
+  <script src="./i18n.js?v=20261103c"></script>
+  <script src="./i18n-el.js?v=20261103c"></script>
+  <script src="./site.js?v=20261103c"></script>
 </body>
 </html>

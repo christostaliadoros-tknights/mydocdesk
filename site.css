@@ -403,3 +403,62 @@ html.md-intro-on .md-intro { display: flex; position: fixed; inset: 0; z-index: 
   html.md-intro-on .md-intro { display: none; }
   .mp-hero-photo, .mp-chip-dot { animation: none; }
 }
+
+/* ---------- Audit fixes (Nov 2026): SVG icons, outline CTA, pilot band, illustrative labels ---------- */
+.ico { display: inline-block; width: 1em; height: 1em; flex: 0 0 auto; vertical-align: -0.14em; }
+.pilot-cta-btn .ico, .mp-btn-ghost .ico { width: 1.15em; height: 1.15em; }
+.mp-hero-actions .mp-btn-ghost.js-pilot-cta, .mp-cta-actions .mp-btn-ghost.js-pilot-cta { border-color: rgba(251,191,36,0.75); color: #fde68a; }
+.mp-hero-actions .mp-btn-ghost.js-pilot-cta:hover, .mp-cta-actions .mp-btn-ghost.js-pilot-cta:hover { background: rgba(251,191,36,0.1); border-color: var(--gold); color: #fff; }
+.mp-hero-facts li { display: inline-flex; align-items: center; gap: 6px; }
+.mp-hero-facts .ico { color: var(--teal-hi); width: 1.05em; height: 1.05em; }
+.mp-chip-ico .ico { color: var(--gold); vertical-align: -0.12em; }
+.mp-benefit-ico .ico, .mp-card-ico .ico { width: 24px; height: 24px; color: #0d9488; }
+.mp-explore-ico .ico { width: 26px; height: 26px; color: var(--gold-deep); }
+.flow-ico .ico { width: 30px; height: 30px; color: #0d9488; }
+.how-step-ico { display: inline-flex; color: #0d9488; }
+.how-step-ico .ico { width: 26px; height: 26px; }
+.trust-ico { display: inline-flex; width: 38px; height: 38px; border-radius: 10px; align-items: center; justify-content: center; background: linear-gradient(135deg, #ccfbf1, #e0f2fe); }
+.trust-ico .ico { width: 21px; height: 21px; color: #0d9488; }
+.safety-section .trust-ico { background: linear-gradient(135deg, #fef3c7, #fde68a); }
+.safety-section .trust-ico .ico { color: var(--gold-deep); }
+.mjump-btn .mj-ico .ico { width: 1.15rem; height: 1.15rem; }
+.nav-tab .tab-ico .ico { width: 1.05em; height: 1.05em; }
+.site-footer-trust .ico { color: var(--teal-hi); width: 1.1em; height: 1.1em; vertical-align: -0.2em; }
+.setup-note .ico { color: var(--teal-hi); }
+.price-badge { display: inline-flex; align-items: center; gap: 6px; }
+.price-list li::before { content: ""; background: #14b8a6 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center / 11px no-repeat; }
+/* triage colour markers (replace emoji dots) */
+.tri-pill::before, .tri-t::before { content: ""; display: inline-block; width: 0.62em; height: 0.62em; border-radius: 50%; background: currentColor; flex: 0 0 auto; }
+.tri-t { white-space: nowrap; }
+.tri-t::before { margin-right: 0.3em; vertical-align: 0.06em; }
+.tri-t.p1 { color: #b91c1c; } .tri-t.p2 { color: #b45309; } .tri-t.p3 { color: #15803d; }
+/* safety line */
+.demo-safety-line { display: flex; align-items: flex-start; gap: 8px; }
+.demo-safety-line .safety-ico { display: inline-flex; color: #0d9488; margin-top: 1px; }
+.demo-safety-line .safety-ico .ico { width: 18px; height: 18px; }
+.demo-safety-line a { color: #0f766e; font-weight: 700; text-decoration: underline; text-underline-offset: 2px; white-space: nowrap; }
+/* illustrative label: clearly visible, not tiny */
+.mp-illustrative { display: flex; align-items: center; justify-content: center; gap: 7px; width: fit-content; max-width: 100%; margin: 12px auto 0; padding: 7px 12px; border-radius: 999px; background: #fffbeb; border: 1px solid #fcd34d; color: #78350f; font-size: 0.84rem; font-weight: 700; line-height: 1.35; text-align: left; }
+.mp-illustrative .ico { width: 17px; height: 17px; color: var(--gold-deep); }
+.mp-hero-visual .mp-illustrative { margin-right: 0; }
+.mp-illustrative-wide { border-radius: 12px; margin: 0 0 12px; justify-content: flex-start; width: auto; }
+.info-section-head .mp-illustrative, .consent-box .mp-illustrative { margin: 10px 0 0; }
+.consent-box .mp-illustrative { margin: 8px 0 10px; }
+/* founding pilot band */
+.mp-pilot-band-wrap { padding-top: 8px; padding-bottom: 8px; }
+.mp-pilot-band { display: flex; align-items: center; gap: 20px; padding: 24px 28px; border-radius: 20px; background: linear-gradient(135deg, #fffbeb, #fef3c7); border: 1.5px solid #fcd34d; box-shadow: var(--shadow-sm); }
+.mp-pilot-band-ico { flex: 0 0 auto; width: 54px; height: 54px; border-radius: 14px; display: flex; align-items: center; justify-content: center; background: #0a192f; color: var(--gold); }
+.mp-pilot-band-ico .ico { width: 26px; height: 26px; }
+.mp-pilot-band-copy { flex: 1 1 auto; min-width: 0; }
+.mp-pilot-band-copy .mp-eyebrow { color: var(--gold-deep); }
+.mp-pilot-band-copy h2 { font-size: 1.35rem; font-weight: 800; color: #0f172a; margin: 4px 0 4px; letter-spacing: -0.01em; }
+.mp-pilot-band-copy p { font-size: 0.98rem; color: #78350f; line-height: 1.5; }
+.mp-pilot-band-actions { flex: 0 0 auto; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.mp-pilot-band-link { font-size: 0.88rem; font-weight: 700; color: #92400e; text-decoration: underline; text-underline-offset: 2px; }
+@media (max-width: 760px) {
+  .mp-pilot-band { flex-direction: column; align-items: flex-start; padding: 20px; gap: 14px; }
+  .mp-pilot-band-actions { width: 100%; }
+  .mp-pilot-band-actions .pilot-cta-btn { width: 100%; white-space: normal; text-align: center; }
+  .mp-illustrative { font-size: 0.8rem; border-radius: 12px; }
+}
+.how-step-body .mp-illustrative { margin-left: 0; }
