@@ -5,7 +5,7 @@ window.I18N_EL = {
  "Sister Brand: MyVacAI": "Αδελφή εφαρμογή: MyVacAI",
  "🔗 Sister: MyVacAI": "🔗 Αδελφή εφαρμογή: MyVacAI",
  "Platform Sections": "Ενότητες πλατφόρμας",
- "1. Live AI Receptionist & Triage": "1. Ζωντανή AI Γραμματεία &amp; Διαλογή",
+ "1. Live AI Receptionist & Booking": "1. Ζωντανή AI Γραμματεία &amp; Ραντεβού",
  "Live Demo": "Ζωντανή επίδειξη",
  "2. Doctor Schedule & Case Notes": "2. Πρόγραμμα Γιατρού &amp; Σημειώματα",
  "Schedule": "Πρόγραμμα",
@@ -14,9 +14,9 @@ window.I18N_EL = {
  "4. Official MyDocDesk Logos": "4. Επίσημα λογότυπα MyDocDesk",
  "Logos": "Λογότυπα",
  "PHASE 1: AI VIRTUAL MEDICAL RECEPTIONIST • PHASE 2 (VISION): PATIENT FINDER": "ΦΑΣΗ 1: AI ΨΗΦΙΑΚΗ ΙΑΤΡΙΚΗ ΓΡΑΜΜΑΤΕΙΑ • ΦΑΣΗ 2 (ΟΡΑΜΑ): ΑΝΑΖΗΤΗΣΗ ΓΙΑΤΡΟΥ",
- "How MyDocDesk Triages Calls & WhatsApp Messages, Writes Case Notes, and Protects the Doctor's Schedule": "Πώς το <span class=\"js-brand-name\">MyDocDesk</span> ταξινομεί κλήσεις &amp; μηνύματα WhatsApp, συντάσσει σημειώματα και προστατεύει το πρόγραμμα του γιατρού",
+ "How MyDocDesk Sorts Calls & WhatsApp Messages, Writes Case Notes, and Protects the Doctor's Schedule": "Πώς το <span class=\"js-brand-name\">MyDocDesk</span> ταξινομεί κλήσεις &amp; μηνύματα WhatsApp, συντάσσει σημειώματα και προστατεύει το πρόγραμμα του γιατρού",
  "While the doctor examines a patient, Anastasia (AI Medical Receptionist) answers calls & WhatsApp voice notes in Greek/English, scores clinical priority (🔴 Urgent / 🟡 Soon / 🟢 GeSY Admin), attaches a 3-bullet Pre-Visit Case Note, and unlocks emergency buffer slots only when needed.": "Όσο ο γιατρός εξετάζει, η <strong>Αναστασία (AI Ιατρική Γραμματέας)</strong> απαντά σε κλήσεις &amp; φωνητικά μηνύματα WhatsApp στα ελληνικά/αγγλικά, αξιολογεί την κλινική προτεραιότητα (<strong>🔴 Επείγον / 🟡 Σύντομα / 🟢 Διοικητικά ΓεΣΥ</strong>), επισυνάπτει <strong>σημείωμα 3 σημείων πριν από την επίσκεψη</strong> και ξεκλειδώνει ραντεβού επειγόντων μόνο όταν χρειάζεται.",
- "▶ Start Guided Triage Demo": "▶ Έναρξη καθοδηγούμενης επίδειξης",
+ "▶ Start Guided Demo": "▶ Έναρξη καθοδηγούμενης επίδειξης",
  "🎙️ Speak as Patient (Mic)": "🎙️ Μιλήστε ως ασθενής (μικρόφωνο)",
  "Voice input language": "Γλώσσα φωνητικής εισόδου",
  "Mic language:": "Γλώσσα μικροφώνου:",
@@ -24,15 +24,15 @@ window.I18N_EL = {
  "EN": "EN",
  "Speak in Greek": "Μιλήστε στα ελληνικά",
  "📅 Book a 15-min pilot call": "📅 Κλείστε 15λεπτη πιλοτική κλήση",
- "4-Step Interactive Medical Triage Walkthrough": "Διαδραστική επίδειξη ιατρικής διαλογής σε 4 βήματα",
+ "4-Step Interactive Reception Walkthrough": "Διαδραστική επίδειξη γραμματείας σε 4 βήματα",
  "STEP 1": "ΒΗΜΑ 1",
  "🔊 Hear Patient Call": "🔊 Ακούστε την κλήση",
  "📞 Patient Calls While Doctor Is in Exam": "📞 Ο ασθενής καλεί ενώ ο γιατρός εξετάζει",
  "Doctor's phone doesn't interrupt the consultation—Anastasia answers in Dr. Andreas Nicolaou's Clinic.": "Το τηλέφωνο δεν διακόπτει την εξέταση — η Αναστασία απαντά για το <strong id=\"step1-clinic-label\">ιατρείο: Δρ. Ανδρέας Νικολάου</strong>.",
  "STEP 2": "ΒΗΜΑ 2",
  "🩺 Score Priority": "🩺 Αξιολόγηση προτεραιότητας",
- "🧠 Clinical Intake & Priority Triage": "🧠 Κλινική λήψη στοιχείων &amp; διαλογή προτεραιότητας",
- "Asks symptoms, duration & red flags. Assigns 🔴 P1 Urgent, 🟡 P2 Soon, or 🟢 P3 GeSY Queue.": "Ρωτά για συμπτώματα, διάρκεια &amp; σημεία κινδύνου. Ορίζει <strong>🔴 Π1 Επείγον</strong>, <strong>🟡 Π2 Σύντομα</strong> ή <strong>🟢 Π3 Λίστα ΓεΣΥ</strong>.",
+ "🧠 Intake & Booking Priority": "🧠 Λήψη στοιχείων &amp; προτεραιότητα ραντεβού",
+ "Asks symptoms, duration & urgent warning signs. Assigns 🔴 P1 Urgent, 🟡 P2 Soon, or 🟢 P3 GeSY Queue.": "Ρωτά για συμπτώματα, διάρκεια &amp; επείγοντα συμπτώματα. Ορίζει <strong>🔴 Π1 Επείγον</strong>, <strong>🟡 Π2 Σύντομα</strong> ή <strong>🟢 Π3 Λίστα ΓεΣΥ</strong>.",
  "STEP 3": "ΒΗΜΑ 3",
  "📅 AI Sub-Calendar Layer": "📅 Επίπεδο υπο-ημερολογίου AI",
  "🗓️ Multi-Calendar Read & Buffer Unlock": "🗓️ Ανάγνωση πολλών ημερολογίων &amp; ξεκλείδωμα ραντεβού επειγόντων",
@@ -49,13 +49,12 @@ window.I18N_EL = {
  "🦷 Dr. Nikos Constantinou — Dentistry (Limassol • GeSY & Private)": "🦷 Δρ. Νίκος Κωνσταντίνου — Οδοντιατρική (Λεμεσός • ΓεΣΥ &amp; Ιδιωτικά)",
  "🔬 Dr. Elena Georgiou — Dermatology (Nicosia • GeSY & Private)": "🔬 Δρ. Έλενα Γεωργίου — Δερματολογία (Λευκωσία • ΓεΣΥ &amp; Ιδιωτικά)",
  "❤️ Dr. Marios Petrou — Cardiology (Larnaca • GeSY & Private)": "❤️ Δρ. Μάριος Πέτρου — Καρδιολογία (Λάρνακα • ΓεΣΥ &amp; Ιδιωτικά)",
- "Interactive Triage Cases:": "Διαδραστικά περιστατικά διαλογής:",
+ "Interactive Demo Cases:": "Διαδραστικά περιστατικά επίδειξης:",
  "🔴 P1 Urgent: Child 39.6°C Fever + Ear Pain (Unlocks 12:30 Slot)": "🔴 Π1 Επείγον: Παιδί με πυρετό 39,6°C + πόνο στο αυτί (ξεκλειδώνει το ραντεβού 12:30)",
  "🦷 Dental Urgent: Broken Crown & Acute Toothache + Photo": "🦷 Οδοντιατρικό επείγον: Σπασμένη στεφάνη &amp; οξύς πονόδοντος + φωτογραφία",
  "🟡 P2 Soon: Spreading Skin Rash + WhatsApp Photo": "🟡 Π2 Σύντομα: Εξάνθημα που επεκτείνεται + φωτογραφία WhatsApp",
  "🟢 P3 Routine: GeSY Prescription Renewal (No Slot Wasted)": "🟢 Π3 Ρουτίνα: Επανάληψη συνταγής ΓεΣΥ (χωρίς δέσμευση ραντεβού)",
  "🔊 Voice Audio: Off (Tap to Hear Anastasia)": "🔊 Φωνή: Ανενεργή (πατήστε για να ακούσετε την Αναστασία)",
- "⚕️ Anastasia never diagnoses. Red-flag symptoms are escalated to 112 or the doctor immediately.": "<span aria-hidden=\"true\">⚕️</span> <strong>Η Αναστασία δεν κάνει ποτέ διάγνωση.</strong> Τα συμπτώματα κινδύνου παραπέμπονται αμέσως στο 112 ή στον γιατρό.",
  "5G • +357 CY CLINIC LINE": "5G • +357 ΓΡΑΜΜΗ ΙΑΤΡΕΙΟΥ",
  "🩺 Dr. Andreas Nicolaou is in Exam Room 1": "🩺 <strong id=\"busy-doc-name\">Δρ. Ανδρέας Νικολάου</strong> • σε εξέταση στο <span id=\"busy-room-label\">Εξεταστήριο 1</span>",
  "⚡ AI Desk Answering": "⚡ Απαντά η AI Γραμματεία",
@@ -69,7 +68,7 @@ window.I18N_EL = {
  "Speak": "Μιλήστε",
  "MyDocDesk": "MyDocDesk",
  "✓ Verified Medical": "✓ Επαληθευμένο ιατρείο",
- "MyDocDesk • Triage, Slot Booking & Photo Intake": "<span class=\"js-brand-name\">MyDocDesk</span> • Διαλογή, κλείσιμο ραντεβού &amp; λήψη φωτογραφιών",
+ "MyDocDesk • Priority, Slot Booking & Photo Intake": "<span class=\"js-brand-name\">MyDocDesk</span> • Προτεραιότητα, κλείσιμο ραντεβού &amp; λήψη φωτογραφιών",
  "⚡ Live Schedule Sync + Pre-Visit Photo/Lab Intake": "⚡ Ζωντανός συγχρονισμός προγράμματος + λήψη φωτογραφιών/εξετάσεων πριν από την επίσκεψη",
  "GeSY & Private": "ΓεΣΥ & Ιδιωτικά",
  "✅ Confirm Suggested Slot": "✅ Επιβεβαίωση προτεινόμενου ραντεβού",
@@ -79,7 +78,7 @@ window.I18N_EL = {
  "Message Anastasia on WhatsApp (or send symptoms)...": "Γράψτε στην Αναστασία στο WhatsApp (ή στείλτε συμπτώματα)...",
  "Type a patient WhatsApp message": "Γράψτε ένα μήνυμα WhatsApp ασθενούς",
  "Send": "Αποστολή",
- "🧠 AI Priority Triage & Doctor's Case Note Card": "🧠 Διαλογή προτεραιότητας AI &amp; καρτέλα περιστατικού για τον γιατρό",
+ "🧠 AI Booking Priority & Doctor's Case Note Card": "🧠 Προτεραιότητα ραντεβού AI &amp; καρτέλα περιστατικού για τον γιατρό",
  "Automatically pinned to the doctor's calendar event before the patient walks in": "Επισυνάπτεται αυτόματα στο ραντεβού του γιατρού πριν φτάσει ο ασθενής",
  "CLINICAL SLOT PRIORITY LEVEL": "ΕΠΙΠΕΔΟ ΚΛΙΝΙΚΗΣ ΠΡΟΤΕΡΑΙΟΤΗΤΑΣ",
  "📋 STRUCTURED PRE-VISIT CASE NOTE (FOR DOCTOR)": "📋 ΔΟΜΗΜΕΝΟ ΣΗΜΕΙΩΜΑ ΠΡΙΝ ΑΠΟ ΤΗΝ ΕΠΙΣΚΕΨΗ (ΓΙΑ ΤΟΝ ΓΙΑΤΡΟ)",
@@ -93,7 +92,7 @@ window.I18N_EL = {
  "Request Lab / Photo on WhatsApp": "Αίτημα εξετάσεων / φωτογραφίας στο WhatsApp",
  "[D]": "[D]",
  "Escalate — Doctor Calls Back": "Κλιμάκωση — ο γιατρός θα καλέσει",
- "⚡ Real-Time Schedule & Triage Engine Trace": "⚡ Καταγραφή μηχανής προγράμματος &amp; διαλογής σε πραγματικό χρόνο",
+ "⚡ Real-Time Schedule & Booking Engine Trace": "⚡ Καταγραφή μηχανής προγράμματος &amp; κρατήσεων σε πραγματικό χρόνο",
  "💡 CLINIC ROI & DOCTOR FOCUS CALCULATOR (CYPRUS & GREECE)": "💡 ΥΠΟΛΟΓΙΣΜΟΣ ΑΠΟΔΟΣΗΣ ΙΑΤΡΕΙΟΥ &amp; ΧΡΟΝΟΥ ΓΙΑΤΡΟΥ (ΚΥΠΡΟΣ &amp; ΕΛΛΑΔΑ)",
  "See Why Doctors Switch to MyDocDesk Before Joining the Marketplace": "Γιατί οι γιατροί επιλέγουν το <span class=\"js-brand-name\">MyDocDesk</span>",
  "Personal Doctors (GeSY) and Private Specialists receive 40–120 calls & WhatsApp messages a day. See how much time and revenue MyDocDesk recovers compared to a €1,400/month front-desk secretary.": "Οι Προσωπικοί Ιατροί (ΓεΣΥ) και οι ιδιώτες ειδικοί δέχονται 40–120 κλήσεις &amp; μηνύματα WhatsApp την ημέρα. Δείτε πόσο χρόνο και έσοδα ανακτά το <span class=\"js-brand-name\">MyDocDesk</span> σε σύγκριση με γραμματέα πλήρους απασχόλησης στα €1.400/μήνα.",
@@ -127,7 +126,7 @@ window.I18N_EL = {
  "Anastasia • MyDocDesk": "Αναστασία • MyDocDesk",
  "AI receptionist for Dr. Andreas Nicolaou": "AI γραμματεία του Δρ. Ανδρέα Νικολάου",
  "☀️ Morning digest Good morning, Dr. Nicolaou. Today: 8 patients booked, first at 08:30. Urgent buffers at 12:30 and 17:00 are still free. 3 GeSY items waiting for your end-of-day batch. Overnight: 4 WhatsApp messages answered, 0 missed calls. 07:30": "<div class=\"bubble-tag\">☀️ Πρωινή σύνοψη</div> Καλημέρα, γιατρέ. Σήμερα: <strong>8 ασθενείς</strong> με ραντεβού, το πρώτο στις 08:30. Τα ραντεβού επειγόντων στις <strong>12:30</strong> και <strong>17:00</strong> είναι ακόμη ελεύθερα. <strong>3 αιτήματα ΓεΣΥ</strong> περιμένουν τη λίστα του τέλους της ημέρας. Κατά τη νύχτα: απαντήθηκαν 4 μηνύματα WhatsApp, 0 αναπάντητες κλήσεις. <span class=\"bubble-meta\">07:30</span>",
- "🔴 Approval needed • #MD-409 Leo K. (4y, GeSY): 39.6°C fever since last night + right ear pain. Red-flag screen negative. Reply: A book today 12:30 buffer • B tomorrow 09:00 • C I'll call the parent • D decline 12:05": "<div class=\"bubble-tag\">🔴 Απαιτείται έγκριση • #MD-409</div> Λέων Κ. (4 ετών, ΓεΣΥ): πυρετός 39,6°C από χθες το βράδυ + πόνος στο δεξί αυτί. Έλεγχος σημείων κινδύνου αρνητικός. Απαντήστε:<br> <strong>A</strong> ραντεβού σήμερα 12:30 • <strong>B</strong> αύριο 09:00 • <strong>C</strong> θα καλέσω τον γονέα • <strong>D</strong> απόρριψη <span class=\"bubble-meta\">12:05</span>",
+ "🔴 Approval needed • #MD-409 Leo K. (4y, GeSY): 39.6°C fever since last night + right ear pain. No urgent symptoms reported. Reply: A book today 12:30 buffer • B tomorrow 09:00 • C I'll call the parent • D decline 12:05": "<div class=\"bubble-tag\">🔴 Απαιτείται έγκριση • #MD-409</div> Λέων Κ. (4 ετών, ΓεΣΥ): πυρετός 39,6°C από χθες το βράδυ + πόνος στο δεξί αυτί. Δεν αναφέρθηκαν επείγοντα συμπτώματα. Απαντήστε:<br> <strong>A</strong> ραντεβού σήμερα 12:30 • <strong>B</strong> αύριο 09:00 • <strong>C</strong> θα καλέσω τον γονέα • <strong>D</strong> απόρριψη <span class=\"bubble-meta\">12:05</span>",
  "A12:06 ✓✓": "A<span class=\"bubble-meta\">12:06 ✓✓</span>",
  "✅ Done. Leo is booked at 12:30, mother confirmed on WhatsApp, case note pinned to the calendar event. 12:06": "✅ Έγινε. Ο Λέων έχει ραντεβού στις 12:30, η μητέρα επιβεβαίωσε στο WhatsApp και το σημείωμα επισυνάφθηκε στο ραντεβού. <span class=\"bubble-meta\">12:06</span>",
  "🚨 Urgent escalation A parent called about a 6-month-old with fever and unusual drowsiness. These can be urgent symptoms, so I did not book an appointment. I told her to call 112 now and flagged it to you. Caller: Sample Parent, +357 99 000 000. 15:10": "<div class=\"bubble-tag\">🚨 Επείγουσα κλιμάκωση</div> Ένας γονέας κάλεσε για <strong>βρέφος 6 μηνών με πυρετό και ασυνήθιστη υπνηλία</strong>. Μπορεί να πρόκειται για επείγοντα συμπτώματα, γι' αυτό δεν έκλεισα ραντεβού. Της είπα να <strong>καλέσει αμέσως το 112</strong> και σας το επισήμανα. Καλών: Ενδεικτικός γονέας, +357 99 000 000. <span class=\"bubble-meta\">15:10</span>",
@@ -167,7 +166,7 @@ window.I18N_EL = {
  "Choose your rules": "Ορίστε τους κανόνες σας",
  "Set your booking hours, which slots are kept as urgent buffers, and what needs your A/B/C/D approval. Change them at any time.": "Ορίστε τις ώρες ραντεβού, ποια ραντεβού κρατούνται για επείγοντα και τι χρειάζεται τη δική σας έγκριση A/B/C/D. Αλλάξτε τα όποτε θέλετε.",
  "A short call with us to see whether Anastasia fits your clinic. No commitment.": "Μια σύντομη κλήση μαζί μας για να δείτε αν η Αναστασία ταιριάζει στο ιατρείο σας. Χωρίς καμία δέσμευση.",
- "Today's Triaged Bookings": "Σημερινά ραντεβού μετά από διαλογή",
+ "Today's Prioritised Bookings": "Σημερινά ραντεβού κατά προτεραιότητα",
  "🔴 Urgent Buffer Slots": "🔴 Ραντεβού επειγόντων",
  "🟢 Async GeSY Admin Queue": "🟢 Λίστα διοικητικών ΓεΣΥ",
  "Phase 2 Network Status": "Κατάσταση δικτύου Φάσης 2",
@@ -185,7 +184,7 @@ window.I18N_EL = {
  "[B] Book Next Morning Slot": "<strong>[B]</strong> Ραντεβού το επόμενο πρωί",
  "[C] Request Lab / Photo on WhatsApp": "<strong>[C]</strong> Αίτημα εξετάσεων / φωτογραφίας στο WhatsApp",
  "[D] Escalate — Doctor Calls Back": "<strong>[D]</strong> Κλιμάκωση — ο γιατρός θα καλέσει",
- "⚙️ Doctor's Custom Priority Triage Rules": "⚙️ Προσαρμοσμένοι κανόνες διαλογής του γιατρού",
+ "⚙️ Doctor's Custom Booking Priority Rules": "⚙️ Προσαρμοσμένοι κανόνες προτεραιότητας του γιατρού",
  "Each doctor controls what counts as 🔴 Urgent vs 🟡 Soon vs 🟢 Async Admin": "Κάθε γιατρός ορίζει τι θεωρείται 🔴 Επείγον, 🟡 Σύντομα ή 🟢 Διοικητικό",
  "🔴 Priority 1 (Unlocks 12:30 & 17:00 Buffer Slots): Fever >39.0°C in children under 6, acute ear/abdominal pain, post-op complication, acute allergic reaction.": "<strong>🔴 Προτεραιότητα 1 (ξεκλειδώνει τα ραντεβού επειγόντων 12:30 &amp; 17:00):</strong> Πυρετός &gt;39,0°C σε παιδιά κάτω των 6 ετών, οξύς πόνος στο αυτί/την κοιλιά, μετεγχειρητική επιπλοκή, οξεία αλλεργική αντίδραση.",
  "🟡 Priority 2 (Books Next 24–48h Standard Slot): New rash/mole check (requests WhatsApp photo upfront), mild cough/cold >3 days, specialist consultation.": "<strong>🟡 Προτεραιότητα 2 (επόμενο ραντεβού εντός 24–48 ωρών):</strong> Νέο εξάνθημα/έλεγχος σπίλου (ζητείται φωτογραφία WhatsApp εκ των προτέρων), ήπιος βήχας/κρυολόγημα &gt;3 ημερών, εξέταση από ειδικό.",
@@ -225,11 +224,11 @@ window.I18N_EL = {
  "Call": "Κλήση",
  "Jump to the WhatsApp chat": "Μετάβαση στη συνομιλία WhatsApp",
  "WhatsApp": "WhatsApp",
- "Jump to the triage case note": "Μετάβαση στο σημείωμα διαλογής",
+ "Jump to the case note": "Μετάβαση στο σημείωμα περιστατικού",
  "Notes": "Σημείωμα",
  "Get started: your clinic in 3 steps and pilot call": "Ξεκινήστε: το ιατρείο σας σε 3 βήματα και πιλοτική κλήση",
  "Start": "Έναρξη",
- "MyDocDesk (mydocdesk.com) — Intelligent Medical Reception • AI Voice & WhatsApp Triage for Cyprus Clinics & Dentists": "<strong>MyDocDesk (mydocdesk.com)</strong> — Έξυπνη ιατρική γραμματεία • Διαλογή μέσω φωνής &amp; WhatsApp με AI για ιατρεία &amp; οδοντιατρεία στην Κύπρο",
+ "MyDocDesk (mydocdesk.com) — Intelligent Medical Reception • AI Voice & WhatsApp Reception for Cyprus Clinics & Dentists": "<strong>MyDocDesk (mydocdesk.com)</strong> — Έξυπνη ιατρική γραμματεία • Γραμματεία μέσω φωνής &amp; WhatsApp με AI για ιατρεία &amp; οδοντιατρεία στην Κύπρο",
  "EMERGENCY BUFFER": "ΡΑΝΤΕΒΟΥ ΕΠΕΙΓΟΝΤΩΝ",
  "MULTI-CALENDAR BUSY HOLD": "ΔΕΣΜΕΥΜΕΝΟΣ ΧΡΟΝΟΣ ΑΠΟ ΗΜΕΡΟΛΟΓΙΑ",
  "45m TREATMENT BLOCK": "ΘΕΡΑΠΕΙΑ 45 ΛΕΠΤΩΝ",
@@ -237,7 +236,7 @@ window.I18N_EL = {
  "30m CHAIRSIDE EMERGENCY BUFFER": "ΡΑΝΤΕΒΟΥ ΕΠΕΙΓΟΝΤΩΝ 30 ΛΕΠΤΩΝ",
  "30m HYGIENE & SCALING": "ΚΑΘΑΡΙΣΜΟΣ 30 ΛΕΠΤΩΝ",
  "30m DERMOSCOPY": "ΔΕΡΜΑΤΟΣΚΟΠΗΣΗ 30 ΛΕΠΤΩΝ",
- "PHOTO TRIAGED": "ΔΙΑΛΟΓΗ ΜΕ ΦΩΤΟΓΡΑΦΙΑ",
+ "PHOTO RECEIVED": "ΛΗΦΘΗΚΕ ΦΩΤΟΓΡΑΦΙΑ",
  "CRYOTHERAPY / BIOPSY": "ΚΡΥΟΘΕΡΑΠΕΙΑ / ΒΙΟΨΙΑ",
  "45m ECHO + ECG": "ΥΠΕΡΗΧΟΓΡΑΦΗΜΑ + ΗΚΓ 45 ΛΕΠΤΩΝ",
  "HOLTER REVIEW": "ΑΞΙΟΛΟΓΗΣΗ HOLTER",
@@ -260,14 +259,14 @@ window.I18N_EL = {
  "🟡 PRIORITY 2 • 60m IMPLANT & CBCT": "🟡 ΠΡΟΤΕΡΑΙΟΤΗΤΑ 2 • ΕΜΦΥΤΕΥΜΑ & CBCT 60 ΛΕΠΤΩΝ",
  "🟡 PRIORITY 2 • CARDIAC CLEARANCE": "🟡 ΠΡΟΤΕΡΑΙΟΤΗΤΑ 2 • ΚΑΡΔΙΟΛΟΓΙΚΗ ΕΚΤΙΜΗΣΗ",
  "🟡 PRIORITY 2 • MOLE MAPPING & PHOTO": "🟡 ΠΡΟΤΕΡΑΙΟΤΗΤΑ 2 • ΧΑΡΤΟΓΡΑΦΗΣΗ ΣΠΙΛΩΝ & ΦΩΤΟΓΡΑΦΙΑ",
- "🟡 PRIORITY 2 • PHOTO TRIAGED": "🟡 ΠΡΟΤΕΡΑΙΟΤΗΤΑ 2 • ΔΙΑΛΟΓΗ ΜΕ ΦΩΤΟΓΡΑΦΙΑ",
+ "🟡 PRIORITY 2 • PHOTO RECEIVED": "🟡 ΠΡΟΤΕΡΑΙΟΤΗΤΑ 2 • ΛΗΦΘΗΚΕ ΦΩΤΟΓΡΑΦΙΑ",
  "🟡 PRIORITY 2 • PROCEDURE BLOCK": "🟡 ΠΡΟΤΕΡΑΙΟΤΗΤΑ 2 • ΧΡΟΝΟΣ ΕΠΕΜΒΑΣΗΣ",
  "🟡 PRIORITY 2 • RASH + WHATSAPP PHOTO": "🟡 ΠΡΟΤΕΡΑΙΟΤΗΤΑ 2 • ΕΞΑΝΘΗΜΑ + ΦΩΤΟΓΡΑΦΙΑ WHATSAPP",
  "🟡 PRIORITY 2 • STANDARD": "🟡 ΠΡΟΤΕΡΑΙΟΤΗΤΑ 2 • ΤΑΚΤΙΚΟ",
  "🟡 PRIORITY 2 • TRANSTHORACIC ECHO": "🟡 ΠΡΟΤΕΡΑΙΟΤΗΤΑ 2 • ΔΙΑΘΩΡΑΚΙΚΟ ΥΠΕΡΗΧΟΓΡΑΦΗΜΑ",
  "🟢 PRIORITY 3 • 30m HYGIENE": "🟢 ΠΡΟΤΕΡΑΙΟΤΗΤΑ 3 • ΚΑΘΑΡΙΣΜΟΣ 30 ΛΕΠΤΩΝ",
  "🟢 PRIORITY 3 • 30m SCALING": "🟢 ΠΡΟΤΕΡΑΙΟΤΗΤΑ 3 • ΑΠΟΤΡΥΓΩΣΗ 30 ΛΕΠΤΩΝ",
- "AI Triage Guard": "Φύλαξη διαλογής AI",
+ "AI Safety Guard": "Έλεγχος ασφαλείας AI",
  "Call → WhatsApp Handoff": "Κλήση → συνέχεια στο WhatsApp",
  "Call → WhatsApp Photo Handoff": "Κλήση → φωτογραφία στο WhatsApp",
  "Clinic Desk": "Γραμματεία ιατρείου",
@@ -277,7 +276,7 @@ window.I18N_EL = {
  "WhatsApp Booking": "Κράτηση WhatsApp",
  "WhatsApp Document": "Έγγραφο WhatsApp",
  "WhatsApp Intake": "Λήψη στοιχείων WhatsApp",
- "WhatsApp Photo Triage": "Διαλογή φωτογραφίας WhatsApp",
+ "WhatsApp Photo Intake": "Λήψη φωτογραφίας WhatsApp",
  "WhatsApp Text": "Μήνυμα WhatsApp",
  "WhatsApp Voice + Photo": "Φωνητικό + φωτογραφία WhatsApp",
  "WhatsApp Voice Note": "Φωνητικό μήνυμα WhatsApp",
@@ -298,8 +297,8 @@ window.I18N_EL = {
  "Protected AI Priority 1 Emergency Buffer Layer": "Επίπεδο προστατευμένων ραντεβού επειγόντων Προτεραιότητας 1",
  "Multi-Calendar Busy-Read Holds (Personal + Hospital/Surgery Rounds)": "Δεσμευμένος χρόνος από πολλά ημερολόγια (προσωπικά + νοσοκομείο/χειρουργείο)",
  "Main Clinic Desk Calendar Layer": "Κύριο ημερολόγιο γραμματείας ιατρείου",
- "INTELLIGENT MEDICAL RECEPTION • AI Voice & WhatsApp Triage": "ΕΞΥΠΝΗ ΙΑΤΡΙΚΗ ΓΡΑΜΜΑΤΕΙΑ • Διαλογή μέσω φωνής & WhatsApp με AI",
- "SMART TRIAGE AND SCHEDULING • AI Voice & WhatsApp Triage": "ΕΞΥΠΝΗ ΔΙΑΛΟΓΗ & ΠΡΟΓΡΑΜΜΑΤΙΣΜΟΣ • Διαλογή μέσω φωνής & WhatsApp με AI",
+ "INTELLIGENT MEDICAL RECEPTION • AI Voice & WhatsApp Reception": "ΕΞΥΠΝΗ ΙΑΤΡΙΚΗ ΓΡΑΜΜΑΤΕΙΑ • Γραμματεία μέσω φωνής & WhatsApp με AI",
+ "SMART PRIORITY AND SCHEDULING • AI Voice & WhatsApp Reception": "ΕΞΥΠΝΗ ΠΡΟΤΕΡΑΙΟΤΗΤΑ & ΠΡΟΓΡΑΜΜΑΤΙΣΜΟΣ • Γραμματεία μέσω φωνής & WhatsApp με AI",
  "Costas Papadopoulos (Age 58)": "Κώστας Παπαδόπουλος (58 ετών)",
  "Despina Ioannou (Age 41)": "Δέσποινα Ιωάννου (41 ετών)",
  "Michalis Kyprianou (Age 64)": "Μιχάλης Κυπριανού (64 ετών)",
@@ -335,7 +334,7 @@ window.I18N_EL = {
  "🔴 📅 AI Emergency Buffers (": "🔴 📅 Ραντεβού επειγόντων AI (",
  "🔒 Personal / Surgery Busy Hold (": "🔒 Δεσμευμένος χρόνος: προσωπικά / χειρουργείο (",
  "⚪ 📅 Clinic Main Desk (": "⚪ 📅 Κύριο ημερολόγιο ιατρείου (",
- "✅ Case #MD-409 Triaged as 🔴 PRIORITY 1 — Unlocked 12:30 PM Buffer Slot & pinned Case Note to Dr. Nicolaou's Calendar!": "✅ Περιστατικό #MD-409: 🔴 ΠΡΟΤΕΡΑΙΟΤΗΤΑ 1 — ξεκλειδώθηκε το ραντεβού επειγόντων των 12:30 και το σημείωμα καταχωρίστηκε στο ημερολόγιο του Δρ. Νικολάου!"
+ "✅ Case #MD-409 Marked as 🔴 PRIORITY 1 — Unlocked 12:30 PM Buffer Slot & pinned Case Note to Dr. Nicolaou's Calendar!": "✅ Περιστατικό #MD-409: 🔴 ΠΡΟΤΕΡΑΙΟΤΗΤΑ 1 — ξεκλειδώθηκε το ραντεβού επειγόντων των 12:30 και το σημείωμα καταχωρίστηκε στο ημερολόγιο του Δρ. Νικολάου!"
 };
 window.SCHEDULE_EL = {
  "pediatrics/slot-0930": [
@@ -351,7 +350,7 @@ window.SCHEDULE_EL = {
  "pediatrics/slot-1230": [
   "Λέων Κ. (4 ετών) — Μαρία Κ.",
   "Πυρετός 39,6°C από τις 22:00 χθες + οξύς πόνος στο δεξί αυτί & καταβολή",
-  "ΓεΣΥ & Ιδιωτικά (#948201) • Έλεγχος σημείων κινδύνου: Χωρίς αυχενική δυσκαμψία, χωρίς αναπνευστική δυσχέρεια. Έλαβε Nurofen στις 07:30. Φωτογραφία του θερμομέτρου αυτιού στο WhatsApp."
+  "ΓεΣΥ & Ιδιωτικά (#948201) • Έλεγχος επειγόντων συμπτωμάτων: Χωρίς αυχενική δυσκαμψία, χωρίς αναπνευστική δυσχέρεια. Έλαβε Nurofen στις 07:30. Φωτογραφία του θερμομέτρου αυτιού στο WhatsApp."
  ],
  "pediatrics/slot-1530": [
   "Σοφία Χριστοδούλου (9 ετών)",
@@ -376,7 +375,7 @@ window.SCHEDULE_EL = {
  "pediatrics/slot-1100": [
   "Μαρία Χαραλάμπους (3 ετών)",
   "Χαμηλός πυρετός 37,8°C (2 ημέρες) + τραβάει το αριστερό αυτί, πίνει υγρά κανονικά",
-  "ΓεΣΥ & Ιδιωτικά (#771230) • Έλεγχος σημείων κινδύνου αρνητικός· ο γονέας στέλνει καταγραφή θερμοκρασίας στο WhatsApp."
+  "ΓεΣΥ & Ιδιωτικά (#771230) • Δεν αναφέρθηκαν επείγοντα συμπτώματα· ο γονέας στέλνει καταγραφή θερμοκρασίας στο WhatsApp."
  ],
  "pediatrics/slot-1145": [
   "Χριστίνα Παύλου (1 έτους)",
@@ -451,7 +450,7 @@ window.SCHEDULE_EL = {
  "dermatology/slot-1230-derm": [
   "Κατερίνα Β. (26 ετών)",
   "Οξεία γενικευμένη κνίδωση / έξαρση αγγειοοιδήματος γύρω από τα βλέφαρα (εδώ και 3 ώρες)",
-  "ΓεΣΥ & Ιδιωτικά (#650219) • Έλεγχος σημείων κινδύνου: Χωρίς οίδημα αεραγωγού/γλώσσας ή δύσπνοια. Φωτογραφία προσώπου στο WhatsApp."
+  "ΓεΣΥ & Ιδιωτικά (#650219) • Έλεγχος επειγόντων συμπτωμάτων: Χωρίς οίδημα αεραγωγού/γλώσσας ή δύσπνοια. Φωτογραφία προσώπου στο WhatsApp."
  ],
  "dermatology/slot-1530-derm": [
   "Γιάννης Λαζάρου (61 ετών)",
@@ -501,7 +500,7 @@ window.SCHEDULE_EL = {
  "cardiology/slot-1230-card": [
   "Πέτρος Χαραλάμπους (68 ετών)",
   "Νέος ακανόνιστος ταχύς σφυγμός (132 bpm στο ΗΚΓ του Apple Watch) + ΑΠ 184/106 mmHg",
-  "ΓεΣΥ & Ιδιωτικά (#294011) • Έλεγχος σημείων κινδύνου: Χωρίς συσφιγκτικό θωρακικό άλγος ή συγκοπή. Το PDF ΗΚΓ του Apple Watch επισυνάφθηκε για τον Δρ. Μάριο Πέτρου."
+  "ΓεΣΥ & Ιδιωτικά (#294011) • Έλεγχος επειγόντων συμπτωμάτων: Χωρίς συσφιγκτικό θωρακικό άλγος ή συγκοπή. Το PDF ΗΚΓ του Apple Watch επισυνάφθηκε για τον Δρ. Μάριο Πέτρου."
  ],
  "cardiology/slot-1530-card": [
   "Γιώργος Μιχαηλίδης (71 ετών)",
@@ -526,7 +525,7 @@ window.SCHEDULE_EL = {
  "cardiology/slot-1000": [
   "Άννα Δημητρίου (44 ετών)",
   "Διαλείπον αίσθημα παλμών — τα αποτελέσματα Holter 24 ωρών ανέβηκαν",
-  "ΓεΣΥ & Ιδιωτικά (#681204) • Χωρίς θωρακικό άλγος ή συγκοπή στον έλεγχο σημείων κινδύνου."
+  "ΓεΣΥ & Ιδιωτικά (#681204) • Δεν αναφέρθηκε θωρακικό άλγος ή συγκοπή."
  ],
  "cardiology/slot-1145": [
   "Λοΐζος Κωνσταντίνου (70 ετών)",
@@ -576,7 +575,7 @@ window.CLINIC_EL = {
 window.SCENARIOS_EL = {
  "urgent_fever": {
   "callerDisplay": "Καλών ασθενής: Μαρία Κ. (+357 99 614 280)",
-  "statusLabel": "ΖΩΝΤΑΝΗ ΚΛΗΣΗ • 🔴 ΔΙΑΛΟΓΗ ΠΡΟΤΕΡΑΙΟΤΗΤΑΣ 1",
+  "statusLabel": "ΖΩΝΤΑΝΗ ΚΛΗΣΗ • 🔴 ΚΡΑΤΗΣΗ ΠΡΟΤΕΡΑΙΟΤΗΤΑΣ 1",
   "prioPill": "🔴 ΠΡΟΤΕΡΑΙΟΤΗΤΑ 1 • ΕΠΕΙΓΟΝ ΑΥΘΗΜΕΡΟΝ",
   "prioHeadline": "Ξεκλειδώνει το προστατευμένο ραντεβού επειγόντων 12:30",
   "coverage": "ΓεΣΥ & Ιδιωτικά (#948201)",
@@ -618,7 +617,7 @@ window.SCENARIOS_EL = {
    },
    {
     "dir": "incoming",
-    "html": "✅ <strong>Επιβεβαιώθηκε για σήμερα στις 12:30!</strong><br/>Ο <strong>Δρ. Ανδρέας Νικολάου</strong> έχει ήδη στην οθόνη του το σημείωμα 3 σημείων:<br/>• <strong>Συμπτώματα:</strong> πυρετός 39,6°C (12 ώρες) + οξύς πόνος στο δεξί αυτί<br/>• <strong>Φάρμακα:</strong> Nurofen στις 07:30<br/>• <strong>Σημεία κινδύνου:</strong> Αρνητικά (κανονική αναπνοή, πίνει υγρά)"
+    "html": "✅ <strong>Επιβεβαιώθηκε για σήμερα στις 12:30!</strong><br/>Ο <strong>Δρ. Ανδρέας Νικολάου</strong> έχει ήδη στην οθόνη του το σημείωμα 3 σημείων:<br/>• <strong>Συμπτώματα:</strong> πυρετός 39,6°C (12 ώρες) + οξύς πόνος στο δεξί αυτί<br/>• <strong>Φάρμακα:</strong> Nurofen στις 07:30<br/>• <strong>Επείγοντα συμπτώματα:</strong> Δεν αναφέρθηκαν (κανονική αναπνοή, πίνει υγρά)"
    }
   ],
   "caseFields": [
@@ -628,7 +627,7 @@ window.SCENARIOS_EL = {
     "full": false
    },
    {
-    "label": "Διαλογή & ενέργεια",
+    "label": "Προτεραιότητα & ενέργεια",
     "val": "🔴 Π1 Επείγον → Ξεκλείδωμα ραντεβού επειγόντων 12:30",
     "full": false
    },
@@ -638,7 +637,7 @@ window.SCENARIOS_EL = {
     "full": true
    },
    {
-    "label": "Έλεγχος σημείων κινδύνου & φάρμακα",
+    "label": "Έλεγχος επειγόντων συμπτωμάτων & φάρμακα",
     "val": "✓ Κανονική αναπνοή, πίνει υγρά, χωρίς αυχενική δυσκαμψία. Τελευταία δόση: Ιβουπροφαίνη (Nurofen) στις 07:30.",
     "full": true
    }
@@ -699,7 +698,7 @@ window.SCENARIOS_EL = {
     "full": false
    },
    {
-    "label": "Διαλογή & ενέργεια",
+    "label": "Προτεραιότητα & ενέργεια",
     "val": "🔴 Π1 Επείγον → Σήμερα 12:30 (ραντεβού 30 λεπτών)",
     "full": false
    },
@@ -709,7 +708,7 @@ window.SCENARIOS_EL = {
     "full": true
    },
    {
-    "label": "Έλεγχος σημείων κινδύνου & προετοιμασία",
+    "label": "Έλεγχος επειγόντων συμπτωμάτων & προετοιμασία",
     "val": "✓ Χωρίς οίδημα προσώπου, πυρετό ή αιμορραγία. Ο βοηθός στο Εξεταστήριο 1 ενημερώθηκε για δίσκο προσωρινής συγκόλλησης στεφάνης / σύνθετης ρητίνης.",
     "full": true
    }
@@ -718,7 +717,7 @@ window.SCENARIOS_EL = {
  },
  "soon_rash": {
   "callerDisplay": "Λήψη μέσω WhatsApp: Ανδρέας Μ. (+357 99 208 511)",
-  "statusLabel": "ΔΙΑΛΟΓΗ ΦΩΤΟΓΡΑΦΙΑΣ WHATSAPP • 🟡 ΠΡΟΤΕΡΑΙΟΤΗΤΑ 2",
+  "statusLabel": "ΛΗΨΗ ΦΩΤΟΓΡΑΦΙΑΣ WHATSAPP • 🟡 ΠΡΟΤΕΡΑΙΟΤΗΤΑ 2",
   "prioPill": "🟡 ΠΡΟΤΕΡΑΙΟΤΗΤΑ 2 • ΕΞΕΤΑΣΗ ΕΝΤΟΣ 24–48 ΩΡΩΝ",
   "prioHeadline": "Η φωτογραφία επισυνάφθηκε • Κλείστηκε το επόμενο τακτικό ραντεβού (αύριο 10:15)",
   "coverage": "ΓεΣΥ & Ιδιωτικά (#839104)",
@@ -751,7 +750,7 @@ window.SCENARIOS_EL = {
     "full": false
    },
    {
-    "label": "Διαλογή & ενέργεια",
+    "label": "Προτεραιότητα & ενέργεια",
     "val": "🟡 Π2 Σύντομα → Αύριο 10:15 + φωτογραφία",
     "full": false
    },
@@ -761,7 +760,7 @@ window.SCENARIOS_EL = {
     "full": true
    },
    {
-    "label": "Έλεγχος σημείων κινδύνου",
+    "label": "Έλεγχος επειγόντων συμπτωμάτων",
     "val": "✓ Απύρετος, χωρίς προσβολή βλεννογόνων, χωρίς σημεία αναφυλαξίας. Κατάλληλο για δερματολογικό ραντεβού εντός 24 ωρών με τη Δρ. Έλενα Γεωργίου.",
     "full": true
    }
@@ -814,7 +813,7 @@ window.SCENARIOS_EL = {
     "full": false
    },
    {
-    "label": "Διαλογή & ενέργεια",
+    "label": "Προτεραιότητα & ενέργεια",
     "val": "🟢 Π3 Ρουτίνα → Λίστα ΓεΣΥ τέλους ημέρας",
     "full": false
    },
@@ -869,14 +868,13 @@ Object.assign(window.I18N_EL, {
  "Anastasia": "Αναστασία",
  "Anastasia also takes clear messages from suppliers, medical reps, labs, insurers and other doctors, labelled separately so they never get mixed up with patient cases, and never shares your schedule.": "Η Αναστασία κρατά επίσης σαφή μηνύματα από προμηθευτές, ιατρικούς επισκέπτες, εργαστήρια, ασφαλιστικές εταιρείες και άλλους γιατρούς, με ξεχωριστή σήμανση ώστε να μη μπερδεύονται ποτέ με περιστατικά ασθενών, και δεν κοινοποιεί ποτέ το πρόγραμμά σας.",
  "Anastasia answers calls and WhatsApp messages 24/7 in Greek and English, including while you are examining a patient, at lunch or after hours.": "Η Αναστασία απαντά σε κλήσεις και μηνύματα WhatsApp 24/7, στα ελληνικά και στα αγγλικά, ακόμη κι όταν εξετάζετε ασθενή, στο διάλειμμα ή μετά το ωράριο.",
- "Anastasia answers your clinic's calls and WhatsApp messages in Greek and English, triages each patient by urgency and books them into your calendar with a short case note, while you focus on the patient in front of you.": "Η <strong>Αναστασία</strong> απαντά στις κλήσεις και στα μηνύματα WhatsApp του ιατρείου σας στα ελληνικά και στα αγγλικά, ταξινομεί κάθε ασθενή κατά επείγον και τον κλείνει στο ημερολόγιό σας με ένα σύντομο σημείωμα, ενώ εσείς ασχολείστε με τον ασθενή που έχετε μπροστά σας.",
- "Anastasia asks standard red-flag questions. If there are red-flag symptoms she does not book an appointment: she tells the caller to call 112 and alerts you straight away. She never diagnoses.": "Η Αναστασία κάνει τις τυπικές ερωτήσεις για συμπτώματα κινδύνου. Αν υπάρχουν, δεν κλείνει ραντεβού: λέει στον καλούντα να καλέσει το 112 και σας ειδοποιεί αμέσως. Δεν κάνει ποτέ διάγνωση.",
+ "Anastasia answers your clinic's calls and WhatsApp messages in Greek and English, sorts each request by urgency and books them into your calendar with a short case note, while you focus on the patient in front of you.": "Η <strong>Αναστασία</strong> απαντά στις κλήσεις και στα μηνύματα WhatsApp του ιατρείου σας στα ελληνικά και στα αγγλικά, ταξινομεί κάθε ασθενή κατά επείγον και τον κλείνει στο ημερολόγιό σας με ένα σύντομο σημείωμα, ενώ εσείς ασχολείστε με τον ασθενή που έχετε μπροστά σας.",
  "Anastasia calendar layer": "Ημερολόγιο Αναστασίας",
  "Anastasia handles the front-desk work in six steps. Nothing changes for your patients, and nothing sensitive happens without you.": "Η Αναστασία αναλαμβάνει τη δουλειά της υποδοχής σε έξι βήματα. Για τους ασθενείς σας δεν αλλάζει τίποτα, και τίποτα ευαίσθητο δεν γίνεται χωρίς εσάς.",
  "Anastasia reads the busy times across your connected Google, Apple or Outlook calendars (personal, hospital rounds and the clinic calendar) so she never double-books, without exposing private details.": "Η Αναστασία βλέπει τις απασχολημένες ώρες σε όλα τα συνδεδεμένα ημερολόγια Google, Apple ή Outlook (προσωπικό, εφημερίες νοσοκομείου και ημερολόγιο ιατρείου), ώστε να μην κάνει ποτέ διπλοκράτηση, χωρίς να εμφανίζει ιδιωτικές λεπτομέρειες.",
  "Anastasia records the patient's GeSY details during intake. Prescription renewals and referrals are grouped into one end-of-day list for you to approve, instead of taking exam slots.": "Η Αναστασία καταγράφει τα στοιχεία ΓεΣΥ του ασθενή κατά τη λήψη στοιχείων. Οι ανανεώσεις συνταγών και τα παραπεμπτικά ομαδοποιούνται σε μία λίστα στο τέλος της ημέρας για έγκριση, αντί να πιάνουν κενά εξέτασης.",
  "Anastasia works with real patients while you watch and adjust.": "Η Αναστασία δουλεύει με πραγματικούς ασθενείς ενώ εσείς παρακολουθείτε και προσαρμόζετε.",
- "Anastasia, the AI medical receptionist for Cyprus doctors and dentists. Calls and WhatsApp answered 24/7, triaged by urgency and booked into your calendar.": "Η Αναστασία, η AI ιατρική γραμματέας για γιατρούς και οδοντιάτρους στην Κύπρο. Κλήσεις και WhatsApp απαντώνται 24/7, ταξινομούνται κατά επείγον και κλείνονται στο ημερολόγιό σας.",
+ "Anastasia, the AI medical receptionist for Cyprus doctors and dentists. Calls and WhatsApp answered 24/7, sorted by urgency and booked into your calendar.": "Η Αναστασία, η AI ιατρική γραμματέας για γιατρούς και οδοντιάτρους στην Κύπρο. Κλήσεις και WhatsApp απαντώνται 24/7, ταξινομούνται κατά επείγον και κλείνονται στο ημερολόγιό σας.",
  "Approve & send": "Έγκριση &amp; αποστολή",
  "Book a 15-min pilot call": "Κλείστε 15λεπτη πιλοτική κλήση",
  "Book a 15-minute call or email hello@mydocdesk.com.": "Κλείστε μια 15λεπτη κλήση ή στείλτε email στο hello@mydocdesk.com.",
@@ -903,8 +901,7 @@ Object.assign(window.I18N_EL, {
  "Does it work with my landline?": "Λειτουργεί με το σταθερό μου;",
  "Each booking carries a short pre-visit note: the chief complaint, the GeSY ID and any photos or files the patient sent. You walk in already knowing why they came.": "Κάθε ραντεβού συνοδεύεται από σύντομο σημείωμα: το κύριο πρόβλημα, τον αριθμό ΓεΣΥ και όποιες φωτογραφίες ή αρχεία έστειλε ο ασθενής. Ξέρετε ήδη γιατί έρχεται.",
  "Each booking lands on a colour-coded Anastasia calendar with a 3-bullet case note. Anything sensitive waits for your one-letter A/B/C/D reply on WhatsApp.": "Κάθε ραντεβού μπαίνει σε ξεχωριστό χρωματικό ημερολόγιο της Αναστασίας με σημείωμα 3 σημείων. Ό,τι είναι ευαίσθητο περιμένει τη δική σας απάντηση με ένα γράμμα (A/B/C/D) στο WhatsApp.",
- "Every request is triaged as 🔴 Urgent, 🟡 Soon or 🟢 Routine/GeSY. Urgent buffer slots are protected, and red-flag symptoms go straight to 112 or to you.": "Κάθε αίτημα ταξινομείται ως 🔴 Επείγον, 🟡 Σύντομα ή 🟢 Ρουτίνα/ΓεΣΥ. Τα κενά έκτακτης ανάγκης προστατεύονται και τα συμπτώματα κινδύνου πηγαίνουν αμέσως στο 112 ή σε εσάς.",
- "Every request is triaged by urgency": "Κάθε αίτημα ταξινομείται κατά επείγον",
+ "Every request is sorted by urgency": "Κάθε αίτημα ταξινομείται κατά επείγον",
  "Example calendar day with colour-coded layers": "Παράδειγμα ημέρας ημερολογίου με χρωματικά επίπεδα",
  "Example: the doctor approves an urgent booking on WhatsApp with one letter": "Παράδειγμα: ο γιατρός εγκρίνει ένα επείγον ραντεβού στο WhatsApp με ένα γράμμα",
  "FAQ": "Συχνές ερωτήσεις",
@@ -968,7 +965,6 @@ Object.assign(window.I18N_EL, {
  "Quick links": "Γρήγοροι σύνδεσμοι",
  "Ready to see Anastasia in your clinic?": "Έτοιμοι να δείτε την Αναστασία στο ιατρείο σας;",
  "Urgent symptoms → advised to call 112": "Επείγοντα συμπτώματα → σύσταση για 112",
- "Red-flag symptoms are never booked. The caller is told to call 112 and you are alerted straight away.": "<strong>Για συμπτώματα κινδύνου δεν κλείνεται ποτέ ραντεβού.</strong> Ο καλών καθοδηγείται να καλέσει το 112 και εσείς ειδοποιείστε αμέσως.",
  "Request a lab result or photo": "Αίτημα για εξέταση ή φωτογραφία",
  "See exactly how it works": "Δείτε ακριβώς πώς λειτουργεί",
  "See it for yourself": "Δείτε το στην πράξη",
@@ -988,7 +984,7 @@ Object.assign(window.I18N_EL, {
  "The button opens a short email with the details we need. We reply to arrange a time that suits you.": "Το κουμπί ανοίγει ένα σύντομο email με τα στοιχεία που χρειαζόμαστε. Θα σας απαντήσουμε για να βρούμε μια ώρα που σας βολεύει.",
  "The flow at a glance": "Η ροή με μια ματιά",
  "The six steps in detail": "Τα έξι βήματα αναλυτικά",
- "Triage P1 / P2 / P3": "Διαλογή Π1 / Π2 / Π3",
+ "Booking priority P1 / P2 / P3": "Προτεραιότητα ραντεβού Π1 / Π2 / Π3",
  "Try the live demo, or book a 15-minute call to walk through your own clinic's setup.": "Δοκιμάστε τη ζωντανή επίδειξη ή κλείστε μια 15λεπτη κλήση για να δούμε τη ρύθμιση για το δικό σας ιατρείο.",
  "Urgent buffers, GeSY renewals and anything unusual wait for you. Anastasia sends a short WhatsApp/SMS message and you reply from your lock screen:": "Τα κενά έκτακτης ανάγκης, οι ανανεώσεις ΓεΣΥ και ό,τι ασυνήθιστο περιμένουν εσάς. Η Αναστασία στέλνει ένα σύντομο μήνυμα WhatsApp/SMS και απαντάτε από την οθόνη κλειδώματος:",
  "Urgent patients first": "Πρώτα τα επείγοντα",
@@ -1087,7 +1083,7 @@ Object.assign(window.I18N_EL, {
  "The doctor makes every clinical decision": "Όλες τις κλινικές αποφάσεις τις παίρνει ο γιατρός",
  "Anastasia collects information, books within your rules and passes urgent cases on. All clinical decisions stay with the doctor.": "Η Αναστασία συλλέγει πληροφορίες, κλείνει ραντεβού με βάση τους κανόνες σας και προωθεί τα επείγοντα. Όλες οι κλινικές αποφάσεις παραμένουν στον γιατρό.",
  "Your clinic approves the script": "Το ιατρείο εγκρίνει το σενάριο",
- "During onboarding, your clinic reviews and approves the triage questions and red-flag list before Anastasia speaks to any patient.": "Κατά την αρχική ρύθμιση, το ιατρείο σας ελέγχει και εγκρίνει τις ερωτήσεις διαλογής και τη λίστα συμπτωμάτων κινδύνου πριν η Αναστασία μιλήσει με οποιονδήποτε ασθενή.",
+ "During onboarding, your clinic reviews and approves the intake questions and urgent-symptom list before Anastasia speaks to any patient.": "Κατά την αρχική ρύθμιση, το ιατρείο σας ελέγχει και εγκρίνει τις ερωτήσεις λήψης στοιχείων και τη λίστα επειγόντων συμπτωμάτων πριν η Αναστασία μιλήσει με οποιονδήποτε ασθενή.",
  "MyDocDesk runs on the official WhatsApp Business Platform. You can choose a dedicated MyDocDesk WhatsApp line for your clinic (the fastest option), or we migrate your existing business number to the platform. Once migrated, that number no longer works in the regular WhatsApp app. Either way, patients still call your usual clinic number, and Anastasia answers text and voice notes, sends booking confirmations and collects photos or lab results before the visit.": "Το MyDocDesk λειτουργεί στην επίσημη πλατφόρμα WhatsApp Business. Μπορείτε να επιλέξετε μια αποκλειστική γραμμή WhatsApp του MyDocDesk για το ιατρείο σας (η πιο γρήγορη λύση) ή να μεταφέρουμε τον υπάρχοντα επαγγελματικό σας αριθμό στην πλατφόρμα. Μετά τη μεταφορά, ο αριθμός αυτός δεν λειτουργεί πλέον στην κανονική εφαρμογή WhatsApp. Σε κάθε περίπτωση, οι ασθενείς συνεχίζουν να καλούν τον γνωστό αριθμό του ιατρείου, και η Αναστασία απαντά σε κείμενα και φωνητικά, στέλνει επιβεβαιώσεις ραντεβού και συλλέγει φωτογραφίες ή αποτελέσματα εξετάσεων πριν από την επίσκεψη.",
  "Anastasia asks standard questions about the symptoms. If a caller describes urgent symptoms, she does not book an appointment: she tells them to call 112 and flags the message to you straight away. She is not an emergency service and may not recognise every emergency. If she is unsure or the call drops, the case is flagged for the clinic to call back. She never diagnoses.": "Η Αναστασία κάνει τυπικές ερωτήσεις για τα συμπτώματα. Αν κάποιος περιγράψει επείγοντα συμπτώματα, δεν κλείνει ραντεβού: του λέει να καλέσει το 112 και επισημαίνει αμέσως το μήνυμα σε εσάς. Δεν είναι υπηρεσία έκτακτης ανάγκης και ενδέχεται να μην αναγνωρίσει κάθε επείγον περιστατικό. Αν δεν είναι σίγουρη ή κοπεί η κλήση, η περίπτωση επισημαίνεται για να καλέσει πίσω το ιατρείο. Δεν κάνει ποτέ διάγνωση.",
  "We follow GDPR and treat health information as special-category data. Only the details needed to book and brief you are collected. Your clinic is the data controller and MyDocDesk (T-Knights Consulting Ltd) is the data processor; a data processing agreement (DPA) is signed before go-live. Callers are told at the start that they are speaking with an AI assistant. Call audio recording is off by default, by default we set transcripts and call logs in our systems to delete after 30 days, and the medical record stays with you in your own calendar and WhatsApp. See the privacy section above.": "Ακολουθούμε τον GDPR και αντιμετωπίζουμε τις πληροφορίες υγείας ως ειδική κατηγορία δεδομένων. Συλλέγονται μόνο τα στοιχεία που χρειάζονται για το ραντεβού και την ενημέρωσή σας. Το ιατρείο σας είναι ο υπεύθυνος επεξεργασίας και το MyDocDesk (T-Knights Consulting Ltd) είναι ο εκτελών την επεξεργασία· η σύμβαση επεξεργασίας δεδομένων (DPA) υπογράφεται πριν από την έναρξη λειτουργίας. Όσοι καλούν ενημερώνονται από την αρχή ότι μιλούν με ψηφιακή βοηθό τεχνητής νοημοσύνης. Η ηχογράφηση των κλήσεων είναι απενεργοποιημένη από προεπιλογή, από προεπιλογή ρυθμίζουμε τις απομαγνητοφωνήσεις και τα αρχεία κλήσεων στα συστήματά μας ώστε να διαγράφονται μετά από 30 ημέρες και ο ιατρικός φάκελος μένει σε εσάς, στο δικό σας ημερολόγιο και WhatsApp. Δείτε την ενότητα απορρήτου παραπάνω."

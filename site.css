@@ -427,7 +427,7 @@ html.md-intro-on .md-intro { display: flex; position: fixed; inset: 0; z-index: 
 .setup-note .ico { color: var(--teal-hi); }
 .price-badge { display: inline-flex; align-items: center; gap: 6px; }
 .price-list li::before { content: ""; background: #14b8a6 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center / 11px no-repeat; }
-/* triage colour markers (replace emoji dots) */
+/* priority colour markers (replace emoji dots) */
 .tri-pill::before, .tri-t::before { content: ""; display: inline-block; width: 0.62em; height: 0.62em; border-radius: 50%; background: currentColor; flex: 0 0 auto; }
 .tri-t { white-space: nowrap; }
 .tri-t::before { margin-right: 0.3em; vertical-align: 0.06em; }

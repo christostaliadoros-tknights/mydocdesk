@@ -990,7 +990,7 @@ button {
   flex-shrink: 0;
 }
 
-/* Column 2: WhatsApp Medical Triage & Confirmation Card */
+/* Column 2: WhatsApp Booking & Confirmation Card */
 .whatsapp-card {
   background: var(--whatsapp-chat-bg);
   border-radius: var(--radius-lg);
@@ -1181,7 +1181,7 @@ button {
   border-color: #cbd5e1 !important;
 }
 
-/* Column 3: AI Clinical Triage Brain & Structured Pre-Visit Case Note */
+/* Column 3: AI Booking Brain & Structured Pre-Visit Case Note */
 .brain-panel {
   background: #ffffff;
   border-radius: var(--radius-lg);
@@ -1467,7 +1467,7 @@ button {
   color: #94a3b8;
 }
 
-/* TAB 2: Doctor's Live Schedule, Triage Case Notes & GeSY Queue */
+/* TAB 2: Doctor's Live Schedule, Case Notes & GeSY Queue */
 .kpi-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
