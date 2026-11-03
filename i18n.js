@@ -110,6 +110,12 @@ function i18nTranslateTree(el) {
   const text = i18nNorm(el.textContent);
   if ((hasDirectText || inlineOnly) && text) {
     if (!/[A-Za-z]/.test(text)) return;
+    // Wrapper with no own text around a link (e.g. <li><a href>…</a></li>): translate inside the
+    // link so its href/download attributes survive instead of replacing the wrapper's innerHTML.
+    if (!hasDirectText && [...el.children].some((c) => c.tagName === "A")) {
+      [...el.children].forEach(i18nTranslateTree);
+      return;
+    }
     if (Object.prototype.hasOwnProperty.call(dict, text) && !el.querySelector(I18N_INTERACTIVE)) {
       el.innerHTML = dict[text];
       el.querySelectorAll("*").forEach(i18nTranslateAttrs);

@@ -1689,7 +1689,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const hashTab = (window.location.hash || "").replace("#", "").trim();
   const urlTab = new URLSearchParams(window.location.search).get("tab");
   const initialTab = urlTab || hashTab;
-  if (["simulator", "schedule", "marketplace", "logos", "onepager"].includes(initialTab)) {
+  if (["simulator", "schedule", "marketplace", "logos"].includes(initialTab)) {
     switchTab(initialTab);
   }
 });
