@@ -27,7 +27,11 @@
     return !over;
   }
   function checkFit() {
+    // Step 1: full layout. Step 2: tight (no header CTA, smaller tabs). Step 3: hamburger.
+    root.classList.remove("nav-tight");
     var ok = fits();
+    if (!ok) { root.classList.add("nav-tight"); ok = fits(); }
+    if (!ok) root.classList.remove("nav-tight");
     root.classList.toggle("nav-compact", !ok);
     if (ok && getComputedStyle(nav).position !== "fixed") setOpen(false);
   }
