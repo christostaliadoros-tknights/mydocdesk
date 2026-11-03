@@ -1138,7 +1138,7 @@ const TOUR_STEP_PANELS = {
   1: { id: "card-phone-call", label: L("Step 1 • Live call", "Βήμα 1 • Ζωντανή κλήση") },
   2: { id: "card-brain-panel", label: L("Step 2 • Case note", "Βήμα 2 • Σημείωμα περιστατικού") },
   3: { id: "card-whatsapp-chat", label: L("Step 3 • WhatsApp slot offer", "Βήμα 3 • Πρόταση ραντεβού στο WhatsApp") },
-  4: { id: "simulator-abcd-card", label: L("Step 4 • A/B/C/D doctor reply", "Βήμα 4 • Απάντηση γιατρού A/B/C/D") }
+  4: { id: "simulator-abcd-card", label: L("Step 4 • 1/2/3/4 doctor reply", "Βήμα 4 • Απάντηση γιατρού 1/2/3/4") }
 };
 
 function focusTourPanel(stepNum) {
@@ -1721,10 +1721,10 @@ function updateSimulatorAbcdCard(scenKey, scen) {
   const stripEl = document.getElementById("booking-subcal-strip");
 
   const DIGEST_BY_SCEN = {
-    urgent_fever: `🩺 <strong>[Anastasia Digest #MD-409]</strong> Leo K. (4y, GeSY #948201): 39.6°C fever + R ear pain. Unlocked 12:30 PM Emergency Buffer. Reply <strong>A / B / C / D</strong>:`,
-    dental_emergency: `🦷 <strong>[Anastasia Digest #MD-415]</strong> Dimitris A. (38y, GeSY #704118): Fractured UR4 crown + 8/10 thermal pain (photo attached). Held 12:30 PM Chair Buffer. Reply <strong>A / B / C / D</strong>:`,
-    soon_rash: `🩺 <strong>[Anastasia Digest #MD-410]</strong> Andreas M. (34y, GeSY #839104): Forearm rash 48h, afebrile + photo attached. Offered Tomorrow 10:15 AM (P2). Reply <strong>A / B / C / D</strong>:`,
-    routine_gesy: `💊 <strong>[Anastasia Digest #MD-411]</strong> Costas P. (GeSY #449102): Chronic refill Amlodipine 5mg + Atorvastatin 20mg (Home BP 122/78). Queued in EOD Batch. Reply <strong>A / B / C / D</strong>:`
+    urgent_fever: `🩺 <strong>[Anastasia Digest #MD-409]</strong> Leo K. (4y, GeSY #948201): 39.6°C fever + R ear pain. Unlocked 12:30 PM Emergency Buffer. Reply <strong>1 / 2 / 3 / 4</strong>:`,
+    dental_emergency: `🦷 <strong>[Anastasia Digest #MD-415]</strong> Dimitris A. (38y, GeSY #704118): Fractured UR4 crown + 8/10 thermal pain (photo attached). Held 12:30 PM Chair Buffer. Reply <strong>1 / 2 / 3 / 4</strong>:`,
+    soon_rash: `🩺 <strong>[Anastasia Digest #MD-410]</strong> Andreas M. (34y, GeSY #839104): Forearm rash 48h, afebrile + photo attached. Offered Tomorrow 10:15 AM (P2). Reply <strong>1 / 2 / 3 / 4</strong>:`,
+    routine_gesy: `💊 <strong>[Anastasia Digest #MD-411]</strong> Costas P. (GeSY #449102): Chronic refill Amlodipine 5mg + Atorvastatin 20mg (Home BP 122/78). Queued in EOD Batch. Reply <strong>1 / 2 / 3 / 4</strong>:`
   };
 
   const digests = isGreekUI() && window.DIGEST_EL ? window.DIGEST_EL : DIGEST_BY_SCEN;
@@ -1738,8 +1738,8 @@ function updateSimulatorAbcdCard(scenKey, scen) {
   }
   if (statusEl) {
     statusEl.innerHTML = L(
-      `💡 Tap <strong>[A]</strong>, <strong>[B]</strong>, <strong>[C]</strong>, or <strong>[D]</strong> above to simulate replying from ${docName()}'s phone lock screen—Anastasia executes it on WhatsApp immediately.`,
-      `💡 Πατήστε <strong>[A]</strong>, <strong>[B]</strong>, <strong>[C]</strong> ή <strong>[D]</strong> παραπάνω για να δείτε την απάντηση του γιατρού από την οθόνη κλειδώματος — η Αναστασία την εκτελεί αμέσως στο WhatsApp.`
+      `💡 Tap <strong>[1]</strong>, <strong>[2]</strong>, <strong>[3]</strong>, or <strong>[4]</strong> above to simulate replying from ${docName()}'s phone lock screen—Anastasia executes it on WhatsApp immediately.`,
+      `💡 Πατήστε <strong>[1]</strong>, <strong>[2]</strong>, <strong>[3]</strong> ή <strong>[4]</strong> παραπάνω για να δείτε την απάντηση του γιατρού από την οθόνη κλειδώματος — η Αναστασία την εκτελεί αμέσως στο WhatsApp.`
     );
   }
   if (stripEl) {
@@ -1760,60 +1760,60 @@ function updateSimulatorAbcdCard(scenKey, scen) {
 function triggerDoctorQuickReply(optionKey, context, btnEl, itemId) {
   const doc = docName();
   const ACTIONS_EN = {
-    A: {
+    "1": {
       short: "Approved & Sent",
-      simStatus: `✅ <strong>Doctor Replied "A" from Lock Screen:</strong> Anastasia confirmed the recommended slot/prescription on WhatsApp & locked the event on the <strong>Anastasia AI Sub-Calendar</strong>.`,
-      waHtml: `✅ <strong>[Doctor Quick-Reply "A" Executed by Anastasia]</strong><br/>${doc} approved your case directly via 1-tap lock-screen reply. Your appointment/prescription is confirmed and synced to the clinic calendar!`,
-      gesyNote: "✓ Replied [A]: Approved & Sent Pharmacy Code on WhatsApp"
+      simStatus: `✅ <strong>Doctor Replied "1" from Lock Screen:</strong> Anastasia confirmed the recommended slot/prescription on WhatsApp & locked the event on the <strong>Anastasia AI Sub-Calendar</strong>.`,
+      waHtml: `✅ <strong>[Doctor Quick-Reply "1" Executed by Anastasia]</strong><br/>${doc} approved your case directly via 1-tap lock-screen reply. Your appointment/prescription is confirmed and synced to the clinic calendar!`,
+      gesyNote: "✓ Replied [1]: Approved & Sent Pharmacy Code on WhatsApp"
     },
-    B: {
+    "2": {
       short: "Next Morning Slot Offered",
-      simStatus: `🗓️ <strong>Doctor Replied "B" from Lock Screen:</strong> Anastasia moved the booking to <strong>Tomorrow 09:15 AM Morning Slot</strong> on the AI Sub-Calendar & messaged the patient on WhatsApp.`,
-      waHtml: `🗓️ <strong>[Doctor Quick-Reply "B" Executed by Anastasia]</strong><br/>${doc} reviewed your case note and offered our priority morning slot tomorrow at <strong>09:15 AM</strong>. Tap below to confirm!`,
-      gesyNote: "🗓️ Replied [B]: Booked Next Morning 09:15 AM Brief Check Slot"
+      simStatus: `🗓️ <strong>Doctor Replied "2" from Lock Screen:</strong> Anastasia moved the booking to <strong>Tomorrow 09:15 AM Morning Slot</strong> on the AI Sub-Calendar & messaged the patient on WhatsApp.`,
+      waHtml: `🗓️ <strong>[Doctor Quick-Reply "2" Executed by Anastasia]</strong><br/>${doc} reviewed your case note and offered our priority morning slot tomorrow at <strong>09:15 AM</strong>. Tap below to confirm!`,
+      gesyNote: "🗓️ Replied [2]: Booked Next Morning 09:15 AM Brief Check Slot"
     },
-    C: {
+    "3": {
       short: "Requested Lab / Photo on WhatsApp",
-      simStatus: `📷 <strong>Doctor Replied "C" from Lock Screen:</strong> Anastasia automatically messaged the patient on WhatsApp requesting a recent lab PDF / close-up symptom photo before final sign-off.`,
-      waHtml: `📷 <strong>[Doctor Quick-Reply "C" Executed by Anastasia]</strong><br/>${doc} reviewed your request and asked if you can reply here on WhatsApp with a quick photo / latest lab result so we can attach it to your chart right away.`,
-      gesyNote: "📷 Replied [C]: Anastasia Requested Latest BP/Lab Photo on WhatsApp"
+      simStatus: `📷 <strong>Doctor Replied "3" from Lock Screen:</strong> Anastasia automatically messaged the patient on WhatsApp requesting a recent lab PDF / close-up symptom photo before final sign-off.`,
+      waHtml: `📷 <strong>[Doctor Quick-Reply "3" Executed by Anastasia]</strong><br/>${doc} reviewed your request and asked if you can reply here on WhatsApp with a quick photo / latest lab result so we can attach it to your chart right away.`,
+      gesyNote: "📷 Replied [3]: Anastasia Requested Latest BP/Lab Photo on WhatsApp"
     },
-    D: {
+    "4": {
       short: "Escalated — Doctor Calls Back",
-      simStatus: `📞 <strong>Doctor Replied "D" from Lock Screen:</strong> Anastasia notified the patient that ${doc} will call them personally right after the current exam.`,
-      waHtml: `📞 <strong>[Doctor Quick-Reply "D" Executed by Anastasia]</strong><br/>${doc} saw your case summary and asked me to let you know they will call you directly on your mobile in ~10 minutes as soon as the current examination finishes.`,
-      gesyNote: "📞 Replied [D]: Flagged for Direct 2-Min Doctor Callback"
+      simStatus: `📞 <strong>Doctor Replied "4" from Lock Screen:</strong> Anastasia notified the patient that ${doc} will call them personally right after the current exam.`,
+      waHtml: `📞 <strong>[Doctor Quick-Reply "4" Executed by Anastasia]</strong><br/>${doc} saw your case summary and asked me to let you know they will call you directly on your mobile in ~10 minutes as soon as the current examination finishes.`,
+      gesyNote: "📞 Replied [4]: Flagged for Direct 2-Min Doctor Callback"
     }
   };
   const ACTIONS_EL = {
-    A: {
+    "1": {
       short: "Εγκρίθηκε & στάλθηκε",
-      simStatus: `✅ <strong>Ο γιατρός απάντησε «A» από την οθόνη κλειδώματος:</strong> η Αναστασία επιβεβαίωσε το προτεινόμενο ραντεβού/τη συνταγή στο WhatsApp και κλείδωσε την καταχώριση στο <strong>Υπο-ημερολόγιο Αναστασίας AI</strong>.`,
-      waHtml: `✅ <strong>[Γρήγορη απάντηση γιατρού «A» — εκτελέστηκε από την Αναστασία]</strong><br/>Ο/Η ${doc} ενέκρινε το αίτημά σας με ένα άγγιγμα. Το ραντεβού/η συνταγή σας επιβεβαιώθηκε και συγχρονίστηκε με το ημερολόγιο του ιατρείου.`,
-      gesyNote: "✓ Απάντηση [A]: Εγκρίθηκε — ο κωδικός φαρμακείου στάλθηκε στο WhatsApp"
+      simStatus: `✅ <strong>Ο γιατρός απάντησε «1» από την οθόνη κλειδώματος:</strong> η Αναστασία επιβεβαίωσε το προτεινόμενο ραντεβού/τη συνταγή στο WhatsApp και κλείδωσε την καταχώριση στο <strong>Υπο-ημερολόγιο Αναστασίας AI</strong>.`,
+      waHtml: `✅ <strong>[Γρήγορη απάντηση γιατρού «1» — εκτελέστηκε από την Αναστασία]</strong><br/>Ο/Η ${doc} ενέκρινε το αίτημά σας με ένα άγγιγμα. Το ραντεβού/η συνταγή σας επιβεβαιώθηκε και συγχρονίστηκε με το ημερολόγιο του ιατρείου.`,
+      gesyNote: "✓ Απάντηση [1]: Εγκρίθηκε — ο κωδικός φαρμακείου στάλθηκε στο WhatsApp"
     },
-    B: {
+    "2": {
       short: "Προτάθηκε πρωινό ραντεβού",
-      simStatus: `🗓️ <strong>Ο γιατρός απάντησε «B» από την οθόνη κλειδώματος:</strong> η Αναστασία μετέφερε το ραντεβού <strong>αύριο στις 09:15</strong> στο υπο-ημερολόγιο AI και ενημέρωσε τον ασθενή στο WhatsApp.`,
-      waHtml: `🗓️ <strong>[Γρήγορη απάντηση γιατρού «B» — εκτελέστηκε από την Αναστασία]</strong><br/>Ο/Η ${doc} είδε το σημείωμά σας και σας προτείνει πρωινό ραντεβού προτεραιότητας αύριο στις <strong>09:15</strong>. Πατήστε παρακάτω για επιβεβαίωση.`,
-      gesyNote: "🗓️ Απάντηση [B]: Κλείστηκε σύντομο ραντεβού αύριο στις 09:15"
+      simStatus: `🗓️ <strong>Ο γιατρός απάντησε «2» από την οθόνη κλειδώματος:</strong> η Αναστασία μετέφερε το ραντεβού <strong>αύριο στις 09:15</strong> στο υπο-ημερολόγιο AI και ενημέρωσε τον ασθενή στο WhatsApp.`,
+      waHtml: `🗓️ <strong>[Γρήγορη απάντηση γιατρού «2» — εκτελέστηκε από την Αναστασία]</strong><br/>Ο/Η ${doc} είδε το σημείωμά σας και σας προτείνει πρωινό ραντεβού προτεραιότητας αύριο στις <strong>09:15</strong>. Πατήστε παρακάτω για επιβεβαίωση.`,
+      gesyNote: "🗓️ Απάντηση [2]: Κλείστηκε σύντομο ραντεβού αύριο στις 09:15"
     },
-    C: {
+    "3": {
       short: "Ζητήθηκαν εξετάσεις / φωτογραφία",
-      simStatus: `📷 <strong>Ο γιατρός απάντησε «C» από την οθόνη κλειδώματος:</strong> η Αναστασία ζήτησε αυτόματα από τον ασθενή στο WhatsApp πρόσφατες εξετάσεις (PDF) ή κοντινή φωτογραφία πριν από την τελική έγκριση.`,
-      waHtml: `📷 <strong>[Γρήγορη απάντηση γιατρού «C» — εκτελέστηκε από την Αναστασία]</strong><br/>Ο/Η ${doc} είδε το αίτημά σας και παρακαλεί να στείλετε εδώ στο WhatsApp μια φωτογραφία ή τις πιο πρόσφατες εξετάσεις σας, ώστε να επισυναφθούν στον φάκελό σας.`,
-      gesyNote: "📷 Απάντηση [C]: Η Αναστασία ζήτησε πρόσφατες μετρήσεις πίεσης/εξετάσεις στο WhatsApp"
+      simStatus: `📷 <strong>Ο γιατρός απάντησε «3» από την οθόνη κλειδώματος:</strong> η Αναστασία ζήτησε αυτόματα από τον ασθενή στο WhatsApp πρόσφατες εξετάσεις (PDF) ή κοντινή φωτογραφία πριν από την τελική έγκριση.`,
+      waHtml: `📷 <strong>[Γρήγορη απάντηση γιατρού «3» — εκτελέστηκε από την Αναστασία]</strong><br/>Ο/Η ${doc} είδε το αίτημά σας και παρακαλεί να στείλετε εδώ στο WhatsApp μια φωτογραφία ή τις πιο πρόσφατες εξετάσεις σας, ώστε να επισυναφθούν στον φάκελό σας.`,
+      gesyNote: "📷 Απάντηση [3]: Η Αναστασία ζήτησε πρόσφατες μετρήσεις πίεσης/εξετάσεις στο WhatsApp"
     },
-    D: {
+    "4": {
       short: "Κλιμάκωση — ο γιατρός θα καλέσει",
-      simStatus: `📞 <strong>Ο γιατρός απάντησε «D» από την οθόνη κλειδώματος:</strong> η Αναστασία ενημέρωσε τον ασθενή ότι ο γιατρός θα τον καλέσει προσωπικά μόλις ολοκληρωθεί η τρέχουσα εξέταση.`,
-      waHtml: `📞 <strong>[Γρήγορη απάντηση γιατρού «D» — εκτελέστηκε από την Αναστασία]</strong><br/>Ο/Η ${doc} είδε τη σύνοψη του περιστατικού σας και θα σας καλέσει στο κινητό σε περίπου 10 λεπτά, μόλις ολοκληρωθεί η τρέχουσα εξέταση.`,
-      gesyNote: "📞 Απάντηση [D]: Σημειώθηκε για άμεση τηλεφωνική επικοινωνία με τον γιατρό"
+      simStatus: `📞 <strong>Ο γιατρός απάντησε «4» από την οθόνη κλειδώματος:</strong> η Αναστασία ενημέρωσε τον ασθενή ότι ο γιατρός θα τον καλέσει προσωπικά μόλις ολοκληρωθεί η τρέχουσα εξέταση.`,
+      waHtml: `📞 <strong>[Γρήγορη απάντηση γιατρού «4» — εκτελέστηκε από την Αναστασία]</strong><br/>Ο/Η ${doc} είδε τη σύνοψη του περιστατικού σας και θα σας καλέσει στο κινητό σε περίπου 10 λεπτά, μόλις ολοκληρωθεί η τρέχουσα εξέταση.`,
+      gesyNote: "📞 Απάντηση [4]: Σημειώθηκε για άμεση τηλεφωνική επικοινωνία με τον γιατρό"
     }
   };
   const ACTIONS = isGreekUI() ? ACTIONS_EL : ACTIONS_EN;
 
-  const act = ACTIONS[optionKey] || ACTIONS.A;
+  const act = ACTIONS[optionKey] || ACTIONS["1"];
 
   if (context === "simulator") {
     document.querySelectorAll("#simulator-abcd-card .abcd-btn").forEach((b) => b.classList.remove("selected"));
@@ -1871,10 +1871,10 @@ function renderGesyQueue() {
           <div style="font-size:0.75rem; color:#475569; margin-top:3px;">${tr(g.request)}</div>
           <div class="gesy-abcd-row">
             <span class="gesy-abcd-label">${L("📲 Quick Reply:", "📲 Γρήγορη απάντηση:")}</span>
-            <button type="button" class="gesy-abcd-chip ${g.quickReplyChoice === "A" ? "active" : ""}" onclick="triggerDoctorQuickReply('A', 'gesy', this, '${g.id}')" title="${L("Approve & Send on WhatsApp", "Έγκριση & αποστολή στο WhatsApp")}">${L("[A] Approve &amp; Send", "[A] Έγκριση")}</button>
-            <button type="button" class="gesy-abcd-chip ${g.quickReplyChoice === "B" ? "active" : ""}" onclick="triggerDoctorQuickReply('B', 'gesy', this, '${g.id}')" title="${L("Book Next Morning Slot", "Ραντεβού επόμενο πρωί")}">${L("[B] Morning Slot", "[B] Πρωινό ραντεβού")}</button>
-            <button type="button" class="gesy-abcd-chip ${g.quickReplyChoice === "C" ? "active" : ""}" onclick="triggerDoctorQuickReply('C', 'gesy', this, '${g.id}')" title="${L("Request Lab / Photo on WhatsApp", "Αίτημα εξετάσεων / φωτογραφίας στο WhatsApp")}">${L("[C] Ask Lab/Photo", "[C] Εξετάσεις/Φωτογραφία")}</button>
-            <button type="button" class="gesy-abcd-chip ${g.quickReplyChoice === "D" ? "active" : ""}" onclick="triggerDoctorQuickReply('D', 'gesy', this, '${g.id}')" title="${L("Escalate — Doctor Will Call Back", "Κλιμάκωση — ο γιατρός θα καλέσει")}">${L("[D] Call Back", "[D] Επανάκληση")}</button>
+            <button type="button" class="gesy-abcd-chip ${g.quickReplyChoice === "1" ? "active" : ""}" onclick="triggerDoctorQuickReply('1', 'gesy', this, '${g.id}')" title="${L("Approve & Send on WhatsApp", "Έγκριση & αποστολή στο WhatsApp")}">${L("[1] Approve &amp; Send", "[1] Έγκριση")}</button>
+            <button type="button" class="gesy-abcd-chip ${g.quickReplyChoice === "2" ? "active" : ""}" onclick="triggerDoctorQuickReply('2', 'gesy', this, '${g.id}')" title="${L("Book Next Morning Slot", "Ραντεβού επόμενο πρωί")}">${L("[2] Morning Slot", "[2] Πρωινό ραντεβού")}</button>
+            <button type="button" class="gesy-abcd-chip ${g.quickReplyChoice === "3" ? "active" : ""}" onclick="triggerDoctorQuickReply('3', 'gesy', this, '${g.id}')" title="${L("Request Lab / Photo on WhatsApp", "Αίτημα εξετάσεων / φωτογραφίας στο WhatsApp")}">${L("[3] Ask Lab/Photo", "[3] Εξετάσεις/Φωτογραφία")}</button>
+            <button type="button" class="gesy-abcd-chip ${g.quickReplyChoice === "4" ? "active" : ""}" onclick="triggerDoctorQuickReply('4', 'gesy', this, '${g.id}')" title="${L("Escalate — Doctor Will Call Back", "Κλιμάκωση — ο γιατρός θα καλέσει")}">${L("[4] Call Back", "[4] Επανάκληση")}</button>
           </div>
           ${
             g.quickReplyStatus
@@ -1887,7 +1887,7 @@ function renderGesyQueue() {
           class="gesy-approve-btn ${g.approved ? "approved" : ""}"
           onclick="approveGesyItem('${g.id}')"
         >
-          ${g.approved ? L("✓ Action Sent on WhatsApp", "✓ Στάλθηκε στο WhatsApp") : L("✓ 1-Click Approve [A]", "✓ Έγκριση με 1 κλικ [A]")}
+          ${g.approved ? L("✓ Action Sent on WhatsApp", "✓ Στάλθηκε στο WhatsApp") : L("✓ 1-Click Approve [1]", "✓ Έγκριση με 1 κλικ [1]")}
         </button>
       </div>`
     )
@@ -1895,14 +1895,14 @@ function renderGesyQueue() {
 }
 
 function approveGesyItem(id) {
-  triggerDoctorQuickReply("A", "gesy", null, id);
+  triggerDoctorQuickReply("1", "gesy", null, id);
 }
 
 function approveAllGesy() {
   state.gesyQueue.forEach((g) => {
     g.approved = true;
-    g.quickReplyChoice = g.quickReplyChoice || "A";
-    g.quickReplyStatus = g.quickReplyStatus || L("✓ Replied [A]: Approved & Sent Pharmacy Code on WhatsApp", "✓ Απάντηση [A]: Εγκρίθηκε — ο κωδικός φαρμακείου στάλθηκε στο WhatsApp");
+    g.quickReplyChoice = g.quickReplyChoice || "1";
+    g.quickReplyStatus = g.quickReplyStatus || L("✓ Replied [1]: Approved & Sent Pharmacy Code on WhatsApp", "✓ Απάντηση [1]: Εγκρίθηκε — ο κωδικός φαρμακείου στάλθηκε στο WhatsApp");
   });
   renderGesyQueue();
   updateGesyKpi();
