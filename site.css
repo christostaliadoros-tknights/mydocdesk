@@ -166,6 +166,18 @@ html { scroll-padding-top: calc(var(--mp-header-h) + 12px); }
 .price-list.check li { color: #334155; }
 .price-card.featured .pilot-cta-btn { align-self: flex-start; margin-top: auto; }
 .price-compare { margin-top: 16px; padding: 12px 14px; border-radius: 12px; background: #fffbeb; border: 1px solid #fde68a; font-size: 0.86rem; color: #78350f; }
+
+.plan-section { margin-top: 10px; }
+.plan-section .mp-section-head p { max-width: 720px; margin: 8px 0 0; font-size: 0.98rem; color: #475569; line-height: 1.55; }
+.plan-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 8px; align-items: stretch; }
+.plan-card { background: #fff; border: 1px solid var(--border-subtle); border-radius: 20px; padding: 24px; box-shadow: var(--shadow-md); display: flex; flex-direction: column; gap: 12px; }
+.plan-card.recommended { border: 1.5px solid rgba(217,119,6,0.7); box-shadow: 0 10px 28px rgba(217,119,6,0.14); }
+.plan-badge { align-self: flex-start; font-size: 0.75rem; font-weight: 800; color: #0a192f; background: linear-gradient(135deg, var(--gold), var(--gold-deep)); padding: 4px 11px; border-radius: 999px; letter-spacing: 0.01em; }
+.plan-name { font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0; letter-spacing: -0.01em; }
+.plan-card .price-num { color: #0f172a; font-size: 2.6rem; }
+.plan-card .price-per { color: #64748b; }
+.plan-card .price-note { color: #475569; font-weight: 600; }
+.plan-card .pilot-cta-btn { margin-top: auto; align-self: stretch; justify-content: center; text-align: center; }
 .pilot-steps { list-style: none; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
 .pilot-step { display: flex; gap: 12px; background: #fff; border: 1px solid var(--border-subtle); border-radius: 16px; padding: 18px; box-shadow: var(--shadow-sm); }
 .pilot-step .setup-num { flex: 0 0 auto; }
@@ -258,7 +270,7 @@ a.mjump-btn { text-decoration: none; }
   .mp-hero-actions .pilot-cta-btn, .mp-hero-actions .mp-btn-ghost, .mp-cta-actions .pilot-cta-btn, .mp-cta-actions .mp-btn-ghost { width: 100%; }
   .mp-section { margin-top: 32px; }
   .mp-section-head h2, .mp-flow-title { font-size: 1.3rem; }
-  .mp-benefits, .mp-benefits.mp-benefits-4, .mp-explore-grid, .pilot-steps, .mp-two-col, .price-grid, .contact-grid, .download-grid { grid-template-columns: minmax(0, 1fr); }
+  .mp-benefits, .mp-benefits.mp-benefits-4, .mp-explore-grid, .pilot-steps, .mp-two-col, .price-grid, .plan-grid, .contact-grid, .download-grid { grid-template-columns: minmax(0, 1fr); }
   .price-grid, .contact-grid { margin-top: -18px; }
   .flow-section { padding: 20px 14px; }
   .flow-diagram { grid-template-columns: minmax(0, 1fr); gap: 22px; }
@@ -274,6 +286,8 @@ a.mjump-btn { text-decoration: none; }
   .mp-cta-band { padding: 22px 18px; }
   .mp-cta-band h2 { font-size: 1.2rem; }
   .price-num { font-size: 2.8rem; }
+  .plan-card .price-num { font-size: 2.3rem; }
+  .plan-card { padding: 22px 18px; }
   .price-card { padding: 22px 18px; }
   .price-card.featured .pilot-cta-btn { align-self: stretch; }
   .mp-footer-grid { grid-template-columns: minmax(0, 1fr); gap: 20px; padding: 30px 18px 18px; }
