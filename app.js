@@ -45,7 +45,7 @@ const SCHEDULE_SLOTS_BY_SPECIALTY = {
       priority: 2,
       prioLabel: "🟡 PRIORITY 2 • PHOTO RECEIVED",
       complaint: "Mild viral exanthem / forearm rash (48h) — High-res photo attached",
-      notes: "GeSY & Private • AI attached forearm photo to calendar event so Dr. Andreas Nicolaou can review before arrival.",
+      notes: "GeSY & Private • AI attached forearm photo to calendar event so the doctor can review before arrival.",
       channel: "WhatsApp Photo Intake"
     },
     {
@@ -57,7 +57,7 @@ const SCHEDULE_SLOTS_BY_SPECIALTY = {
       calLayer: "busy_hold",
       calBadge: "🔒 Personal / Surgery Busy Hold",
       prioLabel: "🔒 BUSY HOLD • ZERO DOUBLE-BOOKING",
-      complaint: "Synced from Dr. Andreas Nicolaou's Personal & Limassol Hospital Rounds Calendar (Private event title hidden)",
+      complaint: "Synced from the doctor's Personal & Limassol Hospital Rounds Calendar (Private event title hidden)",
       notes: "Anastasia reads busy blocks across all connected calendars so she never books over hospital rounds or family pickup.",
       channel: "Multi-Calendar Read"
     },
@@ -128,7 +128,7 @@ const SCHEDULE_SLOTS_BY_SPECIALTY = {
       calLayer: "busy_hold",
       calBadge: "🔒 Personal / Surgery Busy Hold",
       prioLabel: "🔒 BUSY HOLD • ZERO DOUBLE-BOOKING",
-      complaint: "Synced from Dr. Nikos Constantinou's Personal & Prosthodontic Lab Calendar (Private details hidden)",
+      complaint: "Synced from the doctor's Personal & Prosthodontic Lab Calendar (Private details hidden)",
       notes: "Anastasia reads busy blocks across all connected calendars so chairside slots never conflict with personal or surgical blocks.",
       channel: "Multi-Calendar Read"
     },
@@ -154,7 +154,7 @@ const SCHEDULE_SLOTS_BY_SPECIALTY = {
       priority: 2,
       prioLabel: "🟡 PRIORITY 2 • MOLE MAPPING & PHOTO",
       complaint: "Annual full-body digital dermoscopy & pigmented lesion check (2 macro photos attached)",
-      notes: "GeSY & Private (#714902) • Baseline dermoscopy images synced to Dr. Elena Georgiou's chart.",
+      notes: "GeSY & Private (#714902) • Baseline dermoscopy images synced to the doctor's chart.",
       channel: "WhatsApp Photo Intake"
     },
     {
@@ -165,7 +165,7 @@ const SCHEDULE_SLOTS_BY_SPECIALTY = {
       priority: 2,
       prioLabel: "🟡 PRIORITY 2 • RASH + WHATSAPP PHOTO",
       complaint: "Spreading erythematous pruritic rash on right forearm (48h) — High-res photo attached",
-      notes: "GeSY & Private (#839104) • Afebrile, no mucosal involvement. Photo (forearm_rash_day2.jpg) pre-attached for Dr. Elena Georgiou.",
+      notes: "GeSY & Private (#839104) • Afebrile, no mucosal involvement. Photo (forearm_rash_day2.jpg) pre-attached for the doctor.",
       channel: "WhatsApp Voice + Photo"
     },
     {
@@ -199,7 +199,7 @@ const SCHEDULE_SLOTS_BY_SPECIALTY = {
       calLayer: "busy_hold",
       calBadge: "🔒 Personal / Surgery Busy Hold",
       prioLabel: "🔒 BUSY HOLD • ZERO DOUBLE-BOOKING",
-      complaint: "Synced from Dr. Elena Georgiou's Personal & Inpatient Consult Calendar (Private event title hidden)",
+      complaint: "Synced from the doctor's Personal & Inpatient Consult Calendar (Private event title hidden)",
       notes: "Anastasia reads busy blocks across all connected calendars while writing AI bookings only to the Anastasia AI sub-calendar.",
       channel: "Multi-Calendar Read"
     },
@@ -211,7 +211,7 @@ const SCHEDULE_SLOTS_BY_SPECIALTY = {
       priority: 0,
       prioLabel: "🔒 PROTECTED BUFFER SLOT",
       complaint: "Unlocked by Anastasia only for acute dermatological flares, herpes zoster, or severe allergic rashes",
-      notes: "Keeps same-day urgent capacity open for Dr. Elena Georgiou.",
+      notes: "Keeps same-day urgent capacity open for the doctor.",
       channel: "AI Safety Guard"
     }
   ],
@@ -247,7 +247,7 @@ const SCHEDULE_SLOTS_BY_SPECIALTY = {
       priority: 1,
       prioLabel: "🔴 PRIORITY 1 • ACUTE ARRHYTHMIA / BP SPIKE",
       complaint: "New-onset irregular rapid pulse (132 bpm on Apple Watch ECG) + BP 184/106 mmHg",
-      notes: "GeSY & Private (#294011) • Urgent-symptom check: No crushing chest pain or syncope. Apple Watch ECG PDF attached for Dr. Marios Petrou.",
+      notes: "GeSY & Private (#294011) • Urgent-symptom check: No crushing chest pain or syncope. Apple Watch ECG PDF attached for the doctor.",
       channel: "Call → WhatsApp Handoff"
     },
     {
@@ -270,7 +270,7 @@ const SCHEDULE_SLOTS_BY_SPECIALTY = {
       calLayer: "busy_hold",
       calBadge: "🔒 Personal / Surgery Busy Hold",
       prioLabel: "🔒 BUSY HOLD • ZERO DOUBLE-BOOKING",
-      complaint: "Synced from Dr. Marios Petrou's Hospital Cath Lab & Personal Google Calendar (Private details hidden)",
+      complaint: "Synced from the doctor's Hospital Cath Lab & Personal Google Calendar (Private details hidden)",
       notes: "Anastasia checks all connected calendars for real availability and writes AI bookings onto a dedicated color-coded sub-calendar.",
       channel: "Multi-Calendar Read"
     },
@@ -282,7 +282,7 @@ const SCHEDULE_SLOTS_BY_SPECIALTY = {
       priority: 0,
       prioLabel: "🔒 PROTECTED BUFFER SLOT",
       complaint: "Note: Costas Papadopoulos (GeSY #449102) BP refill was routed to the Async GeSY Queue — saving a 20m slot!",
-      notes: "Protects Dr. Marios Petrou's same-day urgent ECG/Echo capacity.",
+      notes: "Protects the doctor's same-day urgent ECG/Echo capacity.",
       channel: "AI Safety Guard"
     }
   ]
@@ -396,8 +396,8 @@ const state = {
   guidedTimer: null,
   activeClinic: {
     id: "pediatrics",
-    doctorName: "Dr. Andreas Nicolaou",
-    clinicTitle: "Dr. Andreas Nicolaou — Pediatrics",
+    doctorName: "the doctor",
+    clinicTitle: "Pediatric clinic",
     specialty: "Pediatrics",
     city: "Limassol",
     coverage: "GeSY & Private",
@@ -437,7 +437,7 @@ const state = {
   marketplaceDoctors: [
     {
       id: "mp-doc-1",
-      name: "Dr. Sample A",
+      name: "Clinic A",
       specialty: "Pediatrics",
       specialtyLabel: "👶 Pediatrics",
       city: "Limassol",
@@ -453,7 +453,7 @@ const state = {
     },
     {
       id: "mp-doc-dental-1",
-      name: "Dr. Sample B",
+      name: "Clinic B",
       specialty: "Dental",
       specialtyLabel: "🦷 Dentistry",
       city: "Limassol",
@@ -469,7 +469,7 @@ const state = {
     },
     {
       id: "mp-doc-2",
-      name: "Dr. Sample C",
+      name: "Clinic C",
       specialty: "Dermatology",
       specialtyLabel: "🔬 Dermatology",
       city: "Nicosia",
@@ -485,7 +485,7 @@ const state = {
     },
     {
       id: "mp-doc-3",
-      name: "Dr. Sample D",
+      name: "Clinic D",
       specialty: "Cardiology",
       specialtyLabel: "❤️ Cardiology",
       city: "Larnaca",
@@ -501,7 +501,7 @@ const state = {
     },
     {
       id: "mp-doc-dental-2",
-      name: "Dr. Sample E",
+      name: "Clinic E",
       specialty: "Dental",
       specialtyLabel: "🦷 Dentistry",
       city: "Nicosia",
@@ -517,7 +517,7 @@ const state = {
     },
     {
       id: "mp-doc-4",
-      name: "Dr. Sample F",
+      name: "Clinic F",
       specialty: "Pediatrics",
       specialtyLabel: "👶 Pediatrics",
       city: "Nicosia",
@@ -532,7 +532,7 @@ const state = {
     },
     {
       id: "mp-doc-5",
-      name: "Dr. Sample G",
+      name: "Clinic G",
       specialty: "ENT",
       specialtyLabel: "👂 ENT / Otolaryngology",
       city: "Limassol",
@@ -547,7 +547,7 @@ const state = {
     },
     {
       id: "mp-doc-6",
-      name: "Dr. Sample H",
+      name: "Clinic H",
       specialty: "Dermatology",
       specialtyLabel: "🔬 Dermatology",
       city: "Paphos",
@@ -577,17 +577,17 @@ const SCENARIOS = {
       {
         speaker: "Anastasia (AI Medical Receptionist)",
         role: "ai",
-        text: "Good morning, Dr. Andreas Nicolaou — Pediatrics. Dr. Nicolaou is currently examining a patient in Exam Room 1, so I am his AI Medical Receptionist Anastasia. How can I help your child today?"
+        text: "Good morning, you've reached the pediatric clinic. The doctor is currently examining a patient in Exam Room 1, so I am the clinic's AI Medical Receptionist, Anastasia. How can I help your child today?"
       },
       {
         speaker: "Maria K. (Mother)",
         role: "caller",
-        text: "Hi, my 4-year-old son Leo has had a 39.6°C fever since last night, he's pulling his right ear crying, and he's very lethargic this morning. Can Dr. Nicolaou see him today?"
+        text: "Hi, my 4-year-old son Leo has had a 39.6°C fever since last night, he's pulling his right ear crying, and he's very lethargic this morning. Can the doctor see him today?"
       },
       {
         speaker: "Anastasia (AI Medical Receptionist)",
         role: "ai",
-        text: "I'm sorry Leo isn't feeling well. Let me quickly ask 2 safety questions for Dr. Andreas Nicolaou: Is Leo breathing comfortably and able to drink fluids without neck stiffness?"
+        text: "I'm sorry Leo isn't feeling well. Let me quickly ask 2 safety questions for the doctor: Is Leo breathing comfortably and able to drink fluids without neck stiffness?"
       },
       {
         speaker: "Maria K. (Mother)",
@@ -597,13 +597,13 @@ const SCENARIOS = {
       {
         speaker: "Anastasia (AI Medical Receptionist)",
         role: "ai",
-        text: "Got it. Because of the 39.6°C fever and acute ear pain in a 4-year-old, I have flagged Leo as Priority 1 Urgent and unlocked Dr. Andreas Nicolaou's protected 12:30 PM Emergency Buffer Slot. I just sent the confirmation and pre-visit card to your WhatsApp!"
+        text: "Got it. Because of the 39.6°C fever and acute ear pain in a 4-year-old, I have flagged Leo as Priority 1 Urgent and unlocked the doctor's protected 12:30 PM Emergency Buffer Slot. I just sent the confirmation and pre-visit card to your WhatsApp!"
       }
     ],
     waMessages: [
       {
         dir: "incoming",
-        html: `<strong>🩺 Priority 1 Urgent Slot Unlocked</strong><br/>Hello Maria! While we were on the phone, I prepared Leo's Pre-Visit Case Note for <strong>Dr. Andreas Nicolaou</strong> and unlocked today's protected emergency slot:<div class="wa-slot-card urgent"><div class="wa-slot-title">🔴 Today at 12:30 PM (Emergency Buffer Slot)</div><div style="font-size:0.72rem; color:#475569;">Patient: Leo K. (4y) • Chief Complaint: 39.6°C fever + acute right otalgia</div><div class="wa-slot-btn-row"><button type="button" class="wa-slot-btn urgent" onclick="confirmSuggestedSlot()">✓ Confirm 12:30 PM Urgent Slot</button><button type="button" class="wa-slot-btn secondary" onclick="simulatePatientPhotoUpload()">📷 Attach Thermometer / Ear Photo</button></div></div>`
+        html: `<strong>🩺 Priority 1 Urgent Slot Unlocked</strong><br/>Hello Maria! While we were on the phone, I prepared Leo's Pre-Visit Case Note for the doctor and unlocked today's protected emergency slot:<div class="wa-slot-card urgent"><div class="wa-slot-title">🔴 Today at 12:30 PM (Emergency Buffer Slot)</div><div style="font-size:0.72rem; color:#475569;">Patient: Leo K. (4y) • Chief Complaint: 39.6°C fever + acute right otalgia</div><div class="wa-slot-btn-row"><button type="button" class="wa-slot-btn urgent" onclick="confirmSuggestedSlot()">✓ Confirm 12:30 PM Urgent Slot</button><button type="button" class="wa-slot-btn secondary" onclick="simulatePatientPhotoUpload()">📷 Attach Thermometer / Ear Photo</button></div></div>`
       },
       {
         dir: "outgoing",
@@ -611,7 +611,7 @@ const SCENARIOS = {
       },
       {
         dir: "incoming",
-        html: `✅ <strong>Confirmed for Today at 12:30 PM!</strong><br/><strong>Dr. Andreas Nicolaou</strong> already has your 3-bullet Case Note on his screen:<br/>• <strong>Sx:</strong> 39.6°C fever (12h) + acute R ear pain<br/>• <strong>Meds:</strong> Nurofen given 07:30 AM<br/>• <strong>Urgent symptoms:</strong> None reported (breathing normal, taking fluids)`
+        html: `✅ <strong>Confirmed for Today at 12:30 PM!</strong><br/>The doctor already has your 3-bullet Case Note on screen:<br/>• <strong>Sx:</strong> 39.6°C fever (12h) + acute R ear pain<br/>• <strong>Meds:</strong> Nurofen given 07:30 AM<br/>• <strong>Urgent symptoms:</strong> None reported (breathing normal, taking fluids)`
       }
     ],
     caseFields: [
@@ -621,7 +621,7 @@ const SCENARIOS = {
       { label: "Urgent-Symptom Check & Meds", val: "✓ Breathing normal, drinking fluids, no neck stiffness. Last dose: Ibuprofen (Nurofen) at 07:30 AM.", full: true }
     ],
     logs: [
-      "[10:14:02] SIP_INBOUND +35799614280 → Dr. Andreas Nicolaou in Exam Room 1 → AI Anastasia answered in 180ms",
+      "[10:14:02] SIP_INBOUND +35799614280 → the doctor in Exam Room 1 → AI Anastasia answered in 180ms",
       "[10:14:19] CLINICAL_INTAKE extracted: age=4y, temp=39.6C, sx=['acute_otalgia','lethargy'], urgent_sx=false",
       "[10:14:20] PRIORITY_ENGINE score=P1_URGENT (Rule: Pediatric Fever >39.0C + Acute Pain)",
       "[10:14:21] CALENDAR_GUARD unlocked hidden 12:30 PM Emergency Buffer Slot & pinned SOAP Note #MD-409"
@@ -640,17 +640,17 @@ const SCENARIOS = {
       {
         speaker: "Anastasia (AI Medical Receptionist)",
         role: "ai",
-        text: "Good morning, Dr. Nikos Constantinou — Dentistry. Dr. Constantinou is currently in Exam Room 1 with gloves on mid-procedure, so I am his AI Medical Receptionist Anastasia. How can I help with your teeth today?"
+        text: "Good morning, you've reached the dental clinic. The doctor is currently in Exam Room 1 with gloves on mid-procedure, so I am the clinic's AI Medical Receptionist, Anastasia. How can I help with your teeth today?"
       },
       {
         speaker: "Dimitris A. (Patient)",
         role: "caller",
-        text: "Hi, I fractured my upper-right premolar crown biting something hard at breakfast and I have sharp throbbing pain—8 out of 10—whenever air or cold water touches it. I have client meetings all day tomorrow, can Dr. Constantinou see me today?"
+        text: "Hi, I fractured my upper-right premolar crown biting something hard at breakfast and I have sharp throbbing pain—8 out of 10—whenever air or cold water touches it. I have client meetings all day tomorrow, can the doctor see me today?"
       },
       {
         speaker: "Anastasia (AI Medical Receptionist)",
         role: "ai",
-        text: "I'm sorry you're in pain, Dimitris—let's get you into the chair today. Quick dental safety check for Dr. Nikos Constantinou: Do you have any facial swelling spreading toward your eye or neck, fever, or uncontrolled bleeding? Also, can you snap a quick smartphone photo on WhatsApp so the dentist knows whether to prepare composite bonding or temporary crown cement?"
+        text: "I'm sorry you're in pain, Dimitris—let's get you into the chair today. Quick dental safety check for the doctor: Do you have any facial swelling spreading toward your eye or neck, fever, or uncontrolled bleeding? Also, can you snap a quick smartphone photo on WhatsApp so the dentist knows whether to prepare composite bonding or temporary crown cement?"
       },
       {
         speaker: "Dimitris A. (Patient)",
@@ -660,7 +660,7 @@ const SCENARIOS = {
       {
         speaker: "Anastasia (AI Medical Receptionist)",
         role: "ai",
-        text: "Perfect. I have marked this as a Priority 1 Dental Emergency, unlocked Dr. Nikos Constantinou's protected 12:30 PM 30-Minute Emergency Chair Slot, and sent your WhatsApp confirmation and photo upload prompt so Exam Room 1 is prepped before you walk in!"
+        text: "Perfect. I have marked this as a Priority 1 Dental Emergency, unlocked the doctor's protected 12:30 PM 30-Minute Emergency Chair Slot, and sent your WhatsApp confirmation and photo upload prompt so Exam Room 1 is prepped before you walk in!"
       }
     ],
     waMessages: [
@@ -670,11 +670,11 @@ const SCENARIOS = {
       },
       {
         dir: "incoming",
-        html: `<strong>🦷 Priority 1 Dental Emergency Slot Unlocked (#MD-415)</strong><br/>Thank you Dimitris! I attached <code>tooth_fracture_UR4.jpg</code> to <strong>Dr. Nikos Constantinou</strong>'s calendar and locked your emergency relief slot:<div class="wa-slot-card urgent"><div class="wa-slot-title">🔴 Today at 12:30 PM (30-Min Emergency Chair Slot)</div><div style="font-size:0.72rem; color:#475569;">Patient: Dimitris A. • Tooth #14 Crown Fracture &amp; Acute Thermal Pain (8/10)</div><div class="wa-slot-btn-row"><button type="button" class="wa-slot-btn urgent" onclick="confirmSuggestedSlot()">✓ Confirm 12:30 PM Chair Slot</button><button type="button" class="wa-slot-btn secondary" onclick="simulatePatientPhotoUpload()">📷 Upload Extra X-Ray / Photo</button></div></div>`
+        html: `<strong>🦷 Priority 1 Dental Emergency Slot Unlocked (#MD-415)</strong><br/>Thank you Dimitris! I attached <code>tooth_fracture_UR4.jpg</code> to the doctor's calendar and locked your emergency relief slot:<div class="wa-slot-card urgent"><div class="wa-slot-title">🔴 Today at 12:30 PM (30-Min Emergency Chair Slot)</div><div style="font-size:0.72rem; color:#475569;">Patient: Dimitris A. • Tooth #14 Crown Fracture &amp; Acute Thermal Pain (8/10)</div><div class="wa-slot-btn-row"><button type="button" class="wa-slot-btn urgent" onclick="confirmSuggestedSlot()">✓ Confirm 12:30 PM Chair Slot</button><button type="button" class="wa-slot-btn secondary" onclick="simulatePatientPhotoUpload()">📷 Upload Extra X-Ray / Photo</button></div></div>`
       },
       {
         dir: "incoming",
-        html: `✅ <strong>3-Bullet Dental SOAP Note Pinned for Dr. Nikos Constantinou:</strong><br/>• <strong>Tooth/Site:</strong> Upper Right Premolar (#14) — fractured porcelain crown<br/>• <strong>Pain/Pulp Status:</strong> 8/10 sharp thermal sensitivity, no facial swelling, no fever<br/>• <strong>Tray Prep:</strong> Temporary crown cement / composite bonding tray pre-flagged for nurse`
+        html: `✅ <strong>3-Bullet Dental SOAP Note Pinned for the doctor:</strong><br/>• <strong>Tooth/Site:</strong> Upper Right Premolar (#14) — fractured porcelain crown<br/>• <strong>Pain/Pulp Status:</strong> 8/10 sharp thermal sensitivity, no facial swelling, no fever<br/>• <strong>Tray Prep:</strong> Temporary crown cement / composite bonding tray pre-flagged for nurse`
       }
     ],
     caseFields: [
@@ -684,7 +684,7 @@ const SCENARIOS = {
       { label: "Urgent-Symptom Check & Tray Prep", val: "✓ No facial swelling, no fever, no bleeding. Temporary crown cement / composite bonding tray pre-flagged for nurse in Exam Room 1.", full: true }
     ],
     logs: [
-      "[10:29:04] SIP_INBOUND +35799845120 → Dr. Nikos Constantinou in Exam Room 1 (Gloves On) → AI Anastasia answered in 160ms",
+      "[10:29:04] SIP_INBOUND +35799845120 → the doctor in Exam Room 1 (Gloves On) → AI Anastasia answered in 160ms",
       "[10:29:18] DENTAL_INTAKE extracted: site=UR4_tooth_14, sx=['crown_fracture','thermal_pain_8_10'], swelling=false",
       "[10:29:22] WA_MEDIA_INGEST attached intraoral photo 'tooth_fracture_UR4.jpg' to Case #MD-415",
       "[10:29:23] CHAIR_SCHEDULER unlocked 12:30 PM (30m Emergency Chair Slot) & flagged nurse for Crown/Composite Tray"
@@ -703,12 +703,12 @@ const SCENARIOS = {
       {
         speaker: "Andreas M. (Patient Voice Note)",
         role: "caller",
-        text: "🎙️ [WhatsApp Voice Note 0:14]: 'Hello Dr. Elena Georgiou's Dermatology clinic, I noticed a red circular rash on my forearm 2 days ago that is itchy and spreading slightly. No fever. Can I send a photo and book a check?'"
+        text: "🎙️ [WhatsApp Voice Note 0:14]: 'Hello, I noticed a red circular rash on my forearm 2 days ago that is itchy and spreading slightly. No fever. Can I send a photo and book a check?'"
       },
       {
         speaker: "Anastasia (AI Medical Receptionist)",
         role: "ai",
-        text: "Hello Andreas! You've reached Dr. Elena Georgiou — Dermatology. Because you have no fever, breathing issue, or facial swelling, I have marked this as Priority 2 (Within 24–48h). Please send a clear photo of your forearm on WhatsApp so Dr. Georgiou can inspect it alongside your booking."
+        text: "Hello Andreas! You've reached the dermatology clinic. Because you have no fever, breathing issue, or facial swelling, I have marked this as Priority 2 (Within 24–48h). Please send a clear photo of your forearm on WhatsApp so the doctor can inspect it alongside your booking."
       }
     ],
     waMessages: [
@@ -718,17 +718,17 @@ const SCENARIOS = {
       },
       {
         dir: "incoming",
-        html: `<strong>🩺 Photo Attached to Case Note #MD-410</strong><br/>Thank you Andreas! I attached your high-resolution photo directly to <strong>Dr. Elena Georgiou</strong>'s schedule card and reserved our next Priority 2 consultation slot:<div class="wa-slot-card"><div class="wa-slot-title">🟡 Tomorrow at 10:15 AM (Standard Priority 2 Slot)</div><div style="font-size:0.72rem; color:#475569;">Note: Today's 12:30 PM emergency slot stays protected for acute flares, while your photo is queued for Dr. Elena Georgiou's review today.</div><div class="wa-slot-btn-row"><button type="button" class="wa-slot-btn" onclick="confirmSuggestedSlot()">✓ Confirm Tomorrow 10:15 AM</button></div></div>`
+        html: `<strong>🩺 Photo Attached to Case Note #MD-410</strong><br/>Thank you Andreas! I attached your high-resolution photo directly to the doctor's schedule card and reserved our next Priority 2 consultation slot:<div class="wa-slot-card"><div class="wa-slot-title">🟡 Tomorrow at 10:15 AM (Standard Priority 2 Slot)</div><div style="font-size:0.72rem; color:#475569;">Note: Today's 12:30 PM emergency slot stays protected for acute flares, while your photo is queued for the doctor's review today.</div><div class="wa-slot-btn-row"><button type="button" class="wa-slot-btn" onclick="confirmSuggestedSlot()">✓ Confirm Tomorrow 10:15 AM</button></div></div>`
       }
     ],
     caseFields: [
       { label: "Patient & Coverage", val: "Andreas M. (Age 34) • GeSY & Private (#839104)", full: false },
       { label: "Booking Priority & Action", val: "🟡 P2 Soon → Tomorrow 10:15 AM + Photo", full: false },
       { label: "Chief Complaint & Media", val: "Erythematous pruritic rash on right forearm (48h duration). High-res photo attached (forearm_rash_day2.jpg).", full: true },
-      { label: "Urgent-Symptom Check", val: "✓ Afebrile, no mucosal involvement, no anaphylaxis signs. Safe for 24h Dermatology slot with Dr. Elena Georgiou.", full: true }
+      { label: "Urgent-Symptom Check", val: "✓ Afebrile, no mucosal involvement, no anaphylaxis signs. Safe for 24h Dermatology slot with the doctor.", full: true }
     ],
     logs: [
-      "[10:18:05] WA_VOICENOTE +35799208511 → Dr. Elena Georgiou in Exam Room 1 → Whisper ASR (320ms)",
+      "[10:18:05] WA_VOICENOTE +35799208511 → the doctor in Exam Room 1 → Whisper ASR (320ms)",
       "[10:18:09] WA_MEDIA_INGEST saved 'forearm_rash_day2.jpg' to patient encounter #MD-410",
       "[10:18:10] PRIORITY_ENGINE score=P2_SOON (Protected 12:30 PM emergency slot; offered Tomorrow 10:15 AM)"
     ]
@@ -746,17 +746,17 @@ const SCENARIOS = {
       {
         speaker: "Anastasia (AI Medical Receptionist)",
         role: "ai",
-        text: "Good morning, Dr. Marios Petrou — Cardiology. Dr. Petrou is currently performing an echocardiogram in Exam Room 1, so I am his AI Medical Receptionist Anastasia. How can I assist you?"
+        text: "Good morning, you've reached the cardiology clinic. The doctor is currently performing an echocardiogram in Exam Room 1, so I am the clinic's AI Medical Receptionist, Anastasia. How can I assist you?"
       },
       {
         speaker: "Costas P. (Patient)",
         role: "caller",
-        text: "Hello, I don't need an exam, I just need Dr. Petrou to renew my monthly GeSY blood pressure pills (Amlodipine 5mg) before I go to the pharmacy."
+        text: "Hello, I don't need an exam, I just need the doctor to renew my monthly GeSY blood pressure pills (Amlodipine 5mg) before I go to the pharmacy."
       },
       {
         speaker: "Anastasia (AI Medical Receptionist)",
         role: "ai",
-        text: "I can take care of that for Dr. Marios Petrou without making you come in or wait on hold! Confirming Costas Papadopoulos, GeSY ID #449102, Amlodipine 5mg + Atorvastatin 20mg. Any new dizziness, chest tightness, or blood pressure readings above 140/90?"
+        text: "I can take care of that for the doctor without making you come in or wait on hold! Confirming Costas Papadopoulos, GeSY ID #449102, Amlodipine 5mg + Atorvastatin 20mg. Any new dizziness, chest tightness, or blood pressure readings above 140/90?"
       },
       {
         speaker: "Costas P. (Patient)",
@@ -766,25 +766,25 @@ const SCENARIOS = {
       {
         speaker: "Anastasia (AI Medical Receptionist)",
         role: "ai",
-        text: "Perfect. I logged your BP reading (122/78) and added your renewal to Dr. Marios Petrou's 1-Click End-of-Day GeSY Approval Queue. You'll receive a WhatsApp message as soon as it's signed!"
+        text: "Perfect. I logged your BP reading (122/78) and added your renewal to the doctor's 1-Click End-of-Day GeSY Approval Queue. You'll receive a WhatsApp message as soon as it's signed!"
       }
     ],
     waMessages: [
       {
         dir: "incoming",
-        html: `<strong>🟢 GeSY Prescription Logged (#MD-411)</strong><br/>Hello Mr. Papadopoulos! Your renewal request is in <strong>Dr. Marios Petrou</strong>'s <strong>End-of-Day GeSY Queue</strong>:<br/>• <strong>Medication:</strong> Amlodipine 5mg + Atorvastatin 20mg (GeSY #449102)<br/>• <strong>Home BP Logged:</strong> 122/78 mmHg (Stable)<br/>• <strong>Status:</strong> Dr. Marios Petrou approves batch at 1:30 PM — we will message you here as soon as the pharmacy code is active!`
+        html: `<strong>🟢 GeSY Prescription Logged (#MD-411)</strong><br/>Hello Mr. Papadopoulos! Your renewal request is in the doctor's <strong>End-of-Day GeSY Queue</strong>:<br/>• <strong>Medication:</strong> Amlodipine 5mg + Atorvastatin 20mg (GeSY #449102)<br/>• <strong>Home BP Logged:</strong> 122/78 mmHg (Stable)<br/>• <strong>Status:</strong> The doctor approves batch at 1:30 PM — we will message you here as soon as the pharmacy code is active!`
       }
     ],
     caseFields: [
       { label: "Patient & Coverage", val: "Costas Papadopoulos • GeSY & Private (#449102)", full: false },
       { label: "Booking Priority & Action", val: "🟢 P3 Routine → EOD GeSY Batch Queue", full: false },
       { label: "Admin Request Summary", val: "Repeat chronic GeSY prescription: Amlodipine 5mg + Atorvastatin 20mg. Saves a 20-minute in-person Cardiology slot.", full: true },
-      { label: "Safety Check", val: "✓ Home BP 122/78 mmHg, zero chest pain or side effects reported. Ready for 1-click sign-off by Dr. Marios Petrou.", full: true }
+      { label: "Safety Check", val: "✓ Home BP 122/78 mmHg, zero chest pain or side effects reported. Ready for 1-click sign-off by the doctor.", full: true }
     ],
     logs: [
-      "[10:21:11] SIP_INBOUND +35799449102 → Dr. Marios Petrou in Exam Room 1 → Intent: GESY_PRESCRIPTION_RENEWAL",
+      "[10:21:11] SIP_INBOUND +35799449102 → the doctor in Exam Room 1 → Intent: GESY_PRESCRIPTION_RENEWAL",
       "[10:21:24] PRIORITY_ENGINE score=P3_ASYNC_GESY (0 calendar slots consumed — saved 20 min)",
-      "[10:21:25] GESY_BATCH_QUEUE appended item #gesy-1 for Dr. Marios Petrou 1-click sign-off"
+      "[10:21:25] GESY_BATCH_QUEUE appended item #gesy-1 for the doctor 1-click sign-off"
     ]
   }
 };
@@ -901,8 +901,8 @@ function jumpToMobileSection(elementId, btnEl) {
 const CLINIC_PRESETS = {
   pediatrics: {
     id: "pediatrics",
-    doctorName: "Dr. Andreas Nicolaou",
-    clinicTitle: "Dr. Andreas Nicolaou — Pediatrics",
+    doctorName: "the doctor",
+    clinicTitle: "Pediatric clinic",
     specialty: "Pediatrics",
     city: "Limassol",
     coverage: "GeSY & Private",
@@ -911,8 +911,8 @@ const CLINIC_PRESETS = {
   },
   dental: {
     id: "dental",
-    doctorName: "Dr. Nikos Constantinou",
-    clinicTitle: "Dr. Nikos Constantinou — Dentistry",
+    doctorName: "the doctor",
+    clinicTitle: "Dental clinic",
     specialty: "Dentistry",
     city: "Limassol",
     coverage: "GeSY & Private",
@@ -921,8 +921,8 @@ const CLINIC_PRESETS = {
   },
   dermatology: {
     id: "dermatology",
-    doctorName: "Dr. Elena Georgiou",
-    clinicTitle: "Dr. Elena Georgiou — Dermatology",
+    doctorName: "the doctor",
+    clinicTitle: "Dermatology clinic",
     specialty: "Dermatology",
     city: "Nicosia",
     coverage: "GeSY & Private",
@@ -931,8 +931,8 @@ const CLINIC_PRESETS = {
   },
   cardiology: {
     id: "cardiology",
-    doctorName: "Dr. Marios Petrou",
-    clinicTitle: "Dr. Marios Petrou — Cardiology",
+    doctorName: "the doctor",
+    clinicTitle: "Cardiology clinic",
     specialty: "Cardiology",
     city: "Larnaca",
     coverage: "GeSY & Private",
@@ -973,11 +973,10 @@ function applyCustomClinicForm(e) {
   const input = document.getElementById("custom-clinic-name-input");
   const rawName = (input?.value || "").trim();
   if (!rawName) return;
-  const normalizedDoc = rawName.startsWith("Dr.") ? rawName.split("—")[0].trim() : `Dr. ${rawName.split("—")[0].trim()}`;
-  const normalizedTitle = rawName.includes("—") ? rawName : `${normalizedDoc} — Specialist Clinic`;
+  const normalizedTitle = rawName;
   state.activeClinic = {
     id: "custom",
-    doctorName: normalizedDoc,
+    doctorName: "the doctor",
     clinicTitle: normalizedTitle,
     specialty: "Specialist Clinic",
     city: "Cyprus",
@@ -996,9 +995,9 @@ function applyCustomClinicForm(e) {
 function applyClinicBranding() {
   const c = clinicView(state.activeClinic);
   const step1Label = document.getElementById("step1-clinic-label");
-  if (step1Label) step1Label.textContent = L(`${c.doctorName}'s Clinic`, `ιατρείο: ${c.doctorName}`);
+  if (step1Label) step1Label.textContent = L("your clinic", "ιατρείο σας");
   const busyDoc = document.getElementById("busy-doc-name");
-  if (busyDoc) busyDoc.textContent = c.doctorName;
+  if (busyDoc) busyDoc.textContent = L("The doctor", "Ο γιατρός");
   const busyRoom = document.getElementById("busy-room-label");
   if (busyRoom) busyRoom.textContent = c.roomLabel || L("Exam Room 1", "Εξεταστήριο 1");
   const callTitle = document.getElementById("call-clinic-title");
@@ -1172,7 +1171,7 @@ function runInteractiveStep(stepNum) {
     playClinicRingtone();
     triggerScenario("urgent_fever", document.getElementById("btn-scen-urgent"));
     showToast(L(
-      "📞 Step 1: Patient calls while Dr. Nicolaou is in Exam Room 1 — AI Anastasia answers immediately!",
+      "📞 Step 1: Patient calls while the doctor is in Exam Room 1 — AI Anastasia answers immediately!",
       "📞 Βήμα 1: Ο ασθενής καλεί ενώ ο γιατρός εξετάζει στο Εξεταστήριο 1 — η Αναστασία απαντά αμέσως!"
     ));
   } else if (stepNum === 2) {
@@ -1182,7 +1181,7 @@ function runInteractiveStep(stepNum) {
     ));
   } else if (stepNum === 3) {
     showToast(L(
-      "🔓 Step 3: Anastasia unlocks Dr. Nicolaou's hidden 12:30 PM Emergency Buffer Slot!",
+      "🔓 Step 3: Anastasia unlocks the doctor's hidden 12:30 PM Emergency Buffer Slot!",
       "🔓 Βήμα 3: Η Αναστασία ξεκλειδώνει το προστατευμένο ραντεβού επειγόντων των 12:30!"
     ));
   } else if (stepNum === 4) {
@@ -1226,14 +1225,14 @@ function confirmSuggestedSlot() {
   const passDiv = document.createElement("div");
   passDiv.className = "wa-msg incoming";
   passDiv.innerHTML = L(
-    `✅ <strong>Appointment Locked &amp; Case Note Pinned!</strong><br/>${docName()} now sees your structured 3-bullet Pre-Visit Case Note on the clinic schedule. Reply here anytime to attach photos or lab results.`,
-    `✅ <strong>Το ραντεβού κλείδωσε και το σημείωμα επισυνάφθηκε!</strong><br/>Ο/Η ${docName()} βλέπει πλέον το δομημένο σημείωμα 3 σημείων στο πρόγραμμα του ιατρείου. Μπορείτε να απαντήσετε εδώ οποτεδήποτε για να στείλετε φωτογραφίες ή εξετάσεις.`
+    `✅ <strong>Appointment Locked &amp; Case Note Pinned!</strong><br/>The doctor now sees your structured 3-bullet Pre-Visit Case Note on the clinic schedule. Reply here anytime to attach photos or lab results.`,
+    `✅ <strong>Το ραντεβού κλείδωσε και το σημείωμα επισυνάφθηκε!</strong><br/>Ο γιατρός βλέπει πλέον το δομημένο σημείωμα 3 σημείων στο πρόγραμμα του ιατρείου. Μπορείτε να απαντήσετε εδώ οποτεδήποτε για να στείλετε φωτογραφίες ή εξετάσεις.`
   );
   waList.appendChild(passDiv);
   waList.scrollTop = waList.scrollHeight;
   showToast(L(
     `✅ Confirmed slot & attached Pre-Visit Case Note to ${docName()}'s live schedule!`,
-    `✅ Το ραντεβού επιβεβαιώθηκε και το σημείωμα επισυνάφθηκε στο πρόγραμμα: ${docName()}`
+    `✅ Το ραντεβού επιβεβαιώθηκε και το σημείωμα επισυνάφθηκε στο πρόγραμμα του γιατρού`
   ));
 }
 
@@ -1252,7 +1251,7 @@ function simulatePatientPhotoUpload() {
   inMsg.className = "wa-msg incoming";
   inMsg.innerHTML = L(
     `🩺 <strong>Photo Added to Doctor's Case Card!</strong><br/>I attached <code>patient_symptom_photo.jpg</code> directly onto your calendar slot so ${docName()} can inspect it before you walk in.`,
-    `🩺 <strong>Η φωτογραφία προστέθηκε στην καρτέλα του περιστατικού!</strong><br/>Επισύναψα το <code>patient_symptom_photo.jpg</code> στο ραντεβού σας, ώστε ο/η ${docName()} να τη δει πριν από την επίσκεψη.`
+    `🩺 <strong>Η φωτογραφία προστέθηκε στην καρτέλα του περιστατικού!</strong><br/>Επισύναψα το <code>patient_symptom_photo.jpg</code> στο ραντεβού σας, ώστε ο γιατρός να τη δει πριν από την επίσκεψη.`
   );
   waList.appendChild(inMsg);
   waList.scrollTop = waList.scrollHeight;
@@ -1405,8 +1404,8 @@ function priorityReplyText(category, lang, doctorNameEn) {
 function voiceIntroText(lang, clinic) {
   const v = lang === "el" ? (window.CLINIC_EL && window.CLINIC_EL[clinic.id]) || clinic : clinic;
   return lang === "el"
-    ? `Γεια σας, είμαι η Αναστασία, η ψηφιακή ιατρική γραμματέας του ιατρείου: ${v.doctorName}. Απαντώ στις κλήσεις των ασθενών, κρατώ σημειώσεις για τον γιατρό και διαχειρίζομαι τα επείγοντα ραντεβού.`
-    : `Hello, I am Anastasia, the AI Medical Receptionist for ${clinic.doctorName}. I sort patient calls by urgency, take case notes, and manage urgent buffer slots.`;
+    ? `Γεια σας, είμαι η Αναστασία, η ψηφιακή ιατρική γραμματέας του ιατρείου. Απαντώ στις κλήσεις των ασθενών, κρατώ σημειώσεις για τον γιατρό και διαχειρίζομαι τα επείγοντα ραντεβού.`
+    : `Hello, I am Anastasia, the clinic's AI Medical Receptionist. I sort patient calls by urgency, take case notes, and manage urgent buffer slots.`;
 }
 
 /** Every text Anastasia can speak with the built-in presets (used to pre-generate neural voice clips). */
@@ -1763,25 +1762,25 @@ function triggerDoctorQuickReply(optionKey, context, btnEl, itemId) {
     "1": {
       short: "Approved & Sent",
       simStatus: `✅ <strong>Doctor Replied "1" from Lock Screen:</strong> Anastasia confirmed the recommended slot/prescription on WhatsApp & locked the event on the <strong>Anastasia AI Sub-Calendar</strong>.`,
-      waHtml: `✅ <strong>[Doctor Quick-Reply "1" Executed by Anastasia]</strong><br/>${doc} approved your case directly via 1-tap lock-screen reply. Your appointment/prescription is confirmed and synced to the clinic calendar!`,
+      waHtml: `✅ <strong>[Doctor Quick-Reply "1" Executed by Anastasia]</strong><br/>The doctor approved your case directly via 1-tap lock-screen reply. Your appointment/prescription is confirmed and synced to the clinic calendar!`,
       gesyNote: "✓ Replied [1]: Approved & Sent Pharmacy Code on WhatsApp"
     },
     "2": {
       short: "Next Morning Slot Offered",
       simStatus: `🗓️ <strong>Doctor Replied "2" from Lock Screen:</strong> Anastasia moved the booking to <strong>Tomorrow 09:15 AM Morning Slot</strong> on the AI Sub-Calendar & messaged the patient on WhatsApp.`,
-      waHtml: `🗓️ <strong>[Doctor Quick-Reply "2" Executed by Anastasia]</strong><br/>${doc} reviewed your case note and offered our priority morning slot tomorrow at <strong>09:15 AM</strong>. Tap below to confirm!`,
+      waHtml: `🗓️ <strong>[Doctor Quick-Reply "2" Executed by Anastasia]</strong><br/>The doctor reviewed your case note and offered our priority morning slot tomorrow at <strong>09:15 AM</strong>. Tap below to confirm!`,
       gesyNote: "🗓️ Replied [2]: Booked Next Morning 09:15 AM Brief Check Slot"
     },
     "3": {
       short: "Requested Lab / Photo on WhatsApp",
       simStatus: `📷 <strong>Doctor Replied "3" from Lock Screen:</strong> Anastasia automatically messaged the patient on WhatsApp requesting a recent lab PDF / close-up symptom photo before final sign-off.`,
-      waHtml: `📷 <strong>[Doctor Quick-Reply "3" Executed by Anastasia]</strong><br/>${doc} reviewed your request and asked if you can reply here on WhatsApp with a quick photo / latest lab result so we can attach it to your chart right away.`,
+      waHtml: `📷 <strong>[Doctor Quick-Reply "3" Executed by Anastasia]</strong><br/>The doctor reviewed your request and asked if you can reply here on WhatsApp with a quick photo / latest lab result so we can attach it to your chart right away.`,
       gesyNote: "📷 Replied [3]: Anastasia Requested Latest BP/Lab Photo on WhatsApp"
     },
     "4": {
       short: "Escalated — Doctor Calls Back",
       simStatus: `📞 <strong>Doctor Replied "4" from Lock Screen:</strong> Anastasia notified the patient that ${doc} will call them personally right after the current exam.`,
-      waHtml: `📞 <strong>[Doctor Quick-Reply "4" Executed by Anastasia]</strong><br/>${doc} saw your case summary and asked me to let you know they will call you directly on your mobile in ~10 minutes as soon as the current examination finishes.`,
+      waHtml: `📞 <strong>[Doctor Quick-Reply "4" Executed by Anastasia]</strong><br/>The doctor saw your case summary and asked me to let you know they will call you directly on your mobile in ~10 minutes as soon as the current examination finishes.`,
       gesyNote: "📞 Replied [4]: Flagged for Direct 2-Min Doctor Callback"
     }
   };
@@ -1789,25 +1788,25 @@ function triggerDoctorQuickReply(optionKey, context, btnEl, itemId) {
     "1": {
       short: "Εγκρίθηκε & στάλθηκε",
       simStatus: `✅ <strong>Ο γιατρός απάντησε «1» από την οθόνη κλειδώματος:</strong> η Αναστασία επιβεβαίωσε το προτεινόμενο ραντεβού/τη συνταγή στο WhatsApp και κλείδωσε την καταχώριση στο <strong>Υπο-ημερολόγιο Αναστασίας AI</strong>.`,
-      waHtml: `✅ <strong>[Γρήγορη απάντηση γιατρού «1» — εκτελέστηκε από την Αναστασία]</strong><br/>Ο/Η ${doc} ενέκρινε το αίτημά σας με ένα άγγιγμα. Το ραντεβού/η συνταγή σας επιβεβαιώθηκε και συγχρονίστηκε με το ημερολόγιο του ιατρείου.`,
+      waHtml: `✅ <strong>[Γρήγορη απάντηση γιατρού «1» — εκτελέστηκε από την Αναστασία]</strong><br/>Ο γιατρός ενέκρινε το αίτημά σας με ένα άγγιγμα. Το ραντεβού/η συνταγή σας επιβεβαιώθηκε και συγχρονίστηκε με το ημερολόγιο του ιατρείου.`,
       gesyNote: "✓ Απάντηση [1]: Εγκρίθηκε — ο κωδικός φαρμακείου στάλθηκε στο WhatsApp"
     },
     "2": {
       short: "Προτάθηκε πρωινό ραντεβού",
       simStatus: `🗓️ <strong>Ο γιατρός απάντησε «2» από την οθόνη κλειδώματος:</strong> η Αναστασία μετέφερε το ραντεβού <strong>αύριο στις 09:15</strong> στο υπο-ημερολόγιο AI και ενημέρωσε τον ασθενή στο WhatsApp.`,
-      waHtml: `🗓️ <strong>[Γρήγορη απάντηση γιατρού «2» — εκτελέστηκε από την Αναστασία]</strong><br/>Ο/Η ${doc} είδε το σημείωμά σας και σας προτείνει πρωινό ραντεβού προτεραιότητας αύριο στις <strong>09:15</strong>. Πατήστε παρακάτω για επιβεβαίωση.`,
+      waHtml: `🗓️ <strong>[Γρήγορη απάντηση γιατρού «2» — εκτελέστηκε από την Αναστασία]</strong><br/>Ο γιατρός είδε το σημείωμά σας και σας προτείνει πρωινό ραντεβού προτεραιότητας αύριο στις <strong>09:15</strong>. Πατήστε παρακάτω για επιβεβαίωση.`,
       gesyNote: "🗓️ Απάντηση [2]: Κλείστηκε σύντομο ραντεβού αύριο στις 09:15"
     },
     "3": {
       short: "Ζητήθηκαν εξετάσεις / φωτογραφία",
       simStatus: `📷 <strong>Ο γιατρός απάντησε «3» από την οθόνη κλειδώματος:</strong> η Αναστασία ζήτησε αυτόματα από τον ασθενή στο WhatsApp πρόσφατες εξετάσεις (PDF) ή κοντινή φωτογραφία πριν από την τελική έγκριση.`,
-      waHtml: `📷 <strong>[Γρήγορη απάντηση γιατρού «3» — εκτελέστηκε από την Αναστασία]</strong><br/>Ο/Η ${doc} είδε το αίτημά σας και παρακαλεί να στείλετε εδώ στο WhatsApp μια φωτογραφία ή τις πιο πρόσφατες εξετάσεις σας, ώστε να επισυναφθούν στον φάκελό σας.`,
+      waHtml: `📷 <strong>[Γρήγορη απάντηση γιατρού «3» — εκτελέστηκε από την Αναστασία]</strong><br/>Ο γιατρός είδε το αίτημά σας και παρακαλεί να στείλετε εδώ στο WhatsApp μια φωτογραφία ή τις πιο πρόσφατες εξετάσεις σας, ώστε να επισυναφθούν στον φάκελό σας.`,
       gesyNote: "📷 Απάντηση [3]: Η Αναστασία ζήτησε πρόσφατες μετρήσεις πίεσης/εξετάσεις στο WhatsApp"
     },
     "4": {
       short: "Κλιμάκωση — ο γιατρός θα καλέσει",
       simStatus: `📞 <strong>Ο γιατρός απάντησε «4» από την οθόνη κλειδώματος:</strong> η Αναστασία ενημέρωσε τον ασθενή ότι ο γιατρός θα τον καλέσει προσωπικά μόλις ολοκληρωθεί η τρέχουσα εξέταση.`,
-      waHtml: `📞 <strong>[Γρήγορη απάντηση γιατρού «4» — εκτελέστηκε από την Αναστασία]</strong><br/>Ο/Η ${doc} είδε τη σύνοψη του περιστατικού σας και θα σας καλέσει στο κινητό σε περίπου 10 λεπτά, μόλις ολοκληρωθεί η τρέχουσα εξέταση.`,
+      waHtml: `📞 <strong>[Γρήγορη απάντηση γιατρού «4» — εκτελέστηκε από την Αναστασία]</strong><br/>Ο γιατρός είδε τη σύνοψη του περιστατικού σας και θα σας καλέσει στο κινητό σε περίπου 10 λεπτά, μόλις ολοκληρωθεί η τρέχουσα εξέταση.`,
       gesyNote: "📞 Απάντηση [4]: Σημειώθηκε για άμεση τηλεφωνική επικοινωνία με τον γιατρό"
     }
   };

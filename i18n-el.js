@@ -28,7 +28,7 @@ window.I18N_EL = {
  "STEP 1": "ΒΗΜΑ 1",
  "🔊 Hear Patient Call": "🔊 Ακούστε την κλήση",
  "📞 Patient Calls While Doctor Is in Exam": "📞 Ο ασθενής καλεί ενώ ο γιατρός εξετάζει",
- "Doctor's phone doesn't interrupt the consultation—Anastasia answers in Dr. Andreas Nicolaou's Clinic.": "Το τηλέφωνο δεν διακόπτει την εξέταση — η Αναστασία απαντά για το <strong id=\"step1-clinic-label\">ιατρείο: Δρ. Ανδρέας Νικολάου</strong>.",
+ "Doctor's phone doesn't interrupt the consultation—Anastasia answers for your clinic.": "Το τηλέφωνο δεν διακόπτει την εξέταση — η Αναστασία απαντά για το <strong id=\"step1-clinic-label\">ιατρείο σας</strong>.",
  "STEP 2": "ΒΗΜΑ 2",
  "🩺 Score Priority": "🩺 Αξιολόγηση προτεραιότητας",
  "🧠 Intake & Booking Priority": "🧠 Λήψη στοιχείων &amp; προτεραιότητα ραντεβού",
@@ -41,14 +41,14 @@ window.I18N_EL = {
  "📲 1/2/3/4 Quick-Reply": "📲 Γρήγορη απάντηση 1/2/3/4",
  "💬 Case Card & 1-Tap 1/2/3/4 Approval": "💬 Καρτέλα περιστατικού &amp; έγκριση 1/2/3/4 με ένα άγγιγμα",
  "Pins SOAP note to calendar & lets the doctor reply 1 / 2 / 3 / 4 from a WhatsApp notification—zero app needed.": "Επισυνάπτει το σημείωμα (SOAP) στο ημερολόγιο &amp; ο γιατρός απαντά <strong>1 / 2 / 3 / 4</strong> από μια ειδοποίηση WhatsApp — χωρίς καμία εφαρμογή.",
- "🩺 Test With Any Clinic (Select a Specialty Preset or Type Any Doctor):": "🩺 Δοκιμάστε με οποιοδήποτε ιατρείο (επιλέξτε ειδικότητα ή γράψτε όνομα γιατρού):",
- "Or type any Doctor / Clinic name (e.g. Dr. Kyprianou — ENT)...": "Ή γράψτε όνομα γιατρού / ιατρείου (π.χ. Δρ. Κυπριανού — ΩΡΛ)...",
+ "🩺 Test With Any Clinic (Select a Specialty Preset or Type Your Clinic Name):": "🩺 Δοκιμάστε με οποιοδήποτε ιατρείο (επιλέξτε ειδικότητα ή γράψτε το όνομα του ιατρείου σας):",
+ "Or type your clinic name (e.g. ENT clinic, Limassol)...": "Ή γράψτε το όνομα του ιατρείου σας (π.χ. ΩΡΛ ιατρείο, Λεμεσός)...",
  "Custom Doctor or Clinic Name": "Όνομα γιατρού ή ιατρείου",
  "Apply to AI": "Εφαρμογή",
- "👶 Dr. Andreas Nicolaou — Pediatrics (Limassol • GeSY & Private)": "👶 Δρ. Ανδρέας Νικολάου — Παιδιατρική (Λεμεσός • ΓεΣΥ &amp; Ιδιωτικά)",
- "🦷 Dr. Nikos Constantinou — Dentistry (Limassol • GeSY & Private)": "🦷 Δρ. Νίκος Κωνσταντίνου — Οδοντιατρική (Λεμεσός • ΓεΣΥ &amp; Ιδιωτικά)",
- "🔬 Dr. Elena Georgiou — Dermatology (Nicosia • GeSY & Private)": "🔬 Δρ. Έλενα Γεωργίου — Δερματολογία (Λευκωσία • ΓεΣΥ &amp; Ιδιωτικά)",
- "❤️ Dr. Marios Petrou — Cardiology (Larnaca • GeSY & Private)": "❤️ Δρ. Μάριος Πέτρου — Καρδιολογία (Λάρνακα • ΓεΣΥ &amp; Ιδιωτικά)",
+ "👶 Pediatric clinic (Limassol • GeSY & Private)": "👶 Παιδιατρικό ιατρείο (Λεμεσός • ΓεΣΥ &amp; Ιδιωτικά)",
+ "🦷 Dental clinic (Limassol • GeSY & Private)": "🦷 Οδοντιατρείο (Λεμεσός • ΓεΣΥ &amp; Ιδιωτικά)",
+ "🔬 Dermatology clinic (Nicosia • GeSY & Private)": "🔬 Δερματολογικό ιατρείο (Λευκωσία • ΓεΣΥ &amp; Ιδιωτικά)",
+ "❤️ Cardiology clinic (Larnaca • GeSY & Private)": "❤️ Καρδιολογικό ιατρείο (Λάρνακα • ΓεΣΥ &amp; Ιδιωτικά)",
  "Interactive Demo Cases:": "Διαδραστικά περιστατικά επίδειξης:",
  "🔴 P1 Urgent: Child 39.6°C Fever + Ear Pain (Unlocks 12:30 Slot)": "🔴 Π1 Επείγον: Παιδί με πυρετό 39,6°C + πόνο στο αυτί (ξεκλειδώνει το ραντεβού 12:30)",
  "🦷 Dental Urgent: Broken Crown & Acute Toothache + Photo": "🦷 Οδοντιατρικό επείγον: Σπασμένη στεφάνη &amp; οξύς πονόδοντος + φωτογραφία",
@@ -56,7 +56,7 @@ window.I18N_EL = {
  "🟢 P3 Routine: GeSY Prescription Renewal (No Slot Wasted)": "🟢 Π3 Ρουτίνα: Επανάληψη συνταγής ΓεΣΥ (χωρίς δέσμευση ραντεβού)",
  "🔊 Voice Audio: Off (Tap to Hear Anastasia)": "🔊 Φωνή: Ανενεργή (πατήστε για να ακούσετε την Αναστασία)",
  "5G • +357 CY CLINIC LINE": "5G • +357 ΓΡΑΜΜΗ ΙΑΤΡΕΙΟΥ",
- "🩺 Dr. Andreas Nicolaou is in Exam Room 1": "🩺 <strong id=\"busy-doc-name\">Δρ. Ανδρέας Νικολάου</strong> • σε εξέταση στο <span id=\"busy-room-label\">Εξεταστήριο 1</span>",
+ "🩺 The doctor is in Exam Room 1": "🩺 <strong id=\"busy-doc-name\">Ο γιατρός</strong> • σε εξέταση στο <span id=\"busy-room-label\">Εξεταστήριο 1</span>",
  "⚡ AI Desk Answering": "⚡ Απαντά η AI Γραμματεία",
  "🎙️ Anastasia (AI Medical Receptionist • EL/EN)": "🎙️ Αναστασία (AI Ιατρική Γραμματέας • EL/EN)",
  "\"39.6°C fever + ear pain\"": "«Πυρετός 39,5°C, υπάρχει ραντεβού σήμερα;»",
@@ -124,8 +124,8 @@ window.I18N_EL = {
  "Phone showing the doctor's WhatsApp thread with Anastasia across one day": "Κινητό που δείχνει τη συνομιλία WhatsApp του γιατρού με την Αναστασία κατά τη διάρκεια μιας ημέρας",
  "A": "A",
  "Anastasia • MyDocDesk": "Αναστασία • MyDocDesk",
- "AI receptionist for Dr. Andreas Nicolaou": "AI γραμματεία του Δρ. Ανδρέα Νικολάου",
- "☀️ Morning digest Good morning, Dr. Nicolaou. Today: 8 patients booked, first at 08:30. Urgent buffers at 12:30 and 17:00 are still free. 3 GeSY items waiting for your end-of-day batch. Overnight: 4 WhatsApp messages answered, 0 missed calls. 07:30": "<div class=\"bubble-tag\">☀️ Πρωινή σύνοψη</div> Καλημέρα, γιατρέ. Σήμερα: <strong>8 ασθενείς</strong> με ραντεβού, το πρώτο στις 08:30. Τα ραντεβού επειγόντων στις <strong>12:30</strong> και <strong>17:00</strong> είναι ακόμη ελεύθερα. <strong>3 αιτήματα ΓεΣΥ</strong> περιμένουν τη λίστα του τέλους της ημέρας. Κατά τη νύχτα: απαντήθηκαν 4 μηνύματα WhatsApp, 0 αναπάντητες κλήσεις. <span class=\"bubble-meta\">07:30</span>",
+ "AI receptionist for your clinic": "AI γραμματέας για το ιατρείο σας",
+ "☀️ Morning digest Good morning. Today: 8 patients booked, first at 08:30. Urgent buffers at 12:30 and 17:00 are still free. 3 GeSY items waiting for your end-of-day batch. Overnight: 4 WhatsApp messages answered, 0 missed calls. 07:30": "<div class=\"bubble-tag\">☀️ Πρωινή σύνοψη</div> Καλημέρα, γιατρέ. Σήμερα: <strong>8 ασθενείς</strong> με ραντεβού, το πρώτο στις 08:30. Τα ραντεβού επειγόντων στις <strong>12:30</strong> και <strong>17:00</strong> είναι ακόμη ελεύθερα. <strong>3 αιτήματα ΓεΣΥ</strong> περιμένουν τη λίστα του τέλους της ημέρας. Κατά τη νύχτα: απαντήθηκαν 4 μηνύματα WhatsApp, 0 αναπάντητες κλήσεις. <span class=\"bubble-meta\">07:30</span>",
  "🔴 Approval needed • #MD-409 Leo K. (4y, GeSY): 39.6°C fever since last night + right ear pain. No urgent symptoms reported. Reply: 1 book today 12:30 buffer • 2 tomorrow 09:00 • 3 I'll call the parent • 4 decline 12:05": "<div class=\"bubble-tag\">🔴 Απαιτείται έγκριση • #MD-409</div> Λέων Κ. (4 ετών, ΓεΣΥ): πυρετός 39,6°C από χθες το βράδυ + πόνος στο δεξί αυτί. Δεν αναφέρθηκαν επείγοντα συμπτώματα. Απαντήστε:<br> <strong>1</strong> ραντεβού σήμερα 12:30 • <strong>2</strong> αύριο 09:00 • <strong>3</strong> θα καλέσω τον γονέα • <strong>4</strong> απόρριψη <span class=\"bubble-meta\">12:05</span>",
  "112:06 ✓✓": "1<span class=\"bubble-meta\">12:06 ✓✓</span>",
  "✅ Done. Leo is booked at 12:30, mother confirmed on WhatsApp, case note pinned to the calendar event. 12:06": "✅ Έγινε. Ο Λέων έχει ραντεβού στις 12:30, η μητέρα επιβεβαίωσε στο WhatsApp και το σημείωμα επισυνάφθηκε στο ραντεβού. <span class=\"bubble-meta\">12:06</span>",
@@ -153,7 +153,7 @@ window.I18N_EL = {
  "Anastasia never diagnoses": "Η Αναστασία δεν κάνει ποτέ διάγνωση",
  "She asks standard intake questions and books within your rules. If a caller describes urgent symptoms, she tells them to call 112 and flags the message to the doctor.": "Κάνει τις τυπικές ερωτήσεις λήψης στοιχείων και κλείνει ραντεβού με βάση τους κανόνες σας. Αν κάποιος περιγράψει επείγοντα συμπτώματα, του λέει να καλέσει το 112 και επισημαίνει το μήνυμα στον γιατρό.",
  "What callers hear first (consent notice)": "Τι ακούν πρώτα όσοι καλούν (ενημέρωση συγκατάθεσης)",
- "“Hello, you've reached Dr. Nicolaou's clinic. I'm Anastasia, the clinic's AI assistant. This call is handled by an AI and a transcript is kept to prepare your appointment, in line with the clinic's privacy policy. If you'd rather speak to a person, just say so and the clinic will call you back.”": "«Γεια σας, καλέσατε το ιατρείο του Δρ. Νικολάου. Είμαι η Αναστασία, η ψηφιακή βοηθός του ιατρείου. Την κλήση χειρίζεται σύστημα τεχνητής νοημοσύνης και τηρείται απομαγνητοφώνηση για την προετοιμασία του ραντεβού σας, σύμφωνα με την πολιτική απορρήτου του ιατρείου. Αν προτιμάτε να μιλήσετε με άνθρωπο, απλώς πείτε το και το ιατρείο θα σας καλέσει.»",
+ "“Hello, you've reached the clinic. I'm Anastasia, the clinic's AI assistant. This call is handled by an AI and a transcript is kept to prepare your appointment, in line with the clinic's privacy policy. If you'd rather speak to a person, just say so and the clinic will call you back.”": "«Γεια σας, καλέσατε το ιατρείο. Είμαι η Αναστασία, η ψηφιακή βοηθός του ιατρείου. Την κλήση χειρίζεται σύστημα τεχνητής νοημοσύνης και τηρείται απομαγνητοφώνηση για την προετοιμασία του ραντεβού σας, σύμφωνα με την πολιτική απορρήτου του ιατρείου. Αν προτιμάτε να μιλήσετε με άνθρωπο, απλώς πείτε το και το ιατρείο θα σας καλέσει.»",
  "Every caller and WhatsApp sender is told at the start that they are speaking with an AI assistant, and can ask for the clinic to call them back. Each clinic can adjust the rest of the wording with its data-protection adviser, but the AI disclosure always stays in.": "Όποιος καλεί ή στέλνει μήνυμα στο WhatsApp ενημερώνεται από την αρχή ότι μιλά με ψηφιακή βοηθό τεχνητής νοημοσύνης και μπορεί να ζητήσει να τον καλέσει το ιατρείο. Κάθε ιατρείο μπορεί να προσαρμόσει την υπόλοιπη διατύπωση με τον σύμβουλο προστασίας δεδομένων του, αλλά η ενημέρωση ότι πρόκειται για τεχνητή νοημοσύνη παραμένει πάντα.",
  "Getting started": "Πώς ξεκινάτε",
  "Your clinic in 3 steps": "Το ιατρείο σας σε 3 βήματα",
@@ -191,7 +191,7 @@ window.I18N_EL = {
  "🟢 Priority 3 (Routes to Async GeSY Admin Queue): Chronic prescription refills, repeat specialist referrals, routine blood test review.": "<strong>🟢 Προτεραιότητα 3 (λίστα διοικητικών ΓεΣΥ):</strong> Επαναλήψεις συνταγών χρόνιας αγωγής, επαναληπτικά παραπεμπτικά σε ειδικό, έλεγχος εξετάσεων ρουτίνας.",
  "PHASE 2 VISION (CONCEPT MOCK-UP) • PATIENT FINDER APP": "ΟΡΑΜΑ ΦΑΣΗΣ 2 (ΠΡΟΤΑΣΗ ΣΧΕΔΙΑΣΜΟΥ) • ΕΦΑΡΜΟΓΗ ΑΝΑΖΗΤΗΣΗΣ ΓΙΑΤΡΟΥ",
  "MyDocDesk Patient Finder — a future concept for finding available doctors by case & urgency": "<span class=\"js-brand-name\">MyDocDesk</span> Patient Finder — μελλοντική ιδέα για εύρεση διαθέσιμων γιατρών ανά περιστατικό &amp; επείγον",
- "🧪 Future concept — not a live service. This tab is a design mock-up of a possible Phase 2 patient app. The doctors, clinics, areas and time slots below are fictional samples; no real bookings are made and no doctors are listed. Today, MyDocDesk is the AI receptionist shown in the Live Demo.": "<strong>🧪 Μελλοντική ιδέα — όχι ενεργή υπηρεσία.</strong> Αυτή η καρτέλα είναι πρόταση σχεδιασμού για μια πιθανή εφαρμογή ασθενών (Φάση 2). Οι γιατροί, τα ιατρεία, οι περιοχές και οι ώρες παρακάτω είναι <strong>φανταστικά δείγματα</strong>· δεν γίνονται πραγματικές κρατήσεις και δεν εμφανίζονται πραγματικοί γιατροί. Σήμερα, το <span class=\"js-brand-name\">MyDocDesk</span> είναι η AI γραμματεία που βλέπετε στη Ζωντανή επίδειξη.",
+ "🧪 Future concept — not a live service. This tab is a design mock-up of a possible Phase 2 patient app. The clinics, areas and time slots below are samples only; no real bookings are made and no doctors are listed. Today, MyDocDesk is the AI receptionist shown in the Live Demo.": "<strong>🧪 Μελλοντική ιδέα — όχι ενεργή υπηρεσία.</strong> Αυτή η καρτέλα είναι πρόταση σχεδιασμού για μια πιθανή εφαρμογή ασθενών (Φάση 2). Τα ιατρεία, οι περιοχές και οι ώρες παρακάτω είναι <strong>μόνο δείγματα</strong>· δεν γίνονται πραγματικές κρατήσεις και δεν εμφανίζονται γιατροί. Σήμερα, το <span class=\"js-brand-name\">MyDocDesk</span> είναι η AI γραμματεία που βλέπετε στη Ζωντανή επίδειξη.",
  "Because every doctor on the network uses the MyDocDesk AI Receptionist as their live master schedule in Phase 1, a future patient app could let people search by symptom or specialty and see the same-day slots each participating doctor chooses to publish (including urgent buffer slots the doctor has unlocked).": "Επειδή κάθε γιατρός του δικτύου θα χρησιμοποιεί την <strong>AI Γραμματεία <span class=\"js-brand-name\">MyDocDesk</span></strong> ως κύριο πρόγραμμα στη Φάση 1, μια μελλοντική εφαρμογή ασθενών θα μπορούσε να επιτρέπει αναζήτηση ανά σύμπτωμα ή ειδικότητα και να δείχνει τα αυθημερόν ραντεβού που επιλέγει να δημοσιεύσει κάθε συμμετέχων γιατρός (συμπεριλαμβανομένων ραντεβού επειγόντων που έχει ξεκλειδώσει ο γιατρός).",
  "Filter by Specialty": "Φιλτράρισμα ανά ειδικότητα",
  "🩺 All Specialties": "🩺 Όλες οι ειδικότητες",
@@ -321,20 +321,20 @@ window.I18N_EL = {
  "Dentistry": "Οδοντιατρική",
  "Dermatology": "Δερματολογία",
  "Cardiology": "Καρδιολογία",
- "Dr. Sample A": "Δρ. Δείγμα Α",
- "Dr. Sample B": "Δρ. Δείγμα Β",
- "Dr. Sample C": "Δρ. Δείγμα Γ",
- "Dr. Sample D": "Δρ. Δείγμα Δ",
- "Dr. Sample E": "Δρ. Δείγμα Ε",
- "Dr. Sample F": "Δρ. Δείγμα Ζ",
- "Dr. Sample G": "Δρ. Δείγμα Η",
- "Dr. Sample H": "Δρ. Δείγμα Θ",
+ "Clinic A": "Ιατρείο Α",
+ "Clinic B": "Ιατρείο Β",
+ "Clinic C": "Ιατρείο Γ",
+ "Clinic D": "Ιατρείο Δ",
+ "Clinic E": "Ιατρείο Ε",
+ "Clinic F": "Ιατρείο Ζ",
+ "Clinic G": "Ιατρείο Η",
+ "Clinic H": "Ιατρείο Θ",
  "🗂️ All Layers (": "🗂️ Όλα τα επίπεδα (",
  "🟣 📅 Anastasia AI Sub-Calendar (": "🟣 📅 Υπο-ημερολόγιο Αναστασίας AI (",
  "🔴 📅 AI Emergency Buffers (": "🔴 📅 Ραντεβού επειγόντων AI (",
  "🔒 Personal / Surgery Busy Hold (": "🔒 Δεσμευμένος χρόνος: προσωπικά / χειρουργείο (",
  "⚪ 📅 Clinic Main Desk (": "⚪ 📅 Κύριο ημερολόγιο ιατρείου (",
- "✅ Case #MD-409 Marked as 🔴 PRIORITY 1 — Unlocked 12:30 PM Buffer Slot & pinned Case Note to Dr. Nicolaou's Calendar!": "✅ Περιστατικό #MD-409: 🔴 ΠΡΟΤΕΡΑΙΟΤΗΤΑ 1 — ξεκλειδώθηκε το ραντεβού επειγόντων των 12:30 και το σημείωμα καταχωρίστηκε στο ημερολόγιο του Δρ. Νικολάου!"
+ "✅ Case #MD-409 Marked as 🔴 PRIORITY 1 — Unlocked 12:30 PM Buffer Slot & pinned Case Note to the doctor's Calendar!": "✅ Περιστατικό #MD-409: 🔴 ΠΡΟΤΕΡΑΙΟΤΗΤΑ 1 — ξεκλειδώθηκε το ραντεβού επειγόντων των 12:30 και το σημείωμα καταχωρίστηκε στο ημερολόγιο του γιατρού!"
 };
 window.SCHEDULE_EL = {
  "pediatrics/slot-0930": [
@@ -355,11 +355,11 @@ window.SCHEDULE_EL = {
  "pediatrics/slot-1530": [
   "Σοφία Χριστοδούλου (9 ετών)",
   "Ήπιο ιογενές εξάνθημα στον πήχη (48 ώρες) — επισυνάπτεται φωτογραφία υψηλής ανάλυσης",
-  "ΓεΣΥ & Ιδιωτικά • Η AI επισύναψε τη φωτογραφία στο ραντεβού, ώστε ο Δρ. Ανδρέας Νικολάου να την δει πριν από την άφιξη."
+  "ΓεΣΥ & Ιδιωτικά • Η AI επισύναψε τη φωτογραφία στο ραντεβού, ώστε ο γιατρός να την δει πριν από την άφιξη."
  ],
  "pediatrics/slot-1330-busy": [
   "🔒 Δεσμευμένος χρόνος: προσωπικά & επισκέψεις νοσοκομείου (μόνο ανάγνωση)",
-  "Συγχρονισμός από το προσωπικό ημερολόγιο του Δρ. Ανδρέα Νικολάου & το ημερολόγιο του Νοσοκομείου Λεμεσού (ο τίτλος του ιδιωτικού συμβάντος δεν εμφανίζεται)",
+  "Συγχρονισμός από το προσωπικό ημερολόγιο του γιατρού & το ημερολόγιο του Νοσοκομείου Λεμεσού (ο τίτλος του ιδιωτικού συμβάντος δεν εμφανίζεται)",
   "Η Αναστασία διαβάζει τα κατειλημμένα διαστήματα σε όλα τα συνδεδεμένα ημερολόγια, ώστε να μην κλείνει ποτέ ραντεβού πάνω σε επισκέψεις νοσοκομείου ή οικογενειακές υποχρεώσεις."
  ],
  "pediatrics/slot-1700": [
@@ -409,7 +409,7 @@ window.SCHEDULE_EL = {
  ],
  "dental/slot-1330-dent-busy": [
   "🔒 Δεσμευμένος χρόνος: οδοντοτεχνικό εργαστήριο & προσωπικά (μόνο ανάγνωση)",
-  "Συγχρονισμός από το προσωπικό ημερολόγιο του Δρ. Νίκου Κωνσταντίνου & το ημερολόγιο του προσθετικού εργαστηρίου (οι ιδιωτικές λεπτομέρειες δεν εμφανίζονται)",
+  "Συγχρονισμός από το προσωπικό ημερολόγιο του γιατρού & το ημερολόγιο του προσθετικού εργαστηρίου (οι ιδιωτικές λεπτομέρειες δεν εμφανίζονται)",
   "Η Αναστασία διαβάζει τα κατειλημμένα διαστήματα σε όλα τα συνδεδεμένα ημερολόγια, ώστε τα ραντεβού στην έδρα να μη συμπίπτουν ποτέ με προσωπικές ή χειρουργικές υποχρεώσεις."
  ],
  "dental/slot-1700-dent": [
@@ -440,12 +440,12 @@ window.SCHEDULE_EL = {
  "dermatology/slot-0930-derm": [
   "Μαριλένα Χρήστου (37 ετών)",
   "Ετήσια ψηφιακή δερματοσκόπηση όλου του σώματος & έλεγχος μελαγχρωματικών βλαβών (2 μακροφωτογραφίες)",
-  "ΓεΣΥ & Ιδιωτικά (#714902) • Οι αρχικές εικόνες δερματοσκόπησης συγχρονίστηκαν στον φάκελο της Δρ. Έλενας Γεωργίου."
+  "ΓεΣΥ & Ιδιωτικά (#714902) • Οι αρχικές εικόνες δερματοσκόπησης συγχρονίστηκαν στον φάκελο της γιατρού."
  ],
  "dermatology/slot-1015-derm": [
   "Ανδρέας Μ. (34 ετών)",
   "Κνησμώδες ερυθηματώδες εξάνθημα που επεκτείνεται στον δεξί πήχη (48 ώρες) — επισυνάπτεται φωτογραφία υψηλής ανάλυσης",
-  "ΓεΣΥ & Ιδιωτικά (#839104) • Απύρετος, χωρίς προσβολή βλεννογόνων. Η φωτογραφία (forearm_rash_day2.jpg) επισυνάφθηκε εκ των προτέρων για τη Δρ. Έλενα Γεωργίου."
+  "ΓεΣΥ & Ιδιωτικά (#839104) • Απύρετος, χωρίς προσβολή βλεννογόνων. Η φωτογραφία (forearm_rash_day2.jpg) επισυνάφθηκε εκ των προτέρων για τη γιατρό."
  ],
  "dermatology/slot-1230-derm": [
   "Κατερίνα Β. (26 ετών)",
@@ -459,13 +459,13 @@ window.SCHEDULE_EL = {
  ],
  "dermatology/slot-1330-derm-busy": [
   "🔒 Δεσμευμένος χρόνος: προσωπικά & νοσοκομειακές εκτιμήσεις (μόνο ανάγνωση)",
-  "Συγχρονισμός από το προσωπικό ημερολόγιο της Δρ. Έλενας Γεωργίου & το ημερολόγιο νοσοκομειακών εκτιμήσεων (ο τίτλος του ιδιωτικού συμβάντος δεν εμφανίζεται)",
+  "Συγχρονισμός από το προσωπικό ημερολόγιο της γιατρού & το ημερολόγιο νοσοκομειακών εκτιμήσεων (ο τίτλος του ιδιωτικού συμβάντος δεν εμφανίζεται)",
   "Η Αναστασία διαβάζει τα κατειλημμένα διαστήματα σε όλα τα συνδεδεμένα ημερολόγια και καταχωρίζει τα ραντεβού της μόνο στο υπο-ημερολόγιο «Αναστασία AI»."
  ],
  "dermatology/slot-1700-derm": [
   "🔒 Μόνο για 🔴 οξύ φαρμακευτικό εξάνθημα / λοίμωξη Προτεραιότητας 1",
   "Ξεκλειδώνεται από την Αναστασία μόνο για οξείες δερματολογικές εξάρσεις, έρπητα ζωστήρα ή σοβαρά αλλεργικά εξανθήματα",
-  "Κρατά διαθέσιμο χρόνο για αυθημερόν επείγοντα για τη Δρ. Έλενα Γεωργίου."
+  "Κρατά διαθέσιμο χρόνο για αυθημερόν επείγοντα για τη γιατρό."
  ],
  "dermatology/slot-0830": [
   "Κατερίνα Χατζηαντώνη (39 ετών)",
@@ -500,7 +500,7 @@ window.SCHEDULE_EL = {
  "cardiology/slot-1230-card": [
   "Πέτρος Χαραλάμπους (68 ετών)",
   "Νέος ακανόνιστος ταχύς σφυγμός (132 bpm στο ΗΚΓ του Apple Watch) + ΑΠ 184/106 mmHg",
-  "ΓεΣΥ & Ιδιωτικά (#294011) • Έλεγχος επειγόντων συμπτωμάτων: Χωρίς συσφιγκτικό θωρακικό άλγος ή συγκοπή. Το PDF ΗΚΓ του Apple Watch επισυνάφθηκε για τον Δρ. Μάριο Πέτρου."
+  "ΓεΣΥ & Ιδιωτικά (#294011) • Έλεγχος επειγόντων συμπτωμάτων: Χωρίς συσφιγκτικό θωρακικό άλγος ή συγκοπή. Το PDF ΗΚΓ του Apple Watch επισυνάφθηκε για τον γιατρό."
  ],
  "cardiology/slot-1530-card": [
   "Γιώργος Μιχαηλίδης (71 ετών)",
@@ -509,13 +509,13 @@ window.SCHEDULE_EL = {
  ],
  "cardiology/slot-1330-card-busy": [
   "🔒 Δεσμευμένος χρόνος: αιμοδυναμικό εργαστήριο & προσωπικά (μόνο ανάγνωση)",
-  "Συγχρονισμός από το ημερολόγιο του αιμοδυναμικού εργαστηρίου του νοσοκομείου & το προσωπικό Google Calendar του Δρ. Μάριου Πέτρου (οι ιδιωτικές λεπτομέρειες δεν εμφανίζονται)",
+  "Συγχρονισμός από το ημερολόγιο του αιμοδυναμικού εργαστηρίου του νοσοκομείου & το προσωπικό Google Calendar του γιατρού (οι ιδιωτικές λεπτομέρειες δεν εμφανίζονται)",
   "Η Αναστασία ελέγχει όλα τα συνδεδεμένα ημερολόγια για την πραγματική διαθεσιμότητα και καταχωρίζει τα ραντεβού της σε ξεχωριστό χρωματικό υπο-ημερολόγιο."
  ],
  "cardiology/slot-1700-card": [
   "🔒 Μόνο για 🔴 επείγοντα καρδιολογικά περιστατικά Προτεραιότητας 1",
   "Σημείωση: Η επανάληψη αντιυπερτασικής αγωγής του Κώστα Παπαδόπουλου (ΓεΣΥ #449102) δρομολογήθηκε στη λίστα ΓεΣΥ — εξοικονομήθηκε ραντεβού 20 λεπτών!",
-  "Προστατεύει τη διαθεσιμότητα του Δρ. Μάριου Πέτρου για αυθημερόν επείγοντα ΗΚΓ/υπερηχογραφήματα."
+  "Προστατεύει τη διαθεσιμότητα του γιατρού για αυθημερόν επείγοντα ΗΚΓ/υπερηχογραφήματα."
  ],
  "cardiology/slot-0830": [
   "Γιάννης Κάλλης (66 ετών)",
@@ -540,32 +540,32 @@ window.SCHEDULE_EL = {
 };
 window.CLINIC_EL = {
  "pediatrics": {
-  "doctorName": "Δρ. Ανδρέας Νικολάου",
-  "clinicTitle": "Δρ. Ανδρέας Νικολάου — Παιδιατρική",
+  "doctorName": "ο γιατρός",
+  "clinicTitle": "Παιδιατρικό ιατρείο",
   "specialty": "Παιδιατρική",
   "city": "Λεμεσός",
   "coverage": "ΓεΣΥ & Ιδιωτικά",
   "roomLabel": "Εξεταστήριο 1"
  },
  "dental": {
-  "doctorName": "Δρ. Νίκος Κωνσταντίνου",
-  "clinicTitle": "Δρ. Νίκος Κωνσταντίνου — Οδοντιατρική",
+  "doctorName": "ο γιατρός",
+  "clinicTitle": "Οδοντιατρείο",
   "specialty": "Οδοντιατρική",
   "city": "Λεμεσός",
   "coverage": "ΓεΣΥ & Ιδιωτικά",
   "roomLabel": "Εξεταστήριο 1"
  },
  "dermatology": {
-  "doctorName": "Δρ. Έλενα Γεωργίου",
-  "clinicTitle": "Δρ. Έλενα Γεωργίου — Δερματολογία",
+  "doctorName": "ο γιατρός",
+  "clinicTitle": "Δερματολογικό ιατρείο",
   "specialty": "Δερματολογία",
   "city": "Λευκωσία",
   "coverage": "ΓεΣΥ & Ιδιωτικά",
   "roomLabel": "Εξεταστήριο 1"
  },
  "cardiology": {
-  "doctorName": "Δρ. Μάριος Πέτρου",
-  "clinicTitle": "Δρ. Μάριος Πέτρου — Καρδιολογία",
+  "doctorName": "ο γιατρός",
+  "clinicTitle": "Καρδιολογικό ιατρείο",
   "specialty": "Καρδιολογία",
   "city": "Λάρνακα",
   "coverage": "ΓεΣΥ & Ιδιωτικά",
@@ -583,7 +583,7 @@ window.SCENARIOS_EL = {
    {
     "speaker": "Αναστασία (AI Ιατρική Γραμματέας)",
     "role": "ai",
-    "text": "Καλημέρα σας, ιατρείο του Δρ. Ανδρέα Νικολάου, Παιδιατρική. Ο γιατρός εξετάζει αυτή τη στιγμή στο Εξεταστήριο 1, γι' αυτό σας απαντά η Αναστασία, η ψηφιακή γραμματέας του. Πώς μπορώ να βοηθήσω το παιδί σας σήμερα;"
+    "text": "Καλημέρα σας, παιδιατρικό ιατρείο. Ο γιατρός εξετάζει αυτή τη στιγμή στο Εξεταστήριο 1, γι' αυτό σας απαντά η Αναστασία, η ψηφιακή γραμματέας του. Πώς μπορώ να βοηθήσω το παιδί σας σήμερα;"
    },
    {
     "speaker": "Μαρία Κ. (μητέρα)",
@@ -609,7 +609,7 @@ window.SCENARIOS_EL = {
   "waMessages": [
    {
     "dir": "incoming",
-    "html": "<strong>🩺 Ξεκλειδώθηκε ραντεβού επειγόντων Προτεραιότητας 1</strong><br/>Γεια σας κυρία Μαρία! Όσο μιλούσαμε, ετοίμασα το σημείωμα του Λέοντα για τον <strong>Δρ. Ανδρέα Νικολάου</strong> και ξεκλείδωσα το σημερινό προστατευμένο ραντεβού επειγόντων:<div class=\"wa-slot-card urgent\"><div class=\"wa-slot-title\">🔴 Σήμερα στις 12:30 (ραντεβού επειγόντων)</div><div style=\"font-size:0.72rem; color:#475569;\">Ασθενής: Λέων Κ. (4 ετών) • Κύριο ενόχλημα: πυρετός 39,6°C + οξεία ωταλγία δεξιά</div><div class=\"wa-slot-btn-row\"><button type=\"button\" class=\"wa-slot-btn urgent\" onclick=\"confirmSuggestedSlot()\">✓ Επιβεβαίωση ραντεβού 12:30</button><button type=\"button\" class=\"wa-slot-btn secondary\" onclick=\"simulatePatientPhotoUpload()\">📷 Επισύναψη φωτογραφίας θερμομέτρου / αυτιού</button></div></div>"
+    "html": "<strong>🩺 Ξεκλειδώθηκε ραντεβού επειγόντων Προτεραιότητας 1</strong><br/>Γεια σας κυρία Μαρία! Όσο μιλούσαμε, ετοίμασα το σημείωμα του Λέοντα για τον <strong>γιατρό</strong> και ξεκλείδωσα το σημερινό προστατευμένο ραντεβού επειγόντων:<div class=\"wa-slot-card urgent\"><div class=\"wa-slot-title\">🔴 Σήμερα στις 12:30 (ραντεβού επειγόντων)</div><div style=\"font-size:0.72rem; color:#475569;\">Ασθενής: Λέων Κ. (4 ετών) • Κύριο ενόχλημα: πυρετός 39,6°C + οξεία ωταλγία δεξιά</div><div class=\"wa-slot-btn-row\"><button type=\"button\" class=\"wa-slot-btn urgent\" onclick=\"confirmSuggestedSlot()\">✓ Επιβεβαίωση ραντεβού 12:30</button><button type=\"button\" class=\"wa-slot-btn secondary\" onclick=\"simulatePatientPhotoUpload()\">📷 Επισύναψη φωτογραφίας θερμομέτρου / αυτιού</button></div></div>"
    },
    {
     "dir": "outgoing",
@@ -617,7 +617,7 @@ window.SCENARIOS_EL = {
    },
    {
     "dir": "incoming",
-    "html": "✅ <strong>Επιβεβαιώθηκε για σήμερα στις 12:30!</strong><br/>Ο <strong>Δρ. Ανδρέας Νικολάου</strong> έχει ήδη στην οθόνη του το σημείωμα 3 σημείων:<br/>• <strong>Συμπτώματα:</strong> πυρετός 39,6°C (12 ώρες) + οξύς πόνος στο δεξί αυτί<br/>• <strong>Φάρμακα:</strong> Nurofen στις 07:30<br/>• <strong>Επείγοντα συμπτώματα:</strong> Δεν αναφέρθηκαν (κανονική αναπνοή, πίνει υγρά)"
+    "html": "✅ <strong>Επιβεβαιώθηκε για σήμερα στις 12:30!</strong><br/>Ο <strong>γιατρός</strong> έχει ήδη στην οθόνη του το σημείωμα 3 σημείων:<br/>• <strong>Συμπτώματα:</strong> πυρετός 39,6°C (12 ώρες) + οξύς πόνος στο δεξί αυτί<br/>• <strong>Φάρμακα:</strong> Nurofen στις 07:30<br/>• <strong>Επείγοντα συμπτώματα:</strong> Δεν αναφέρθηκαν (κανονική αναπνοή, πίνει υγρά)"
    }
   ],
   "caseFields": [
@@ -654,7 +654,7 @@ window.SCENARIOS_EL = {
    {
     "speaker": "Αναστασία (AI Ιατρική Γραμματέας)",
     "role": "ai",
-    "text": "Καλημέρα σας, οδοντιατρείο του Δρ. Νίκου Κωνσταντίνου. Ο γιατρός βρίσκεται αυτή τη στιγμή σε θεραπεία στο Εξεταστήριο 1, γι' αυτό σας απαντά η Αναστασία, η ψηφιακή γραμματέας του. Πώς μπορώ να σας βοηθήσω;"
+    "text": "Καλημέρα σας, οδοντιατρείο. Ο γιατρός βρίσκεται αυτή τη στιγμή σε θεραπεία στο Εξεταστήριο 1, γι' αυτό σας απαντά η Αναστασία, η ψηφιακή γραμματέας του. Πώς μπορώ να σας βοηθήσω;"
    },
    {
     "speaker": "Δημήτρης Α. (ασθενής)",
@@ -684,11 +684,11 @@ window.SCENARIOS_EL = {
    },
    {
     "dir": "incoming",
-    "html": "<strong>🦷 Ξεκλειδώθηκε οδοντιατρικό ραντεβού επειγόντων Προτεραιότητας 1 (#MD-415)</strong><br/>Ευχαριστώ, κύριε Δημήτρη! Επισύναψα το <code>tooth_fracture_UR4.jpg</code> στο ημερολόγιο του <strong>Δρ. Νίκου Κωνσταντίνου</strong> και κράτησα το ραντεβού επειγόντων σας:<div class=\"wa-slot-card urgent\"><div class=\"wa-slot-title\">🔴 Σήμερα στις 12:30 (ραντεβού επειγόντων 30 λεπτών)</div><div style=\"font-size:0.72rem; color:#475569;\">Ασθενής: Δημήτρης Α. • Κάταγμα στεφάνης δοντιού #14 &amp; οξύς πόνος στα θερμικά ερεθίσματα (8/10)</div><div class=\"wa-slot-btn-row\"><button type=\"button\" class=\"wa-slot-btn urgent\" onclick=\"confirmSuggestedSlot()\">✓ Επιβεβαίωση ραντεβού 12:30</button><button type=\"button\" class=\"wa-slot-btn secondary\" onclick=\"simulatePatientPhotoUpload()\">📷 Αποστολή επιπλέον ακτινογραφίας / φωτογραφίας</button></div></div>"
+    "html": "<strong>🦷 Ξεκλειδώθηκε οδοντιατρικό ραντεβού επειγόντων Προτεραιότητας 1 (#MD-415)</strong><br/>Ευχαριστώ, κύριε Δημήτρη! Επισύναψα το <code>tooth_fracture_UR4.jpg</code> στο ημερολόγιο του <strong>γιατρού</strong> και κράτησα το ραντεβού επειγόντων σας:<div class=\"wa-slot-card urgent\"><div class=\"wa-slot-title\">🔴 Σήμερα στις 12:30 (ραντεβού επειγόντων 30 λεπτών)</div><div style=\"font-size:0.72rem; color:#475569;\">Ασθενής: Δημήτρης Α. • Κάταγμα στεφάνης δοντιού #14 &amp; οξύς πόνος στα θερμικά ερεθίσματα (8/10)</div><div class=\"wa-slot-btn-row\"><button type=\"button\" class=\"wa-slot-btn urgent\" onclick=\"confirmSuggestedSlot()\">✓ Επιβεβαίωση ραντεβού 12:30</button><button type=\"button\" class=\"wa-slot-btn secondary\" onclick=\"simulatePatientPhotoUpload()\">📷 Αποστολή επιπλέον ακτινογραφίας / φωτογραφίας</button></div></div>"
    },
    {
     "dir": "incoming",
-    "html": "✅ <strong>Οδοντιατρικό σημείωμα 3 σημείων για τον Δρ. Νίκο Κωνσταντίνου:</strong><br/>• <strong>Δόντι/περιοχή:</strong> Άνω δεξιός προγόμφιος (#14) — κάταγμα πορσελάνινης στεφάνης<br/>• <strong>Πόνος/κατάσταση πολφού:</strong> 8/10 έντονη θερμική ευαισθησία, χωρίς οίδημα προσώπου, χωρίς πυρετό<br/>• <strong>Προετοιμασία:</strong> Ο βοηθός ενημερώθηκε για δίσκο προσωρινής συγκόλλησης στεφάνης / σύνθετης ρητίνης"
+    "html": "✅ <strong>Οδοντιατρικό σημείωμα 3 σημείων για τον γιατρό:</strong><br/>• <strong>Δόντι/περιοχή:</strong> Άνω δεξιός προγόμφιος (#14) — κάταγμα πορσελάνινης στεφάνης<br/>• <strong>Πόνος/κατάσταση πολφού:</strong> 8/10 έντονη θερμική ευαισθησία, χωρίς οίδημα προσώπου, χωρίς πυρετό<br/>• <strong>Προετοιμασία:</strong> Ο βοηθός ενημερώθηκε για δίσκο προσωρινής συγκόλλησης στεφάνης / σύνθετης ρητίνης"
    }
   ],
   "caseFields": [
@@ -725,12 +725,12 @@ window.SCENARIOS_EL = {
    {
     "speaker": "Ανδρέας Μ. (φωνητικό μήνυμα ασθενούς)",
     "role": "caller",
-    "text": "🎙️ [Φωνητικό μήνυμα WhatsApp 0:14]: «Γεια σας, δερματολογικό ιατρείο της Δρ. Έλενας Γεωργίου; Πριν από 2 μέρες πρόσεξα ένα κόκκινο κυκλικό εξάνθημα στον πήχη μου που φαγουρίζει και απλώνεται λίγο. Δεν έχω πυρετό. Μπορώ να στείλω φωτογραφία και να κλείσω ραντεβού;»"
+    "text": "🎙️ [Φωνητικό μήνυμα WhatsApp 0:14]: «Γεια σας, δερματολογικό ιατρείο; Πριν από 2 μέρες πρόσεξα ένα κόκκινο κυκλικό εξάνθημα στον πήχη μου που φαγουρίζει και απλώνεται λίγο. Δεν έχω πυρετό. Μπορώ να στείλω φωτογραφία και να κλείσω ραντεβού;»"
    },
    {
     "speaker": "Αναστασία (AI Ιατρική Γραμματέας)",
     "role": "ai",
-    "text": "Γεια σας, κύριε Ανδρέα! Επικοινωνήσατε με το δερματολογικό ιατρείο της Δρ. Έλενας Γεωργίου. Επειδή δεν έχετε πυρετό, δυσκολία στην αναπνοή ή πρήξιμο στο πρόσωπο, κατέταξα το περιστατικό ως Προτεραιότητα 2, για εξέταση εντός 24 έως 48 ωρών. Παρακαλώ στείλτε μια καθαρή φωτογραφία του πήχη στο WhatsApp, ώστε η γιατρός να τη δει μαζί με το ραντεβού σας."
+    "text": "Γεια σας, κύριε Ανδρέα! Επικοινωνήσατε με το δερματολογικό ιατρείο. Επειδή δεν έχετε πυρετό, δυσκολία στην αναπνοή ή πρήξιμο στο πρόσωπο, κατέταξα το περιστατικό ως Προτεραιότητα 2, για εξέταση εντός 24 έως 48 ωρών. Παρακαλώ στείλτε μια καθαρή φωτογραφία του πήχη στο WhatsApp, ώστε η γιατρός να τη δει μαζί με το ραντεβού σας."
    }
   ],
   "waMessages": [
@@ -740,7 +740,7 @@ window.SCENARIOS_EL = {
    },
    {
     "dir": "incoming",
-    "html": "<strong>🩺 Η φωτογραφία επισυνάφθηκε στο σημείωμα #MD-410</strong><br/>Ευχαριστώ, κύριε Ανδρέα! Επισύναψα τη φωτογραφία υψηλής ανάλυσης απευθείας στην κάρτα ραντεβού της <strong>Δρ. Έλενας Γεωργίου</strong> και κράτησα το επόμενο ραντεβού Προτεραιότητας 2:<div class=\"wa-slot-card\"><div class=\"wa-slot-title\">🟡 Αύριο στις 10:15 (τακτικό ραντεβού Προτεραιότητας 2)</div><div style=\"font-size:0.72rem; color:#475569;\">Σημείωση: Το σημερινό ραντεβού επειγόντων στις 12:30 παραμένει προστατευμένο για οξείες εξάρσεις· η φωτογραφία σας θα εξεταστεί από τη Δρ. Έλενα Γεωργίου σήμερα.</div><div class=\"wa-slot-btn-row\"><button type=\"button\" class=\"wa-slot-btn\" onclick=\"confirmSuggestedSlot()\">✓ Επιβεβαίωση για αύριο 10:15</button></div></div>"
+    "html": "<strong>🩺 Η φωτογραφία επισυνάφθηκε στο σημείωμα #MD-410</strong><br/>Ευχαριστώ, κύριε Ανδρέα! Επισύναψα τη φωτογραφία υψηλής ανάλυσης απευθείας στην κάρτα ραντεβού της <strong>γιατρού</strong> και κράτησα το επόμενο ραντεβού Προτεραιότητας 2:<div class=\"wa-slot-card\"><div class=\"wa-slot-title\">🟡 Αύριο στις 10:15 (τακτικό ραντεβού Προτεραιότητας 2)</div><div style=\"font-size:0.72rem; color:#475569;\">Σημείωση: Το σημερινό ραντεβού επειγόντων στις 12:30 παραμένει προστατευμένο για οξείες εξάρσεις· η φωτογραφία σας θα εξεταστεί από τη γιατρό σήμερα.</div><div class=\"wa-slot-btn-row\"><button type=\"button\" class=\"wa-slot-btn\" onclick=\"confirmSuggestedSlot()\">✓ Επιβεβαίωση για αύριο 10:15</button></div></div>"
    }
   ],
   "caseFields": [
@@ -761,7 +761,7 @@ window.SCENARIOS_EL = {
    },
    {
     "label": "Έλεγχος επειγόντων συμπτωμάτων",
-    "val": "✓ Απύρετος, χωρίς προσβολή βλεννογόνων, χωρίς σημεία αναφυλαξίας. Κατάλληλο για δερματολογικό ραντεβού εντός 24 ωρών με τη Δρ. Έλενα Γεωργίου.",
+    "val": "✓ Απύρετος, χωρίς προσβολή βλεννογόνων, χωρίς σημεία αναφυλαξίας. Κατάλληλο για δερματολογικό ραντεβού εντός 24 ωρών με τη γιατρό.",
     "full": true
    }
   ],
@@ -777,7 +777,7 @@ window.SCENARIOS_EL = {
    {
     "speaker": "Αναστασία (AI Ιατρική Γραμματέας)",
     "role": "ai",
-    "text": "Καλημέρα σας, καρδιολογικό ιατρείο του Δρ. Μάριου Πέτρου. Ο γιατρός κάνει αυτή τη στιγμή υπερηχοκαρδιογράφημα στο Εξεταστήριο 1, γι' αυτό σας απαντά η Αναστασία, η ψηφιακή γραμματέας του. Πώς μπορώ να σας εξυπηρετήσω;"
+    "text": "Καλημέρα σας, καρδιολογικό ιατρείο. Ο γιατρός κάνει αυτή τη στιγμή υπερηχοκαρδιογράφημα στο Εξεταστήριο 1, γι' αυτό σας απαντά η Αναστασία, η ψηφιακή γραμματέας του. Πώς μπορώ να σας εξυπηρετήσω;"
    },
    {
     "speaker": "Κώστας Π. (ασθενής)",
@@ -803,7 +803,7 @@ window.SCENARIOS_EL = {
   "waMessages": [
    {
     "dir": "incoming",
-    "html": "<strong>🟢 Καταχωρίστηκε η συνταγή ΓεΣΥ (#MD-411)</strong><br/>Γεια σας, κύριε Παπαδόπουλε! Το αίτημα ανανέωσης βρίσκεται στη <strong>λίστα ΓεΣΥ τέλους ημέρας</strong> του <strong>Δρ. Μάριου Πέτρου</strong>:<br/>• <strong>Φάρμακα:</strong> Amlodipine 5mg + Atorvastatin 20mg (ΓεΣΥ #449102)<br/>• <strong>Πίεση στο σπίτι:</strong> 122/78 mmHg (σταθερή)<br/>• <strong>Κατάσταση:</strong> Ο Δρ. Μάριος Πέτρου εγκρίνει τη λίστα στις 13:30 — θα σας ενημερώσουμε εδώ μόλις ενεργοποιηθεί ο κωδικός για το φαρμακείο!"
+    "html": "<strong>🟢 Καταχωρίστηκε η συνταγή ΓεΣΥ (#MD-411)</strong><br/>Γεια σας, κύριε Παπαδόπουλε! Το αίτημα ανανέωσης βρίσκεται στη <strong>λίστα ΓεΣΥ τέλους ημέρας</strong> του <strong>γιατρού</strong>:<br/>• <strong>Φάρμακα:</strong> Amlodipine 5mg + Atorvastatin 20mg (ΓεΣΥ #449102)<br/>• <strong>Πίεση στο σπίτι:</strong> 122/78 mmHg (σταθερή)<br/>• <strong>Κατάσταση:</strong> Ο γιατρός εγκρίνει τη λίστα στις 13:30 — θα σας ενημερώσουμε εδώ μόλις ενεργοποιηθεί ο κωδικός για το φαρμακείο!"
    }
   ],
   "caseFields": [
@@ -824,7 +824,7 @@ window.SCENARIOS_EL = {
    },
    {
     "label": "Έλεγχος ασφαλείας",
-    "val": "✓ Πίεση στο σπίτι 122/78 mmHg, χωρίς θωρακικό άλγος ή ανεπιθύμητες ενέργειες. Έτοιμο για έγκριση με 1 κλικ από τον Δρ. Μάριο Πέτρου.",
+    "val": "✓ Πίεση στο σπίτι 122/78 mmHg, χωρίς θωρακικό άλγος ή ανεπιθύμητες ενέργειες. Έτοιμο για έγκριση με 1 κλικ από τον γιατρό.",
     "full": true
    }
   ],
@@ -1051,7 +1051,6 @@ Object.assign(window.I18N_EL, {
  /* audit-fixes 2026-11 */
  "Try the live demo": "Δοκιμάστε τη ζωντανή επίδειξη",
  "Illustrative example – not a real clinic or patient": "Ενδεικτικό παράδειγμα – δεν πρόκειται για πραγματικό ιατρείο ή ασθενή",
- "Illustrative example – not a real clinic or patient. All doctors, patients and phone numbers in this demo are fictional.": "Ενδεικτικό παράδειγμα – δεν πρόκειται για πραγματικό ιατρείο ή ασθενή. Όλοι οι γιατροί, οι ασθενείς και οι αριθμοί τηλεφώνου σε αυτή την επίδειξη είναι φανταστικοί.",
  "Every request is sorted for booking as Urgent, Soon or Routine/GeSY. Urgent buffer slots are protected. Callers who describe urgent symptoms are told to call 112 and the message is flagged to you. If anything is unclear, the case is flagged for a call-back.": "Κάθε αίτημα κατατάσσεται για κράτηση ως <strong class=\"tri-t p1\">Επείγον</strong>, <strong class=\"tri-t p2\">Σύντομα</strong> ή <strong class=\"tri-t p3\">Ρουτίνα/ΓεΣΥ</strong>. Τα κενά έκτακτης ανάγκης προστατεύονται. Όσοι περιγράφουν επείγοντα συμπτώματα καθοδηγούνται να καλέσουν το 112 και το μήνυμα επισημαίνεται σε εσάς. Αν κάτι δεν είναι σαφές, η περίπτωση επισημαίνεται για επανάκληση.",
  "Now onboarding": "Ξεκινάμε τώρα",
  "Founding pilot clinics wanted": "Ζητούνται ιδρυτικά πιλοτικά ιατρεία",
@@ -1103,7 +1102,6 @@ Object.assign(window.I18N_EL, {
 /* Homepage redesign (2026-11-19) */
 Object.assign(window.I18N_EL, {
  "Start your 14-day pilot": "Ξεκινήστε το 14ήμερο πιλοτικό",
- "Watch a 30-sec demo": "Δείτε επίδειξη 30 δευτερολέπτων",
  "AI receptionist for your clinic": "AI γραμματέας για το ιατρείο σας",
  "Trust and safety": "Εμπιστοσύνη και ασφάλεια",
  "GDPR & DPA": "GDPR &amp; DPA",
@@ -1127,4 +1125,18 @@ Object.assign(window.I18N_EL, {
  "The first 10 Cyprus clinics pay €99/month instead of the standard €149/month, with 300 call minutes and WhatsApp included.": "Τα πρώτα 10 ιατρεία στην Κύπρο πληρώνουν <strong>€99/μήνα</strong> αντί για την κανονική τιμή <strong>€149/μήνα</strong>, με 300 λεπτά κλήσεων και WhatsApp.",
  "Ready when you are.": "Είμαστε έτοιμοι όταν είστε κι εσείς.",
  "14-day free pilot. Cancel with one month's notice.": "14 ημέρες δωρεάν πιλοτικά. Ακύρωση με ειδοποίηση ενός μήνα."
+});
+
+/* Pilot wording, 6-month founding rate (2026-11-19b) */
+Object.assign(window.I18N_EL, {
+ "Illustrative example – not a real clinic or patient.": "Ενδεικτικό παράδειγμα – δεν πρόκειται για πραγματικό ιατρείο ή ασθενή.",
+ "No long contract. The first 10 clinics pay €99/month for 6 months, then €149/month, with 300 call minutes. Other clinics choose a plan from €99/month.": "Χωρίς μακροχρόνιο συμβόλαιο. Τα πρώτα 10 ιατρεία πληρώνουν €99/μήνα για 6 μήνες, έπειτα €149/μήνα, με 300 λεπτά κλήσεων. Τα υπόλοιπα ιατρεία επιλέγουν πακέτο από €99/μήνα.",
+ "For the first 6 months, then €149/month. Billed monthly in advance.": "Για τους πρώτους 6 μήνες, έπειτα <strong>€149/μήνα</strong>. Χρέωση μηνιαία, προκαταβολικά.",
+ "We're onboarding our first 10 Cyprus clinics at €99/month for 6 months, then €149/month. Be one of them.": "Εντάσσουμε τα πρώτα 10 ιατρεία στην Κύπρο με €99/μήνα για 6 μήνες, έπειτα €149/μήνα. Γίνετε ένα από αυτά.",
+ "The first 10 Cyprus clinics pay €99/month for 6 months, then €149/month, with 300 call minutes and WhatsApp included.": "Τα πρώτα 10 ιατρεία στην Κύπρο πληρώνουν <strong>€99/μήνα</strong> για 6 μήνες, έπειτα <strong>€149/μήνα</strong>, με 300 λεπτά κλήσεων και WhatsApp.",
+ "Watch the demo": "Δείτε την επίδειξη",
+ "The button opens a short email with the details we need. We reply to set up your pilot.": "Το κουμπί ανοίγει ένα σύντομο email με τα στοιχεία που χρειαζόμαστε. Σας απαντάμε για να οργανώσουμε το πιλοτικό σας.",
+ "Start your 14-day pilot. We set it up together with you.": "Ξεκινήστε το 14ήμερο πιλοτικό. Το ρυθμίζουμε μαζί σας.",
+ "Start your 14-day pilot or email hello@mydocdesk.com.": "Ξεκινήστε το 14ήμερο πιλοτικό ή στείλτε email στο hello@mydocdesk.com.",
+ "Try the live demo, or start your 14-day pilot and we set it up with you.": "Δοκιμάστε τη ζωντανή επίδειξη ή ξεκινήστε το 14ήμερο πιλοτικό και το ρυθμίζουμε μαζί σας."
 });

@@ -195,10 +195,10 @@ function i18nSyncSwitch() {
 // Pilot-call CTA (mailto built from SITE_CONFIG.pilotEmail)
 // ---------------------------------------------------------------------------
 function buildPilotMailto() {
-  const subject = L("MyDocDesk pilot call", "MyDocDesk — πιλοτική κλήση");
+  const subject = L("MyDocDesk 14-day pilot", "MyDocDesk — 14ήμερο πιλοτικό");
   const body = L(
-    "Hello MyDocDesk team,\n\nI'd like to book a 15-minute MyDocDesk pilot call.\n\nClinic name & specialty:\nCity:\nLandline or mobile used for appointments:\nBest days/times to talk:\n\nThank you,\n",
-    "Γεια σας,\n\nΘα ήθελα να κλείσω μια 15λεπτη πιλοτική κλήση για το MyDocDesk.\n\nΌνομα ιατρείου & ειδικότητα:\nΠόλη:\nΣταθερό ή κινητό για ραντεβού:\nΚαλύτερες ημέρες/ώρες για επικοινωνία:\n\nΕυχαριστώ,\n"
+    "Hello MyDocDesk team,\n\nI'd like to start a 14-day MyDocDesk pilot for my clinic.\n\nClinic name & specialty:\nCity:\nLandline or mobile used for appointments:\nBest days/times to talk:\n\nThank you,\n",
+    "Γεια σας,\n\nΘα ήθελα να ξεκινήσω το 14ήμερο πιλοτικό του MyDocDesk για το ιατρείο μου.\n\nΌνομα ιατρείου & ειδικότητα:\nΠόλη:\nΣταθερό ή κινητό για ραντεβού:\nΚαλύτερες ημέρες/ώρες για επικοινωνία:\n\nΕυχαριστώ,\n"
   );
   return `mailto:${SITE_CONFIG.pilotEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
