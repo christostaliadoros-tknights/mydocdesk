@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none" role="img" width="512" height="512">
+  <rect width="512" height="512" rx="92.16" fill="#0a192f"/>
+  <g transform="translate(81.92,81.92) scale(10.879999999999999)">
+  <title>MyDocDesk mark — modular cross with answering bubble</title>
+  <defs>
+    <mask id="k-av-teal-0" maskUnits="userSpaceOnUse" x="0" y="0" width="32" height="32">
+      <rect width="32" height="32" fill="white"/>
+      <g fill="black" stroke="black" stroke-width="1.15"
+         stroke-linejoin="round" stroke-linecap="round">
+    <path d="M 15.03 12.18 H 16.98 A 2.85 2.85 0 0 1 19.83 15.03 V 16.98 A 2.85 2.85 0 0 1 16.98 19.83 H 15.03 A 2.85 2.85 0 0 1 13.90 19.50 C 13.20 19.95 12.65 20.15 12.25 20.10 A 0.50 0.50 0 0 1 11.85 19.72 C 12.05 19.30 12.30 18.70 12.45 18.18 A 2.85 2.85 0 0 1 12.18 16.98 V 15.03 A 2.85 2.85 0 0 1 15.03 12.18 Z"/>
+      </g>
+    </mask>
+  </defs>
+  <g fill="#ffffff" mask="url(#k-av-teal-0)">
+    <rect x="11.00" y="4.25" width="10.00" height="10.00" rx="2.50"/>
+    <rect x="4.25" y="11.00" width="10.00" height="10.00" rx="2.50"/>
+    <rect x="17.75" y="11.00" width="10.00" height="10.00" rx="2.50"/>
+    <rect x="11.00" y="17.75" width="10.00" height="10.00" rx="2.50"/>
+  </g>
+  <g fill="#44c4d8">
+    <path d="M 15.03 12.18 H 16.98 A 2.85 2.85 0 0 1 19.83 15.03 V 16.98 A 2.85 2.85 0 0 1 16.98 19.83 H 15.03 A 2.85 2.85 0 0 1 13.90 19.50 C 13.20 19.95 12.65 20.15 12.25 20.10 A 0.50 0.50 0 0 1 11.85 19.72 C 12.05 19.30 12.30 18.70 12.45 18.18 A 2.85 2.85 0 0 1 12.18 16.98 V 15.03 A 2.85 2.85 0 0 1 15.03 12.18 Z"/>
+  </g>
+  </g>
+</svg>

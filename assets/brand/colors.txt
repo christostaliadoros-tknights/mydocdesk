@@ -1,0 +1,7 @@
+navy                 #0a192f
+teal                 #0e7c86
+teal-on-navy         #44c4d8
+tagline-light        #5c6e80
+tagline-on-navy      #94a3b8
+white                #ffffff
+black                #000000

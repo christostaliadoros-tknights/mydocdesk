@@ -1099,3 +1099,32 @@ Object.assign(window.I18N_EL, {
  "We follow GDPR and treat health information as special-category data. Only the details needed to book and brief you are collected. Your clinic is the data controller and MyDocDesk (T-Knights Consulting Ltd) is the data processor; a data processing agreement (DPA) is signed before go-live. Callers are told at the start that they are speaking with an AI assistant. Call audio recording is off by default, by default we set transcripts and call logs in our systems to delete after 30 days, and the medical record stays with you in your own calendar and WhatsApp. See the privacy section above.": "Ακολουθούμε τον GDPR και αντιμετωπίζουμε τις πληροφορίες υγείας ως ειδική κατηγορία δεδομένων. Συλλέγονται μόνο τα στοιχεία που χρειάζονται για το ραντεβού και την ενημέρωσή σας. Το ιατρείο σας είναι ο υπεύθυνος επεξεργασίας και το MyDocDesk (T-Knights Consulting Ltd) είναι ο εκτελών την επεξεργασία· η σύμβαση επεξεργασίας δεδομένων (DPA) υπογράφεται πριν από την έναρξη λειτουργίας. Όσοι καλούν ενημερώνονται από την αρχή ότι μιλούν με ψηφιακή βοηθό τεχνητής νοημοσύνης. Η ηχογράφηση των κλήσεων είναι απενεργοποιημένη από προεπιλογή, από προεπιλογή ρυθμίζουμε τις απομαγνητοφωνήσεις και τα αρχεία κλήσεων στα συστήματά μας ώστε να διαγράφονται μετά από 30 ημέρες και ο ιατρικός φάκελος μένει σε εσάς, στο δικό σας ημερολόγιο και WhatsApp. Δείτε την ενότητα απορρήτου παραπάνω."
 });
 /* MULTIPAGE-END */
+
+/* Homepage redesign (2026-11-19) */
+Object.assign(window.I18N_EL, {
+ "Start your 14-day pilot": "Ξεκινήστε το 14ήμερο πιλοτικό",
+ "Watch a 30-sec demo": "Δείτε επίδειξη 30 δευτερολέπτων",
+ "AI receptionist for your clinic": "AI γραμματέας για το ιατρείο σας",
+ "Trust and safety": "Εμπιστοσύνη και ασφάλεια",
+ "GDPR & DPA": "GDPR &amp; DPA",
+ "30-day deletion": "Διαγραφή σε 30 ημέρες",
+ "Greek & English": "Ελληνικά &amp; Αγγλικά",
+ "Forward your number": "Προωθήστε τον αριθμό σας",
+ "Patients keep calling the number they already know.": "Οι ασθενείς συνεχίζουν να καλούν τον αριθμό που ήδη γνωρίζουν.",
+ "Connect WhatsApp": "Συνδέστε το WhatsApp",
+ "Anastasia answers messages and voice notes, and sends confirmations.": "Η Αναστασία απαντά σε μηνύματα και φωνητικά μηνύματα και στέλνει επιβεβαιώσεις.",
+ "Set your rules": "Ορίστε τους κανόνες σας",
+ "You choose booking hours, urgent slots and what needs your approval.": "Εσείς επιλέγετε ώρες ραντεβού, επείγουσες θέσεις και τι χρειάζεται την έγκρισή σας.",
+ "See how it works in detail": "Δείτε αναλυτικά πώς λειτουργεί",
+ "A calmer clinic": "Ένα πιο ήρεμο ιατρείο",
+ "Calls and WhatsApp answered 24/7, even while you are with a patient.": "Απαντά σε κλήσεις και WhatsApp 24/7, ακόμη κι όταν εξετάζετε ασθενή.",
+ "Requests are sorted by urgency. Callers with urgent symptoms are told to call 112.": "Τα αιτήματα ταξινομούνται κατά επείγον. Όσοι περιγράφουν επείγοντα συμπτώματα ενημερώνονται να καλέσουν το 112.",
+ "You stay in control": "Ο έλεγχος μένει σε εσάς",
+ "Each booking comes with a short case note. Sensitive cases wait for your 1/2/3/4 reply.": "Κάθε ραντεβού συνοδεύεται από σύντομο σημείωμα. Τα ευαίσθητα περιστατικά περιμένουν την απάντησή σας 1/2/3/4.",
+ "Supplier & rep calls too": "Και κλήσεις προμηθευτών &amp; επισκεπτών",
+ "Messages from suppliers, reps and labs are kept separate from patient cases.": "Τα μηνύματα από προμηθευτές, ιατρικούς επισκέπτες και εργαστήρια κρατούνται χωριστά από τα περιστατικά ασθενών.",
+ "Founding clinics": "Ιδρυτικά ιατρεία",
+ "The first 10 Cyprus clinics pay €99/month instead of the standard €149/month, with 300 call minutes and WhatsApp included.": "Τα πρώτα 10 ιατρεία στην Κύπρο πληρώνουν <strong>€99/μήνα</strong> αντί για την κανονική τιμή <strong>€149/μήνα</strong>, με 300 λεπτά κλήσεων και WhatsApp.",
+ "Ready when you are.": "Είμαστε έτοιμοι όταν είστε κι εσείς.",
+ "14-day free pilot. Cancel with one month's notice.": "14 ημέρες δωρεάν πιλοτικά. Ακύρωση με ειδοποίηση ενός μήνα."
+});

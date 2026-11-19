@@ -800,12 +800,12 @@ function setBrandVariant(newBrandKey, newIconKey, silent) {
   const domainText = "mydocdesk.com";
   const ICON_META = {
     schedule_navy: {
-      path: "./assets/icon-schedule-gold-navy.png",
+      path: "./assets/brand/avatar.png",
       label: "Schedule Shield + Gold/Navy/Teal (v1)",
       tagline: "INTELLIGENT MEDICAL RECEPTION • AI Voice & WhatsApp Reception"
     },
     schedule_gold: {
-      path: "./assets/icon-schedule-gold-cross.png",
+      path: "./assets/brand/avatar.png",
       label: "Gold Cross + Schedule Shield (v2)",
       tagline: "INTELLIGENT MEDICAL RECEPTION • AI Voice & WhatsApp Reception"
     },
