@@ -1140,3 +1140,29 @@ Object.assign(window.I18N_EL, {
  "Start your 14-day pilot or email hello@mydocdesk.com.": "Ξεκινήστε το 14ήμερο πιλοτικό ή στείλτε email στο hello@mydocdesk.com.",
  "Try the live demo, or start your 14-day pilot and we set it up with you.": "Δοκιμάστε τη ζωντανή επίδειξη ή ξεκινήστε το 14ήμερο πιλοτικό και το ρυθμίζουμε μαζί σας."
 });
+
+/* Live demo page, decluttered (2026-11-19) */
+Object.assign(window.I18N_EL, {
+ "Hear Anastasia answer a call, sort it by urgency, and send the doctor a one-number WhatsApp reply.": "Ακούστε την Αναστασία να απαντά σε μια κλήση, να την ταξινομεί κατά επείγον και να στέλνει στον γιατρό ένα μήνυμα WhatsApp που απαντιέται με έναν αριθμό.",
+ "Demo cases": "Περιστατικά επίδειξης",
+ "Fever + ear pain": "Πυρετός + πόνος στο αυτί",
+ "Broken tooth": "Σπασμένο δόντι",
+ "Skin rash": "Δερματικό εξάνθημα",
+ "GeSY renewal": "Ανανέωση συνταγής ΓεΣΥ",
+ "Interactive demo": "Διαδραστική επίδειξη",
+ "The call": "Η κλήση",
+ "Anastasia answering": "Απαντά η Αναστασία",
+ "Anastasia · MyDocDesk": "Αναστασία · MyDocDesk",
+ "The doctor’s WhatsApp": "Το WhatsApp του γιατρού",
+ "What the doctor sees": "Τι βλέπει ο γιατρός",
+ "Good morning. Today: 8 patients booked, first at 08:30. Urgent buffers at 12:30 and 17:00 are still free. 3 GeSY items waiting for your end-of-day batch. Overnight: 4 WhatsApp messages answered, 0 missed calls.": "Καλημέρα, γιατρέ. Σήμερα: <strong>8 ασθενείς</strong> με ραντεβού, το πρώτο στις 08:30. Τα ραντεβού επειγόντων στις <strong>12:30</strong> και <strong>17:00</strong> είναι ακόμη ελεύθερα. <strong>3 αιτήματα ΓεΣΥ</strong> περιμένουν τη λίστα του τέλους της ημέρας. Κατά τη νύχτα: απαντήθηκαν 4 μηνύματα WhatsApp, 0 αναπάντητες κλήσεις.",
+ "Approval needed · #MD-409": "Χρειάζεται έγκριση · #MD-409",
+ "Leo K. (4y, GeSY): 39.6°C fever since last night + right ear pain. No urgent symptoms reported. Reply: 1 book today 12:30 buffer · 2 tomorrow 09:00 · 3 I'll call the parent · 4 decline": "Λέων Κ. (4 ετών, ΓεΣΥ): πυρετός 39,6°C από χθες το βράδυ + πόνος στο δεξί αυτί. Δεν αναφέρθηκαν επείγοντα συμπτώματα. Απαντήστε: <strong>1</strong> ραντεβού σήμερα 12:30 · <strong>2</strong> αύριο 09:00 · <strong>3</strong> θα πάρω εγώ τον γονιό · <strong>4</strong> απόρριψη",
+ "Done. Leo is booked at 12:30. I've texted the mother to confirm and pinned the case note to the calendar event.": "Έγινε. Ο Λέων έκλεισε ραντεβού για τις 12:30. Έστειλα SMS επιβεβαίωσης στη μητέρα και επισύναψα το σημείωμα στο ραντεβού στο ημερολόγιο.",
+ "A parent called about a 6-month-old with fever and unusual drowsiness. These can be urgent symptoms, so I did not book an appointment. I told her to call 112 now and flagged it to you.": "Ένας γονιός τηλεφώνησε για <strong>βρέφος 6 μηνών με πυρετό και ασυνήθιστη υπνηλία</strong>. Μπορεί να πρόκειται για επείγοντα συμπτώματα, γι' αυτό δεν έκλεισα ραντεβού. Της είπα να <strong>καλέσει αμέσως το 112</strong> και σας το επισήμανα.",
+ "Thanks, calling her now.": "Ευχαριστώ, την παίρνω τώρα.",
+ "3 items ready: 2 prescription renewals, 1 physiotherapy referral. Reply ALL to approve or a number to review one.": "<strong>3 αιτήματα</strong> έτοιμα: 2 επαναλήψεις συνταγών, 1 παραπεμπτικό φυσιοθεραπείας. Απαντήστε <strong>ΟΛΑ</strong> για έγκριση ή έναν αριθμό για να δείτε ένα συγκεκριμένο.",
+ "ALL": "ΟΛΑ",
+ "14-day free pilot. You keep your existing number.": "14ήμερο δωρεάν πιλοτικό. Κρατάτε τον αριθμό που ήδη έχετε.",
+ "From €99/month · See pricing": "Από €99/μήνα · Δείτε τις τιμές"
+});
